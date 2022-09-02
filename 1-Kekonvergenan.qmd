@@ -129,3 +129,45 @@ $$
 $$
 
 Di semua titik $F_X(x)$ kontinu. Pembuktian dari definisi tersebut cukup sederhana: cari fungsi kumulatif, lalu cari limitnya.
+
+
+## Hukum Bilangan Besar Lemah 
+
+Misalkan $\{ X_{n}\}$ adalah barisan bilangan peubah acak yang
+berdistribusi identik dan saling bebas dengan nilai tengah $\mu$ dan
+ragam $\sigma^{2} < \ \infty$. Misalkan
+${\bar{X}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}X_{i}$ , maka
+
+$$
+{\bar{X}}_{n}\ \overset{p}{\rightarrow}\ \mu
+$$
+
+### Bukti
+
+Diketahui bahwa:
+
+$$
+\begin{aligned}
+E\left( {\overline{X}}_{n} \right)&= \frac{1}{n}E\left( \sum_{i = 1}^{n}X_{i} \right)= \frac{1}{n}\cdot n\cdot \mu =\mu \\
+
+V\left( {\overline{X}}_{n} \right)&= \frac{1}{n^{2}}V\left( \sum_{i = 1}^{n}X_{i} \right) = \frac{1}{n^{2}}.n.\sigma^{2} = \frac{\sigma^{2}}{n}
+\end{aligned}
+$$
+Sehingga, untuk setiap $\varepsilon > 0$:
+$$
+\lim_{n \rightarrow \infty}P\left( \left| {\bar{X}}_{n} - \mu \right| \geq \epsilon \right) \leq \frac{\sigma^{2}}{n\varepsilon^{2}} \rightarrow 0
+$$
+
+### Teorema Limit Pusat 
+
+Misalkan $X_{1},X_{2},\ldots,X_{n}$ adalah contoh acak dari populasi
+dengan nilai tengah $\mu$ dan ragam $\sigma^{2}$ (sebaran tidak harus
+normal). Jika ${\bar{X}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}X_{i}$
+dan n besar (secara matematis $n \rightarrow \infty$) maka
+${\overline{X}}_{n}$ akan menyebar normal dengan nilai tengah $\mu$ dan
+ragam $\frac{\sigma^{2}}{n}.$
+
+$$\frac{\begin{matrix}
+{\overline{X}}_{n} - E\left( {\overline{X}}_{n} \right) \\
+\end{matrix}}{\sqrt{V\left( {\overline{X}}_{n} \right)}}\sim N(0,\ 1)
+$$
