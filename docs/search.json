@@ -28,6 +28,13 @@
     "text": "Konvergensi dalam Distribusi\nDinotasikan \\(X_n\\ \\xrightarrow{d}\\ X\\), dengan definisi:\nJika \\(\\{X_{n}\\}\\) adalah suatu barisan peubah acak (\\(X_1, X_2, \\ldots, X_{i}, \\ldots\\) dengan ukuran sampel adalah i) dan X adalah peubah acak, maka \\(X_{n}\\) konvergen dalam distribusi ke X jika:\n\\[\n\\begin{aligned}\n\\lim_{n\\to\\infty} F_{X_{n}}(x)=F_X\n\\end{aligned}\n\\]\nDi semua titik \\(F_X(x)\\) kontinu. Pembuktian dari definisi tersebut cukup sederhana: cari fungsi kumulatif, lalu cari limitnya."
   },
   {
+    "objectID": "1-Kekonvergenan.html#hukum-bilangan-besar-lemah",
+    "href": "1-Kekonvergenan.html#hukum-bilangan-besar-lemah",
+    "title": "Bab 1: Kekonvergenan, LLN, CLT",
+    "section": "Hukum Bilangan Besar Lemah",
+    "text": "Hukum Bilangan Besar Lemah\nMisalkan \\(\\{ X_{n}\\}\\) adalah barisan bilangan peubah acak yang berdistribusi identik dan saling bebas dengan nilai tengah \\(\\mu\\) dan ragam \\(\\sigma^{2} < \\ \\infty\\). Misalkan \\({\\bar{X}}_{n} = \\frac{1}{n}\\sum_{i = 1}^{n}X_{i}\\) , maka\n\\[\n{\\bar{X}}_{n}\\ \\overset{p}{\\rightarrow}\\ \\mu\n\\]\n\nBukti\nDiketahui bahwa:\n$$\n\\[\\begin{aligned}\nE\\left( {\\overline{X}}_{n} \\right)&= \\frac{1}{n}E\\left( \\sum_{i = 1}^{n}X_{i} \\right)= \\frac{1}{n}\\cdot n\\cdot \\mu =\\mu \\\\\n\nV\\left( {\\overline{X}}_{n} \\right)&= \\frac{1}{n^{2}}V\\left( \\sum_{i = 1}^{n}X_{i} \\right) = \\frac{1}{n^{2}}.n.\\sigma^{2} = \\frac{\\sigma^{2}}{n}\n\\end{aligned}\\]\n$$\nSehingga, untuk setiap \\(\\varepsilon > 0\\):\n\\[\n\\lim_{n \\rightarrow \\infty}P\\left( \\left| {\\bar{X}}_{n} - \\mu \\right| \\geq \\epsilon \\right) \\leq \\frac{\\sigma^{2}}{n\\varepsilon^{2}} \\rightarrow 0\n\\]\n\n\nTeorema Limit Pusat\nMisalkan \\(X_{1},X_{2},\\ldots,X_{n}\\) adalah contoh acak dari populasi dengan nilai tengah \\(\\mu\\) dan ragam \\(\\sigma^{2}\\) (sebaran tidak harus normal). Jika \\({\\bar{X}}_{n} = \\frac{1}{n}\\sum_{i = 1}^{n}X_{i}\\) dan n besar (secara matematis \\(n \\rightarrow \\infty\\)) maka \\({\\overline{X}}_{n}\\) akan menyebar normal dengan nilai tengah \\(\\mu\\) dan ragam \\(\\frac{\\sigma^{2}}{n}.\\)\n\\[\\frac{\\begin{matrix}\n{\\overline{X}}_{n} - E\\left( {\\overline{X}}_{n} \\right) \\\\\n\\end{matrix}}{\\sqrt{V\\left( {\\overline{X}}_{n} \\right)}}\\sim N(0,\\ 1)\n\\]"
+  },
+  {
     "objectID": "1-LatihanSoal.html",
     "href": "1-LatihanSoal.html",
     "title": "Contoh Soal Bab 1 - Kekonvergenan",
