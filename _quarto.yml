@@ -1,0 +1,50 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Praktikum Inferensia Statistika"
+  navbar:
+    background: primary
+    foreground: light
+    search: true
+    left:
+      - text: "Home"
+        file: index.qmd
+      - text: "Modul"
+        file: modul.qmd
+      - text: "Tugas"
+        file: tugas.qmd
+      - text: "Pembahasan"
+        file: pembahasan.qmd
+
+  sidebar:
+    - title: "Modul"
+      style: "docked"
+      background: light
+      contents: 
+        - modul.qmd
+        - 1-Kekonvergenan.qmd
+        - 2-SebaranContohNormal.qmd
+        - 3-MaximumLikelihood.qmd
+        
+    - title: "Tugas"
+      style: "docked"
+      background: light
+      contents:
+        - tugas.qmd
+        - 1-Tugas.qmd
+
+    - title: "pembahasan"
+      style: "docked"
+      background: light
+      contents: 
+        - pembahasan.qmd
+        - 1-LatihanSoal.qmd
+        - 1-PembahasanTugas.qmd
+
+format:
+  html:
+    theme: pulse
+    css: styles.css
+    toc: true

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Tugas Bab 1 - Kekonvergenan</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./modul.html">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pembahasan.html" aria-current="page">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Tugas Bab 1 - Kekonvergenan</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pembahasan.html" class="sidebar-item-text sidebar-link">Pembahasan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Contoh Soal Bab 1 - Kekonvergenan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-PembahasanTugas.html" class="sidebar-item-text sidebar-link active">Tugas Bab 1 - Kekonvergenan</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#konvergensi-dalam-peluang" id="toc-konvergensi-dalam-peluang" class="nav-link active" data-scroll-target="#konvergensi-dalam-peluang">Konvergensi dalam peluang</a>
+  <ul class="collapse">
+  <li><a href="#y_nn-konvergen-dalam-peluang-ke-p." id="toc-y_nn-konvergen-dalam-peluang-ke-p." class="nav-link" data-scroll-target="#y_nn-konvergen-dalam-peluang-ke-p."><span class="math inline">\(Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(p\)</span>.</a></li>
+  <li><a href="#y_nn-konvergen-dalam-peluang-ke-1-p." id="toc-y_nn-konvergen-dalam-peluang-ke-1-p." class="nav-link" data-scroll-target="#y_nn-konvergen-dalam-peluang-ke-1-p."><span class="math inline">\(1-Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(1-p\)</span>.</a></li>
+  <li><a href="#fracy_nnleft1-fracy_nnright-konvergen-dalam-peluang-ke-p1-p" id="toc-fracy_nnleft1-fracy_nnright-konvergen-dalam-peluang-ke-p1-p" class="nav-link" data-scroll-target="#fracy_nnleft1-fracy_nnright-konvergen-dalam-peluang-ke-p1-p"><span class="math inline">\(\frac{Y_n}{n}\left(1-\frac{Y_n}{n}\right)\)</span> konvergen dalam peluang ke <span class="math inline">\(p(1-p)\)</span></a></li>
+  </ul></li>
+  <li><a href="#konvergensi-dalam-distribusi" id="toc-konvergensi-dalam-distribusi" class="nav-link" data-scroll-target="#konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</a>
+  <ul class="collapse">
+  <li><a href="#diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" id="toc-diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" class="nav-link" data-scroll-target="#diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1">Diberikan fungsi kumulatif <span class="math inline">\(X_n\)</span> sebagai berikut. Tunjukkan <span class="math inline">\(X_{n}\)</span> konvergen dalam distribusi ke <span class="math inline">\(\mathrm{Exponential}(1)\)</span>!</a></li>
+  <li><a href="#let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" id="toc-let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" class="nav-link" data-scroll-target="#let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n">Let <span class="math inline">\(Y_{[1]}\)</span> denote the minimum of a random sample of size n from a distribution that has pdf <span class="math inline">\(f(x) = e^{-(x-\theta)}, \theta&lt;x&lt; \infty,\)</span> zero elsewhere. Let <span class="math inline">\(Z_n = n(Y_{[1]} - \theta)\)</span>. Investigate the limiting distribution of <span class="math inline">\(Z_n\)</span>!</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Tugas Bab 1 - Kekonvergenan</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="konvergensi-dalam-peluang" class="level2">
+<h2 class="anchored" data-anchor-id="konvergensi-dalam-peluang">Konvergensi dalam peluang</h2>
+<p>Sebuah peubah acak <span class="math inline">\(Y_n\)</span> menyebar <span class="math inline">\(b(n,p)\)</span>. Buktikan:</p>
+<section id="y_nn-konvergen-dalam-peluang-ke-p." class="level3">
+<h3 class="anchored" data-anchor-id="y_nn-konvergen-dalam-peluang-ke-p."><span class="math inline">\(Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(p\)</span>.</h3>
+<p>Pertama, cari terlebih dahulu nilai harapan dan ragam dari <span class="math inline">\(Y_n/n\)</span>. Karena:</p>
+<ol type="1">
+<li><span class="math inline">\(E(aY)=aE(Y)\)</span></li>
+<li><span class="math inline">\(V(aY)=a^2V(Y)\)</span></li>
+</ol>
+<p>Jika <span class="math inline">\(a=1/n\)</span>, maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left(\frac{Y_n}{n}\right)&amp;=\frac{1}{n}E(Y)=\frac{np}{n}\\
+&amp;=p\\
+V\left(\frac{Y_n}{n}\right)&amp;=\frac{1}{n^2}V(Y)=\frac{np(1-p)}{n^2}\\
+&amp;=\frac{p(1-p)}{n}
+\end{aligned}
+\]</span></p>
+<p>Dari nilai harapan dan ragam dari sebaran Binomial. Maka dengan menggunakan Teorema Chebysheff:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&amp;\leq   {\frac {p(1-p)}{n\varepsilon^{2}}}.\\
+\lim_{n\to\infty}  P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&amp;\leq   \lim_{n\to\infty} {\frac {p(1-p)}{n\varepsilon^{2}}}.\\
+\lim_{n\to\infty}  P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&amp;\leq 0
+\end{aligned}
+\]</span></p>
+</section>
+<section id="y_nn-konvergen-dalam-peluang-ke-1-p." class="level3">
+<h3 class="anchored" data-anchor-id="y_nn-konvergen-dalam-peluang-ke-1-p."><span class="math inline">\(1-Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(1-p\)</span>.</h3>
+<p>Dari definisi konvergensi dalam peluang, <span class="math inline">\(1-Y_n \ \xrightarrow{p}\ 1-p\)</span> jika:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty} P\left(|\{1-Y_n\}-\{1-p\}|\geq\varepsilon\right)&amp;=0\\
+\lim_{n\to\infty} P\left(|1-1+p-Y_n|\geq\varepsilon\right)&amp;=0\\
+\lim_{n\to\infty} P\left(|p-Y_n|\geq\varepsilon\right)&amp;=0\\
+\lim_{n\to\infty} P\left(|-Y_n+p|\geq\varepsilon\right)&amp;=0\\
+\lim_{n\to\infty} P\left(|\{-Y_n\}-\{-p\}|\geq\varepsilon\right)&amp;=0\\
+\end{aligned}
+\]</span></p>
+<p>Dalam kata lain <span class="math inline">\(1-Y_n \ \xrightarrow{p}\ 1-p\)</span>, sama saja dengan <span class="math inline">\(-Y_n \ \xrightarrow{p}\ -p\)</span>. Oleh karena itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P\left(\left| -Y_n-(-p) \right| \geq \varepsilon \right)&amp;=P\left(\left| \{-1\}Y_n-\{-1\}p \right| \geq \varepsilon \right)\\
+&amp;=P\bigl( |-1|\left| Y_n-p \right| \geq \varepsilon \bigr)\\
+&amp;=P\bigl( \left| Y_n-p \right| \geq \varepsilon/|-1| \bigr)\\
+&amp;=P\bigl( \left| Y_n-p \right| \geq \varepsilon/1 \bigr)\\
+\end{aligned}
+\]</span></p>
+<p>Yang telah dibuktikan sebelumya.</p>
+</section>
+<section id="fracy_nnleft1-fracy_nnright-konvergen-dalam-peluang-ke-p1-p" class="level3">
+<h3 class="anchored" data-anchor-id="fracy_nnleft1-fracy_nnright-konvergen-dalam-peluang-ke-p1-p"><span class="math inline">\(\frac{Y_n}{n}\left(1-\frac{Y_n}{n}\right)\)</span> konvergen dalam peluang ke <span class="math inline">\(p(1-p)\)</span></h3>
+<p>Perhatikan bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_nY_n &amp;= \frac{1}{2}X_n^2+\frac{1}{2}Y_n^2-\frac{1}{2}(X_n-Y_n)^2\\
+&amp;\xrightarrow{p} \frac{1}{2}X^2+\frac{1}{2}Y^2-\frac{1}{2}(X-Y)^2=XY
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(g(X_n)\xrightarrow{p}g(X)\)</span>, maka <span class="math inline">\(X_n^2 \xrightarrow{p} X^2\)</span>. Begitu juga <span class="math inline">\(Y_n^2 \xrightarrow{p} Y^2\)</span>. Selain itu, <span class="math inline">\(-Y_n\xrightarrow{p}-Y\)</span> dari teorema yang dibuktikan di soal sebelumnya, sehingga <span class="math inline">\(X_n-Y_n \xrightarrow{p}X-Y\)</span>, dan kuadratnya konvergen dalam peluang juga.</p>
+<p>Maka dari itu, jika <span class="math inline">\(Y_n/n \xrightarrow{p} p\)</span> dan <span class="math inline">\(1-Y_n/n \xrightarrow{p} 1-p\)</span>, maka <span class="math inline">\(\frac{Y_n}{n}\left(1-\frac{Y_n}{n}\right) \xrightarrow{p} p(1-p)\)</span>.</p>
+</section>
+</section>
+<section id="konvergensi-dalam-distribusi" class="level2">
+<h2 class="anchored" data-anchor-id="konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</h2>
+<section id="diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" class="level3">
+<h3 class="anchored" data-anchor-id="diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1">Diberikan fungsi kumulatif <span class="math inline">\(X_n\)</span> sebagai berikut. Tunjukkan <span class="math inline">\(X_{n}\)</span> konvergen dalam distribusi ke <span class="math inline">\(\mathrm{Exponential}(1)\)</span>!</h3>
+<p><span class="math display">\[
+    \begin{equation}
+    F_{X_n}(x)=
+    \begin{cases}
+    1-\left(1-\frac{1}{n}\right)^{nx} &amp; \quad x &gt; 0\\
+    &amp; \quad \\
+    0 &amp; \quad \text{lainnya}
+    \end{cases}
+    \end{equation}
+\]</span></p>
+<p>Cari limit dari fungsi kumulatif tersebut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty}F_{X_n}(x)&amp;=\lim_{n\to\infty}\left\{1-\left(1-\frac{1}{n}\right)^{nx}\right\} &amp;  x &gt; 0\\
+&amp;=1-\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{nx}&amp; x&gt;0
+\end{aligned}
+\]</span></p>
+<p>Perhatikan bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{n}&amp;=e^{-1}\\
+\lim_{n\to\infty}\left\{\left(1-\frac{1}{n}\right)^{n}\right\}^x&amp;=e^{-x}\\
+\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{nx}&amp;=e^{-x}
+\end{aligned}
+\]</span></p>
+<p>Bukti dari:</p>
+<p><span class="math display">\[
+\begin{aligned}\lim_{n\to\infty}\left( 1 - \frac{1}{n} \right)^n &amp;= \lim_{n\to\infty}\left(\frac{n-1}{n}\right)^n = \lim_{n\to\infty}\left(\frac{1}{\frac{n}{n-1}}\right)^n = \lim_{n\to\infty}\frac{1}{\left(\frac{n}{n-1}\right)^n} \\ &amp;= \lim_{n\to\infty}\frac{1}{\left(1 + \frac{1}{n-1}\right)^n} = \lim_{n\to\infty} \left(\frac{1}{\left(1 + \frac{1}{n-1}\right)^{n-1}} \cdot \frac{1}{1 + \frac{1}{n-1}} \right) \\
+&amp;= \lim_{n\to\infty} \frac{1}{\left(1 + \frac{1}{n-1}\right)^{n-1}} = \lim_{n\to\infty} \frac{1}{\left(1 + \frac{1}{n}\right)^{n}} = \frac{1}{e} \\
+&amp;= e^{-1}
+\end{aligned}
+\]</span></p>
+<p>Sehingga:</p>
+<p><span class="math display">\[
+\lim_{n\to\infty}F_{X_n}(x)=1-e^{-x}, \quad x&gt;0
+\]</span></p>
+<p>Yang merupakan fungsi kumulatif dari <span class="math inline">\(\mathrm{Exponential}(1)\)</span>.</p>
+</section>
+<section id="let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" class="level3">
+<h3 class="anchored" data-anchor-id="let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n">Let <span class="math inline">\(Y_{[1]}\)</span> denote the minimum of a random sample of size n from a distribution that has pdf <span class="math inline">\(f(x) = e^{-(x-\theta)}, \theta&lt;x&lt; \infty,\)</span> zero elsewhere. Let <span class="math inline">\(Z_n = n(Y_{[1]} - \theta)\)</span>. Investigate the limiting distribution of <span class="math inline">\(Z_n\)</span>!</h3>
+<p>Pertama, kaji fungsi kumulatif dari <span class="math inline">\(Y_1\)</span>. Perhatikan bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{Y_{[1]}}(y)=P(Y_{[1]} \leq y)=1-P(Y_{[1]}&gt;y)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(P\left(Y_{[1]}&gt;y\right)\)</span> berarti nilai minimum dari contoh acak tersebut lebih dari nilai tertentu, atau <span class="math inline">\(y=x\)</span>. Namun jika nilai minimum tersebut lebih besar dari <span class="math inline">\(y=x\)</span>, maka pasti semua nilai lebih besar dari <span class="math inline">\(y=x\)</span>. Nilai pertama di sampel, <span class="math inline">\(Y_1&gt;y\)</span>; nilai kedua di sampel, <span class="math inline">\(Y_2&gt;y\)</span> sampai nilai ke-n <span class="math inline">\(Y_n&gt;y\)</span> sehingga dapat dibuat:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{Y_{[1]}}(y)&amp;=1-P(X_1&gt;x, \ X_2&gt;x, \ldots,X_n&gt;x)&amp;\\
+&amp;=1-\left[P(X_1&gt;x)P(X_2&gt;x)\ldots P(X_n&gt;x)\right] &amp; \text{(saling bebas)}\\
+&amp;=1-\left[1-F(x)\right]^n
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(1-F(x)=1-P(X\leq x)=P(X&gt;x)\)</span>. Maka fungsi kumulatif dari <span class="math inline">\(x\)</span> adalah:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F(x)&amp;=\int_\theta^x e^{-x+\theta}dx=e^\theta\int_\theta^x e^{-x}dx\\
+&amp;=e^\theta\left[-e^{-x}\right]^{x}_\theta=e^\theta(-e^{-x}+e^-\theta)\\
+&amp;=-e^{-(x-\theta)}+1=1-e^{-(x-\theta)}
+\end{aligned}
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F_{Y_{[1]}}(y)&amp;=1-\left[1-F(x)\right]^n=1-[e^{-n(y-\theta)}]\\
+&amp;=1-e^{-n(y-\theta)}
+\end{aligned}
+\]</span></p>
+<p>Karena fungsi kepekatan peluang adalah turunan dari fungsi kumulatif, maka:</p>
+<p><span class="math display">\[
+f_{Y_{[1]}}(y)=ne^{-n(y-\theta)}
+\]</span></p>
+<p>Sehingga buat transformasi <span class="math inline">\(Z_n = n(Y_{[1]} - \theta)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+Z_n &amp;= n(Y_{[1]} - \theta) &amp; \theta&lt;&amp;y_{[1]}&lt;\infty\\
+Y_1-\theta &amp;= \frac{Z_n}{n} &amp; 0&lt;&amp;y_{[1]}-\theta&lt;\infty\\
+Y_1&amp;=\frac{Z_n}{n}+\theta &amp; 0&lt;&amp;n(y_{[1]}-\theta)&lt;\infty\\
+\frac{dy}{dz} &amp;=\frac{1}{n} &amp; 0&lt;&amp;z&lt;\infty
+\end{aligned}
+\]</span></p>
+<p>Sehingga menurut metode transformasi fungsi:</p>
+<p><span class="math display">\[
+\begin{aligned}
+h(z)&amp;=e^{-z}\\
+H(z)&amp;=\int_0^z e^{-z}dz=-e^{-z}+1\\
+&amp;=1-e^{-z}
+\end{aligned}
+\]</span></p>
+<p>Sehingga distribusi tersebut konvergen ke <span class="math inline">\(\mathrm{Exponential}(1)\)</span>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

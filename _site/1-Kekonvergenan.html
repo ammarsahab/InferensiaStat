@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ayunda Afiani Rosita, Muhammad Ammar Sahab">
+
+<title>Praktikum Inferensia Statistika - Bab 1: Kekonvergenan, LLN, CLT</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./modul.html" aria-current="page">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pembahasan.html">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 1: Kekonvergenan, LLN, CLT</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modul.html" class="sidebar-item-text sidebar-link">Modul</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link active">Bab 1: Kekonvergenan, LLN, CLT</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link">Sebaran Percontohan dari Sebaran Normal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Maximum Likelihood</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#motivasi" id="toc-motivasi" class="nav-link active" data-scroll-target="#motivasi">Motivasi</a></li>
+  <li><a href="#kekonvergenan" id="toc-kekonvergenan" class="nav-link" data-scroll-target="#kekonvergenan">Kekonvergenan</a>
+  <ul class="collapse">
+  <li><a href="#konvergensi-dalam-peluang" id="toc-konvergensi-dalam-peluang" class="nav-link" data-scroll-target="#konvergensi-dalam-peluang">Konvergensi dalam Peluang</a></li>
+  <li><a href="#beberapa-teorema-berguna" id="toc-beberapa-teorema-berguna" class="nav-link" data-scroll-target="#beberapa-teorema-berguna">Beberapa Teorema Berguna</a>
+  <ul class="collapse">
+  <li><a href="#teorema-chebysheff" id="toc-teorema-chebysheff" class="nav-link" data-scroll-target="#teorema-chebysheff">Teorema Chebysheff</a></li>
+  <li><a href="#teorema-pertama-jika-x_n-xrightarrowp-x-dan-y_n-xrightarrowp-y-maka-x_ny_n-xrightarrowp-xy." id="toc-teorema-pertama-jika-x_n-xrightarrowp-x-dan-y_n-xrightarrowp-y-maka-x_ny_n-xrightarrowp-xy." class="nav-link" data-scroll-target="#teorema-pertama-jika-x_n-xrightarrowp-x-dan-y_n-xrightarrowp-y-maka-x_ny_n-xrightarrowp-xy.">Teorema pertama: jika <span class="math inline">\(X_n \ \xrightarrow{p}\ X\)</span> dan <span class="math inline">\(Y_n \ \xrightarrow{p}\ Y\)</span> maka <span class="math inline">\(X_n+Y_n \ \xrightarrow{p}\ X+Y\)</span>.</a></li>
+  <li><a href="#teorema-kedua-jika-x_n-xrightarrowp-x-dan-a-suatu-konstanta-maka-ax_n-xrightarrowp-ax." id="toc-teorema-kedua-jika-x_n-xrightarrowp-x-dan-a-suatu-konstanta-maka-ax_n-xrightarrowp-ax." class="nav-link" data-scroll-target="#teorema-kedua-jika-x_n-xrightarrowp-x-dan-a-suatu-konstanta-maka-ax_n-xrightarrowp-ax.">Teorema kedua: jika <span class="math inline">\(X_n \ \xrightarrow{p}\ X\)</span> dan <span class="math inline">\(a\)</span> suatu konstanta, maka <span class="math inline">\(aX_n \ \xrightarrow{p}\ aX\)</span>.</a></li>
+  <li><a href="#teorema-ketiga-konvergensi-dalam-peluang-untuk-fungsi-dari-x." id="toc-teorema-ketiga-konvergensi-dalam-peluang-untuk-fungsi-dari-x." class="nav-link" data-scroll-target="#teorema-ketiga-konvergensi-dalam-peluang-untuk-fungsi-dari-x.">Teorema ketiga: konvergensi dalam peluang untuk fungsi dari X.</a></li>
+  </ul></li>
+  <li><a href="#konvergensi-dalam-distribusi" id="toc-konvergensi-dalam-distribusi" class="nav-link" data-scroll-target="#konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 1: Kekonvergenan, LLN, CLT</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayunda Afiani Rosita, Muhammad Ammar Sahab </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="motivasi" class="level1">
+<h1>Motivasi</h1>
+<p>Untuk meningkatkan kualitas suatu penduga, dapat dilakukan peningkatan ukuran sampel. Jika ukuran sampel ditingkatkan, biasanya ragam dari penduga akan berkurang, nilai tengah penduga akan mendekati nilai parameter, dan beberapa sebaran dapat diaproksimasi dengan sebaran yang lebih mudah. Dalam pertemuan ini, akan dipelajari dasar teori mengenai perubahan perilaku suatu penduga saat ukuran sampel besar.</p>
+</section>
+<section id="kekonvergenan" class="level1">
+<h1>Kekonvergenan</h1>
+<section id="konvergensi-dalam-peluang" class="level2">
+<h2 class="anchored" data-anchor-id="konvergensi-dalam-peluang">Konvergensi dalam Peluang</h2>
+<p>Jika <span class="math inline">\(\{X_{n}\}\)</span> adalah suatu barisan peubah acak (<span class="math inline">\(X_1, X_2, \ldots, X_{i}, \ldots\)</span> dengan ukuran sampel adalah i) dan X adalah peubah acak, maka <span class="math inline">\(X_{n}\)</span> <strong>konvergen dalam peluang</strong> ke X jika untuk tiap <span class="math inline">\(\varepsilon&gt;0\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty} P\left(|X_n-X|\geq\varepsilon\right)=0
+\end{aligned}
+\]</span></p>
+<p>Atau,</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty} P\left(|X_n-X|&lt;\varepsilon\right)=1
+\end{aligned}
+\]</span></p>
+<p>Dinotasikan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+X_n \ \xrightarrow{p}\ X .
+\end{aligned}
+\]</span></p>
+</section>
+<section id="beberapa-teorema-berguna" class="level2">
+<h2 class="anchored" data-anchor-id="beberapa-teorema-berguna">Beberapa Teorema Berguna</h2>
+<p>Beberapa teorema dapat membantu membuktikan kekonvergenan dalam peluang suatu peubah acak. Teorema tersebut adalah teorema Chebysheff, serta beberapa teorema mengenai sifat kekonvergenan dalam peluang.</p>
+<section id="teorema-chebysheff" class="level3">
+<h3 class="anchored" data-anchor-id="teorema-chebysheff">Teorema Chebysheff</h3>
+<p>Ada beberapa teorema yang digunakan dalam menyelesaikan masalah kekonvergenan. Pertama, ada <strong>Pertidaksamaan Chebysheff</strong>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(|X-\mu |\geq k\sigma )\leq {\frac {1}{k^{2}}}.
+\end{aligned}
+\]</span></p>
+<p>Atau, dengan substitusi <span class="math inline">\(k=a/\sigma\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+    P(|X-\mu |\geq a )\leq {\frac {\sigma^2}{a^{2}}}.
+\end{aligned}
+\]</span></p>
+<p>Teorema Chebysheff dapat menentukan batas bagi peluang dari jarak suatu peubah acak dan nilai harapannya lebih dari suatu nilai. Konsep konvergensi dengan peluang menyatakan bahwa peluang tersebut akan menuju nol jika ukuran sampel semakin besar, sehingga teorema tersebut cukup berguna untuk dipakai.</p>
+<p>Lalu, ada teorema mengenai sifat-sifat kekonvergenan.</p>
+</section>
+<section id="teorema-pertama-jika-x_n-xrightarrowp-x-dan-y_n-xrightarrowp-y-maka-x_ny_n-xrightarrowp-xy." class="level3">
+<h3 class="anchored" data-anchor-id="teorema-pertama-jika-x_n-xrightarrowp-x-dan-y_n-xrightarrowp-y-maka-x_ny_n-xrightarrowp-xy.">Teorema pertama: jika <span class="math inline">\(X_n \ \xrightarrow{p}\ X\)</span> dan <span class="math inline">\(Y_n \ \xrightarrow{p}\ Y\)</span> maka <span class="math inline">\(X_n+Y_n \ \xrightarrow{p}\ X+Y\)</span>.</h3>
+<p>Dalam kata lain, syarat <span class="math inline">\(\lim_{n\to\infty} P\left(|(X_n+Y_n)-(X-Y)|&lt;\varepsilon\right)=1\)</span>, atau <span class="math inline">\(\leq \varepsilon=0\)</span> terpenuhi. Bukti teorema sebagai berikut; pertama, perhatikan bahwa <span class="math inline">\(|x| = \max\{x,-x\}\)</span> sehinga <span class="math inline">\(\pm x \leq |x|\)</span>. Dalam kata lain, suatu bilangan <span class="math inline">\(x\)</span> pastilah lebih kecil atau sama dengan dari nilai mutlaknya. Jika bilangan tersebut positif, maka mutlaknya sama dengan bilangan tersebut. Jika negatif, maka mutlaknya lebih besar. Oleh karena itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+a+b &amp;\leq |a|+b \leq |a|+|b|, \ \text{dan}\\
+-a-b &amp;\leq |a|-b \leq |a|+|b|
+\end{aligned}
+\]</span></p>
+<p>Sehingga <span class="math inline">\(|a+b|=\max\{a+b,-a-b\}\leq |a|+|b|\)</span>, seperti yang telah dibuktikan sebelumnya. <span class="math inline">\(X_n \ \xrightarrow{p}\ X\)</span> berarti peluang <span class="math inline">\(X_n-X\)</span> berbeda dari nol akan sangat kecil jika ukuran sampel sangat besar, begitu juga untuk <span class="math inline">\(Y\)</span>. Jika <span class="math inline">\(a=X_n-X\)</span>, <span class="math inline">\(b=Y_n-Y\)</span>, maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+|X_n-X|+|Y_n-Y|\geq |(X_n+Y_n)-(X+Y)|\geq \varepsilon
+\end{aligned}
+\]</span></p>
+<p>Ini berarti jika <span class="math inline">\(|(X_n+Y_n)-(X+Y)|\geq \varepsilon\)</span>, pastilah <span class="math inline">\(|X_n-X|+|Y_n-Y|\geq \varepsilon\)</span> karena kuantitas tersebut lebih besar atau sama dengan kuantitias sebelumnya. Maka dapat dikatakan bahwa kejadian di mana <span class="math inline">\(|(X_n+Y_n)-(X+Y)|\geq \varepsilon\)</span> merupakan himpunan bagian dari <span class="math inline">\(|X_n-X|+|Y_n-Y|\geq \varepsilon\)</span>. Atau, <span class="math inline">\(\{|(X_n+Y_n)-(X+Y)| \geq \varepsilon\}\subseteq \{|X_n-X|+|Y_n-Y| \geq \varepsilon\}\)</span>. Note bahwa jika <span class="math inline">\(A\subseteq B\)</span>, <span class="math inline">\(P(A)\leq P(B)\)</span>, sehingga</p>
+<p><span class="math display">\[
+\begin{aligned}
+P\bigl( \left| X_n+Y_n \right| - \left| (X+Y) \right|\geq \varepsilon  \bigr) \leq P\bigl( \left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon  \bigr)
+\end{aligned}
+\]</span></p>
+<p>Lalu, perhatikan bahwa jika <span class="math inline">\(\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon\)</span>, maka syaratnya adalah <span class="math inline">\(\left| X_n-X \right|\geq \varepsilon/2\)</span> atau <span class="math inline">\(\left| Y_n-Y \right|\geq \varepsilon/2\)</span>. Jika syarat tersebut tidak terpenuhi, maka tidak mungkin <span class="math inline">\(\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon\)</span>. Namun, jika syarat tersebut terpenuhi belum tentu <span class="math inline">\(\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon\)</span> - maka, kejadian itu adalah himpunan bagian dari terjadinya syarat tersebut. Maka probabilitasnya lebih kecil:</p>
+<p><span class="math display">\[
+\begin{aligned}
+S&amp;=P\bigl( \left| X_n+Y_n \right| - \left| (X+Y) \right|\geq \varepsilon  \bigr) \\
+&amp;\leq P\bigl( \left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon  \bigr)\\
+&amp;\leq P\bigl( \left| X_n-X \right| \geq \varepsilon/2  \bigr) + P\bigl( \left| Y_n-Y \right| \geq \varepsilon/2  \bigr)
+\end{aligned}
+\]</span></p>
+<p>Yang diketahui bahwa saat <span class="math inline">\(n\to\infty\)</span>, <span class="math inline">\(P\bigl( \left| X_n-X \right| \geq \varepsilon/2 \bigr)\)</span> dan <span class="math inline">\(P\bigl( \left| Y_n-Y \right| \geq \varepsilon/2 \bigr)\)</span> menuju 0.</p>
+</section>
+<section id="teorema-kedua-jika-x_n-xrightarrowp-x-dan-a-suatu-konstanta-maka-ax_n-xrightarrowp-ax." class="level3">
+<h3 class="anchored" data-anchor-id="teorema-kedua-jika-x_n-xrightarrowp-x-dan-a-suatu-konstanta-maka-ax_n-xrightarrowp-ax.">Teorema kedua: jika <span class="math inline">\(X_n \ \xrightarrow{p}\ X\)</span> dan <span class="math inline">\(a\)</span> suatu konstanta, maka <span class="math inline">\(aX_n \ \xrightarrow{p}\ aX\)</span>.</h3>
+<p>Buktinya untuk <span class="math inline">\(a\neq 0\)</span> adalah:</p>
+<p><span class="math display">\[
+P\bigl( \left| aX_n-aX \right| \geq \varepsilon \bigr)=P\bigl( |a|\left| X_n-X \right| \geq \varepsilon \bigr)=P\bigl( \left| X_n-X \right| \geq \varepsilon/|a| \bigr)
+\]</span></p>
+<p>Karena diketahyu saat <span class="math inline">\(n \to \infty\)</span> pernyataan tersebut benar untuk semua <span class="math inline">\(\varepsilon&gt;0\)</span>, maka akan benar untuk semua <span class="math inline">\(\varepsilon/|a|&gt;0\)</span>.</p>
+</section>
+<section id="teorema-ketiga-konvergensi-dalam-peluang-untuk-fungsi-dari-x." class="level3">
+<h3 class="anchored" data-anchor-id="teorema-ketiga-konvergensi-dalam-peluang-untuk-fungsi-dari-x.">Teorema ketiga: konvergensi dalam peluang untuk fungsi dari X.</h3>
+<p>Jika <span class="math inline">\(X_n \ \xrightarrow{p}\ a\)</span> dan fungsi <span class="math inline">\(g\)</span> kontinu di <span class="math inline">\(a\)</span>. Maka <span class="math inline">\(g(X_n) \ \xrightarrow{p}\ g(a)\)</span>. Karena <span class="math inline">\(g\)</span> kontinu di <span class="math inline">\(a\)</span>, maka ada <span class="math inline">\(\delta\geq 0\)</span> agar jika <span class="math inline">\(|g(X)-g(a)|\leq \varepsilon \Longleftrightarrow |x-a| \leq \delta\)</span>. Teorema ini dapat digunakan untuk membuktikan konvergensi fungsi kuadrat, pecahan, akar.</p>
+</section>
+</section>
+<section id="konvergensi-dalam-distribusi" class="level2">
+<h2 class="anchored" data-anchor-id="konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</h2>
+<p>Dinotasikan <span class="math inline">\(X_n\ \xrightarrow{d}\ X\)</span>, dengan definisi:</p>
+<p>Jika <span class="math inline">\(\{X_{n}\}\)</span> adalah suatu barisan peubah acak (<span class="math inline">\(X_1, X_2, \ldots, X_{i}, \ldots\)</span> dengan ukuran sampel adalah i) dan X adalah peubah acak, maka <span class="math inline">\(X_{n}\)</span> <strong>konvergen dalam distribusi</strong> ke X jika:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n\to\infty} F_{X_{n}}(x)=F_X
+\end{aligned}
+\]</span></p>
+<p>Di semua titik <span class="math inline">\(F_X(x)\)</span> kontinu. Pembuktian dari definisi tersebut cukup sederhana: cari fungsi kumulatif, lalu cari limitnya.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

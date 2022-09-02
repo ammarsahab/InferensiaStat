@@ -1,0 +1,131 @@
+---
+title: "Bab 1: Kekonvergenan, LLN, CLT"
+format:
+  html
+author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"
+---
+
+# Motivasi
+
+Untuk meningkatkan kualitas suatu penduga, dapat dilakukan peningkatan ukuran sampel. Jika ukuran sampel ditingkatkan, biasanya ragam dari penduga akan berkurang, nilai tengah penduga akan mendekati nilai parameter, dan beberapa sebaran dapat diaproksimasi dengan sebaran yang lebih mudah. Dalam pertemuan ini, akan dipelajari dasar teori mengenai perubahan perilaku suatu penduga saat ukuran sampel besar.
+
+# Kekonvergenan
+
+## Konvergensi dalam Peluang
+
+Jika $\{X_{n}\}$ adalah suatu barisan peubah acak ($X_1, X_2, \ldots, X_{i}, \ldots$ dengan ukuran sampel adalah i) dan X adalah peubah acak, maka $X_{n}$ **konvergen dalam peluang** ke X jika untuk tiap $\varepsilon>0$,
+
+$$
+\begin{aligned}
+\lim_{n\to\infty} P\left(|X_n-X|\geq\varepsilon\right)=0
+\end{aligned}
+$$
+
+Atau,
+
+$$
+\begin{aligned}
+\lim_{n\to\infty} P\left(|X_n-X|<\varepsilon\right)=1
+\end{aligned}
+$$
+
+Dinotasikan:
+
+$$
+\begin{aligned}
+X_n \ \xrightarrow{p}\ X .
+\end{aligned}
+$$
+
+## Beberapa Teorema Berguna
+
+Beberapa teorema dapat membantu membuktikan kekonvergenan dalam peluang suatu peubah acak. Teorema tersebut adalah teorema Chebysheff, serta beberapa teorema mengenai sifat kekonvergenan dalam peluang.
+
+### Teorema Chebysheff
+
+Ada beberapa teorema yang digunakan dalam menyelesaikan masalah kekonvergenan. Pertama, ada **Pertidaksamaan Chebysheff**:
+
+$$
+\begin{aligned}
+    P(|X-\mu |\geq k\sigma )\leq {\frac {1}{k^{2}}}.
+\end{aligned}
+$$
+
+Atau, dengan substitusi $k=a/\sigma$:
+
+$$
+\begin{aligned}
+    P(|X-\mu |\geq a )\leq {\frac {\sigma^2}{a^{2}}}.
+\end{aligned}
+$$
+
+Teorema Chebysheff dapat menentukan batas bagi peluang dari jarak suatu peubah acak dan nilai harapannya lebih dari suatu nilai. Konsep konvergensi dengan peluang menyatakan bahwa peluang tersebut akan menuju nol jika ukuran sampel semakin besar, sehingga teorema tersebut cukup berguna untuk dipakai.
+
+Lalu, ada teorema mengenai sifat-sifat kekonvergenan. 
+
+### Teorema pertama: jika $X_n \ \xrightarrow{p}\ X$ dan $Y_n \ \xrightarrow{p}\ Y$ maka $X_n+Y_n \ \xrightarrow{p}\ X+Y$. 
+
+Dalam kata lain, syarat $\lim_{n\to\infty} P\left(|(X_n+Y_n)-(X-Y)|<\varepsilon\right)=1$, atau $\leq \varepsilon=0$ terpenuhi. Bukti teorema sebagai berikut; pertama, perhatikan bahwa $|x| = \max\{x,-x\}$ sehinga $\pm x \leq |x|$. Dalam kata lain, suatu bilangan $x$ pastilah lebih kecil atau sama dengan dari nilai mutlaknya. Jika bilangan tersebut positif, maka mutlaknya sama dengan bilangan tersebut. Jika negatif, maka mutlaknya lebih besar. Oleh karena itu:
+
+$$
+\begin{aligned}
+a+b &\leq |a|+b \leq |a|+|b|, \ \text{dan}\\
+-a-b &\leq |a|-b \leq |a|+|b|
+\end{aligned}
+$$
+
+Sehingga $|a+b|=\max\{a+b,-a-b\}\leq |a|+|b|$, seperti yang telah dibuktikan sebelumnya. $X_n \ \xrightarrow{p}\ X$ berarti peluang $X_n-X$ berbeda dari nol akan sangat kecil jika ukuran sampel sangat besar, begitu juga untuk $Y$. Jika $a=X_n-X$, $b=Y_n-Y$, maka:
+
+$$
+\begin{aligned}
+|X_n-X|+|Y_n-Y|\geq |(X_n+Y_n)-(X+Y)|\geq \varepsilon
+\end{aligned}
+$$
+
+Ini berarti jika $|(X_n+Y_n)-(X+Y)|\geq \varepsilon$, pastilah $|X_n-X|+|Y_n-Y|\geq \varepsilon$ karena kuantitas tersebut lebih besar atau sama dengan kuantitias sebelumnya. Maka dapat dikatakan bahwa kejadian di mana $|(X_n+Y_n)-(X+Y)|\geq \varepsilon$ merupakan himpunan bagian dari  $|X_n-X|+|Y_n-Y|\geq \varepsilon$. Atau, $\{|(X_n+Y_n)-(X+Y)| \geq \varepsilon\}\subseteq \{|X_n-X|+|Y_n-Y| \geq \varepsilon\}$. Note bahwa jika $A\subseteq B$, $P(A)\leq P(B)$, sehingga
+
+$$
+\begin{aligned}
+P\bigl( \left| X_n+Y_n \right| - \left| (X+Y) \right|\geq \varepsilon  \bigr) \leq P\bigl( \left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon  \bigr)
+\end{aligned}
+$$
+
+Lalu, perhatikan bahwa jika $\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon$, maka syaratnya adalah $\left| X_n-X \right|\geq \varepsilon/2$ atau $\left| Y_n-Y \right|\geq \varepsilon/2$. Jika syarat tersebut tidak terpenuhi, maka tidak mungkin $\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon$. Namun, jika syarat tersebut terpenuhi belum tentu $\left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon$ - maka, kejadian itu adalah himpunan bagian dari terjadinya syarat tersebut. Maka probabilitasnya lebih kecil:
+
+$$
+\begin{aligned}
+S&=P\bigl( \left| X_n+Y_n \right| - \left| (X+Y) \right|\geq \varepsilon  \bigr) \\
+&\leq P\bigl( \left| X_n-X \right| + \left| Y_n - Y \right|\geq \varepsilon  \bigr)\\
+&\leq P\bigl( \left| X_n-X \right| \geq \varepsilon/2  \bigr) + P\bigl( \left| Y_n-Y \right| \geq \varepsilon/2  \bigr)
+\end{aligned}
+$$
+
+Yang diketahui bahwa saat $n\to\infty$, $P\bigl( \left| X_n-X \right| \geq \varepsilon/2 \bigr)$ dan $P\bigl( \left| Y_n-Y \right| \geq \varepsilon/2 \bigr)$ menuju 0.
+
+### Teorema kedua: jika $X_n \ \xrightarrow{p}\ X$ dan $a$ suatu konstanta, maka $aX_n \ \xrightarrow{p}\ aX$. 
+
+Buktinya untuk $a\neq 0$ adalah:
+
+$$
+P\bigl( \left| aX_n-aX \right| \geq \varepsilon \bigr)=P\bigl( |a|\left| X_n-X \right| \geq \varepsilon \bigr)=P\bigl( \left| X_n-X \right| \geq \varepsilon/|a| \bigr)
+$$
+
+Karena diketahyu saat $n \to \infty$ pernyataan tersebut benar untuk semua $\varepsilon>0$, maka akan benar untuk semua $\varepsilon/|a|>0$.
+
+### Teorema ketiga: konvergensi dalam peluang untuk fungsi dari X.
+
+Jika $X_n \ \xrightarrow{p}\ a$ dan fungsi $g$ kontinu di $a$. Maka $g(X_n) \ \xrightarrow{p}\ g(a)$. Karena $g$ kontinu di $a$, maka ada $\delta\geq 0$ agar jika $|g(X)-g(a)|\leq \varepsilon \Longleftrightarrow |x-a| \leq \delta$. Teorema ini dapat digunakan untuk membuktikan konvergensi fungsi kuadrat, pecahan, akar.
+
+## Konvergensi dalam Distribusi
+
+Dinotasikan $X_n\ \xrightarrow{d}\ X$, dengan definisi:
+
+Jika $\{X_{n}\}$ adalah suatu barisan peubah acak ($X_1, X_2, \ldots, X_{i}, \ldots$ dengan ukuran sampel adalah i) dan X adalah peubah acak, maka $X_{n}$ **konvergen dalam distribusi** ke X jika:
+
+$$
+\begin{aligned}
+\lim_{n\to\infty} F_{X_{n}}(x)=F_X
+\end{aligned}
+$$
+
+Di semua titik $F_X(x)$ kontinu. Pembuktian dari definisi tersebut cukup sederhana: cari fungsi kumulatif, lalu cari limitnya.

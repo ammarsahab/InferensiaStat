@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ayunda Afiani Rosita, Muhammad Ammar Sahab">
+
+<title>Praktikum Inferensia Statistika - Sebaran Percontohan dari Sebaran Normal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./modul.html" aria-current="page">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pembahasan.html">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Sebaran Percontohan dari Sebaran Normal</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modul.html" class="sidebar-item-text sidebar-link">Modul</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1: Kekonvergenan, LLN, CLT</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link active">Sebaran Percontohan dari Sebaran Normal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Maximum Likelihood</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review">Review</a>
+  <ul class="collapse">
+  <li><a href="#momen" id="toc-momen" class="nav-link" data-scroll-target="#momen">Momen</a>
+  <ul class="collapse">
+  <li><a href="#fungsi-pembangkit-momen" id="toc-fungsi-pembangkit-momen" class="nav-link" data-scroll-target="#fungsi-pembangkit-momen">Fungsi Pembangkit Momen</a></li>
+  <li><a href="#sifat-fungsi-pembangkit-momen" id="toc-sifat-fungsi-pembangkit-momen" class="nav-link" data-scroll-target="#sifat-fungsi-pembangkit-momen">Sifat Fungsi Pembangkit Momen</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sebaran-percontohan-dari-populasi-normal" id="toc-sebaran-percontohan-dari-populasi-normal" class="nav-link" data-scroll-target="#sebaran-percontohan-dari-populasi-normal">Sebaran Percontohan dari Populasi Normal</a>
+  <ul class="collapse">
+  <li><a href="#sebaran-dari-kombinasi-linear-peubah-acak-normal" id="toc-sebaran-dari-kombinasi-linear-peubah-acak-normal" class="nav-link" data-scroll-target="#sebaran-dari-kombinasi-linear-peubah-acak-normal">Sebaran dari kombinasi linear peubah acak normal</a>
+  <ul class="collapse">
+  <li><a href="#bukti" id="toc-bukti" class="nav-link" data-scroll-target="#bukti">Bukti</a></li>
+  <li><a href="#sebaran-dari-rata-rata-sampel" id="toc-sebaran-dari-rata-rata-sampel" class="nav-link" data-scroll-target="#sebaran-dari-rata-rata-sampel">Sebaran dari rata-rata sampel</a></li>
+  </ul></li>
+  <li><a href="#sebaran-khi-kuadrat" id="toc-sebaran-khi-kuadrat" class="nav-link" data-scroll-target="#sebaran-khi-kuadrat">Sebaran khi-kuadrat</a>
+  <ul class="collapse">
+  <li><a href="#sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan" id="toc-sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan" class="nav-link" data-scroll-target="#sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan">Sebaran dari observasi populasi normal baku yang dikuadratkan</a></li>
+  <li><a href="#beberapa-sifat-sebaran-khi-kuadrat" id="toc-beberapa-sifat-sebaran-khi-kuadrat" class="nav-link" data-scroll-target="#beberapa-sifat-sebaran-khi-kuadrat">Beberapa sifat sebaran khi-kuadrat</a></li>
+  <li><a href="#sebaran-dari-jumlah-kuadrat-sebaran-normal-baku" id="toc-sebaran-dari-jumlah-kuadrat-sebaran-normal-baku" class="nav-link" data-scroll-target="#sebaran-dari-jumlah-kuadrat-sebaran-normal-baku">Sebaran dari jumlah kuadrat sebaran normal baku</a></li>
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
+  </ul></li>
+  <li><a href="#sebaran-t-student" id="toc-sebaran-t-student" class="nav-link" data-scroll-target="#sebaran-t-student">Sebaran t-student</a>
+  <ul class="collapse">
+  <li><a href="#bukti-1" id="toc-bukti-1" class="nav-link" data-scroll-target="#bukti-1">Bukti</a></li>
+  </ul></li>
+  <li><a href="#sebaran-f" id="toc-sebaran-f" class="nav-link" data-scroll-target="#sebaran-f">Sebaran F</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Sebaran Percontohan dari Sebaran Normal</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ayunda Afiani Rosita, Muhammad Ammar Sahab </p>
+          </div>
+  </div>
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="review" class="level1">
+<h1>Review</h1>
+<section id="momen" class="level2">
+<h2 class="anchored" data-anchor-id="momen">Momen</h2>
+<p>Momen populasi ke-<span class="math inline">\(k\)</span> adalah:</p>
+<p><span class="math display">\[
+\mu_k^{'}=E\bigl(X^k\bigr)
+\]</span></p>
+<p>Momen pertama adalah nilai harapan dari peubah acak tersebut. Momen ke-<span class="math inline">\(k\)</span> adalah nilai harapan dari peubah acak tersebut yang dipangkatkan <span class="math inline">\(k\)</span>. Ada juga momen tersentralkan ke-<span class="math inline">\(k\)</span>, yang didefinisikan sebagai:</p>
+<p><span class="math display">\[
+E\bigl[\left(X-\mu\right)^k\bigr]
+\]</span></p>
+<p>Ada juga momen terstandarkan, yaitu:</p>
+<p><span class="math display">\[
+\frac{E\bigl[\left(X-\mu\right)^k\bigr]}{\sigma^k}
+\]</span></p>
+<section id="fungsi-pembangkit-momen" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-pembangkit-momen">Fungsi Pembangkit Momen</h3>
+<p>Tiap sebaran peluang memiliki <strong>fungsi pembangkit momen</strong> yang didefinisikan sebagai:</p>
+<p><span class="math display">\[
+M_X(t)=E\left(e^{tX}\right)
+\]</span></p>
+<p>Karena diketahui dari Kalkulus bahwa Polinomial Taylor ke-n untuk <span class="math inline">\(e^x\)</span> adalah:</p>
+<p><span class="math display">\[
+P_n(x) =1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
+\]</span></p>
+<p>Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi <span class="math inline">\(e^x\)</span> akan lebih baik sehingga dapat dikatakan:</p>
+<p><span class="math display">\[
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}+\cdots
+\]</span></p>
+<p>Maka karena konstanta <span class="math inline">\(t\)</span> dan konstanta lainnya dapat dikeluarkan dari perhitungan nilai harapan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_X(t)&amp;=E\bigl[e^{tX}\bigr]=E\left[1+tX+\frac{(tX)^2}{2!}+\frac{(tX)^3}{ 3!}+\frac{(tX)^4}{4!}+\cdots +\frac{(tX)^n}{n!}+\cdots\right]\\
+&amp;=1+tE\left[X\right]+\frac{t^2}{2!}E\left[X^2\right]+\frac{t^3}{ 3!}E\left[X^3\right]+\cdots+\frac{t^n}{n!}E\left[X^n\right]+\cdots
+\end{aligned}
+\]</span></p>
+<p>Misal diambil turunan pertama dari fungsi tersebut:</p>
+<p><span class="math display">\[
+\frac{\mathrm{d}M_X(t)}{\mathrm{d}t}=M_X^{'}(t)=E\left[X\right]+{t}E\left[X^2\right]+\frac{t^2}{2!}E\left[X^3\right]+\cdots+\frac{t^{n-1}} {(n-1)!}E\left[X^n\right]+\cdots
+\]</span></p>
+<p>Sehingga di <span class="math inline">\(t=0\)</span>, <span class="math inline">\(M_X^{'}(0)=E\left[X\right]\)</span>, dan jika dilihat:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M^{''}_X(0)&amp;=E\left[X^2\right]\\
+M^{'''}_X(0)&amp;=E\left[X^3\right]\\
+\vdots&amp;=\vdots\\
+M^{(n)}_X(0)&amp;=E\left[X^n\right]
+\end{aligned}
+\]</span></p>
+<p>Sehingga momen ke-<span class="math inline">\(k\)</span> dapat dicari dari fungsi pembangkit momen.</p>
+</section>
+<section id="sifat-fungsi-pembangkit-momen" class="level3">
+<h3 class="anchored" data-anchor-id="sifat-fungsi-pembangkit-momen">Sifat Fungsi Pembangkit Momen</h3>
+<p>Ada beberapa sifat penting fungsi pembangkit momen yang akan dipakai dalam bab ini:</p>
+<ol type="1">
+<li><p>Fungsi pembangkit momen <strong>unik</strong>. Jika peubah acak <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span> memiliki fungsi pembangkit momen yang sama; <span class="math inline">\(M\_{X}(t)=M\_{Y}(t)\)</span>, di t di suatu interval yang memiliki 0, maka <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span> memiliki sebaran sama.</p></li>
+<li><p>Jika <span class="math inline">\(X_1,X_2,\ldots,X_n\)</span> seperangkat peubah bebas dan <span class="math inline">\(Z=\sum_{i=1}^nX_i\)</span> <span class="math inline">\(M_{Z}(t)=\prod_{i=1}^nM_{X_i}(t)\)</span>.</p></li>
+</ol>
+<p>Note bahwa untuk <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span> saling bebas, <span class="math inline">\(f(x,y)=f(x)\cdot f(y)\)</span> atau <span class="math inline">\(p(x,y)=p(x)\cdot p(y)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[XY\right]&amp;=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xy \ f(x,y) \ dx \ dy\\
+&amp;=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xy \ f(x)f(y) \ dx \ dy\\
+&amp;=\int_{-\infty}^{\infty}yf(y)\left[\int_{-\infty}^{\infty}xf(x) \ dx\right]dy\\
+&amp;=\int_{-\infty}^{\infty}yf(y)E[X]dy=E[X]\int_{-\infty}^{\infty}yf(y)\ dy\\
+&amp;=E[X]E[Y]
+\end{aligned}
+\]</span></p>
+<p>Dan hal yang sama dapat dibuktikan untuk sebaran diskret, dan dapat dibuktikan lebih lanjut untuk seperangkat peubah acak saling bebas.</p>
+<p>Bukti dari sifat tersebut adalah:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_Z(t)&amp;=E\left[\mathrm{exp}\left(t\sum_{i=1}^nX_i\right)\right]=E\left[\mathrm{exp}\left(\sum_{i=1}^ntX_i\right)\right]&amp;\\
+&amp;=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]&amp; \text{(Karena saling bebas)}\\
+&amp;=\prod_{i=1}^n M_{X_i}(t) &amp; \text{(Definisi fungsi pembangkit momen)}
+\end{aligned}
+\]</span></p>
+<ol start="3" type="1">
+<li>Jika <span class="math inline">\(Y=aX+b\)</span>, maka <span class="math inline">\(M_Y(t)=e^{bt}M_X(at)\)</span></li>
+</ol>
+<p>Bukti dari sifat tersebut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_Y(t)&amp;=E\left[e^{t\left(aX+b\right)}\right]=E\left[e^{t\left(aX\right)+bt}\right]\\
+&amp;=E\left[e^{t\left(aX\right)}e^{bt}\right]=e^{bt}E\left[e^{t\left(aX\right)}\right]\\
+&amp;=e^{bt}M_X(at)
+\end{aligned}
+\]</span></p>
+<p>Fungsi pembangkit momen dan sifatnya akan digunakan untuk menurunkan sebaran percontohan statisitk dari sebaran normal.</p>
+</section>
+</section>
+</section>
+<section id="sebaran-percontohan-dari-populasi-normal" class="level1">
+<h1>Sebaran Percontohan dari Populasi Normal</h1>
+<p>Sebaran dari statisitik yang diambil dari suatu sampel seringkali bergantung pada bentuk sebaran populasi. Dalam kasus ini, akan dibahas sebaran normal yang bebas stokastik identitik (bsi), atau <em>independent and identically distributed</em> (iid). Distirbusi normal mendapat fokus dalam statistika karena banyak fenomena alami seperti tinggi badan dan galat non-sistematis. Lalu, sifat fungsi pembangkit momen yang berkaitan dengan jumlah dari beberapa variabel bergantung pada asumsi kebebasan antar variabel tersebut.</p>
+<p>Fungsi pembangkit momen sebaran normal adalah:</p>
+<p><span class="math display">\[
+\mathrm{exp}\left(\mu t+\frac{t^2\sigma^2}{2}\right)
+\]</span></p>
+<section id="sebaran-dari-kombinasi-linear-peubah-acak-normal" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-dari-kombinasi-linear-peubah-acak-normal">Sebaran dari kombinasi linear peubah acak normal</h2>
+<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim Normal\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2\)</span>.</p>
+<section id="bukti" class="level3">
+<h3 class="anchored" data-anchor-id="bukti">Bukti</h3>
+<p>Cari fungsi pembangkit momen dari <span class="math inline">\(Y\)</span> - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen normal, maka <span class="math inline">\(Y\)</span> menyebar normal:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_Y(t)&amp;=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\right]&amp;\\
+&amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]&amp; \text{(Karena saling bebas)}\\
+&amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&amp;\\
+&amp;=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&amp;\text{(Dari fungsi pembangkit momen Normal)}\\
+&amp;=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
+\end{aligned}
+\]</span></p>
+<p>Yang tidak lain adalah fungsi pembangkit momen peubah acak <span class="math inline">\(Normal\left(\sum_{i=1}^n a_imu_i, \sum_{i=1}^n a_i\sigma_i^2\right)\)</span>.</p>
+</section>
+<section id="sebaran-dari-rata-rata-sampel" class="level3">
+<h3 class="anchored" data-anchor-id="sebaran-dari-rata-rata-sampel">Sebaran dari rata-rata sampel</h3>
+<p>Jika kita menggangap bahwa <span class="math inline">\(\mu_i=\mu\)</span> dan <span class="math inline">\(\sigma_i=\sigma\)</span> - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan <span class="math inline">\(a_i=1/n\)</span>, akan ditemukan sebaran dari rata-rata sampel berjumlah <span class="math inline">\(n\)</span> observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka <span class="math inline">\(\bar{X}\sim Normal\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)\)</span>. Karena:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^n\frac{1}{n}\mu &amp;= n\cdot \frac{\mu}{n}=\mu\\
+\sum_{i=1}^n\frac{1}{n^2}\sigma^2 &amp;= n\cdot \frac{\sigma^2}{n^2}=\frac{\sigma^2}{n}
+\end{aligned}
+\]</span></p>
+<p>Maka <span class="math inline">\(\bar{X}\sim Normal\left(\mu, \frac{\sigma^2}{n}\right)\)</span>. Dari situ, dapat dibuat peubah normal baku, <span class="math inline">\(Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim Normal(0,1)\)</span></p>
+</section>
+</section>
+<section id="sebaran-khi-kuadrat" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-khi-kuadrat">Sebaran khi-kuadrat</h2>
+<section id="sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan" class="level3">
+<h3 class="anchored" data-anchor-id="sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan">Sebaran dari observasi populasi normal baku yang dikuadratkan</h3>
+<p>Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kumulatif peluang <span class="math inline">\(Normal(\mu,\sigma^2)\)</span> adalah:</p>
+<p><span class="math display">\[
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2\sigma^2}\right)(x-\mu)^2\right]
+\]</span></p>
+<p>Dan jika <span class="math inline">\(Z\sim Normal(\mu=0, \sigma^2=1)\)</span> (dalam kata lain, normal baku), maka fungsi kepekatan peluang <span class="math inline">\(Z\)</span>:</p>
+<p><span class="math display">\[
+f(z)=\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2}\right)z^2\right]
+\]</span></p>
+<p>Maka dapat dibuktikan bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{Z^2}(t)&amp;=E\left[\mathrm{exp}\left(tz^2\right)\right]&amp;\\
+&amp;=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &amp;\text{(dari fungsi kumulatif peluang)}\\
+&amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(tz^2-\frac{z^2}{2}\right)\ dz &amp;\\
+\end{aligned}
+\]</span></p>
+<p>Salah satu cara untuk menyelesaikan integral yang mengandung fungsi kepekatan peluang normal dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(\infty\)</span> adalah dengan fakta bahwa <span class="math inline">\(\int_{-\infty}^{\infty} f(x_i) \ dx_i\)</span>, jika <span class="math inline">\(X_i\)</span> adalah peubah acak normal. Oleh karena itu, integral tersebut harus dikonversi sehingga menjadi fungsi kepekatan peluang normal dengan parameter yang berbeda, sehingga hasilnya 1. Dalam kasus ini:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{Z^2}(t)&amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\frac{1}{2}\left(1-2t\right)z^2\right]\ dz &amp;\\
+&amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}z^2\right]\ dz&amp;
+\end{aligned}
+\]</span></p>
+<p>Note bahwa suatu peubah yang menyebar <span class="math inline">\(Y=Normal[0, (1-2t)^{-1}]\)</span> akan memiliki fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+f(y)=\frac{1}{(1-2t)^{-1/2}\sqrt{2\sigma}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}y^2\right]
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{Z^2}(t)&amp;=(1-2t)^{-1/2} \int_{-\infty}^{\infty}\frac{1}{(1-2t)^{-1/2}\sqrt{2\pi}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}z^2\right]\ dz\\
+&amp;\text{(Perkalian dengan konstanta)}\\ \\
+M_{Z^2}(t)&amp;=(1-2t)^{-1/2}\cdot1=(1-2t)^{-1/2}
+\end{aligned}
+\]</span></p>
+<p>Note bahwa peubah acak chi-kuadrat dengan derajat bebas <span class="math inline">\(v\)</span> memiliki fungsi pembangkit momen:</p>
+<p><span class="math display">\[
+(1-2t)^{-v/2}
+\]</span></p>
+<p>Maka fungsi pembangkit momen untuk <span class="math inline">\(Z^2\)</span> adalah fungsi pembangkit momen khi-kuadrat dengan derajat bebas 1. <span class="math inline">\(Z^2\)</span> menyebar khi-kuadrat dengan derajat bebas 1. Fungsi kepekatan peluang khi-kuadrat dengan derajat bebas <span class="math inline">\(v\)</span> adalah:</p>
+<p><span class="math display">\[
+f(x)=\frac{x^{v/2-1}e^{-x/2}}{2^{v/2}\Gamma\left(\frac{v}{2}\right)}
+\]</span></p>
+</section>
+<section id="beberapa-sifat-sebaran-khi-kuadrat" class="level3">
+<h3 class="anchored" data-anchor-id="beberapa-sifat-sebaran-khi-kuadrat">Beberapa sifat sebaran khi-kuadrat</h3>
+<p>Untuk meneliti sebaran dari ragam lebih lanjut, perlu diteliti beberapa sifat sebaran khi-kuadrat:</p>
+<ol type="1">
+<li><p>Jika <span class="math inline">\(X_{1}, \ldots, X_{k}\)</span> adalah peubah acak <span class="math inline">\(\chi^2\)</span> saling bebas dengan derajat bebas <span class="math inline">\(n_1,\ldots,n_k\)</span>, maka jumlah <span class="math inline">\(V=\sum_{i=1}^k X_k\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n_1+n_2+\ldots+n_k\)</span>.</p>
+<p>Bukti teorema tersebut dapat dilihat dari fungsi pembangkit momen:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{[V=\sum_{i=1}^k X_i]}(t)&amp;=\prod_{i=1}^k M_{X_i}(t) &amp;\text{(Dari sifat fungsi pembangkit momen)}\\
+&amp;=\prod_{i=1}^k(1-2t)^{-n_i/2}=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
+\end{aligned}
+\]</span></p></li>
+<li><p>Jika <span class="math inline">\(X_1\)</span> dan <span class="math inline">\(X_2\)</span> peubah acak saling bebas, dan <span class="math inline">\(X_1\)</span> adalah <span class="math inline">\(\chi^2\)</span> dengan derajat bebas <span class="math inline">\(n_1\)</span>, sedangkan <span class="math inline">\(Y=X_1+X_2\)</span> adalah khi-kuadrat dengan derajat bebas <span class="math inline">\(n\)</span>, di mana <span class="math inline">\(n&gt;n_1\)</span>. Maka <span class="math inline">\(X_2=Y-X_1\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n-n_1\)</span>.</p>
+<p>Untuk membuktikan teorema ini, perlu dilihat</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_{Y}(t)&amp;=M_{X_1}(t)M_{X_2}(t)&amp;\\
+(1-2t)^{-n/2}&amp;=(1-2t)^{-n_1/2}M_{X_2}(t)&amp; \text{(substitusi fpm khi-kuadrat)}\\
+(1-2t)^{-n/2-(-n_1/2)}&amp;=M_{X_2}(t)\\
+(1-2t)^{-(n-n_1)/2}&amp;=M_{X_2}(t)
+\end{aligned}
+\]</span></p>
+<p>Yang tidak lain adalah fungsi pembangkit momen <span class="math inline">\(\chi^2(n-n_1)\)</span>.</p></li>
+<li><p>Jika peubah acak <span class="math inline">\(X\)</span> memiliki sebaran <span class="math inline">\(Gamma(\alpha,\beta)\)</span>, maka:</p>
+<p><span class="math display">\[
+Y=\frac{2X}{\beta}\sim\chi^2(2\alpha)1
+\]</span></p>
+<p>Fungsi pembangkit momen <span class="math inline">\(Gamma(\alpha,\beta)\)</span> adalah <span class="math inline">\((1-\beta t)^{-\alpha}\)</span>. Oleh karena itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_Y(t)&amp;=M_{\frac{2X}{\beta}}(t)=E\left[\mathrm{exp}\left(\frac{2x}{B}t\right)\right]\\
+&amp;=E\left[\mathrm{exp}\left(x\frac{2}{B}t\right)\right]=M_X\left(\frac{2}{\beta}t\right)\\
+&amp;=(1-2t)^{-\alpha}=(1-2t)^{-2\alpha/2}
+\end{aligned}
+\]</span></p>
+<p>Yang merupakan fungsi pembangkit momen khi-kuadrat yang dicari.</p></li>
+</ol>
+</section>
+<section id="sebaran-dari-jumlah-kuadrat-sebaran-normal-baku" class="level3">
+<h3 class="anchored" data-anchor-id="sebaran-dari-jumlah-kuadrat-sebaran-normal-baku">Sebaran dari jumlah kuadrat sebaran normal baku</h3>
+<p>Jika <span class="math inline">\(X_1, \ldots, X_n\)</span> menyebar <span class="math inline">\(N(\mu,\sigma^2)\)</span>. Maka <span class="math inline">\(Z_i=(X_i-\mu)/\sigma\)</span>, di mana <span class="math inline">\(i=1,\ldots,n\)</span> adalah peubah acak normal baku dan:</p>
+<p><span class="math display">\[
+\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2
+\]</span></p>
+<p>Menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n\)</span>. Teorema ini implikasi logis dari <strong>Sifat 1</strong> sebaran khi-kuadrat dan fakta bahwa <span class="math inline">\(Z^2\)</span> menyebar <span class="math inline">\(\chi^2(1)\)</span>. Dari sini, dapat ditemukan sebaran dari simpangan baku.</p>
+</section>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Jika <span class="math inline">\(X_1,\ldots,X_n\)</span> adalah sampel acak dari populasi normal dengan nilai harapan <span class="math inline">\(\mu\)</span> dan ragam <span class="math inline">\(\sigma^2\)</span>, maka:</p>
+<ol type="1">
+<li><span class="math inline">\(\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{\sigma^2}=\frac{(n-1)S^2}{\sigma^2}\)</span> menyebar <span class="math inline">\(\chi^2(n-1)\)</span>.</li>
+<li><span class="math inline">\(\bar{X}\)</span> dan <span class="math inline">\(S^2\)</span> saling bebas.</li>
+</ol>
+<p>Teorema kedua memiliki bukti yang kompleks, tetapi teorema pertama dapat dibuktikan. Bukti dimulai dari peubah <span class="math inline">\(\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2\)</span> yang diketahui menyebar <span class="math inline">\(\chi^2(n)\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{\sigma^2}\sum_{i=1}^n \left(X_i-\mu\right)^2&amp;=\frac{1}{\sigma^2}\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)+\left(\bar{X}-\mu\right)\right]^2\\
+&amp;=\frac{1}{\sigma^2}\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)^2+\left(\bar{X}-\mu\right)^2-2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]\\
+&amp;=\frac{1}{\sigma^2}\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]
+\end{aligned}
+\]</span></p>
+<p>Dapat ditemukan bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)&amp;=2\sum_{i=1}^n \left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\\
+&amp;=2\sum_{i=1}^n\left(X_i\bar{X}-X_i\mu-
+\bar{X}^2+\bar{X}\mu\right)\\
+&amp;=2\left[\sum_{i=1}^nX_iX-\sum_{i=1}^n X_i\mu-\sum_{i=1}^n \bar{X}^2+\sum_{i=1}^n\bar{X}\mu\right]\\
+&amp;=2\left[\left(n\bar{X}\right)\bar{X}-\left(n\bar{X}\right)\mu-n\bar{X}^2+n\bar{X}\mu\right]\\
+&amp;=2\left[\left(n\bar{X}^2-n\bar{X}^2\right)-n\bar{X}\mu+n\bar{X}\mu\right]\\
+&amp;=0
+\end{aligned}
+\]</span></p>
+<p>Perhatikan bahwa <span class="math inline">\(S^2=\sum_{i=1}^n \left(X_i-\bar{X}\right)^2/(n-1)\)</span>. Maka <span class="math inline">\((n-1)S^2=\sum_{i=1}^n \left(X_i-\bar{X}\right)^2\)</span> sehingga:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{1}{\sigma^2}\sum_{i=1}^n \left(X_i-\mu\right)^2&amp;=\frac{1}{\sigma^2}\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2\right]\\
+&amp;=\frac{(n-1)S^2}{\sigma^2}+\frac{n(\bar{X}-\mu)^2}{\sigma^2}\\
+&amp;=\frac{(n-1)S^2}{\sigma^2}+\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\right)^2
+\end{aligned}
+\]</span></p>
+<p>Diketahui bahwa <span class="math inline">\(\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2\)</span> (sisi kiri rumus) menyebar <span class="math inline">\(\chi^2(n)\)</span>. Lalu <span class="math inline">\(\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\right)\)</span> menyebar normal baku, sehingga kuadratnya menyebar <span class="math inline">\(\chi^2(1)\)</span>. Oleh karena itu <span class="math inline">\(\frac{(n-1)S^2}{\sigma^2}\)</span> menyebar <span class="math inline">\(\chi^2(n-1)\)</span>.</p>
+</section>
+</section>
+<section id="sebaran-t-student" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-t-student">Sebaran t-student</h2>
+<p>Jika <span class="math inline">\(X_1,\ldots,X_n\sim N(\mu,\sigma^2)\)</span>, maka <span class="math inline">\(Z=\sqrt{n}(\bar{X}-\mu)/\sigma\sim N(0,1)\)</span>. Namun, <span class="math inline">\(\sigma\)</span> biasanya diduga dengan <span class="math inline">\(S\)</span>, simpangan baku sampel, jika tidak diketahui simpangan baku populasi. Namun, apa sebaran dari <span class="math inline">\(\sqrt{n}(\bar{X}-\mu)/S\)</span>?</p>
+<p>Jika ukuran sampel besar, Teorema Limit Pusat dapat digunakan untuk mengasumsikan bahwa <span class="math inline">\(\sqrt{n}(\bar{X}-\mu)/S\)</span> menyebar normal baku. Namun, jika ukuran sampel kecil <span class="math inline">\(\sqrt{n}(\bar{X}-\mu)/S\)</span> menyebar <span class="math inline">\(t\)</span>-Student.</p>
+<p>Jika <span class="math inline">\(Y\)</span> dan <span class="math inline">\(Z\)</span> saling bebas, <span class="math inline">\(Y\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n\)</span>, dan <span class="math inline">\(Z\sim N(0,1)\)</span>, maka <span class="math inline">\(T\)</span> yang menyebar <span class="math inline">\(t\)</span>-Student dengan <span class="math inline">\(n\)</span> derajat bebas didefinisikan sebagai:</p>
+<p><span class="math display">\[
+T=\frac{Z}{\sqrt{Y/n}}
+\]</span></p>
+<p>Atau, suatu peubah normal baku, dibagi akar dari peubah khi-kuadrat yang dibagi derajat bebasnya, memiliki sebaran <span class="math inline">\(t\)</span>-Student dengan derajat bebas <span class="math inline">\(n\)</span>. Sebaran <span class="math inline">\(t\)</span>-Student memiliki fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+f(t)=\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{\pi n}\Gamma\left(\frac{n}{2}\right)}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}}, \ -\infty&lt;t&lt;\infty
+\]</span></p>
+<p>Sebaran <span class="math inline">\(t\)</span>-Student simetris dengan nilai harapan 0, dan <span class="math inline">\(Var(T)=n/(n-2)\)</span> jika <span class="math inline">\(n&gt;2\)</span>. <span class="math inline">\(t_{\alpha,n}\)</span> merupakan nilai yang membuat <span class="math inline">\(P(t&gt;t_{\alpha,n})=\alpha\)</span>.</p>
+<section id="bukti-1" class="level3">
+<h3 class="anchored" data-anchor-id="bukti-1">Bukti</h3>
+<p>Telah diketahui bahwa:</p>
+<p><span class="math display">\[
+Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)
+\]</span></p>
+<p>Dan:</p>
+<p><span class="math display">\[
+Y=\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)
+\]</span></p>
+<p>Maka Y dibagi derajat bebasnya adalah:</p>
+<p><span class="math display">\[
+Y/(n-1)=\frac{S^2}{\sigma^2}
+\]</span></p>
+<p>Sehingga definisikan peubah acak <span class="math inline">\(T\)</span> yang menyebar <span class="math inline">\(t\)</span>-Student dengan derajat bebas <span class="math inline">\(n-1\)</span>:</p>
+<p><span class="math display">\[
+\frac{\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}}{\sqrt{\frac{S^2}{\sigma^2}}}=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\cdot\frac{\sigma}{S}=\frac{\bar{X}-\mu}{S/\sqrt{n}}
+\]</span></p>
+<p>Dalam kata lain, di sebuah contoh berukuran N dari populasi yang menyebar <span class="math inline">\(N(\mu,\sigma^2)\)</span>,</p>
+<p><span class="math display">\[
+\frac{\bar{X}-\mu}{S/\sqrt{n}}
+\]</span></p>
+<p>Menyebar <span class="math inline">\(t\)</span>-Student dengan derajat bebas <span class="math inline">\(n-1\)</span>.</p>
+</section>
+</section>
+<section id="sebaran-f" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-f">Sebaran F</h2>
+<p>Dalam beberapa kasus, perlu perbandingan antara ragam sampel yang diambil dari dua populasi normal. Salah satu aplikasi dari perbandingan ini adalah menguji kesamaan ragam dua populasi dari ragam sampel. Sebaran yang digunakan dalam uji ini didefinisikan sebagai:</p>
+<p><span class="math display">\[
+F=\frac{U/n_1}{V/n_2}
+\]</span></p>
+<p>Jika <span class="math inline">\(U\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n_1\)</span>, <span class="math inline">\(V\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n_2\)</span>, serta <span class="math inline">\(U\)</span> dan <span class="math inline">\(V\)</span> saling bebas, maka <span class="math inline">\(F\sim F(n_1,n_2)\)</span>. Fungsi kepekatan peluang <span class="math inline">\(X\sim F(n_1,n_2)\)</span> adalah:</p>
+<p><span class="math display">\[
+f(x)=
+\begin{cases}
+\frac{\Gamma\left[(n_1+n_2)/2\right]}{\Gamma\left(n_1/2\right)\Gamma\left(n_2/2\right)}\left(\frac{n_1}{n_2}\right)^{n_1/2}x^{n_1/2-1}\left(1+\frac{n_1}{n_2}\right)^{-(n_1+n_2)/2}, &amp; x&gt;0\\
+0, &amp; \text{lainnya}
+\end{cases}
+\]</span></p>
+<p>Jika contoh acak saling bebas berukuran <span class="math inline">\(n_1\)</span> dan <span class="math inline">\(n_2\)</span> diambil dari dua populasi normal dengan ragam <span class="math inline">\(\sigma_1^2\)</span>, <span class="math inline">\(\sigma_2^2\)</span>; jika ragam sampel <span class="math inline">\(S_1^2\)</span> dan <span class="math inline">\(S_2^2\)</span> maka:</p>
+<p><span class="math display">\[
+F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}=\frac{\sigma_2^2S_1^2}{\sigma_1^2 S_2^2}
+\]</span></p>
+<p>Menyebar <span class="math inline">\(F(n_1-1,n_2-1)\)</span>. Ini karena sudah diketahui bahwa <span class="math inline">\((n_i-1)S_i^2/\sigma_i^2\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n_i-1\)</span>, maka <span class="math inline">\(S_i^2/\sigma_i^2\)</span>, <span class="math inline">\(i=1,2\)</span>, merupakan pembagian peubah acak khi-kuadrat dengan derajat bebasnya. Maka dari itu, kuantitas di atas merupakan rasio dua peubah acak khi-kuadrat yang telah dibagi derajat bebasnya, atau peubah acak F.</p>
+<p>Dalam kasus di mana ragam populasi diasumsikan homogen, maka rasio ragam sampel:</p>
+<p><span class="math display">\[
+F=\frac{S_1^2}{S_2^2}
+\]</span></p>
+<p>Menyebar <span class="math inline">\(F(n_1-1,n_2-1)\)</span>.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

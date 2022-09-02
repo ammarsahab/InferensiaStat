@@ -1,0 +1,102 @@
+---
+title: "Contoh Soal Bab 1 - Kekonvergenan"
+---
+
+## Konvergensi dalam peluang
+
+Dua soal ini menunjukkan dua pendekatan membuktikan konvergensi dalam peluang. Pertama, menggunakan pertidaksamaan Chebysheff dan kedua, menggunakan fungsi kepekatan peluang.
+
+### Let $W_n$ denote a random variable with mean $\mu$ and variance $b/n^{p}$, where $p > 0, \mu$, and $b$ are constants (not functions of n). Prove that $W_n$ converges in probability to $\mu$.
+
+Dengan pertidaksamaan Chebysheff, buat $a=\varepsilon$:
+
+$$
+\begin{aligned}
+    P\left(|W_n-\mu |\geq \varepsilon \right)\leq {\frac {b}{n^p\varepsilon^{2}}}.
+\end{aligned}
+$$
+
+Ambil limit jika $n\to\infty$, pasti akan 0.
+
+### Let $X_n\sim \mathrm{Exponential}(n)$, show that $X_n$ converges in probability to 0.
+
+$$
+\begin{aligned}
+\lim_{n \rightarrow \infty} P\big(|X_n-0| \geq \epsilon \big) &=\lim_{n \rightarrow \infty} P\big(X_n \geq \epsilon \big) & (\textrm{$X_n\geq 0$ })\\
+&=\lim_{n \rightarrow \infty} e^{-n\epsilon} & \textrm{(fkp dari $\mathrm{Eksponensial}[n]$)} \\
+&=0 , \qquad \textrm{ for all }\epsilon>0.
+\end{aligned}
+$$
+
+Limit menuju $0$ karena pangkat negatif tak hingga berarti satu dibagi angka yang sangat besar, sehingga mendekati nol.
+
+## Konvergensi dalam Distribusi
+
+### $\bar{X}_{n}$ memiliki fungsi kumulatif sebagai berikut. Peubah acak tersebut konvergen dalam distirbusi ke?
+
+$$
+F_n(\bar{x})=\int_{-\infty}^{\bar{x}} \frac{1}{\sqrt{1/n}\sqrt{2\pi}}e^{-nw^2/2}dw
+$$
+
+Dengan menggunakan substitusi $v=\sqrt{n}w$, maka $dv=\sqrt{n}dw$ sehingga:
+
+$$
+F_n(\bar{x})=\int_{-\infty}^{\sqrt{n}\bar{x}} \frac{1}{\sqrt{2\pi}}e^{-v^2/2}dw
+$$
+
+Sehingga:
+
+$$
+\begin{aligned}
+\lim_{n\to\infty}F_n(\bar{x})
+\begin{cases}
+0, & \bar{x}<0\\
+\frac{1}{2}, & \bar{x}=0\\
+1, & \bar{x}>0
+\end{cases}
+\end{aligned}
+$$
+
+Karena jika $\bar{x}$ negatif, maka integral dari $-\infty$ ke $-\infty$ menghasilkan nol. Jika $\bar{x}=0$, integral merupakan fungsi kepekatan peluang normal baku dari $-\infty$ ke $0$. Karena diketahui normal baku simetris dengan titik tengah di nol, peluang tersebut pasti $1/2$. Jika $\bar{x}$ positif, maka integral dari $-\infty$ ke $\infty$ akan mencakup seluruh area peubah. Maka, $F_n(\bar{x})$ konvergen dalam distribusi ke:
+
+$$
+\begin{aligned}
+\lim_{n\to\infty}F_n(\bar{x})
+\begin{cases}
+0, & \bar{x}<0\\
+1, & \bar{x}>0
+\end{cases}
+\end{aligned}
+$$
+
+Karena $F_n(\bar{x})$ tak kontinu di $\bar{x}=0$.
+
+### Diberikan $X_n \sim Binomial\left(n, \frac{\lambda}{n}\right)$ Di mana $\lambda>0$ suatu konstanta. Tunjukkan $X_n$ konvergen dalam distribusi ke Poisson($\lambda$).
+
+Kaji fungsi kumulatif binomial:
+
+$$
+\begin{aligned}
+\nonumber \nonumber \lim_{n \rightarrow \infty} P_{X_n}(k) &= \lim_{n \rightarrow \infty} {n \choose k} \left(\frac{\lambda}{n}\right)^k \left(1-\frac{\lambda}{n}\right)^{n-k} \\
+\nonumber &= \lambda^k \lim_{n \rightarrow \infty} {\frac{n!}{k! (n-k)!}} \left(\frac{1}{n^k}\right) \left(1-\frac{\lambda}{n}\right)^{n-k}\\
+\nonumber &= \frac{\lambda^k}{k!} . \lim_{n \rightarrow \infty} \left(\left[ \frac{n...(n-k+1)}{n^k}\right]\\  \left[ \left(1-\frac{\lambda}{n}\right)^{n}\right] \left[\left(1-\frac{\lambda}{n}\right)^{-k}\right]\right)
+\end{aligned}
+$$
+
+Sehingga:
+
+$$
+\begin{aligned}%\label{}
+\nonumber &\lim_{n \rightarrow \infty} \frac{n(n-1)(n-2)...(n-k+1)}{n^k} =1,\\
+\nonumber &\lim_{n \rightarrow \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=1,\\
+\nonumber &\lim_{n \rightarrow \infty}\left(1-\frac{\lambda}{n}\right)^{n}=e^{-\lambda}.
+\end{aligned}
+$$
+
+Yang jika digabung tidak lain merupakan fungsi kumulatif dari Poisson:
+
+$$
+\begin{equation}
+\nonumber \lim_{n \rightarrow \infty} P_{X_n}(k)=\frac{e^{-\lambda} \lambda^k}{k!}.
+\end{equation}
+$$

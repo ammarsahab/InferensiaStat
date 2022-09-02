@@ -1,0 +1,33 @@
+---
+title: "Bab 1: Kekonvergenan"
+format: html
+---
+
+## Konvergensi dalam peluang
+
+Sebuah peubah acak $X_n$ menyebar $b(n,p)$. Buktikan:
+
+1.  $Y_n/n$ konvergen dalam peluang ke $p$.
+2.  $1-Y_n/n$ konvergen dalam peluang ke $1-p$.
+3.  $Y_n/n(1-Y_n/n)$ konvergen dalam peluang ke $p(1-p)$
+
+Hint: $X_n Y_n\ \xrightarrow{p}\ XY.$
+
+## Konvergensi dalam Distribusi
+
+### Diberikan fungsi kumulatif $X_n$ sebagai berikut. Tunjukkan $X_{n}$ konvergen dalam distribusi ke $\mathrm{Exponential}(1)$!
+
+$$
+    \begin{equation}
+    F_{X_n}(x)=
+    \begin{cases}
+    1-\left(1-\frac{1}{n}\right)^{nx} & \quad x > 0\\
+    & \quad \\
+    0 & \quad \text{lainnya}
+    \end{cases} 
+    \end{equation}
+$$
+
+
+
+### Let $Y_1$ denote the minimum of a random sample of size n from a distribution that has pdf $f(x) = e^{-(x-\theta)}, \theta<x< \infty,$ zero elsewhere. Let $Z_n = n(Y_{1} - \theta)$. Investigate the limiting distribution of $Z_n$!

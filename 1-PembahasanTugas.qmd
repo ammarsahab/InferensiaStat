@@ -1,0 +1,192 @@
+---
+title: "Tugas Bab 1 - Kekonvergenan"
+format: html
+---
+## Konvergensi dalam peluang
+
+Sebuah peubah acak $Y_n$ menyebar $b(n,p)$. Buktikan:
+
+### $Y_n/n$ konvergen dalam peluang ke $p$.
+
+Pertama, cari terlebih dahulu nilai harapan dan ragam dari $Y_n/n$. Karena:
+
+1. $E(aY)=aE(Y)$
+2. $V(aY)=a^2V(Y)$
+
+Jika $a=1/n$, maka:
+
+$$
+\begin{aligned}
+E\left(\frac{Y_n}{n}\right)&=\frac{1}{n}E(Y)=\frac{np}{n}\\
+&=p\\
+V\left(\frac{Y_n}{n}\right)&=\frac{1}{n^2}V(Y)=\frac{np(1-p)}{n^2}\\
+&=\frac{p(1-p)}{n}
+\end{aligned}
+$$
+
+Dari nilai harapan dan ragam dari sebaran Binomial. Maka dengan menggunakan Teorema Chebysheff:
+
+$$
+\begin{aligned}
+P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&\leq   {\frac {p(1-p)}{n\varepsilon^{2}}}.\\
+\lim_{n\to\infty}  P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&\leq   \lim_{n\to\infty} {\frac {p(1-p)}{n\varepsilon^{2}}}.\\
+\lim_{n\to\infty}  P\left(\left|\frac{Y_n}{n}-p\right|\geq \varepsilon \right)&\leq 0
+\end{aligned}
+$$
+
+### $1-Y_n/n$ konvergen dalam peluang ke $1-p$.
+
+Dari definisi konvergensi dalam peluang, $1-Y_n \ \xrightarrow{p}\ 1-p$ jika:
+
+$$
+\begin{aligned}
+\lim_{n\to\infty} P\left(|\{1-Y_n\}-\{1-p\}|\geq\varepsilon\right)&=0\\
+\lim_{n\to\infty} P\left(|1-1+p-Y_n|\geq\varepsilon\right)&=0\\
+\lim_{n\to\infty} P\left(|p-Y_n|\geq\varepsilon\right)&=0\\
+\lim_{n\to\infty} P\left(|-Y_n+p|\geq\varepsilon\right)&=0\\
+\lim_{n\to\infty} P\left(|\{-Y_n\}-\{-p\}|\geq\varepsilon\right)&=0\\
+\end{aligned}
+$$
+
+Dalam kata lain $1-Y_n \ \xrightarrow{p}\ 1-p$, sama saja dengan $-Y_n \ \xrightarrow{p}\ -p$. Oleh karena itu:
+
+$$
+\begin{aligned}
+P\left(\left| -Y_n-(-p) \right| \geq \varepsilon \right)&=P\left(\left| \{-1\}Y_n-\{-1\}p \right| \geq \varepsilon \right)\\ 
+&=P\bigl( |-1|\left| Y_n-p \right| \geq \varepsilon \bigr)\\ 
+&=P\bigl( \left| Y_n-p \right| \geq \varepsilon/|-1| \bigr)\\ 
+&=P\bigl( \left| Y_n-p \right| \geq \varepsilon/1 \bigr)\\ 
+\end{aligned}
+$$
+
+Yang telah dibuktikan sebelumya.
+
+### $\frac{Y_n}{n}\left(1-\frac{Y_n}{n}\right)$ konvergen dalam peluang ke $p(1-p)$
+
+Perhatikan bahwa:
+
+$$
+\begin{aligned}
+X_nY_n &= \frac{1}{2}X_n^2+\frac{1}{2}Y_n^2-\frac{1}{2}(X_n-Y_n)^2\\ 
+&\xrightarrow{p} \frac{1}{2}X^2+\frac{1}{2}Y^2-\frac{1}{2}(X-Y)^2=XY
+\end{aligned}
+$$
+
+Karena $g(X_n)\xrightarrow{p}g(X)$, maka $X_n^2 \xrightarrow{p} X^2$. Begitu juga $Y_n^2 \xrightarrow{p} Y^2$. Selain itu, $-Y_n\xrightarrow{p}-Y$ dari teorema yang dibuktikan di soal sebelumnya, sehingga $X_n-Y_n \xrightarrow{p}X-Y$, dan kuadratnya konvergen dalam peluang juga. 
+
+Maka dari itu, jika $Y_n/n \xrightarrow{p} p$ dan $1-Y_n/n \xrightarrow{p} 1-p$, maka $\frac{Y_n}{n}\left(1-\frac{Y_n}{n}\right) \xrightarrow{p} p(1-p)$.
+
+## Konvergensi dalam Distribusi
+
+### Diberikan fungsi kumulatif $X_n$ sebagai berikut. Tunjukkan $X_{n}$ konvergen dalam distribusi ke $\mathrm{Exponential}(1)$!
+
+$$
+    \begin{equation}
+    F_{X_n}(x)=
+    \begin{cases}
+    1-\left(1-\frac{1}{n}\right)^{nx} & \quad x > 0\\
+    & \quad \\
+    0 & \quad \text{lainnya}
+    \end{cases} 
+    \end{equation}
+$$
+
+Cari limit dari fungsi kumulatif tersebut:
+
+$$
+\begin{aligned}
+\lim_{n\to\infty}F_{X_n}(x)&=\lim_{n\to\infty}\left\{1-\left(1-\frac{1}{n}\right)^{nx}\right\} &  x > 0\\
+&=1-\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{nx}& x>0
+\end{aligned}
+$$
+
+Perhatikan bahwa:
+$$
+\begin{aligned}
+\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{n}&=e^{-1}\\
+\lim_{n\to\infty}\left\{\left(1-\frac{1}{n}\right)^{n}\right\}^x&=e^{-x}\\
+\lim_{n\to\infty}\left(1-\frac{1}{n}\right)^{nx}&=e^{-x}
+\end{aligned}
+$$
+
+Bukti dari:
+$$
+\begin{aligned}\lim_{n\to\infty}\left( 1 - \frac{1}{n} \right)^n &= \lim_{n\to\infty}\left(\frac{n-1}{n}\right)^n = \lim_{n\to\infty}\left(\frac{1}{\frac{n}{n-1}}\right)^n = \lim_{n\to\infty}\frac{1}{\left(\frac{n}{n-1}\right)^n} \\ &= \lim_{n\to\infty}\frac{1}{\left(1 + \frac{1}{n-1}\right)^n} = \lim_{n\to\infty} \left(\frac{1}{\left(1 + \frac{1}{n-1}\right)^{n-1}} \cdot \frac{1}{1 + \frac{1}{n-1}} \right) \\ 
+&= \lim_{n\to\infty} \frac{1}{\left(1 + \frac{1}{n-1}\right)^{n-1}} = \lim_{n\to\infty} \frac{1}{\left(1 + \frac{1}{n}\right)^{n}} = \frac{1}{e} \\
+&= e^{-1}
+\end{aligned}
+$$
+
+Sehingga:
+
+$$
+\lim_{n\to\infty}F_{X_n}(x)=1-e^{-x}, \quad x>0
+$$
+
+Yang merupakan fungsi kumulatif dari $\mathrm{Exponential}(1)$.
+
+### Let $Y_{[1]}$ denote the minimum of a random sample of size n from a distribution that has pdf $f(x) = e^{-(x-\theta)}, \theta<x< \infty,$ zero elsewhere. Let $Z_n = n(Y_{[1]} - \theta)$. Investigate the limiting distribution of $Z_n$!
+
+Pertama, kaji fungsi kumulatif dari $Y_1$. Perhatikan bahwa:
+$$
+\begin{aligned}
+F_{Y_{[1]}}(y)=P(Y_{[1]} \leq y)=1-P(Y_{[1]}>y)
+\end{aligned}
+$$
+
+$P\left(Y_{[1]}>y\right)$ berarti nilai minimum dari contoh acak tersebut lebih dari nilai tertentu, atau $y=x$. Namun jika nilai minimum tersebut lebih besar dari $y=x$, maka pasti semua nilai lebih besar dari $y=x$. Nilai pertama di sampel, $Y_1>y$; nilai kedua di sampel, $Y_2>y$ sampai nilai ke-n $Y_n>y$ sehingga dapat dibuat:
+
+$$
+\begin{aligned}
+F_{Y_{[1]}}(y)&=1-P(X_1>x, \ X_2>x, \ldots,X_n>x)&\\
+&=1-\left[P(X_1>x)P(X_2>x)\ldots P(X_n>x)\right] & \text{(saling bebas)}\\ 
+&=1-\left[1-F(x)\right]^n
+\end{aligned}
+$$
+
+Karena $1-F(x)=1-P(X\leq x)=P(X>x)$. Maka fungsi kumulatif dari $x$ adalah:
+
+$$
+\begin{aligned}
+F(x)&=\int_\theta^x e^{-x+\theta}dx=e^\theta\int_\theta^x e^{-x}dx\\
+&=e^\theta\left[-e^{-x}\right]^{x}_\theta=e^\theta(-e^{-x}+e^-\theta)\\ 
+&=-e^{-(x-\theta)}+1=1-e^{-(x-\theta)}
+\end{aligned}
+$$
+
+Maka:
+
+$$
+\begin{aligned}
+F_{Y_{[1]}}(y)&=1-\left[1-F(x)\right]^n=1-[e^{-n(y-\theta)}]\\
+&=1-e^{-n(y-\theta)}
+\end{aligned}
+$$
+
+Karena fungsi kepekatan peluang adalah turunan dari fungsi kumulatif, maka:
+$$
+f_{Y_{[1]}}(y)=ne^{-n(y-\theta)}
+$$
+
+Sehingga buat transformasi $Z_n = n(Y_{[1]} - \theta)$:
+
+$$
+\begin{aligned}
+Z_n &= n(Y_{[1]} - \theta) & \theta<&y_{[1]}<\infty\\
+Y_1-\theta &= \frac{Z_n}{n} & 0<&y_{[1]}-\theta<\infty\\ 
+Y_1&=\frac{Z_n}{n}+\theta & 0<&n(y_{[1]}-\theta)<\infty\\
+\frac{dy}{dz} &=\frac{1}{n} & 0<&z<\infty
+\end{aligned}
+$$
+
+Sehingga menurut metode transformasi fungsi:
+
+$$
+\begin{aligned}
+h(z)&=e^{-z}\\
+H(z)&=\int_0^z e^{-z}dz=-e^{-z}+1\\
+&=1-e^{-z}
+\end{aligned}
+$$
+
+Sehingga distribusi tersebut konvergen ke $\mathrm{Exponential}(1)$.

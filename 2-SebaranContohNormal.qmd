@@ -1,0 +1,418 @@
+---
+title: "Sebaran Percontohan dari Sebaran Normal"
+format: 
+  html
+editor: visual
+author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"
+theme: simplex
+---
+
+# Review
+
+## Momen
+
+Momen populasi ke-$k$ adalah:
+
+$$
+\mu_k^{'}=E\bigl(X^k\bigr)
+$$
+
+Momen pertama adalah nilai harapan dari peubah acak tersebut. Momen ke-$k$ adalah nilai harapan dari peubah acak tersebut yang dipangkatkan $k$. Ada juga momen tersentralkan ke-$k$, yang didefinisikan sebagai:
+
+$$
+E\bigl[\left(X-\mu\right)^k\bigr]
+$$
+
+Ada juga momen terstandarkan, yaitu:
+
+$$
+\frac{E\bigl[\left(X-\mu\right)^k\bigr]}{\sigma^k}
+$$
+
+### Fungsi Pembangkit Momen
+
+Tiap sebaran peluang memiliki **fungsi pembangkit momen** yang didefinisikan sebagai:
+
+$$
+M_X(t)=E\left(e^{tX}\right)
+$$
+
+Karena diketahui dari Kalkulus bahwa Polinomial Taylor ke-n untuk $e^x$ adalah:
+
+$$
+P_n(x) =1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
+$$ 
+
+Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi $e^x$ akan lebih baik sehingga dapat dikatakan:
+
+$$
+e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}+\cdots
+$$ 
+
+Maka karena konstanta $t$ dan konstanta lainnya dapat dikeluarkan dari perhitungan nilai harapan:
+
+$$
+\begin{aligned}
+M_X(t)&=E\bigl[e^{tX}\bigr]=E\left[1+tX+\frac{(tX)^2}{2!}+\frac{(tX)^3}{ 3!}+\frac{(tX)^4}{4!}+\cdots +\frac{(tX)^n}{n!}+\cdots\right]\\
+&=1+tE\left[X\right]+\frac{t^2}{2!}E\left[X^2\right]+\frac{t^3}{ 3!}E\left[X^3\right]+\cdots+\frac{t^n}{n!}E\left[X^n\right]+\cdots
+\end{aligned}
+$$
+
+Misal diambil turunan pertama dari fungsi tersebut:
+
+$$
+\frac{\mathrm{d}M_X(t)}{\mathrm{d}t}=M_X^{'}(t)=E\left[X\right]+{t}E\left[X^2\right]+\frac{t^2}{2!}E\left[X^3\right]+\cdots+\frac{t^{n-1}} {(n-1)!}E\left[X^n\right]+\cdots
+$$
+
+Sehingga di $t=0$, $M_X^{'}(0)=E\left[X\right]$, dan jika dilihat:
+
+$$
+\begin{aligned}
+M^{''}_X(0)&=E\left[X^2\right]\\
+M^{'''}_X(0)&=E\left[X^3\right]\\
+\vdots&=\vdots\\
+M^{(n)}_X(0)&=E\left[X^n\right]
+\end{aligned}
+$$
+
+Sehingga momen ke-$k$ dapat dicari dari fungsi pembangkit momen.
+
+### Sifat Fungsi Pembangkit Momen
+
+Ada beberapa sifat penting fungsi pembangkit momen yang akan dipakai dalam bab ini:
+
+1.  Fungsi pembangkit momen **unik**. Jika peubah acak $X$ dan $Y$ memiliki fungsi pembangkit momen yang sama; $M\_{X}(t)=M\_{Y}(t)$, di t di suatu interval yang memiliki 0, maka $X$ dan $Y$ memiliki sebaran sama.
+
+2.  Jika $X_1,X_2,\ldots,X_n$ seperangkat peubah bebas dan $Z=\sum_{i=1}^nX_i$ $M_{Z}(t)=\prod_{i=1}^nM_{X_i}(t)$.
+
+Note bahwa untuk $X$ dan $Y$ saling bebas, $f(x,y)=f(x)\cdot f(y)$ atau $p(x,y)=p(x)\cdot p(y)$:
+
+$$
+\begin{aligned}
+E\left[XY\right]&=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xy \ f(x,y) \ dx \ dy\\
+&=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xy \ f(x)f(y) \ dx \ dy\\
+&=\int_{-\infty}^{\infty}yf(y)\left[\int_{-\infty}^{\infty}xf(x) \ dx\right]dy\\
+&=\int_{-\infty}^{\infty}yf(y)E[X]dy=E[X]\int_{-\infty}^{\infty}yf(y)\ dy\\
+&=E[X]E[Y]
+\end{aligned}
+$$
+
+Dan hal yang sama dapat dibuktikan untuk sebaran diskret, dan dapat dibuktikan lebih lanjut untuk seperangkat peubah acak saling bebas.
+
+Bukti dari sifat tersebut adalah:
+
+$$
+\begin{aligned}
+M_Z(t)&=E\left[\mathrm{exp}\left(t\sum_{i=1}^nX_i\right)\right]=E\left[\mathrm{exp}\left(\sum_{i=1}^ntX_i\right)\right]&\\
+&=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]& \text{(Karena saling bebas)}\\
+&=\prod_{i=1}^n M_{X_i}(t) & \text{(Definisi fungsi pembangkit momen)}
+\end{aligned}
+$$
+
+3.  Jika $Y=aX+b$, maka $M_Y(t)=e^{bt}M_X(at)$
+
+Bukti dari sifat tersebut:
+
+$$
+\begin{aligned}
+M_Y(t)&=E\left[e^{t\left(aX+b\right)}\right]=E\left[e^{t\left(aX\right)+bt}\right]\\
+&=E\left[e^{t\left(aX\right)}e^{bt}\right]=e^{bt}E\left[e^{t\left(aX\right)}\right]\\
+&=e^{bt}M_X(at)
+\end{aligned}
+$$
+
+Fungsi pembangkit momen dan sifatnya akan digunakan untuk menurunkan sebaran percontohan statisitk dari sebaran normal.
+
+# Sebaran Percontohan dari Populasi Normal
+
+Sebaran dari statisitik yang diambil dari suatu sampel seringkali bergantung pada bentuk sebaran populasi. Dalam kasus ini, akan dibahas sebaran normal yang bebas stokastik identitik (bsi), atau *independent and identically distributed* (iid). Distirbusi normal mendapat fokus dalam statistika karena banyak fenomena alami seperti tinggi badan dan galat non-sistematis. Lalu, sifat fungsi pembangkit momen yang berkaitan dengan jumlah dari beberapa variabel bergantung pada asumsi kebebasan antar variabel tersebut.
+
+Fungsi pembangkit momen sebaran normal adalah:
+
+$$
+\mathrm{exp}\left(\mu t+\frac{t^2\sigma^2}{2}\right)
+$$
+
+## Sebaran dari kombinasi linear peubah acak normal
+
+Jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim Normal\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2$.
+
+### Bukti
+
+Cari fungsi pembangkit momen dari $Y$ - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen normal, maka $Y$ menyebar normal:
+
+$$
+\begin{aligned}
+M_Y(t)&=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\right]&\\
+&=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]& \text{(Karena saling bebas)}\\
+&=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&\\
+&=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&\text{(Dari fungsi pembangkit momen Normal)}\\
+&=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
+\end{aligned}
+$$
+
+Yang tidak lain adalah fungsi pembangkit momen peubah acak $Normal\left(\sum_{i=1}^n a_imu_i, \sum_{i=1}^n a_i\sigma_i^2\right)$.
+
+### Sebaran dari rata-rata sampel
+
+Jika kita menggangap bahwa $\mu_i=\mu$ dan $\sigma_i=\sigma$ - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan $a_i=1/n$, akan ditemukan sebaran dari rata-rata sampel berjumlah $n$ observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka $\bar{X}\sim Normal\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)$. Karena:
+
+$$
+\begin{aligned}
+\sum_{i=1}^n\frac{1}{n}\mu &= n\cdot \frac{\mu}{n}=\mu\\
+\sum_{i=1}^n\frac{1}{n^2}\sigma^2 &= n\cdot \frac{\sigma^2}{n^2}=\frac{\sigma^2}{n}
+\end{aligned}
+$$
+
+Maka $\bar{X}\sim Normal\left(\mu, \frac{\sigma^2}{n}\right)$. Dari situ, dapat dibuat peubah normal baku, $Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim Normal(0,1)$
+
+## Sebaran khi-kuadrat
+
+### Sebaran dari observasi populasi normal baku yang dikuadratkan
+
+Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kumulatif peluang $Normal(\mu,\sigma^2)$ adalah:
+
+$$
+f(x)=\frac{1}{\sigma\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2\sigma^2}\right)(x-\mu)^2\right]
+$$
+
+Dan jika $Z\sim Normal(\mu=0, \sigma^2=1)$ (dalam kata lain, normal baku), maka fungsi kepekatan peluang $Z$:
+
+$$
+f(z)=\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2}\right)z^2\right]
+$$
+
+Maka dapat dibuktikan bahwa:
+
+$$
+\begin{aligned}
+M_{Z^2}(t)&=E\left[\mathrm{exp}\left(tz^2\right)\right]&\\
+&=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &\text{(dari fungsi kumulatif peluang)}\\
+&=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(tz^2-\frac{z^2}{2}\right)\ dz &\\
+\end{aligned}
+$$
+
+Salah satu cara untuk menyelesaikan integral yang mengandung fungsi kepekatan peluang normal dari $-\infty$ ke $\infty$ adalah dengan fakta bahwa $\int_{-\infty}^{\infty} f(x_i) \ dx_i$, jika $X_i$ adalah peubah acak normal. Oleh karena itu, integral tersebut harus dikonversi sehingga menjadi fungsi kepekatan peluang normal dengan parameter yang berbeda, sehingga hasilnya 1. Dalam kasus ini:
+
+$$
+\begin{aligned}
+M_{Z^2}(t)&=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\frac{1}{2}\left(1-2t\right)z^2\right]\ dz &\\
+&=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}z^2\right]\ dz&
+\end{aligned}
+$$
+
+Note bahwa suatu peubah yang menyebar $Y=Normal[0, (1-2t)^{-1}]$ akan memiliki fungsi kepekatan peluang:
+
+$$
+f(y)=\frac{1}{(1-2t)^{-1/2}\sqrt{2\sigma}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}y^2\right]
+$$
+
+Maka:
+
+$$
+\begin{aligned}
+M_{Z^2}(t)&=(1-2t)^{-1/2} \int_{-\infty}^{\infty}\frac{1}{(1-2t)^{-1/2}\sqrt{2\pi}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}z^2\right]\ dz\\
+&\text{(Perkalian dengan konstanta)}\\ \\
+M_{Z^2}(t)&=(1-2t)^{-1/2}\cdot1=(1-2t)^{-1/2}
+\end{aligned}
+$$
+
+Note bahwa peubah acak chi-kuadrat dengan derajat bebas $v$ memiliki fungsi pembangkit momen:
+
+$$
+(1-2t)^{-v/2}
+$$
+
+Maka fungsi pembangkit momen untuk $Z^2$ adalah fungsi pembangkit momen khi-kuadrat dengan derajat bebas 1. $Z^2$ menyebar khi-kuadrat dengan derajat bebas 1. Fungsi kepekatan peluang khi-kuadrat dengan derajat bebas $v$ adalah:
+
+$$
+f(x)=\frac{x^{v/2-1}e^{-x/2}}{2^{v/2}\Gamma\left(\frac{v}{2}\right)}
+$$
+
+### Beberapa sifat sebaran khi-kuadrat
+
+Untuk meneliti sebaran dari ragam lebih lanjut, perlu diteliti beberapa sifat sebaran khi-kuadrat:
+
+1.  Jika $X_{1}, \ldots, X_{k}$ adalah peubah acak $\chi^2$ saling bebas dengan derajat bebas $n_1,\ldots,n_k$, maka jumlah $V=\sum_{i=1}^k X_k$ menyebar khi-kuadrat dengan derajat bebas $n_1+n_2+\ldots+n_k$.
+
+    Bukti teorema tersebut dapat dilihat dari fungsi pembangkit momen:
+
+    $$
+    \begin{aligned}
+    M_{[V=\sum_{i=1}^k X_i]}(t)&=\prod_{i=1}^k M_{X_i}(t) &\text{(Dari sifat fungsi pembangkit momen)}\\
+    &=\prod_{i=1}^k(1-2t)^{-n_i/2}=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
+    \end{aligned}
+    $$
+
+2.  Jika $X_1$ dan $X_2$ peubah acak saling bebas, dan $X_1$ adalah $\chi^2$ dengan derajat bebas $n_1$, sedangkan $Y=X_1+X_2$ adalah khi-kuadrat dengan derajat bebas $n$, di mana $n>n_1$. Maka $X_2=Y-X_1$ menyebar khi-kuadrat dengan derajat bebas $n-n_1$.
+
+    Untuk membuktikan teorema ini, perlu dilihat
+
+    $$
+    \begin{aligned}
+    M_{Y}(t)&=M_{X_1}(t)M_{X_2}(t)&\\
+    (1-2t)^{-n/2}&=(1-2t)^{-n_1/2}M_{X_2}(t)& \text{(substitusi fpm khi-kuadrat)}\\
+    (1-2t)^{-n/2-(-n_1/2)}&=M_{X_2}(t)\\
+    (1-2t)^{-(n-n_1)/2}&=M_{X_2}(t)
+    \end{aligned}
+    $$
+
+    Yang tidak lain adalah fungsi pembangkit momen $\chi^2(n-n_1)$.
+
+3.  Jika peubah acak $X$ memiliki sebaran $Gamma(\alpha,\beta)$, maka:
+
+    $$
+    Y=\frac{2X}{\beta}\sim\chi^2(2\alpha)1
+    $$
+
+    Fungsi pembangkit momen $Gamma(\alpha,\beta)$ adalah $(1-\beta t)^{-\alpha}$. Oleh karena itu:
+
+    $$
+    \begin{aligned}
+    M_Y(t)&=M_{\frac{2X}{\beta}}(t)=E\left[\mathrm{exp}\left(\frac{2x}{B}t\right)\right]\\
+    &=E\left[\mathrm{exp}\left(x\frac{2}{B}t\right)\right]=M_X\left(\frac{2}{\beta}t\right)\\
+    &=(1-2t)^{-\alpha}=(1-2t)^{-2\alpha/2}
+    \end{aligned}
+    $$
+
+    Yang merupakan fungsi pembangkit momen khi-kuadrat yang dicari.
+    
+### Sebaran dari jumlah kuadrat sebaran normal baku
+
+Jika $X_1, \ldots, X_n$ menyebar $N(\mu,\sigma^2)$. Maka $Z_i=(X_i-\mu)/\sigma$, di mana $i=1,\ldots,n$ adalah peubah acak normal baku dan:
+
+$$
+\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2
+$$
+
+Menyebar khi-kuadrat dengan derajat bebas $n$. Teorema ini implikasi logis dari **Sifat 1** sebaran khi-kuadrat dan fakta bahwa $Z^2$ menyebar $\chi^2(1)$. Dari sini, dapat ditemukan sebaran dari simpangan baku.
+
+### Teorema
+
+Jika $X_1,\ldots,X_n$ adalah sampel acak dari populasi normal dengan nilai harapan $\mu$ dan ragam $\sigma^2$, maka:
+
+1. $\frac{\sum_{i=1}^n(X_i-\bar{X})^2}{\sigma^2}=\frac{(n-1)S^2}{\sigma^2}$ menyebar $\chi^2(n-1)$.
+2. $\bar{X}$ dan $S^2$ saling bebas.
+
+Teorema kedua memiliki bukti yang kompleks, tetapi teorema pertama dapat dibuktikan. Bukti dimulai dari peubah $\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2$ yang diketahui menyebar $\chi^2(n)$:
+
+$$
+\begin{aligned}
+\frac{1}{\sigma^2}\sum_{i=1}^n \left(X_i-\mu\right)^2&=\frac{1}{\sigma^2}\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)+\left(\bar{X}-\mu\right)\right]^2\\
+&=\frac{1}{\sigma^2}\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)^2+\left(\bar{X}-\mu\right)^2-2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]\\
+&=\frac{1}{\sigma^2}\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]
+\end{aligned}
+$$
+
+Dapat ditemukan bahwa:
+$$
+\begin{aligned}
+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)&=2\sum_{i=1}^n \left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\\
+&=2\sum_{i=1}^n\left(X_i\bar{X}-X_i\mu-
+\bar{X}^2+\bar{X}\mu\right)\\
+&=2\left[\sum_{i=1}^nX_iX-\sum_{i=1}^n X_i\mu-\sum_{i=1}^n \bar{X}^2+\sum_{i=1}^n\bar{X}\mu\right]\\
+&=2\left[\left(n\bar{X}\right)\bar{X}-\left(n\bar{X}\right)\mu-n\bar{X}^2+n\bar{X}\mu\right]\\
+&=2\left[\left(n\bar{X}^2-n\bar{X}^2\right)-n\bar{X}\mu+n\bar{X}\mu\right]\\
+&=0
+\end{aligned}
+$$
+
+Perhatikan bahwa $S^2=\sum_{i=1}^n \left(X_i-\bar{X}\right)^2/(n-1)$. Maka $(n-1)S^2=\sum_{i=1}^n \left(X_i-\bar{X}\right)^2$ sehingga:
+
+$$
+\begin{aligned}
+\frac{1}{\sigma^2}\sum_{i=1}^n \left(X_i-\mu\right)^2&=\frac{1}{\sigma^2}\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2\right]\\
+&=\frac{(n-1)S^2}{\sigma^2}+\frac{n(\bar{X}-\mu)^2}{\sigma^2}\\
+&=\frac{(n-1)S^2}{\sigma^2}+\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\right)^2
+\end{aligned}
+$$
+
+Diketahui bahwa $\sum_{i=1}^n Z_i^2=\sum_{i=1}^n \left(\frac{X_i-\mu}{\sigma}\right)^2$ (sisi kiri rumus) menyebar $\chi^2(n)$. Lalu $\left(\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\right)$ menyebar normal baku, sehingga kuadratnya menyebar $\chi^2(1)$. Oleh karena itu $\frac{(n-1)S^2}{\sigma^2}$ menyebar $\chi^2(n-1)$.
+
+## Sebaran t-student
+
+Jika $X_1,\ldots,X_n\sim N(\mu,\sigma^2)$, maka $Z=\sqrt{n}(\bar{X}-\mu)/\sigma\sim N(0,1)$. Namun, $\sigma$ biasanya diduga dengan $S$, simpangan baku sampel, jika tidak diketahui simpangan baku populasi. Namun, apa sebaran dari $\sqrt{n}(\bar{X}-\mu)/S$?
+
+Jika ukuran sampel besar, Teorema Limit Pusat dapat digunakan untuk mengasumsikan bahwa $\sqrt{n}(\bar{X}-\mu)/S$ menyebar normal baku. Namun, jika ukuran sampel kecil $\sqrt{n}(\bar{X}-\mu)/S$ menyebar $t$-Student.
+
+Jika $Y$ dan $Z$ saling bebas, $Y$ menyebar khi-kuadrat dengan derajat bebas $n$, dan $Z\sim N(0,1)$, maka $T$ yang menyebar $t$-Student dengan $n$ derajat bebas didefinisikan sebagai:
+
+$$
+T=\frac{Z}{\sqrt{Y/n}}
+$$
+
+Atau, suatu peubah normal baku, dibagi akar dari peubah khi-kuadrat yang dibagi derajat bebasnya, memiliki sebaran $t$-Student dengan derajat bebas $n$. Sebaran $t$-Student memiliki fungsi kepekatan peluang:
+
+$$
+f(t)=\frac{\Gamma\left(\frac{n+1}{2}\right)}{\sqrt{\pi n}\Gamma\left(\frac{n}{2}\right)}\left(1+\frac{t^2}{n}\right)^{-\frac{n+1}{2}}, \ -\infty<t<\infty
+$$
+
+Sebaran $t$-Student simetris dengan nilai harapan 0, dan $Var(T)=n/(n-2)$ jika $n>2$. $t_{\alpha,n}$ merupakan nilai yang membuat $P(t>t_{\alpha,n})=\alpha$.
+
+### Bukti
+
+Telah diketahui bahwa:
+
+$$
+Z=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\sim N(0,1)
+$$
+
+Dan:
+
+$$
+Y=\frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1)
+$$
+
+Maka Y dibagi derajat bebasnya adalah:
+
+$$
+Y/(n-1)=\frac{S^2}{\sigma^2}
+$$
+
+Sehingga definisikan peubah acak $T$ yang menyebar $t$-Student dengan derajat bebas $n-1$:
+
+$$
+\frac{\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}}{\sqrt{\frac{S^2}{\sigma^2}}}=\frac{\bar{X}-\mu}{\sigma/\sqrt{n}}\cdot\frac{\sigma}{S}=\frac{\bar{X}-\mu}{S/\sqrt{n}}
+$$
+
+Dalam kata lain, di sebuah contoh berukuran N dari populasi yang menyebar $N(\mu,\sigma^2)$, 
+
+$$
+\frac{\bar{X}-\mu}{S/\sqrt{n}}
+$$
+
+Menyebar $t$-Student dengan derajat bebas $n-1$.
+
+## Sebaran F
+
+Dalam beberapa kasus, perlu perbandingan antara ragam sampel yang diambil dari dua populasi normal. Salah satu aplikasi dari perbandingan ini adalah menguji kesamaan ragam dua populasi dari ragam sampel. Sebaran yang digunakan dalam uji ini didefinisikan sebagai:
+
+$$
+F=\frac{U/n_1}{V/n_2}
+$$
+
+Jika $U$ menyebar khi-kuadrat dengan derajat bebas $n_1$, $V$ menyebar khi-kuadrat dengan derajat bebas $n_2$, serta $U$ dan $V$ saling bebas, maka $F\sim F(n_1,n_2)$. Fungsi kepekatan peluang $X\sim F(n_1,n_2)$ adalah:
+
+$$
+f(x)=
+\begin{cases}
+\frac{\Gamma\left[(n_1+n_2)/2\right]}{\Gamma\left(n_1/2\right)\Gamma\left(n_2/2\right)}\left(\frac{n_1}{n_2}\right)^{n_1/2}x^{n_1/2-1}\left(1+\frac{n_1}{n_2}\right)^{-(n_1+n_2)/2}, & x>0\\
+0, & \text{lainnya}
+\end{cases}
+$$
+
+Jika contoh acak saling bebas berukuran $n_1$ dan $n_2$ diambil dari dua populasi normal dengan ragam $\sigma_1^2$, $\sigma_2^2$; jika ragam sampel $S_1^2$ dan $S_2^2$ maka:
+
+$$
+F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}=\frac{\sigma_2^2S_1^2}{\sigma_1^2 S_2^2}
+$$
+
+Menyebar $F(n_1-1,n_2-1)$. Ini karena sudah diketahui bahwa $(n_i-1)S_i^2/\sigma_i^2$ menyebar khi-kuadrat dengan derajat bebas $n_i-1$, maka $S_i^2/\sigma_i^2$, $i=1,2$, merupakan pembagian peubah acak khi-kuadrat dengan derajat bebasnya. Maka dari itu, kuantitas di atas merupakan rasio dua peubah acak khi-kuadrat yang telah dibagi derajat bebasnya, atau peubah acak F.
+
+Dalam kasus di mana ragam populasi diasumsikan homogen, maka rasio ragam sampel:
+
+$$
+F=\frac{S_1^2}{S_2^2}
+$$
+
+Menyebar $F(n_1-1,n_2-1)$.

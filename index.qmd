@@ -1,0 +1,5 @@
+---
+title: "Praktikum Inferensia Statistika"
+---
+
+Situs web ini akan mengandung modul inferensia statistika, informasi penugasan, serta pembahasan-pembahasan dari tugas yang ada.
