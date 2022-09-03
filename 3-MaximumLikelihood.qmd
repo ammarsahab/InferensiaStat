@@ -1,5 +1,5 @@
 ---
-title: "Maximum Likelihood"
+title: "Bab 3 - Pendugaan Kemungkinan Maksimum"
 editor: visual
 author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"
 format:
