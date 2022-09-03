@@ -1,5 +1,5 @@
 ---
-title: "Sebaran Percontohan dari Sebaran Normal"
+title: "Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen"
 format: 
   html
 editor: visual
@@ -7,7 +7,7 @@ author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"
 theme: simplex
 ---
 
-# Review
+# Review Momen dan Fungsi Pembangkit Momen
 
 ## Momen
 
@@ -29,9 +29,9 @@ $$
 \frac{E\bigl[\left(X-\mu\right)^k\bigr]}{\sigma^k}
 $$
 
-### Fungsi Pembangkit Momen
+## Fungsi Pembangkit Momen
 
-Tiap sebaran peluang memiliki **fungsi pembangkit momen** yang didefinisikan sebagai:
+Tiap sebaran peluang memiliki **fungsi pembangkit momen** (fpm) yang didefinisikan sebagai:
 
 $$
 M_X(t)=E\left(e^{tX}\right)
@@ -43,7 +43,7 @@ $$
 P_n(x) =1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
 $$ 
 
-Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi $e^x$ akan lebih baik sehingga dapat dikatakan:
+Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi $e^x$ akan lebih baik sampai aproksimasi tersebut tepat, sehingga dapat dikatakan:
 
 $$
 e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}+\cdots
@@ -104,8 +104,8 @@ Bukti dari sifat tersebut adalah:
 $$
 \begin{aligned}
 M_Z(t)&=E\left[\mathrm{exp}\left(t\sum_{i=1}^nX_i\right)\right]=E\left[\mathrm{exp}\left(\sum_{i=1}^ntX_i\right)\right]&\\
-&=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]& \text{(Karena saling bebas)}\\
-&=\prod_{i=1}^n M_{X_i}(t) & \text{(Definisi fungsi pembangkit momen)}
+&=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]& \text{(saling bebas)}\\
+&=\prod_{i=1}^n M_{X_i}(t)&  \text{(definisi fpm)}
 \end{aligned}
 $$
 
@@ -135,27 +135,27 @@ $$
 
 ## Sebaran dari kombinasi linear peubah acak normal
 
-Jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim Normal\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2$.
+Jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2$.
 
 ### Bukti
 
-Cari fungsi pembangkit momen dari $Y$ - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen normal, maka $Y$ menyebar normal:
+Cari fungsi pembangkit momen dari $Y$ - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen (fpm)normal, maka $Y$ menyebar normal:
 
 $$
 \begin{aligned}
 M_Y(t)&=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\right]&\\
-&=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]& \text{(Karena saling bebas)}\\
+&=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]& \text{(saling bebas)}\\
 &=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&\\
-&=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&\text{(Dari fungsi pembangkit momen Normal)}\\
+&=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&\text{(fpm normal)}\\
 &=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
 \end{aligned}
 $$
 
-Yang tidak lain adalah fungsi pembangkit momen peubah acak $Normal\left(\sum_{i=1}^n a_imu_i, \sum_{i=1}^n a_i\sigma_i^2\right)$.
+Yang tidak lain adalah fungsi pembangkit momen peubah acak $\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i\sigma_i^2\right)$.
 
 ### Sebaran dari rata-rata sampel
 
-Jika kita menggangap bahwa $\mu_i=\mu$ dan $\sigma_i=\sigma$ - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan $a_i=1/n$, akan ditemukan sebaran dari rata-rata sampel berjumlah $n$ observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka $\bar{X}\sim Normal\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)$. Karena:
+Jika kita menggangap bahwa $\mu_i=\mu$ dan $\sigma_i=\sigma$ - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan $a_i=1/n$, akan ditemukan sebaran dari rata-rata sampel berjumlah $n$ observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka $\bar{X}\sim \mathrm{Normal}\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)$. Karena:
 
 $$
 \begin{aligned}
@@ -164,19 +164,19 @@ $$
 \end{aligned}
 $$
 
-Maka $\bar{X}\sim Normal\left(\mu, \frac{\sigma^2}{n}\right)$. Dari situ, dapat dibuat peubah normal baku, $Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim Normal(0,1)$
+Maka $\bar{X}\sim \mathrm{Normal}\left(\mu, \frac{\sigma^2}{n}\right)$. Dari situ, dapat dibuat peubah normal baku, $Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim \mathrm{Normal}(0,1)$
 
 ## Sebaran khi-kuadrat
 
 ### Sebaran dari observasi populasi normal baku yang dikuadratkan
 
-Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kumulatif peluang $Normal(\mu,\sigma^2)$ adalah:
+Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kepekatan peluang $\mathrm{Normal}(\mu,\sigma^2)$ adalah:
 
 $$
 f(x)=\frac{1}{\sigma\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2\sigma^2}\right)(x-\mu)^2\right]
 $$
 
-Dan jika $Z\sim Normal(\mu=0, \sigma^2=1)$ (dalam kata lain, normal baku), maka fungsi kepekatan peluang $Z$:
+Dan jika $Z\sim \mathrm{Normal}(\mu=0, \sigma^2=1)$ (dalam kata lain, normal baku), maka fungsi kepekatan peluang $Z$:
 
 $$
 f(z)=\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2}\right)z^2\right]
@@ -187,7 +187,7 @@ Maka dapat dibuktikan bahwa:
 $$
 \begin{aligned}
 M_{Z^2}(t)&=E\left[\mathrm{exp}\left(tz^2\right)\right]&\\
-&=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &\text{(dari fungsi kumulatif peluang)}\\
+&=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &\text{(dari fungsi kepekatan peluang)}\\
 &=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(tz^2-\frac{z^2}{2}\right)\ dz &\\
 \end{aligned}
 $$
@@ -201,7 +201,7 @@ M_{Z^2}(t)&=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\frac
 \end{aligned}
 $$
 
-Note bahwa suatu peubah yang menyebar $Y=Normal[0, (1-2t)^{-1}]$ akan memiliki fungsi kepekatan peluang:
+Note bahwa suatu peubah yang menyebar $Y=\mathrm{Normal}[0, (1-2t)^{-1}]$ akan memiliki fungsi kepekatan peluang:
 
 $$
 f(y)=\frac{1}{(1-2t)^{-1/2}\sqrt{2\sigma}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}y^2\right]
@@ -240,7 +240,8 @@ Untuk meneliti sebaran dari ragam lebih lanjut, perlu diteliti beberapa sifat se
     $$
     \begin{aligned}
     M_{[V=\sum_{i=1}^k X_i]}(t)&=\prod_{i=1}^k M_{X_i}(t) &\text{(Dari sifat fungsi pembangkit momen)}\\
-    &=\prod_{i=1}^k(1-2t)^{-n_i/2}=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
+    &=\prod_{i=1}^k(1-2t)^{-n_i/2}\\ 
+    &=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
     \end{aligned}
     $$
 
@@ -259,13 +260,13 @@ Untuk meneliti sebaran dari ragam lebih lanjut, perlu diteliti beberapa sifat se
 
     Yang tidak lain adalah fungsi pembangkit momen $\chi^2(n-n_1)$.
 
-3.  Jika peubah acak $X$ memiliki sebaran $Gamma(\alpha,\beta)$, maka:
+3.  Jika peubah acak $X$ memiliki sebaran $\mathrm{Gamma}(\alpha,\beta)$, maka:
 
     $$
     Y=\frac{2X}{\beta}\sim\chi^2(2\alpha)1
     $$
 
-    Fungsi pembangkit momen $Gamma(\alpha,\beta)$ adalah $(1-\beta t)^{-\alpha}$. Oleh karena itu:
+    Fungsi pembangkit momen $\mathrm{Gamma}(\alpha,\beta)$ adalah $(1-\beta t)^{-\alpha}$. Oleh karena itu:
 
     $$
     \begin{aligned}
@@ -416,3 +417,327 @@ F=\frac{S_1^2}{S_2^2}
 $$
 
 Menyebar $F(n_1-1,n_2-1)$.
+
+# Pendugaan Parameter
+
+Penduga (*estimator*) adalah suatu aturan, seringkali dinyatakan sebagai
+formula, yang menjelaskan cara menghitung nilai dugaan berdasarkan
+pengukuran yang terdapat dalam contoh (Wackerly *et al*. 2008).
+
+## Kuadrat Tengah Galat (MSE)
+
+Kuadrat Tengah Galat merupakan nilai harapan dari kuadrat selisih penduga dan parameter targetnya. Kuantitas ini sering digunakan untuk mengukur ketepatan dari suatu penduga. MSE dapat didekomposisi menjadi komponen bias dan ragam (bukti dekomposisi akan dijelaskan bersamaan dengan konsep bias dan ragam):
+
+$$
+MSE\left( \widehat{\theta} \right) = E\left\lbrack \left( \widehat{\theta} - \theta \right)^{2} \right\rbrack = \ V\left( \widehat{\theta} \right) + \left\lbrack B(\widehat{\theta}) \right\rbrack^{2}
+$$
+
+Oleh karena itu, penduga yang baik memininumkan bias dan ragam. Karakteristik ini disimpulkan dalam dua sifat:
+
+### Tidak bias, $E\left( \widehat{\theta} \right) = \theta$.
+
+Dalam kata-kata, nilai harapan dari penduga yang dipakai adalah parameter yang hendak diduga. Apabila $E\left( \widehat{\theta} \right) \neq \theta$, atau nilai harapan penduga beda dengan parameter yang diduga, dikatakan
+**penduga bersifat bias**.
+
+Bias suatu penduga dapat diformulasikan sebagai:
+
+$$
+B\left( \widehat{\theta} \right) = E\left( \widehat{\theta} \right) - \theta
+$$
+
+Apabila $\widehat{\theta}$ adalah penduga tidak bias bagi $\theta$, maka:
+
+$$
+\begin{aligned}
+B\left( \widehat{\theta} \right) &= 0\\
+E\left( \widehat{\theta} \right) &= \theta \\
+MSE\left( \widehat{\theta} \right)& = V\left( \widehat{\theta} \right) 
+\end{aligned}
+$$
+
+Dalam kata lain, bias dari $\widehat{\theta}$ akan nol, nilai harapan dari penduga $\widehat{\theta}$ adalah parameter yang hendak diduga $\theta$, dan hanya ragam yang akan berkontribusi ke kuadrat tengah galat.
+
+Sebelum menjelaskan ragam, langkah-langkah pembuktian dekomposisi bias-ragam dapat dimulai dengan menemukan bentuk dari bias kuadrat - $[B(\theta)]^2$:
+
+$$
+\begin{aligned}
+B\left( \widehat{\theta} \right)&= E\left( \widehat{\theta} \right) - \theta\\ 
+\left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2} &=\left\lbrack E\left( \widehat{\theta} \right) - \theta \right\rbrack^{2}\\
+&= \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2} - 2\theta E\left( \widehat{\theta} \right) + \theta^{2}
+\end{aligned}
+$$
+
+Sehingga dapat dikatakan bahwa:
+$$
+\left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2} - \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2}\mathbf{=}\mathbf{- 2\theta E}\left( \widehat{\mathbf{\theta}} \right)\mathbf{+}\mathbf{\theta}^{\mathbf{2}}
+$$
+
+### Ragam Kecil
+
+Karena komponen lain dari kuadrat tengah galat adalah ragam, maka ragam sebaiknya diminimumkan. Seperti yang dibuktikan dalam dekomposisi bias-ragam:
+$$
+\begin{aligned}
+MSE\left( \widehat{\theta} \right)&= E\left\lbrack \left( \widehat{\theta} - \theta \right)^{2} \right\rbrack = E\left( {\widehat{\theta}}^{2} - \ 2\theta\widehat{\theta} + \theta^{2} \right)\\ 
+&= E\left( {\widehat{\theta}}^{2} \right)\mathbf{- 2\theta E}\left( \widehat{\mathbf{\theta}} \right)\mathbf{+}\mathbf{\theta}^{\mathbf{2}}\\ 
+&=  \mathbf{E}\left( {\widehat{\mathbf{\theta}}}^{\mathbf{2}} \right) + \left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2}\mathbf{-}\left\lbrack \mathbf{E}\left( \widehat{\mathbf{\theta}} \right) \right\rbrack^{\mathbf{2}},\ \ \ \ \ \left\{V\left( \widehat{\theta} \right) = E\left( {\widehat{\theta}}^{2} \right) - \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2}\right\}\\ 
+&= V\left( \widehat{\theta} \right) + \left\lbrack B(\widehat{\theta}) \right\rbrack^{2}
+\end{aligned}
+$$
+
+Sehingga dekomposisi terbukti. 
+
+### Galat baku (*standard error*)
+
+Misalkan $\widehat{\theta}$ adalah penduga bagi $\theta$ berdasarkan
+contoh acak $Y_1, Y_2,\ldots, Y_n$. Maka ragam penduga $\sigma_{\widehat{\theta}}^{2}=V\left( \widehat{\theta} \right)$.
+
+Sehingga galat baku $\sigma_{\widehat{\theta}}=\ \sqrt{V\left( \widehat{\theta} \right)}$ dan penduganya adalah
+$s_{\widehat{\theta}} = \sqrt{s^{2}\left( \widehat{\theta} \right)}$
+
+
+# Review Sebaran Statistik Tataan (Order Statistics)
+
+Misalkan $X_1, X_2, \ldots, X_n$ merupakan contoh acak dari suatu sebaran kontinu yang mempunyai fungsi kepekatan peluang $f_X(x)$ untuk $a<x<b$. Misalkan $Y_1$ adalah yang terkecil dari $X_i$, kemudian $Y_2$ adalah urutan terkecil kedua dari $X_i$, dan seterusnya $Y_n$ adalah yang terbesar dari $X_i$ sedemikian rupa sehingga:
+
+$$
+Y_{1} < Y_{2} < \ldots < Y_{n}
+$$
+
+Maka $Y_i, \quad i = 1, 2, \ldots, n$ disebut sebagai statistik tataan (*order
+statistic*) ke-i dari contoh acak $X_1, X_2, \ldots, X_n$.
+
+Notasi lain dari statistik tataan bagi contoh acak $X_1, X_2, \ldots, X_n$ adalah $X_{(1)}, X_{(2)}, \ldots, X_{(n)}$ atau $Y_1, Y_2, \ldots, Y_n$. Beberapa statistik tataan penting adalah:
+
+1. Minimum dari $X_i$ yaitu: $Y_{1} = \mathrm{min}(X_{1},\ X_{2},\ldots, X_{n})$
+2. Maksimum dari $X_i$ yaitu: $Y_{n} = \mathrm{max}(X_{1},\ X_{2},\ldots, X_{n})$
+
+#### Fungsi kepekatan peluang bersama dari $Y_1, Y_2, \ldots, Y_n$ adalah
+
+$$
+g\left( y_{1},y_{2},\ldots,y_{n} \right) = n!f\left( y_{1} \right)f\left( y_{2} \right)\ldots f\left( y_{n} \right) = n!{{\lbrack f}_{x}(x)\rbrack}^{n}
+$$
+
+Di mana $a < y_{1} < y_{2}<\ldots < y_{n} < b$
+
+#### Fungsi kepekatan peluang marginal salah satu statistik tataan $Y_k$ adalah:
+
+$$
+g_{k}\left( y_{k} \right) = \frac{n!}{(k - 1)!(n - k)!}{\lbrack F(y_{k})\rbrack}^{k - 1}f\left( y_{k} \right){\lbrack 1 - F(y_{k})\rbrack}^{n - k}
+$$
+
+Di mana $a < y_{k} < b$. Alasan fungsi kepekatan peluang tersebut dipilih adalah:
+
+```{mermaid}
+flowchart LR
+    subgraph less ["Y < y"]
+    1-->k-1
+    end
+    subgraph same ["Y = y"]
+    k
+    end
+    subgraph more ["Y > y"]
+    k+1-->n
+    end
+    k-1 --> same
+    same --> k+1
+```
+
+Dalam kata lain:
+
+1. Observasi $1$ sampai $k-1$ - sejumlah $k-1$, lebih kecil dari nilai $y$ yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:
+
+$$
+\begin{aligned}
+ P(Y_1, \ldots, Y_{k-1}<y)&=P(Y_1<y)\ldots P(Y_{k-1} < y)\\ 
+ &=P(Y<y)\ldots P(Y<y)\\
+ &=\left[F(y_k)\right]^{k-1}
+ \end{aligned}
+$$
+
+2. Observasi ke-k sama dengan $y_k$. Peristiwa $P(Y=y_k)$ dimodelkan dengan fungsi kepekatan peluang $f(y_k)$.
+
+3. Observasi $k+1$ sampai $n$ - sejumlah $n-k$, lebih besar dari nilai $y$ yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:
+
+$$
+\begin{aligned}
+ P(Y_{k+1}, \ldots, Y_{n}>y)&=P(Y_{k+1}>y)\ldots P(Y_n> y)*\\ 
+ &=P(Y>y)\ldots P(Y>y)&\\
+ &=\left[1-F(y_k)\right]^{n-k}
+ \end{aligned}
+$$
+
+Karena $F(y_k)=P(Y<y)$, maka $1-F(y_k)=P(Y>y)$.
+
+4. Jika dimodelkan melalui kombinatorika, dari $n$ observasi dipilih $k-1$ observasi yang lebih kecil dari y dan $n-k$ observasi lebih besar dari y. Oleh karena itu peristiwa tersebut dimodelkan dengan permutasi berulang:
+
+$$
+ \frac{n!}{(k-1)!(n-k)!}
+$$
+
+Anggap kita mengambil $k-1$ observasi dulu. Maka ada:
+
+$$
+{n\choose k-1}=\frac{n!}{(k-1)!(n-k+1)!}
+$$
+
+Lalu ambil $n-k$ observasi dari sisa $n-k+1$. Maka:
+
+$$
+{n\choose k-1}{n-k+1 \choose n-k}=\frac{n!}{(k-1)!(n-k+1)!}\cdot \frac{(n-k+1)!}{(n-k)!1!}
+$$
+
+Sehingga jika dicoret hasil di atas didapatkan. Maka fungsi kepekatan marginal statistik tataan dibuktikan sebagai berikut.
+
+Maka fungsi kepekatan peluang marginal $Y_1=\mathrm{min} (X_i)$ dan $Y_n=\mathrm{max}(X_i)$ adalah (masukkan saja $k=1$ dan $k=n$):
+
+$$
+\begin{aligned}
+g_{1}\left( y_{1} \right)&=nf\left( y_{1} \right){\lbrack 1 - F(y_{1})\rbrack}^{n - 1},\ a < y_{1} < b \\
+g_{n}\left( y_{n} \right)&=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \right)\ \ \ \ \ \ \ ,\ a < y_{n} < b
+\end{aligned}
+$$
+
+#### Fungsi kepekatan peluang bersama dua statistik tataan, misalnya $Y_i < Y_j$ adalah
+
+$$
+\begin{aligned}
+g_{ij}\left( y_{i},y_{j} \right) =& \frac{n!}{(i - 1)!(j - i - 1)!(n - j)!}{\lbrack F(y_{i})\rbrack}^{i - 1}f\left( y_{i} \right){\lbrack F(y_{j}) - F(y_{i})\rbrack}^{j - i - 1}f\left( y_{j} \right)\\  
+&{\lbrack 1 - F(y_{j})\rbrack}^{n - j}
+\end{aligned}
+$$
+
+Di mana $a < y_{i} < y_{j} < b$. Alasan fungsi kepekatan peluang tersebut dipilih adalah:
+
+```{mermaid}
+flowchart LR
+    subgraph less ["Y < yi"]
+    1-->i-1
+    end
+    subgraph same ["Y = yi"]
+    i
+    end
+    subgraph between ["yi < Y < yj"]
+    i+1 --> j-1
+    end
+    subgraph sameagain ["Y = yj"]
+    j
+    end
+    subgraph more ["Y > yj"]
+    j+1-->n
+    end
+    i-1 --> same
+    same --> i+1
+    between --> sameagain
+    j --> j+1
+```
+
+
+Dalam kata lain:
+
+1. Observasi $1$ sampai $i-1$ - sejumlah $i-1$, lebih kecil dari nilai $i$ yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:
+
+$$
+\begin{aligned}
+ P(Y_1, \ldots, X_{i-1}<y)&=P(X_1<y)\ldots P(X_{i-1} < y)\\ 
+ &=P(Y<y)\ldots P(Y<y)\\
+ &=\left[F(y_k)\right]^{i-1}
+ \end{aligned}
+$$
+
+2. Observasi ke-i sama dengan $y_i$. Peristiwa $P(Y=y_i)$ dimodelkan dengan fungsi kepekatan peluang $f(y_i)$.
+
+3. Terdapat $j-i-1$ observasi yang mencakup observasi $i+1$ sampai $j-1$. Berarti, dapat dimodelkan $P(y_i<Y<y_j)$. Atau, dapat dibuat $P(Y<y_j)-P(Y<y_i)=F(Y_j)-F(y_i)$, karena kita mencari semua kejadian $Y<y_j$, lalu dikurangi dengan kejadian $Y<y_i$. Maka dari itu, 
+
+$$
+\begin{aligned}
+P(y_i<Y_{i+1},\ldots,Y_{j-1}<y_j)&=P(y_i<Y_{i+1}<y_j)\ldots P(y_i<Y_{j-1}<y_j)\\ 
+&=\left[F(Y_j)-F(y_i)\right]^{j-i-1}
+\end{aligned}
+$$
+
+4. Observasi ke-j sama dengan $y_j$. Peristiwa $P(Y=y_j)$ dimodelkan dengan fungsi kepekatan peluang $f(y_j)$.
+
+5. Observasi $j+1$ sampai $n$ - sejumlah $n-j$, lebih besar dari nilai $y_j$ yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:
+
+$$
+\begin{aligned}
+ P(Y_{j+1}, \ldots, Y_{n}>y)&=P(Y_{j+1}>y)\ldots P(Y_n> y)*\\ 
+ &=P(Y>y)\ldots P(Y>y)&\\
+ &=\left[1-F(y_{j+1})\right]^{n-j}
+ \end{aligned}
+$$
+
+Karena $F(y_{j+1})=P(Y<y)$, maka $1-F(y_{j+1})=P(Y>y)$.
+
+6. Jika dimodelkan melalui kombinatorika, dari $n$ observasi dipilih $i-1$ observasi yang lebih kecil dari $y_i$, $n-j$ observasi lebih besar dari $y_j$, dan $j-i-1$ observasi di antara $y_i$ dan $y_j$. Oleh karena itu peristiwa tersebut dimodelkan dengan permutasi berulang:
+
+$$
+ \frac{n!}{(i-1)!(j-i-1)!(n-j)!}
+$$
+
+Sehingga fungsi kepekatan marginal didapatkan.
+
+# Metode Pendugaan Titik
+
+Peubah acak $Y_1, Y_2, \ldots, Y_n$ disebut sebagai contoh acak dari peubah acak Y jika peubah-peubah acak tersebut **saling bebas** dan masing-masing memiliki **sebaran yang sama** dengan sebaran Y.
+
+Misalkan n peubah acak $Y_1, Y_2, \ldots, Y_n$ merupakan contoh acak dari Y yang memiliki sebaran $f_{Y}(y;\theta)$. Fungsi dari contoh yang tidak bergantung pada parameter$theta$, yaitu $T = T (Y_1, Y_2, \ldots,Y_n)$ disebut sebagai **statistik**.
+
+Statistik T digunakan untuk menduga parameter $\theta$, sehingga
+
+$$
+T = T (Y_1, Y_2, \ldots, Y_n)
+$$
+
+Disebut sebagai **penduga (*estimator*) titik** bagi $\theta$ yang dilambangkan $\widehat{\theta}$. Dan
+
+$$
+t = T (Y_1, Y_2, \ldots, Y_n)
+$$
+
+Disebut sebagai **dugaan (*estimate*) titik** bagi $\theta$.
+
+Sebagai contoh:
+
+1. Rata-rata contoh $\left( \overline{Y} = \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)$ adalah penduga titik bagi rata-rata populasi $(\mu)$. Dan dugaan titik bagi $\mu$ adalah $\overline{y} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}$.
+2. Ragam contoh $\left( s^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{{(Y}_{i} - \overline{Y})}^{2} \right)$ adalah penduga titik bagi ragam populasi ($\sigma^{2}$). Dan dugaan titik bagi $\sigma^{2}$ adalah $\ s^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{{(y}_{i} - \overline{y})}^{2}$.
+3. Simpangan baku contoh (s) adalah penduga titik bagi simpangan baku populasi ($\sigma$).
+
+Terdapat beberapa metode untuk melakukan pendugaan titik, diantaranya:
+
+1.  Metode Momen
+2.  Metode Kemungkinan Maksimum (*Maximum Likelihood*)
+3.  Metode Bayes
+4.  Metode Kuadrat Terkecil
+
+Keempat metode tidak dijamin menghasilkan penduga yang bersifat *Uniformly Minimum Variance Unbiased* (UMVU) sehingga perlu dievaluasi berdasarkan sifat-sifat UMVU.
+
+Berikut adalah penjelasan mengenai metode untuk melakukan pendugaan titik.
+
+## Metode Momen
+
+Jika $Y_1, Y_2, \ldots, Y_n$ merupakan contoh acak berukuran n dari suatu populasi Y dengan fungsi kepekatan atau fungsi massa peluang $f_{Y}(y;\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p})$, dimana $\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}$ parameter yang tidak diketahui (yang akan diduga) yang akan diperoleh dengan menyelesaikan  persamaan
+
+$$
+\begin{aligned}
+\mu_{1} &= m_{1}\\ 
+\mu_{2} &= m_{2}\\ 
+&\vdots\\ 
+\mu_{p} &= m_{p}
+\end{aligned}
+$$
+
+Di mana $k\  = \ 1,\ 2,\ \ldots,\ p$ danL
+
+1. Momen ke-k dari populasi: $\mu_{k} = E\left( Y^{k} \right)$
+2.  Momen ke-k dari contoh: $m_{k} = \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{k}$
+
+### Langkah metode momen 
+
+Langkah metode momen adalah sebagai berikut:
+
+Misalkan terdapat p parameter $\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}$ yang akan diduga.
+
+1.  Tentukan p momen dari populasi $\mu_{k},\quad k = 1, 2, \ldots, p$. Setiap momen dari populasi mengandung satu atau lebih parameter $\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}$.
+2.  Tentukan p momen dari contoh $m_{k}, q\quad k = 1, 2, \ldots, p$. Banyaknya momen dari contoh harus sama dengan banyaknya parameter yang akan diduga.
+3.  Dari sistem persamaan $\mu_{k} = m_{k}, \quad k = 1, 2, \ldots, p$ selesaikan sistem persamaan, untuk parameter $\theta = (\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p})$ akan  menjadi penduga momen ${\widehat{\theta}}_{m}$.

@@ -2,4 +2,12 @@
 title: "Pembahasan"
 ---
 
-Pembahasan latihan soal, tugas, dan kuis.
+Pembahasan latihan soal, tugas, dan kuis. Pembahasan yang sudah ada:
+
+## Latihan Soal
+
+1. Bab 1: Kekonvergenan, WLLN, CLT
+
+## Tugas
+
+1. Bab 1: Kekonvergenan, WLLN, CLT

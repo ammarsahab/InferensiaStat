@@ -2,4 +2,13 @@
 title: "Tugas"
 ---
 
-Tugas-tugas Inferensia Statistika.
+Tugas-tugas Inferensia Statistika. Tugas yang ada, yaitu:
+
+## Tugas Individu 
+
+1.  Bab 1: Kekonvergenan
+2.  Bab 3: Penduga Kemungkinan Maksimum (**on progress**)
+
+## Tugas Kelompok 
+
+1. Bab 2: Sebaran Percontohan Normal dan Pendugaan Parameter (**on progress**)

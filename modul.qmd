@@ -2,4 +2,9 @@
 title: "Modul"
 ---
 
-Materi pembelajaran Inferensia Statistika.
+Materi pembelajaran Inferensia Statistika. Modul yang sudah dibuat adalah:
+
+1. Bab 1: Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat.
+2. Bab 2: Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen.
+3. Bab 3: Maximum Likelihood.
+4. **sedang dibuat** - Bab 4: Penduga Bayes.

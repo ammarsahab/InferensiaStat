@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ayunda Afiani Rosita, Muhammad Ammar Sahab">
 
-<title>Praktikum Inferensia Statistika - Sebaran Percontohan dari Sebaran Normal</title>
+<title>Praktikum Inferensia Statistika - Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,6 +54,9 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
@@ -93,7 +96,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Sebaran Percontohan dari Sebaran Normal</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -118,12 +121,12 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link active">Sebaran Percontohan dari Sebaran Normal</a>
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link active">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Maximum Likelihood</a>
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Bab 3 - Pendugaan Kemungkinan Maksimum</a>
   </div>
 </li>
     </ul>
@@ -135,11 +138,11 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#review" id="toc-review" class="nav-link active" data-scroll-target="#review">Review</a>
+  <li><a href="#review-momen-dan-fungsi-pembangkit-momen" id="toc-review-momen-dan-fungsi-pembangkit-momen" class="nav-link active" data-scroll-target="#review-momen-dan-fungsi-pembangkit-momen">Review Momen dan Fungsi Pembangkit Momen</a>
   <ul class="collapse">
-  <li><a href="#momen" id="toc-momen" class="nav-link" data-scroll-target="#momen">Momen</a>
+  <li><a href="#momen" id="toc-momen" class="nav-link" data-scroll-target="#momen">Momen</a></li>
+  <li><a href="#fungsi-pembangkit-momen" id="toc-fungsi-pembangkit-momen" class="nav-link" data-scroll-target="#fungsi-pembangkit-momen">Fungsi Pembangkit Momen</a>
   <ul class="collapse">
-  <li><a href="#fungsi-pembangkit-momen" id="toc-fungsi-pembangkit-momen" class="nav-link" data-scroll-target="#fungsi-pembangkit-momen">Fungsi Pembangkit Momen</a></li>
   <li><a href="#sifat-fungsi-pembangkit-momen" id="toc-sifat-fungsi-pembangkit-momen" class="nav-link" data-scroll-target="#sifat-fungsi-pembangkit-momen">Sifat Fungsi Pembangkit Momen</a></li>
   </ul></li>
   </ul></li>
@@ -163,6 +166,23 @@ ul.task-list{list-style: none;}
   </ul></li>
   <li><a href="#sebaran-f" id="toc-sebaran-f" class="nav-link" data-scroll-target="#sebaran-f">Sebaran F</a></li>
   </ul></li>
+  <li><a href="#pendugaan-parameter" id="toc-pendugaan-parameter" class="nav-link" data-scroll-target="#pendugaan-parameter">Pendugaan Parameter</a>
+  <ul class="collapse">
+  <li><a href="#kuadrat-tengah-galat-mse" id="toc-kuadrat-tengah-galat-mse" class="nav-link" data-scroll-target="#kuadrat-tengah-galat-mse">Kuadrat Tengah Galat (MSE)</a>
+  <ul class="collapse">
+  <li><a href="#tidak-bias-eleft-widehattheta-right-theta." id="toc-tidak-bias-eleft-widehattheta-right-theta." class="nav-link" data-scroll-target="#tidak-bias-eleft-widehattheta-right-theta.">Tidak bias, <span class="math inline">\(E\left( \widehat{\theta} \right) = \theta\)</span>.</a></li>
+  <li><a href="#ragam-kecil" id="toc-ragam-kecil" class="nav-link" data-scroll-target="#ragam-kecil">Ragam Kecil</a></li>
+  <li><a href="#galat-baku-standard-error" id="toc-galat-baku-standard-error" class="nav-link" data-scroll-target="#galat-baku-standard-error">Galat baku (<em>standard error</em>)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#review-sebaran-statistik-tataan-order-statistics" id="toc-review-sebaran-statistik-tataan-order-statistics" class="nav-link" data-scroll-target="#review-sebaran-statistik-tataan-order-statistics">Review Sebaran Statistik Tataan (Order Statistics)</a></li>
+  <li><a href="#metode-pendugaan-titik" id="toc-metode-pendugaan-titik" class="nav-link" data-scroll-target="#metode-pendugaan-titik">Metode Pendugaan Titik</a>
+  <ul class="collapse">
+  <li><a href="#metode-momen" id="toc-metode-momen" class="nav-link" data-scroll-target="#metode-momen">Metode Momen</a>
+  <ul class="collapse">
+  <li><a href="#langkah-metode-momen" id="toc-langkah-metode-momen" class="nav-link" data-scroll-target="#langkah-metode-momen">Langkah metode momen</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -171,7 +191,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Sebaran Percontohan dari Sebaran Normal</h1>
+<h1 class="title d-none d-lg-block">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</h1>
 </div>
 
 
@@ -191,8 +211,8 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="review" class="level1">
-<h1>Review</h1>
+<section id="review-momen-dan-fungsi-pembangkit-momen" class="level1">
+<h1>Review Momen dan Fungsi Pembangkit Momen</h1>
 <section id="momen" class="level2">
 <h2 class="anchored" data-anchor-id="momen">Momen</h2>
 <p>Momen populasi ke-<span class="math inline">\(k\)</span> adalah:</p>
@@ -207,9 +227,10 @@ E\bigl[\left(X-\mu\right)^k\bigr]
 <p><span class="math display">\[
 \frac{E\bigl[\left(X-\mu\right)^k\bigr]}{\sigma^k}
 \]</span></p>
-<section id="fungsi-pembangkit-momen" class="level3">
-<h3 class="anchored" data-anchor-id="fungsi-pembangkit-momen">Fungsi Pembangkit Momen</h3>
-<p>Tiap sebaran peluang memiliki <strong>fungsi pembangkit momen</strong> yang didefinisikan sebagai:</p>
+</section>
+<section id="fungsi-pembangkit-momen" class="level2">
+<h2 class="anchored" data-anchor-id="fungsi-pembangkit-momen">Fungsi Pembangkit Momen</h2>
+<p>Tiap sebaran peluang memiliki <strong>fungsi pembangkit momen</strong> (fpm) yang didefinisikan sebagai:</p>
 <p><span class="math display">\[
 M_X(t)=E\left(e^{tX}\right)
 \]</span></p>
@@ -217,7 +238,7 @@ M_X(t)=E\left(e^{tX}\right)
 <p><span class="math display">\[
 P_n(x) =1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}
 \]</span></p>
-<p>Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi <span class="math inline">\(e^x\)</span> akan lebih baik sehingga dapat dikatakan:</p>
+<p>Maka jika polinomial tersebut diperpanjang sampai tak hingga, aproksimasi <span class="math inline">\(e^x\)</span> akan lebih baik sampai aproksimasi tersebut tepat, sehingga dapat dikatakan:</p>
 <p><span class="math display">\[
 e^x=1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+\frac{x^4}{4!}+\cdots +\frac{x^n}{n!}+\cdots
 \]</span></p>
@@ -242,7 +263,6 @@ M^{(n)}_X(0)&amp;=E\left[X^n\right]
 \end{aligned}
 \]</span></p>
 <p>Sehingga momen ke-<span class="math inline">\(k\)</span> dapat dicari dari fungsi pembangkit momen.</p>
-</section>
 <section id="sifat-fungsi-pembangkit-momen" class="level3">
 <h3 class="anchored" data-anchor-id="sifat-fungsi-pembangkit-momen">Sifat Fungsi Pembangkit Momen</h3>
 <p>Ada beberapa sifat penting fungsi pembangkit momen yang akan dipakai dalam bab ini:</p>
@@ -265,8 +285,8 @@ E\left[XY\right]&amp;=\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}xy \ f(x,y) 
 <p><span class="math display">\[
 \begin{aligned}
 M_Z(t)&amp;=E\left[\mathrm{exp}\left(t\sum_{i=1}^nX_i\right)\right]=E\left[\mathrm{exp}\left(\sum_{i=1}^ntX_i\right)\right]&amp;\\
-&amp;=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]&amp; \text{(Karena saling bebas)}\\
-&amp;=\prod_{i=1}^n M_{X_i}(t) &amp; \text{(Definisi fungsi pembangkit momen)}
+&amp;=E\left[\prod_{i=1}^n \mathrm{exp}\left(tX_i\right)\right]=\prod_{i=1}^n E\left[\mathrm{exp}\left(tX_i\right)\right]&amp; \text{(saling bebas)}\\
+&amp;=\prod_{i=1}^n M_{X_i}(t)&amp;  \text{(definisi fpm)}
 \end{aligned}
 \]</span></p>
 <ol start="3" type="1">
@@ -293,42 +313,42 @@ M_Y(t)&amp;=E\left[e^{t\left(aX+b\right)}\right]=E\left[e^{t\left(aX\right)+bt}\
 \]</span></p>
 <section id="sebaran-dari-kombinasi-linear-peubah-acak-normal" class="level2">
 <h2 class="anchored" data-anchor-id="sebaran-dari-kombinasi-linear-peubah-acak-normal">Sebaran dari kombinasi linear peubah acak normal</h2>
-<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim Normal\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2\)</span>.</p>
+<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2\)</span>.</p>
 <section id="bukti" class="level3">
 <h3 class="anchored" data-anchor-id="bukti">Bukti</h3>
-<p>Cari fungsi pembangkit momen dari <span class="math inline">\(Y\)</span> - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen normal, maka <span class="math inline">\(Y\)</span> menyebar normal:</p>
+<p>Cari fungsi pembangkit momen dari <span class="math inline">\(Y\)</span> - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen (fpm)normal, maka <span class="math inline">\(Y\)</span> menyebar normal:</p>
 <p><span class="math display">\[
 \begin{aligned}
 M_Y(t)&amp;=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\right]&amp;\\
-&amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]&amp; \text{(Karena saling bebas)}\\
+&amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]&amp; \text{(saling bebas)}\\
 &amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&amp;\\
-&amp;=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&amp;\text{(Dari fungsi pembangkit momen Normal)}\\
+&amp;=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&amp;\text{(fpm normal)}\\
 &amp;=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
 \end{aligned}
 \]</span></p>
-<p>Yang tidak lain adalah fungsi pembangkit momen peubah acak <span class="math inline">\(Normal\left(\sum_{i=1}^n a_imu_i, \sum_{i=1}^n a_i\sigma_i^2\right)\)</span>.</p>
+<p>Yang tidak lain adalah fungsi pembangkit momen peubah acak <span class="math inline">\(\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i\sigma_i^2\right)\)</span>.</p>
 </section>
 <section id="sebaran-dari-rata-rata-sampel" class="level3">
 <h3 class="anchored" data-anchor-id="sebaran-dari-rata-rata-sampel">Sebaran dari rata-rata sampel</h3>
-<p>Jika kita menggangap bahwa <span class="math inline">\(\mu_i=\mu\)</span> dan <span class="math inline">\(\sigma_i=\sigma\)</span> - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan <span class="math inline">\(a_i=1/n\)</span>, akan ditemukan sebaran dari rata-rata sampel berjumlah <span class="math inline">\(n\)</span> observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka <span class="math inline">\(\bar{X}\sim Normal\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)\)</span>. Karena:</p>
+<p>Jika kita menggangap bahwa <span class="math inline">\(\mu_i=\mu\)</span> dan <span class="math inline">\(\sigma_i=\sigma\)</span> - dalam kata lain semua peubah normal tersebut identik, berasal dari sebaran yang sama, dan <span class="math inline">\(a_i=1/n\)</span>, akan ditemukan sebaran dari rata-rata sampel berjumlah <span class="math inline">\(n\)</span> observasi dari populasi yang menyebar normal bebas stokastik identik. Jika dihitung, maka <span class="math inline">\(\bar{X}\sim \mathrm{Normal}\left(\sum_{i=1}^n\frac{1}{n}\mu, \sum_{i=1}^n \frac{1}{n^2}\sigma^2\right)\)</span>. Karena:</p>
 <p><span class="math display">\[
 \begin{aligned}
 \sum_{i=1}^n\frac{1}{n}\mu &amp;= n\cdot \frac{\mu}{n}=\mu\\
 \sum_{i=1}^n\frac{1}{n^2}\sigma^2 &amp;= n\cdot \frac{\sigma^2}{n^2}=\frac{\sigma^2}{n}
 \end{aligned}
 \]</span></p>
-<p>Maka <span class="math inline">\(\bar{X}\sim Normal\left(\mu, \frac{\sigma^2}{n}\right)\)</span>. Dari situ, dapat dibuat peubah normal baku, <span class="math inline">\(Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim Normal(0,1)\)</span></p>
+<p>Maka <span class="math inline">\(\bar{X}\sim \mathrm{Normal}\left(\mu, \frac{\sigma^2}{n}\right)\)</span>. Dari situ, dapat dibuat peubah normal baku, <span class="math inline">\(Z\sim \sqrt{n}\frac{\bar{X}-\mu}{\sigma}\sim \mathrm{Normal}(0,1)\)</span></p>
 </section>
 </section>
 <section id="sebaran-khi-kuadrat" class="level2">
 <h2 class="anchored" data-anchor-id="sebaran-khi-kuadrat">Sebaran khi-kuadrat</h2>
 <section id="sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan" class="level3">
 <h3 class="anchored" data-anchor-id="sebaran-dari-observasi-populasi-normal-baku-yang-dikuadratkan">Sebaran dari observasi populasi normal baku yang dikuadratkan</h3>
-<p>Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kumulatif peluang <span class="math inline">\(Normal(\mu,\sigma^2)\)</span> adalah:</p>
+<p>Setelah diketahui sebaran dari rata-rata sampel, sebaran dari ragam sampel juga menarik untuk diteliti. Pada dasarnya, ragam merupakan jumlah kuadrat dari jarak antara observasi dan nilai tengah dibagi dengan derajat bebas. Oleh karena itu, titik awal dari investigasi sebaran dari ragam adalah sebaran dari kuadrat normal baku. Bentuk sebaran dari kuadrat normal baku dapat diinvestigasi dari fungsi pembangkit momen. Sebelum itu, note bahwa fungsi kepekatan peluang <span class="math inline">\(\mathrm{Normal}(\mu,\sigma^2)\)</span> adalah:</p>
 <p><span class="math display">\[
 f(x)=\frac{1}{\sigma\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2\sigma^2}\right)(x-\mu)^2\right]
 \]</span></p>
-<p>Dan jika <span class="math inline">\(Z\sim Normal(\mu=0, \sigma^2=1)\)</span> (dalam kata lain, normal baku), maka fungsi kepekatan peluang <span class="math inline">\(Z\)</span>:</p>
+<p>Dan jika <span class="math inline">\(Z\sim \mathrm{Normal}(\mu=0, \sigma^2=1)\)</span> (dalam kata lain, normal baku), maka fungsi kepekatan peluang <span class="math inline">\(Z\)</span>:</p>
 <p><span class="math display">\[
 f(z)=\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2}\right)z^2\right]
 \]</span></p>
@@ -336,7 +356,7 @@ f(z)=\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left(\frac{1}{2}\right)z^2\right]
 <p><span class="math display">\[
 \begin{aligned}
 M_{Z^2}(t)&amp;=E\left[\mathrm{exp}\left(tz^2\right)\right]&amp;\\
-&amp;=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &amp;\text{(dari fungsi kumulatif peluang)}\\
+&amp;=\int_{-\infty}^{\infty}\mathrm{exp}\left(tz^2\right)\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(-\frac{z^2}{2}\right)\ dz &amp;\text{(dari fungsi kepekatan peluang)}\\
 &amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left(tz^2-\frac{z^2}{2}\right)\ dz &amp;\\
 \end{aligned}
 \]</span></p>
@@ -347,7 +367,7 @@ M_{Z^2}(t)&amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\
 &amp;=\int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}z^2\right]\ dz&amp;
 \end{aligned}
 \]</span></p>
-<p>Note bahwa suatu peubah yang menyebar <span class="math inline">\(Y=Normal[0, (1-2t)^{-1}]\)</span> akan memiliki fungsi kepekatan peluang:</p>
+<p>Note bahwa suatu peubah yang menyebar <span class="math inline">\(Y=\mathrm{Normal}[0, (1-2t)^{-1}]\)</span> akan memiliki fungsi kepekatan peluang:</p>
 <p><span class="math display">\[
 f(y)=\frac{1}{(1-2t)^{-1/2}\sqrt{2\sigma}}\mathrm{exp}\left[-\left\{\frac{1}{2(1-2t)^{-1}}\right\}y^2\right]
 \]</span></p>
@@ -377,7 +397,8 @@ f(x)=\frac{x^{v/2-1}e^{-x/2}}{2^{v/2}\Gamma\left(\frac{v}{2}\right)}
 <p><span class="math display">\[
 \begin{aligned}
 M_{[V=\sum_{i=1}^k X_i]}(t)&amp;=\prod_{i=1}^k M_{X_i}(t) &amp;\text{(Dari sifat fungsi pembangkit momen)}\\
-&amp;=\prod_{i=1}^k(1-2t)^{-n_i/2}=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
+&amp;=\prod_{i=1}^k(1-2t)^{-n_i/2}\\
+&amp;=(1-2t)^{-\frac{\sum_{i=1}^k n_i}{2}}
 \end{aligned}
 \]</span></p></li>
 <li><p>Jika <span class="math inline">\(X_1\)</span> dan <span class="math inline">\(X_2\)</span> peubah acak saling bebas, dan <span class="math inline">\(X_1\)</span> adalah <span class="math inline">\(\chi^2\)</span> dengan derajat bebas <span class="math inline">\(n_1\)</span>, sedangkan <span class="math inline">\(Y=X_1+X_2\)</span> adalah khi-kuadrat dengan derajat bebas <span class="math inline">\(n\)</span>, di mana <span class="math inline">\(n&gt;n_1\)</span>. Maka <span class="math inline">\(X_2=Y-X_1\)</span> menyebar khi-kuadrat dengan derajat bebas <span class="math inline">\(n-n_1\)</span>.</p>
@@ -391,11 +412,11 @@ M_{Y}(t)&amp;=M_{X_1}(t)M_{X_2}(t)&amp;\\
 \end{aligned}
 \]</span></p>
 <p>Yang tidak lain adalah fungsi pembangkit momen <span class="math inline">\(\chi^2(n-n_1)\)</span>.</p></li>
-<li><p>Jika peubah acak <span class="math inline">\(X\)</span> memiliki sebaran <span class="math inline">\(Gamma(\alpha,\beta)\)</span>, maka:</p>
+<li><p>Jika peubah acak <span class="math inline">\(X\)</span> memiliki sebaran <span class="math inline">\(\mathrm{Gamma}(\alpha,\beta)\)</span>, maka:</p>
 <p><span class="math display">\[
 Y=\frac{2X}{\beta}\sim\chi^2(2\alpha)1
 \]</span></p>
-<p>Fungsi pembangkit momen <span class="math inline">\(Gamma(\alpha,\beta)\)</span> adalah <span class="math inline">\((1-\beta t)^{-\alpha}\)</span>. Oleh karena itu:</p>
+<p>Fungsi pembangkit momen <span class="math inline">\(\mathrm{Gamma}(\alpha,\beta)\)</span> adalah <span class="math inline">\((1-\beta t)^{-\alpha}\)</span>. Oleh karena itu:</p>
 <p><span class="math display">\[
 \begin{aligned}
 M_Y(t)&amp;=M_{\frac{2X}{\beta}}(t)=E\left[\mathrm{exp}\left(\frac{2x}{B}t\right)\right]\\
@@ -514,8 +535,301 @@ F=\frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2}=\frac{\sigma_2^2S_1^2}{\sigma_1^2 S_
 F=\frac{S_1^2}{S_2^2}
 \]</span></p>
 <p>Menyebar <span class="math inline">\(F(n_1-1,n_2-1)\)</span>.</p>
+</section>
+</section>
+<section id="pendugaan-parameter" class="level1">
+<h1>Pendugaan Parameter</h1>
+<p>Penduga (<em>estimator</em>) adalah suatu aturan, seringkali dinyatakan sebagai formula, yang menjelaskan cara menghitung nilai dugaan berdasarkan pengukuran yang terdapat dalam contoh (Wackerly <em>et al</em>. 2008).</p>
+<section id="kuadrat-tengah-galat-mse" class="level2">
+<h2 class="anchored" data-anchor-id="kuadrat-tengah-galat-mse">Kuadrat Tengah Galat (MSE)</h2>
+<p>Kuadrat Tengah Galat merupakan nilai harapan dari kuadrat selisih penduga dan parameter targetnya. Kuantitas ini sering digunakan untuk mengukur ketepatan dari suatu penduga. MSE dapat didekomposisi menjadi komponen bias dan ragam (bukti dekomposisi akan dijelaskan bersamaan dengan konsep bias dan ragam):</p>
+<p><span class="math display">\[
+MSE\left( \widehat{\theta} \right) = E\left\lbrack \left( \widehat{\theta} - \theta \right)^{2} \right\rbrack = \ V\left( \widehat{\theta} \right) + \left\lbrack B(\widehat{\theta}) \right\rbrack^{2}
+\]</span></p>
+<p>Oleh karena itu, penduga yang baik memininumkan bias dan ragam. Karakteristik ini disimpulkan dalam dua sifat:</p>
+<section id="tidak-bias-eleft-widehattheta-right-theta." class="level3">
+<h3 class="anchored" data-anchor-id="tidak-bias-eleft-widehattheta-right-theta.">Tidak bias, <span class="math inline">\(E\left( \widehat{\theta} \right) = \theta\)</span>.</h3>
+<p>Dalam kata-kata, nilai harapan dari penduga yang dipakai adalah parameter yang hendak diduga. Apabila <span class="math inline">\(E\left( \widehat{\theta} \right) \neq \theta\)</span>, atau nilai harapan penduga beda dengan parameter yang diduga, dikatakan <strong>penduga bersifat bias</strong>.</p>
+<p>Bias suatu penduga dapat diformulasikan sebagai:</p>
+<p><span class="math display">\[
+B\left( \widehat{\theta} \right) = E\left( \widehat{\theta} \right) - \theta
+\]</span></p>
+<p>Apabila <span class="math inline">\(\widehat{\theta}\)</span> adalah penduga tidak bias bagi <span class="math inline">\(\theta\)</span>, maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+B\left( \widehat{\theta} \right) &amp;= 0\\
+E\left( \widehat{\theta} \right) &amp;= \theta \\
+MSE\left( \widehat{\theta} \right)&amp; = V\left( \widehat{\theta} \right)
+\end{aligned}
+\]</span></p>
+<p>Dalam kata lain, bias dari <span class="math inline">\(\widehat{\theta}\)</span> akan nol, nilai harapan dari penduga <span class="math inline">\(\widehat{\theta}\)</span> adalah parameter yang hendak diduga <span class="math inline">\(\theta\)</span>, dan hanya ragam yang akan berkontribusi ke kuadrat tengah galat.</p>
+<p>Sebelum menjelaskan ragam, langkah-langkah pembuktian dekomposisi bias-ragam dapat dimulai dengan menemukan bentuk dari bias kuadrat - <span class="math inline">\([B(\theta)]^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+B\left( \widehat{\theta} \right)&amp;= E\left( \widehat{\theta} \right) - \theta\\
+\left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2} &amp;=\left\lbrack E\left( \widehat{\theta} \right) - \theta \right\rbrack^{2}\\
+&amp;= \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2} - 2\theta E\left( \widehat{\theta} \right) + \theta^{2}
+\end{aligned}
+\]</span></p>
+<p>Sehingga dapat dikatakan bahwa:</p>
+<p><span class="math display">\[
+\left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2} - \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2}\mathbf{=}\mathbf{- 2\theta E}\left( \widehat{\mathbf{\theta}} \right)\mathbf{+}\mathbf{\theta}^{\mathbf{2}}
+\]</span></p>
+</section>
+<section id="ragam-kecil" class="level3">
+<h3 class="anchored" data-anchor-id="ragam-kecil">Ragam Kecil</h3>
+<p>Karena komponen lain dari kuadrat tengah galat adalah ragam, maka ragam sebaiknya diminimumkan. Seperti yang dibuktikan dalam dekomposisi bias-ragam:</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE\left( \widehat{\theta} \right)&amp;= E\left\lbrack \left( \widehat{\theta} - \theta \right)^{2} \right\rbrack = E\left( {\widehat{\theta}}^{2} - \ 2\theta\widehat{\theta} + \theta^{2} \right)\\
+&amp;= E\left( {\widehat{\theta}}^{2} \right)\mathbf{- 2\theta E}\left( \widehat{\mathbf{\theta}} \right)\mathbf{+}\mathbf{\theta}^{\mathbf{2}}\\
+&amp;=  \mathbf{E}\left( {\widehat{\mathbf{\theta}}}^{\mathbf{2}} \right) + \left\lbrack B\left( \widehat{\theta} \right) \right\rbrack^{2}\mathbf{-}\left\lbrack \mathbf{E}\left( \widehat{\mathbf{\theta}} \right) \right\rbrack^{\mathbf{2}},\ \ \ \ \ \left\{V\left( \widehat{\theta} \right) = E\left( {\widehat{\theta}}^{2} \right) - \left\lbrack E\left( \widehat{\theta} \right) \right\rbrack^{2}\right\}\\
+&amp;= V\left( \widehat{\theta} \right) + \left\lbrack B(\widehat{\theta}) \right\rbrack^{2}
+\end{aligned}
+\]</span></p>
+<p>Sehingga dekomposisi terbukti.</p>
+</section>
+<section id="galat-baku-standard-error" class="level3">
+<h3 class="anchored" data-anchor-id="galat-baku-standard-error">Galat baku (<em>standard error</em>)</h3>
+<p>Misalkan <span class="math inline">\(\widehat{\theta}\)</span> adalah penduga bagi <span class="math inline">\(\theta\)</span> berdasarkan contoh acak <span class="math inline">\(Y_1, Y_2,\ldots, Y_n\)</span>. Maka ragam penduga <span class="math inline">\(\sigma_{\widehat{\theta}}^{2}=V\left( \widehat{\theta} \right)\)</span>.</p>
+<p>Sehingga galat baku <span class="math inline">\(\sigma_{\widehat{\theta}}=\ \sqrt{V\left( \widehat{\theta} \right)}\)</span> dan penduganya adalah <span class="math inline">\(s_{\widehat{\theta}} = \sqrt{s^{2}\left( \widehat{\theta} \right)}\)</span></p>
+</section>
+</section>
+</section>
+<section id="review-sebaran-statistik-tataan-order-statistics" class="level1">
+<h1>Review Sebaran Statistik Tataan (Order Statistics)</h1>
+<p>Misalkan <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari suatu sebaran kontinu yang mempunyai fungsi kepekatan peluang <span class="math inline">\(f_X(x)\)</span> untuk <span class="math inline">\(a&lt;x&lt;b\)</span>. Misalkan <span class="math inline">\(Y_1\)</span> adalah yang terkecil dari <span class="math inline">\(X_i\)</span>, kemudian <span class="math inline">\(Y_2\)</span> adalah urutan terkecil kedua dari <span class="math inline">\(X_i\)</span>, dan seterusnya <span class="math inline">\(Y_n\)</span> adalah yang terbesar dari <span class="math inline">\(X_i\)</span> sedemikian rupa sehingga:</p>
+<p><span class="math display">\[
+Y_{1} &lt; Y_{2} &lt; \ldots &lt; Y_{n}
+\]</span></p>
+<p>Maka <span class="math inline">\(Y_i, \quad i = 1, 2, \ldots, n\)</span> disebut sebagai statistik tataan (<em>order statistic</em>) ke-i dari contoh acak <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span>.</p>
+<p>Notasi lain dari statistik tataan bagi contoh acak <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah <span class="math inline">\(X_{(1)}, X_{(2)}, \ldots, X_{(n)}\)</span> atau <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span>. Beberapa statistik tataan penting adalah:</p>
+<ol type="1">
+<li>Minimum dari <span class="math inline">\(X_i\)</span> yaitu: <span class="math inline">\(Y_{1} = \mathrm{min}(X_{1},\ X_{2},\ldots, X_{n})\)</span></li>
+<li>Maksimum dari <span class="math inline">\(X_i\)</span> yaitu: <span class="math inline">\(Y_{n} = \mathrm{max}(X_{1},\ X_{2},\ldots, X_{n})\)</span></li>
+</ol>
+<section id="fungsi-kepekatan-peluang-bersama-dari-y_1-y_2-ldots-y_n-adalah" class="level4">
+<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dari-y_1-y_2-ldots-y_n-adalah">Fungsi kepekatan peluang bersama dari <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> adalah</h4>
+<p><span class="math display">\[
+g\left( y_{1},y_{2},\ldots,y_{n} \right) = n!f\left( y_{1} \right)f\left( y_{2} \right)\ldots f\left( y_{n} \right) = n!{{\lbrack f}_{x}(x)\rbrack}^{n}
+\]</span></p>
+<p>Di mana <span class="math inline">\(a &lt; y_{1} &lt; y_{2}&lt;\ldots &lt; y_{n} &lt; b\)</span></p>
+</section>
+<section id="fungsi-kepekatan-peluang-marginal-salah-satu-statistik-tataan-y_k-adalah" class="level4">
+<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-marginal-salah-satu-statistik-tataan-y_k-adalah">Fungsi kepekatan peluang marginal salah satu statistik tataan <span class="math inline">\(Y_k\)</span> adalah:</h4>
+<p><span class="math display">\[
+g_{k}\left( y_{k} \right) = \frac{n!}{(k - 1)!(n - k)!}{\lbrack F(y_{k})\rbrack}^{k - 1}f\left( y_{k} \right){\lbrack 1 - F(y_{k})\rbrack}^{n - k}
+\]</span></p>
+<p>Di mana <span class="math inline">\(a &lt; y_{k} &lt; b\)</span>. Alasan fungsi kepekatan peluang tersebut dipilih adalah:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-1">flowchart LR
+    subgraph less ["Y &lt; y"]
+    1--&gt;k-1
+    end
+    subgraph same ["Y = y"]
+    k
+    end
+    subgraph more ["Y &gt; y"]
+    k+1--&gt;n
+    end
+    k-1 --&gt; same
+    same --&gt; k+1
+</pre>
+<div id="mermaid-tooltip-1" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Dalam kata lain:</p>
+<ol type="1">
+<li>Observasi <span class="math inline">\(1\)</span> sampai <span class="math inline">\(k-1\)</span> - sejumlah <span class="math inline">\(k-1\)</span>, lebih kecil dari nilai <span class="math inline">\(y\)</span> yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y_1, \ldots, Y_{k-1}&lt;y)&amp;=P(Y_1&lt;y)\ldots P(Y_{k-1} &lt; y)\\
+&amp;=P(Y&lt;y)\ldots P(Y&lt;y)\\
+&amp;=\left[F(y_k)\right]^{k-1}
+\end{aligned}
+\]</span></p>
+<ol start="2" type="1">
+<li><p>Observasi ke-k sama dengan <span class="math inline">\(y_k\)</span>. Peristiwa <span class="math inline">\(P(Y=y_k)\)</span> dimodelkan dengan fungsi kepekatan peluang <span class="math inline">\(f(y_k)\)</span>.</p></li>
+<li><p>Observasi <span class="math inline">\(k+1\)</span> sampai <span class="math inline">\(n\)</span> - sejumlah <span class="math inline">\(n-k\)</span>, lebih besar dari nilai <span class="math inline">\(y\)</span> yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y_{k+1}, \ldots, Y_{n}&gt;y)&amp;=P(Y_{k+1}&gt;y)\ldots P(Y_n&gt; y)*\\
+&amp;=P(Y&gt;y)\ldots P(Y&gt;y)&amp;\\
+&amp;=\left[1-F(y_k)\right]^{n-k}
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(F(y_k)=P(Y&lt;y)\)</span>, maka <span class="math inline">\(1-F(y_k)=P(Y&gt;y)\)</span>.</p>
+<ol start="4" type="1">
+<li>Jika dimodelkan melalui kombinatorika, dari <span class="math inline">\(n\)</span> observasi dipilih <span class="math inline">\(k-1\)</span> observasi yang lebih kecil dari y dan <span class="math inline">\(n-k\)</span> observasi lebih besar dari y. Oleh karena itu peristiwa tersebut dimodelkan dengan permutasi berulang:</li>
+</ol>
+<p><span class="math display">\[
+\frac{n!}{(k-1)!(n-k)!}
+\]</span></p>
+<p>Anggap kita mengambil <span class="math inline">\(k-1\)</span> observasi dulu. Maka ada:</p>
+<p><span class="math display">\[
+{n\choose k-1}=\frac{n!}{(k-1)!(n-k+1)!}
+\]</span></p>
+<p>Lalu ambil <span class="math inline">\(n-k\)</span> observasi dari sisa <span class="math inline">\(n-k+1\)</span>. Maka:</p>
+<p><span class="math display">\[
+{n\choose k-1}{n-k+1 \choose n-k}=\frac{n!}{(k-1)!(n-k+1)!}\cdot \frac{(n-k+1)!}{(n-k)!1!}
+\]</span></p>
+<p>Sehingga jika dicoret hasil di atas didapatkan. Maka fungsi kepekatan marginal statistik tataan dibuktikan sebagai berikut.</p>
+<p>Maka fungsi kepekatan peluang marginal <span class="math inline">\(Y_1=\mathrm{min} (X_i)\)</span> dan <span class="math inline">\(Y_n=\mathrm{max}(X_i)\)</span> adalah (masukkan saja <span class="math inline">\(k=1\)</span> dan <span class="math inline">\(k=n\)</span>):</p>
+<p><span class="math display">\[
+\begin{aligned}
+g_{1}\left( y_{1} \right)&amp;=nf\left( y_{1} \right){\lbrack 1 - F(y_{1})\rbrack}^{n - 1},\ a &lt; y_{1} &lt; b \\
+g_{n}\left( y_{n} \right)&amp;=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \right)\ \ \ \ \ \ \ ,\ a &lt; y_{n} &lt; b
+\end{aligned}
+\]</span></p>
+</section>
+<section id="fungsi-kepekatan-peluang-bersama-dua-statistik-tataan-misalnya-y_i-y_j-adalah" class="level4">
+<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dua-statistik-tataan-misalnya-y_i-y_j-adalah">Fungsi kepekatan peluang bersama dua statistik tataan, misalnya <span class="math inline">\(Y_i &lt; Y_j\)</span> adalah</h4>
+<p><span class="math display">\[
+\begin{aligned}
+g_{ij}\left( y_{i},y_{j} \right) =&amp; \frac{n!}{(i - 1)!(j - i - 1)!(n - j)!}{\lbrack F(y_{i})\rbrack}^{i - 1}f\left( y_{i} \right){\lbrack F(y_{j}) - F(y_{i})\rbrack}^{j - i - 1}f\left( y_{j} \right)\\  
+&amp;{\lbrack 1 - F(y_{j})\rbrack}^{n - j}
+\end{aligned}
+\]</span></p>
+<p>Di mana <span class="math inline">\(a &lt; y_{i} &lt; y_{j} &lt; b\)</span>. Alasan fungsi kepekatan peluang tersebut dipilih adalah:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<p>
+</p><pre class="mermaid" data-tooltip-selector="#mermaid-tooltip-2">flowchart LR
+    subgraph less ["Y &lt; yi"]
+    1--&gt;i-1
+    end
+    subgraph same ["Y = yi"]
+    i
+    end
+    subgraph between ["yi &lt; Y &lt; yj"]
+    i+1 --&gt; j-1
+    end
+    subgraph sameagain ["Y = yj"]
+    j
+    end
+    subgraph more ["Y &gt; yj"]
+    j+1--&gt;n
+    end
+    i-1 --&gt; same
+    same --&gt; i+1
+    between --&gt; sameagain
+    j --&gt; j+1
+</pre>
+<div id="mermaid-tooltip-2" class="mermaidTooltip">
+
+</div>
+<p></p>
+</div>
+</div>
+</div>
+<p>Dalam kata lain:</p>
+<ol type="1">
+<li>Observasi <span class="math inline">\(1\)</span> sampai <span class="math inline">\(i-1\)</span> - sejumlah <span class="math inline">\(i-1\)</span>, lebih kecil dari nilai <span class="math inline">\(i\)</span> yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:</li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y_1, \ldots, X_{i-1}&lt;y)&amp;=P(X_1&lt;y)\ldots P(X_{i-1} &lt; y)\\
+&amp;=P(Y&lt;y)\ldots P(Y&lt;y)\\
+&amp;=\left[F(y_k)\right]^{i-1}
+\end{aligned}
+\]</span></p>
+<ol start="2" type="1">
+<li><p>Observasi ke-i sama dengan <span class="math inline">\(y_i\)</span>. Peristiwa <span class="math inline">\(P(Y=y_i)\)</span> dimodelkan dengan fungsi kepekatan peluang <span class="math inline">\(f(y_i)\)</span>.</p></li>
+<li><p>Terdapat <span class="math inline">\(j-i-1\)</span> observasi yang mencakup observasi <span class="math inline">\(i+1\)</span> sampai <span class="math inline">\(j-1\)</span>. Berarti, dapat dimodelkan <span class="math inline">\(P(y_i&lt;Y&lt;y_j)\)</span>. Atau, dapat dibuat <span class="math inline">\(P(Y&lt;y_j)-P(Y&lt;y_i)=F(Y_j)-F(y_i)\)</span>, karena kita mencari semua kejadian <span class="math inline">\(Y&lt;y_j\)</span>, lalu dikurangi dengan kejadian <span class="math inline">\(Y&lt;y_i\)</span>. Maka dari itu,</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P(y_i&lt;Y_{i+1},\ldots,Y_{j-1}&lt;y_j)&amp;=P(y_i&lt;Y_{i+1}&lt;y_j)\ldots P(y_i&lt;Y_{j-1}&lt;y_j)\\
+&amp;=\left[F(Y_j)-F(y_i)\right]^{j-i-1}
+\end{aligned}
+\]</span></p>
+<ol start="4" type="1">
+<li><p>Observasi ke-j sama dengan <span class="math inline">\(y_j\)</span>. Peristiwa <span class="math inline">\(P(Y=y_j)\)</span> dimodelkan dengan fungsi kepekatan peluang <span class="math inline">\(f(y_j)\)</span>.</p></li>
+<li><p>Observasi <span class="math inline">\(j+1\)</span> sampai <span class="math inline">\(n\)</span> - sejumlah <span class="math inline">\(n-j\)</span>, lebih besar dari nilai <span class="math inline">\(y_j\)</span> yang ingin diketahui peluangnya. Maka peluang dari kejadian ini dimodelkan:</p></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+P(Y_{j+1}, \ldots, Y_{n}&gt;y)&amp;=P(Y_{j+1}&gt;y)\ldots P(Y_n&gt; y)*\\
+&amp;=P(Y&gt;y)\ldots P(Y&gt;y)&amp;\\
+&amp;=\left[1-F(y_{j+1})\right]^{n-j}
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(F(y_{j+1})=P(Y&lt;y)\)</span>, maka <span class="math inline">\(1-F(y_{j+1})=P(Y&gt;y)\)</span>.</p>
+<ol start="6" type="1">
+<li>Jika dimodelkan melalui kombinatorika, dari <span class="math inline">\(n\)</span> observasi dipilih <span class="math inline">\(i-1\)</span> observasi yang lebih kecil dari <span class="math inline">\(y_i\)</span>, <span class="math inline">\(n-j\)</span> observasi lebih besar dari <span class="math inline">\(y_j\)</span>, dan <span class="math inline">\(j-i-1\)</span> observasi di antara <span class="math inline">\(y_i\)</span> dan <span class="math inline">\(y_j\)</span>. Oleh karena itu peristiwa tersebut dimodelkan dengan permutasi berulang:</li>
+</ol>
+<p><span class="math display">\[
+\frac{n!}{(i-1)!(j-i-1)!(n-j)!}
+\]</span></p>
+<p>Sehingga fungsi kepekatan marginal didapatkan.</p>
+</section>
+</section>
+<section id="metode-pendugaan-titik" class="level1">
+<h1>Metode Pendugaan Titik</h1>
+<p>Peubah acak <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> disebut sebagai contoh acak dari peubah acak Y jika peubah-peubah acak tersebut <strong>saling bebas</strong> dan masing-masing memiliki <strong>sebaran yang sama</strong> dengan sebaran Y.</p>
+<p>Misalkan n peubah acak <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> merupakan contoh acak dari Y yang memiliki sebaran <span class="math inline">\(f_{Y}(y;\theta)\)</span>. Fungsi dari contoh yang tidak bergantung pada parameter<span class="math inline">\(theta\)</span>, yaitu <span class="math inline">\(T = T (Y_1, Y_2, \ldots,Y_n)\)</span> disebut sebagai <strong>statistik</strong>.</p>
+<p>Statistik T digunakan untuk menduga parameter <span class="math inline">\(\theta\)</span>, sehingga</p>
+<p><span class="math display">\[
+T = T (Y_1, Y_2, \ldots, Y_n)
+\]</span></p>
+<p>Disebut sebagai <strong>penduga (<em>estimator</em>) titik</strong> bagi <span class="math inline">\(\theta\)</span> yang dilambangkan <span class="math inline">\(\widehat{\theta}\)</span>. Dan</p>
+<p><span class="math display">\[
+t = T (Y_1, Y_2, \ldots, Y_n)
+\]</span></p>
+<p>Disebut sebagai <strong>dugaan (<em>estimate</em>) titik</strong> bagi <span class="math inline">\(\theta\)</span>.</p>
+<p>Sebagai contoh:</p>
+<ol type="1">
+<li>Rata-rata contoh <span class="math inline">\(\left( \overline{Y} = \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)\)</span> adalah penduga titik bagi rata-rata populasi <span class="math inline">\((\mu)\)</span>. Dan dugaan titik bagi <span class="math inline">\(\mu\)</span> adalah <span class="math inline">\(\overline{y} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}\)</span>.</li>
+<li>Ragam contoh <span class="math inline">\(\left( s^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{{(Y}_{i} - \overline{Y})}^{2} \right)\)</span> adalah penduga titik bagi ragam populasi (<span class="math inline">\(\sigma^{2}\)</span>). Dan dugaan titik bagi <span class="math inline">\(\sigma^{2}\)</span> adalah <span class="math inline">\(\ s^{2} = \frac{1}{n - 1}\sum_{i = 1}^{n}{{(y}_{i} - \overline{y})}^{2}\)</span>.</li>
+<li>Simpangan baku contoh (s) adalah penduga titik bagi simpangan baku populasi (<span class="math inline">\(\sigma\)</span>).</li>
+</ol>
+<p>Terdapat beberapa metode untuk melakukan pendugaan titik, diantaranya:</p>
+<ol type="1">
+<li>Metode Momen</li>
+<li>Metode Kemungkinan Maksimum (<em>Maximum Likelihood</em>)</li>
+<li>Metode Bayes</li>
+<li>Metode Kuadrat Terkecil</li>
+</ol>
+<p>Keempat metode tidak dijamin menghasilkan penduga yang bersifat <em>Uniformly Minimum Variance Unbiased</em> (UMVU) sehingga perlu dievaluasi berdasarkan sifat-sifat UMVU.</p>
+<p>Berikut adalah penjelasan mengenai metode untuk melakukan pendugaan titik.</p>
+<section id="metode-momen" class="level2">
+<h2 class="anchored" data-anchor-id="metode-momen">Metode Momen</h2>
+<p>Jika <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> merupakan contoh acak berukuran n dari suatu populasi Y dengan fungsi kepekatan atau fungsi massa peluang <span class="math inline">\(f_{Y}(y;\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p})\)</span>, dimana <span class="math inline">\(\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}\)</span> parameter yang tidak diketahui (yang akan diduga) yang akan diperoleh dengan menyelesaikan persamaan</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mu_{1} &amp;= m_{1}\\
+\mu_{2} &amp;= m_{2}\\
+&amp;\vdots\\
+\mu_{p} &amp;= m_{p}
+\end{aligned}
+\]</span></p>
+<p>Di mana <span class="math inline">\(k\  = \ 1,\ 2,\ \ldots,\ p\)</span> danL</p>
+<ol type="1">
+<li>Momen ke-k dari populasi: <span class="math inline">\(\mu_{k} = E\left( Y^{k} \right)\)</span></li>
+<li>Momen ke-k dari contoh: <span class="math inline">\(m_{k} = \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{k}\)</span></li>
+</ol>
+<section id="langkah-metode-momen" class="level3">
+<h3 class="anchored" data-anchor-id="langkah-metode-momen">Langkah metode momen</h3>
+<p>Langkah metode momen adalah sebagai berikut:</p>
+<p>Misalkan terdapat p parameter <span class="math inline">\(\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}\)</span> yang akan diduga.</p>
+<ol type="1">
+<li>Tentukan p momen dari populasi <span class="math inline">\(\mu_{k},\quad k = 1, 2, \ldots, p\)</span>. Setiap momen dari populasi mengandung satu atau lebih parameter <span class="math inline">\(\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p}\)</span>.</li>
+<li>Tentukan p momen dari contoh <span class="math inline">\(m_{k}, q\quad k = 1, 2, \ldots, p\)</span>. Banyaknya momen dari contoh harus sama dengan banyaknya parameter yang akan diduga.</li>
+<li>Dari sistem persamaan <span class="math inline">\(\mu_{k} = m_{k}, \quad k = 1, 2, \ldots, p\)</span> selesaikan sistem persamaan, untuk parameter <span class="math inline">\(\theta = (\theta_{1},\ \theta_{2},\ \ldots,\ \theta_{p})\)</span> akan menjadi penduga momen <span class="math inline">\({\widehat{\theta}}_{m}\)</span>.</li>
+</ol>
 
 
+</section>
 </section>
 </section>
 
