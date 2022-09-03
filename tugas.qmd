@@ -2,4 +2,4 @@
 title: "Tugas"
 ---
 
-Tugas-tugas Inferensia Statistika
+Tugas-tugas Inferensia Statistika.
