@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Praktikum Inferensia Statistika - Bab 1, Tugas</title>
+<title>Praktikum Inferensia Statistika - Bab 4</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -77,10 +77,10 @@ ul.task-list{list-style: none;}
     <a class="nav-link" href="./index.html">Home</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./modul.html">Modul</a>
+    <a class="nav-link active" href="./modul.html" aria-current="page">Modul</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./tugas.html" aria-current="page">Tugas</a>
+    <a class="nav-link" href="./tugas.html">Tugas</a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./pembahasan.html">Pembahasan</a>
@@ -92,7 +92,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bab 1, Tugas</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 4</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -107,12 +107,27 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./tugas.html" class="sidebar-item-text sidebar-link">Tugas</a>
+  <a href="./modul.html" class="sidebar-item-text sidebar-link">Modul</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-Tugas.html" class="sidebar-item-text sidebar-link active">Bab 1, Tugas</a>
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link">Bab 2</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Bab 3</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-PendugaBayes.html" class="sidebar-item-text sidebar-link active">Bab 4</a>
   </div>
 </li>
     </ul>
@@ -124,11 +139,12 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#konvergensi-dalam-peluang" id="toc-konvergensi-dalam-peluang" class="nav-link active" data-scroll-target="#konvergensi-dalam-peluang">Konvergensi dalam peluang</a></li>
-  <li><a href="#konvergensi-dalam-distribusi" id="toc-konvergensi-dalam-distribusi" class="nav-link" data-scroll-target="#konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</a>
+  <li><a href="#definisi" id="toc-definisi" class="nav-link active" data-scroll-target="#definisi">Definisi</a>
   <ul class="collapse">
-  <li><a href="#diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" id="toc-diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" class="nav-link" data-scroll-target="#diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1">Diberikan fungsi kumulatif <span class="math inline">\(X_n\)</span> sebagai berikut. Tunjukkan <span class="math inline">\(X_{n}\)</span> konvergen dalam distribusi ke <span class="math inline">\(\mathrm{Exponential}(1)\)</span>!</a></li>
-  <li><a href="#let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" id="toc-let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" class="nav-link" data-scroll-target="#let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n">Let <span class="math inline">\(Y_1\)</span> denote the minimum of a random sample of size n from a distribution that has pdf <span class="math inline">\(f(x) = e^{-(x-\theta)}, \theta&lt;x&lt; \infty,\)</span> zero elsewhere. Let <span class="math inline">\(Z_n = n(Y_{1} - \theta)\)</span>. Investigate the limiting distribution of <span class="math inline">\(Z_n\)</span>!</a></li>
+  <li><a href="#fungsi-kepekatanmassa-peluang-bersama-antara-y_1-y_2-ldots-y_n-dan-theta" id="toc-fungsi-kepekatanmassa-peluang-bersama-antara-y_1-y_2-ldots-y_n-dan-theta" class="nav-link" data-scroll-target="#fungsi-kepekatanmassa-peluang-bersama-antara-y_1-y_2-ldots-y_n-dan-theta">Fungsi kepekatan/massa peluang bersama antara <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> dan <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#fungsi-kepekatanmassa-peluang-marginal-bagi-y_1-y_2-ldots-y_n" id="toc-fungsi-kepekatanmassa-peluang-marginal-bagi-y_1-y_2-ldots-y_n" class="nav-link" data-scroll-target="#fungsi-kepekatanmassa-peluang-marginal-bagi-y_1-y_2-ldots-y_n">Fungsi kepekatan/massa peluang marginal bagi <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span></a></li>
+  <li><a href="#sebaran-posterior-bagi-theta" id="toc-sebaran-posterior-bagi-theta" class="nav-link" data-scroll-target="#sebaran-posterior-bagi-theta">Sebaran posterior bagi <span class="math inline">\(\theta\)</span></a></li>
+  <li><a href="#penduga-bayes-bagi-parameter-theta" id="toc-penduga-bayes-bagi-parameter-theta" class="nav-link" data-scroll-target="#penduga-bayes-bagi-parameter-theta">Penduga Bayes bagi parameter <span class="math inline">\(\theta\)</span></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -138,7 +154,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bab 1, Tugas</h1>
+<h1 class="title d-none d-lg-block">Bab 4</h1>
 </div>
 
 
@@ -152,33 +168,58 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="konvergensi-dalam-peluang" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-peluang">Konvergensi dalam peluang</h2>
-<p>Sebuah peubah acak <span class="math inline">\(X_n\)</span> menyebar <span class="math inline">\(b(n,p)\)</span>. Buktikan:</p>
-<ol type="1">
-<li><span class="math inline">\(Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(p\)</span>.</li>
-<li><span class="math inline">\(1-Y_n/n\)</span> konvergen dalam peluang ke <span class="math inline">\(1-p\)</span>.</li>
-<li><span class="math inline">\(Y_n/n(1-Y_n/n)\)</span> konvergen dalam peluang ke <span class="math inline">\(p(1-p)\)</span></li>
-</ol>
-<p>Hint: <span class="math inline">\(X_n Y_n\ \xrightarrow{p}\ XY.\)</span></p>
-</section>
-<section id="konvergensi-dalam-distribusi" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</h2>
-<section id="diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1" class="level3">
-<h3 class="anchored" data-anchor-id="diberikan-fungsi-kumulatif-x_n-sebagai-berikut.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-mathrmexponential1">Diberikan fungsi kumulatif <span class="math inline">\(X_n\)</span> sebagai berikut. Tunjukkan <span class="math inline">\(X_{n}\)</span> konvergen dalam distribusi ke <span class="math inline">\(\mathrm{Exponential}(1)\)</span>!</h3>
+<p>Terkadang, ada informasi tertentu mengenai nilai parameter yang belum diketahui. Informasi ini dapat diperhitungkan dengan metode Bayes. Pada metode Bayes, parameter yang tidak diketahui (<span class="math inline">\(\theta\)</span>) dianggap sebagai <strong>peubah acak</strong> dengan sebaran peluang tertentu yang dikenal sebagai <strong>sebaran prior</strong> bagi <span class="math inline">\(\theta\)</span> yang dinotasikan dengan <span class="math inline">\(\pi(\theta)\)</span>.</p>
+<section id="definisi" class="level2">
+<h2 class="anchored" data-anchor-id="definisi">Definisi</h2>
+<p>Misalkan <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> adalah contoh acak dengan sebaran yang memiliki fungsi kepekatan peluang <span class="math inline">\(f_{\underline{Y}}(\underline{y} \ {\Large |} \ \theta)\)</span>, di mana <span class="math inline">\(\theta\)</span> adalah parameter yang tidak diketahui. Fungsi kepekatan peluang bersyarat dari peubah acak jika diberikan contoh <span class="math inline">\(y_1, y_2, \ldots, y_n\)</span> disebut <strong>sebaran posterior</strong>. Bagi <span class="math inline">\(\theta\)</span>, fungsi kepekatan peluang sebaran posterior dinotasikan dengan <span class="math inline">\(\pi(\theta \| \underline{y}\)</span>). Penduga parameter ditemukan dari sebaran posterior.</p>
+<section id="fungsi-kepekatanmassa-peluang-bersama-antara-y_1-y_2-ldots-y_n-dan-theta" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-kepekatanmassa-peluang-bersama-antara-y_1-y_2-ldots-y_n-dan-theta">Fungsi kepekatan/massa peluang bersama antara <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> dan <span class="math inline">\(\theta\)</span></h3>
+<p>Untuk mencari fungsi kepekatan peluang bersama, ingat kembali definisi peluang bersama:</p>
 <p><span class="math display">\[
-    \begin{equation}
-    F_{X_n}(x)=
-    \begin{cases}
-    1-\left(1-\frac{1}{n}\right)^{nx} &amp; \quad x &gt; 0\\
-    &amp; \quad \\
-    0 &amp; \quad \text{lainnya}
-    \end{cases}
-    \end{equation}
+P(A,B)=P(A \ | \ B)\cdot P(B)
+\]</span></p>
+<p>Langkah pertama yang intuitif adalah mencari fungsi kepekatan/massa peluang bersama <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span>:</p>
+<p><span class="math display">\[
+f_{\underline{Y}}(\underline{y}|\theta) = \prod_{i = 1}^{n}{f_{Y}\left( y_{i} \middle| \theta \right)}
+\]</span></p>
+<p>Tentu, fungsi kepekatan peluang bersama tersebut masih menghitung peluang bersyarat <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> dengan <span class="math inline">\(\theta\)</span>. Peluang bersama ditemukan dengan mengalikan peluang bersyarat dengan fungsi kepekatan peluang <span class="math inline">\(\theta\)</span> (dari sebaran prior).</p>
+<p><span class="math display">\[
+f(\underline{y},\theta) = f_{\underline{Y}}(\underline{y}|\theta)\pi(\theta)
 \]</span></p>
 </section>
-<section id="let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n" class="level3">
-<h3 class="anchored" data-anchor-id="let-y_1-denote-the-minimum-of-a-random-sample-of-size-n-from-a-distribution-that-has-pdf-fx-e-x-theta-thetax-infty-zero-elsewhere.-let-z_n-ny_1---theta.-investigate-the-limiting-distribution-of-z_n">Let <span class="math inline">\(Y_1\)</span> denote the minimum of a random sample of size n from a distribution that has pdf <span class="math inline">\(f(x) = e^{-(x-\theta)}, \theta&lt;x&lt; \infty,\)</span> zero elsewhere. Let <span class="math inline">\(Z_n = n(Y_{1} - \theta)\)</span>. Investigate the limiting distribution of <span class="math inline">\(Z_n\)</span>!</h3>
+<section id="fungsi-kepekatanmassa-peluang-marginal-bagi-y_1-y_2-ldots-y_n" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-kepekatanmassa-peluang-marginal-bagi-y_1-y_2-ldots-y_n">Fungsi kepekatan/massa peluang marginal bagi <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span></h3>
+<p>Fungsi kepekatan/massa peluang marginal untuk kasus multivariat ditemukan dengan mengintegralkan/menambahkan fungsi kepekatan/massa peluang bersama di peubah-peubah yang tidak dimasukkan dalam fungsi marginal. Misal, jika dicari fungsi kepekatan/massa peluang marginal <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span>, integral dievaluasi di seluruh peubah yang bukan <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> (dalam kasus ini <span class="math inline">\(\theta\)</span>).</p>
+<p><span class="math display">\[
+f(\underline{y}) = \int_{\forall\theta}^{}{f(\underline{y},\theta)}d\theta
+\]</span></p>
+</section>
+<section id="sebaran-posterior-bagi-theta" class="level3">
+<h3 class="anchored" data-anchor-id="sebaran-posterior-bagi-theta">Sebaran posterior bagi <span class="math inline">\(\theta\)</span></h3>
+<p>Sebaran posterior tidak lain adalah suatu peluang bersyarat:</p>
+<p><span class="math display">\[
+P(A\ | \ B)=\frac{P(A,B)}{P(B)}
+\]</span></p>
+<p>Sehingga:</p>
+<p><span class="math display">\[
+\pi(\theta|\underline{y}) = \frac{f(\underline{y},\theta)}{f(\underline{y})}
+\]</span></p>
+</section>
+<section id="penduga-bayes-bagi-parameter-theta" class="level3">
+<h3 class="anchored" data-anchor-id="penduga-bayes-bagi-parameter-theta">Penduga Bayes bagi parameter <span class="math inline">\(\theta\)</span></h3>
+<p>Penduga Bayes bagi parameter θ pada selang tertentu sehubungan dengan <span class="math inline">\(L(θ, d) = (θ - d)^2\)</span> yang diharapkan minimum, maka:</p>
+<p><span class="math display">\[
+{\hat{\theta}}_{B} = E(\theta|\underline{y}) = \int_{\forall\theta}^{}{\theta\pi(\theta|\underline{y})}d\theta
+\]</span></p>
+<p>Oleh karena itu, langkah metode Bayes adalah sebagai berikut:</p>
+<ol type="1">
+<li>Tentukan fkp/fmp bersama antara <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> dengan syarat <span class="math inline">\(\theta\)</span>, <span class="math inline">\(f_{\underline{Y}}(\underline{y} \ | \ \theta)\)</span>.</li>
+<li>Tentukan fkp/fmp dari sebaran prior bagi <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\pi(\theta)\)</span>.</li>
+<li>Tentukan fkp/fmp bersama antara <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> dan <span class="math inline">\(\theta\)</span>, <span class="math inline">\(f(\underline{y},\theta)\)</span>.</li>
+<li>Tentukan fkp/fmp marginal bagi <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span>, <span class="math inline">\(f(\underline{y})\)</span>.</li>
+<li>Tentukan sebaran posterior bagi <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\pi(\theta|\underline{y})\)</span>.</li>
+<li>Dari rumus <span class="math inline">\({\widehat{\theta}}_{B}\)</span>, akan diperoleh penduga Bayes bagi parameter <span class="math inline">\(\theta\)</span>.</li>
+</ol>
 
 
 </section>

@@ -1,5 +1,5 @@
 ---
-title: "Bab 1: Kekonvergenan, LLN, CLT"
+title: "Bab 1"
 format:
   html
 author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Bab 2, Latihan Soal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./modul.html">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pembahasan.html" aria-current="page">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 2, Latihan Soal</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pembahasan.html" class="sidebar-item-text sidebar-link">Pembahasan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 1, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 1, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 2, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Tugas Bab 2 - Dasar Pendugaan Parameter dan Metode Momen</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-LatihanSoal.html" class="sidebar-item-text sidebar-link">Contoh Soal Bab 3 - Penduga Kemungkinan Maksimum</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-LatihanSoal.html" class="sidebar-item-text sidebar-link">Untitled</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dasar-dasar-pendugaan-parameter" id="toc-dasar-dasar-pendugaan-parameter" class="nav-link active" data-scroll-target="#dasar-dasar-pendugaan-parameter">Dasar-Dasar Pendugaan Parameter</a>
+  <ul class="collapse">
+  <li><a href="#y_1-y_2-y_3-adalah-contoh-acak-yang-menyebar-eksponensial-dengan-fungsi-kepekatan-peluang-yang-disebutkan-di-bawah" id="toc-y_1-y_2-y_3-adalah-contoh-acak-yang-menyebar-eksponensial-dengan-fungsi-kepekatan-peluang-yang-disebutkan-di-bawah" class="nav-link" data-scroll-target="#y_1-y_2-y_3-adalah-contoh-acak-yang-menyebar-eksponensial-dengan-fungsi-kepekatan-peluang-yang-disebutkan-di-bawah"><span class="math inline">\(Y_1, Y_2, Y_3\)</span> adalah contoh acak yang menyebar eksponensial dengan fungsi kepekatan peluang yang disebutkan di bawah:</a></li>
+  <li><a href="#jika-ysimmathrmbinomialnp-maka-hatp_1yn-adalah-penduga-tak-bias-bagi-p.-penduga-lain-bagi-p-adalah-hatp_2y1n2." id="toc-jika-ysimmathrmbinomialnp-maka-hatp_1yn-adalah-penduga-tak-bias-bagi-p.-penduga-lain-bagi-p-adalah-hatp_2y1n2." class="nav-link" data-scroll-target="#jika-ysimmathrmbinomialnp-maka-hatp_1yn-adalah-penduga-tak-bias-bagi-p.-penduga-lain-bagi-p-adalah-hatp_2y1n2.">Jika <span class="math inline">\(Y\sim\mathrm{Binomial}(n,p)\)</span>, maka <span class="math inline">\(\hat{p}_1=Y/n\)</span> adalah penduga tak bias bagi <span class="math inline">\(p\)</span>. Penduga lain bagi <span class="math inline">\(p\)</span> adalah <span class="math inline">\(\hat{p}_2=(Y+1)/(n+2)\)</span>.</a></li>
+  </ul></li>
+  <li><a href="#metode-momen" id="toc-metode-momen" class="nav-link" data-scroll-target="#metode-momen">Metode Momen</a>
+  <ul class="collapse">
+  <li><a href="#x-adalah-peubah-acak-dengan-fungsi-kepekatan-peluang-fx-thetafrac2theta2theta-x-quad-0xtheta-theta-in-omega0theta" id="toc-x-adalah-peubah-acak-dengan-fungsi-kepekatan-peluang-fx-thetafrac2theta2theta-x-quad-0xtheta-theta-in-omega0theta" class="nav-link" data-scroll-target="#x-adalah-peubah-acak-dengan-fungsi-kepekatan-peluang-fx-thetafrac2theta2theta-x-quad-0xtheta-theta-in-omega0theta"><span class="math inline">\(X\)</span> adalah peubah acak dengan fungsi kepekatan peluang <span class="math inline">\(f(x\ | \ \theta)=\frac{2}{\theta^2}(\theta-x), \quad 0&lt;x&lt;\theta, \ \theta \in \Omega=(0,\theta)\)</span></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 2, Latihan Soal</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="dasar-dasar-pendugaan-parameter" class="level2">
+<h2 class="anchored" data-anchor-id="dasar-dasar-pendugaan-parameter">Dasar-Dasar Pendugaan Parameter</h2>
+<section id="y_1-y_2-y_3-adalah-contoh-acak-yang-menyebar-eksponensial-dengan-fungsi-kepekatan-peluang-yang-disebutkan-di-bawah" class="level3">
+<h3 class="anchored" data-anchor-id="y_1-y_2-y_3-adalah-contoh-acak-yang-menyebar-eksponensial-dengan-fungsi-kepekatan-peluang-yang-disebutkan-di-bawah"><span class="math inline">\(Y_1, Y_2, Y_3\)</span> adalah contoh acak yang menyebar eksponensial dengan fungsi kepekatan peluang yang disebutkan di bawah:</h3>
+<p><span class="math display">\[
+f(y)=
+\begin{cases}
+\frac{1}{\theta}e^{-y/\theta},&amp; y&gt;0\\
+0, &amp; \mathrm{lainnya}
+\end{cases}
+\]</span></p>
+<p>Kaji penduga <span class="math inline">\(\theta\)</span> tersebut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\hat{\theta}_1&amp;=Y_1 &amp;\hat{\theta}_2&amp;=\frac{Y_1+Y_2}{2}\\
+\hat{\theta}_3&amp;=\frac{Y_1+2Y_2}{3} &amp;\hat{\theta}_4&amp;=\mathrm{min}(Y_1,Y_2,Y_3)\\
+\hat{\theta}_3&amp;= Y_3
+\end{aligned}
+\]</span></p>
+<ol type="1">
+<li>Penduga mana yang tak bias?</li>
+<li>Dari semua penduga tak bias, mana yang memiliki ragam terkecil?</li>
+</ol>
+<p>Karena <span class="math inline">\(Y_1, Y_2, Y_3\sim \mathrm{Eksponensial}\)</span> maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E (Y)&amp;= \theta  &amp;V(Y)&amp;=\theta^{2}
+\end{aligned}
+\]</span></p>
+<section id="bagian-a-bias" class="level4">
+<h4 class="anchored" data-anchor-id="bagian-a-bias">Bagian A: bias</h4>
+<p><span class="math display">\[
+\begin{aligned}
+E ({\widehat{\theta}}_{1})&amp;=E (Y_1)=\theta&amp; \text{(tidak bias)}\\
+E ({\widehat{\theta}}_{2})&amp;=E
+\left( \frac{Y_{1} + Y_{2}}{2} \right) = \frac{1}{2}\ E\left( Y_{1} + Y_{2} \right) = \theta &amp; \text{(tidak bias)}\\
+E ({\widehat{\theta}}_{3})&amp;=E
+\left( \frac{Y_{1} + 2Y_{2}}{3} \right)= \frac{1}{3}\ E\left( Y_{1} + 2Y_{2} \right)=\theta  &amp;\text{(tidak bias)}\\
+E ({\widehat{\theta}}_{5})&amp;= E\left( \overline{Y} \right) = E\left( \frac{1}{3}\sum_{i = 1}^{3}Y_{i} \right) &amp;\\
+&amp;= \frac{1}{3}.3.E\left( Y_{i} \right) = \theta &amp;\text{(tidak bias)}
+\end{aligned}
+\]</span></p>
+<p>Untuk <span class="math inline">\(\hat{\theta}_4\)</span>, penghitungan nilai harapan agak lebih kompleks. Perhatikan fungsi kepekatan peluang marginal statistik tataan minimum:</p>
+<p><span class="math display">\[
+g_{1}\left[ y_{(1)} \right]=nf\left[ y_{(1)} \right]\left( 1 - F\left[y_{(1)}\right]\right)^{n - 1},\ a &lt; y_{(1)} &lt; b \\
+\]</span></p>
+<p>Maka tentukan fungsi kumulatif dari <span class="math inline">\(y\)</span> dan dari situ, ambil fungsi kepekatan peluang marginal tatistik tataan minimum:</p>
+<p><span class="math display">\[
+\begin{aligned}
+F\left[y_{(1)} \right] &amp;= \int_{0}^{y_{(1)}}{f(y)\ dy} = \int_{0}^{y_{(1)}}{\frac{1}{\theta}e^{- \frac{y}{\theta}}\ dy} = \frac{1}{\theta}\int_{0}^{y_{(1)}}{e^{- \frac{y}{\theta}}\ dy}\\
+&amp;= \frac{1}{\theta}\left( - \theta e^{- \frac{y}{\theta}} \right){\huge|}^{y_{(1)}}_0= 1 - e^{- \frac{y_{(1)}}{\theta}},\ \ y_{(1)} &gt; 0\\
+g_{1}\left[ y_{(1)} \right]&amp;=nf\left[ y_{(1)} \right]\left( 1 - F\left[y_{(1)}\right]\right)^{n - 1} = 3\left( \frac{1}{\theta}e^{- \frac{y_{(1)}}{\theta}} \right)\left\lbrack 1 - \left( 1 - e^{- \frac{y_{(1)}}{\theta}} \right) \right\rbrack^{3 - 1}\\
+&amp;= \frac{3}{\theta}e^{- \frac{y_{(1)}}{\theta}}.e^{- \frac{{2y}_{(1)}}{\theta}} = \frac{3}{\theta}e^{- \frac{3y_{(1)}}{\theta}},\ \ y_{(1)} &gt; 0
+\end{aligned}
+\]</span></p>
+<p>Lalu cari nilai harapannya:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[ y_{(1)} \right]&amp;= \int_{0}^{\infty}{{y_{(1)}g}_{(1)}\left[ y_{(1)} \right]\ dy_{(1)}} = \int_{0}^{\infty}{y_{(1)}\ \frac{3}{\theta}e^{- \frac{3y_{(1)}}{\theta}}dy_{(1)}}\\
+&amp;= \frac{3}{\theta}\int_{0}^{\infty}{y_{(1)}\ e^{- \frac{3y_{(1)}}{\theta}}dy_{(1)}}
+\end{aligned}
+\]</span></p>
+<p>Untuk menyelesaikan integral tersebut, dapat dilakukan integrasi parsial:</p>
+<p><span class="math display">\[
+\begin{aligned}
+u&amp;= y_{(1)} &amp; dv&amp;= \exp\left[\frac{3y_{(1)}}{\theta}\right]\\
+du&amp;=dy_{(1)}&amp; v&amp;=\int \exp\left[-\frac{3y_{(1)}}{\theta}\right]dy_{(1)}\\
+&amp; &amp; &amp;=-\frac{\theta}{3}\exp\left[-\frac{3y_{(1)}}{\theta}\right]
+\end{aligned}
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[ y_{(1)} \right]&amp;= \frac{3}{\theta}\left[uv {\huge|}^{\infty}_{0}- \int_{0}^{\infty}{v\ du} \right]\\
+&amp;=\frac{3}{\theta}\left[\left\{y_{(1)} - \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}} \right\} {\huge|}^{\infty}_0  - \int_{0}^{\infty}\left\{- \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}}\ dy_{(1)}\right\} \right]\\
+&amp;= \frac{3}{\theta}\left[\left\{0 - 0\right\} + \frac{\theta}{3}\int_{0}^{\infty}{e^{- \frac{3y_{(1)}}{\theta}}\ dy_{(1)}} \right]\\
+&amp; = \frac{3}{\theta}\left[ \frac{\theta}{3}\left( - \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}} \right){\huge |}^{\infty}_{0}\right]\\
+&amp; =  \frac{\theta}{3} \neq \theta\ \quad \text{(bias)}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="bagian-b-ragam" class="level4">
+<h4 class="anchored" data-anchor-id="bagian-b-ragam">Bagian B: ragam</h4>
+<p>Karena <span class="math inline">\(\hat{\theta}_4\)</span> bias, ragamnya tak perlu dicari.</p>
+<p><span class="math display">\[
+\begin{aligned}
+V\left({\widehat{\theta}}_{1}\right)&amp;= V\left( Y_{1} \right)\\
+&amp;= \theta^{2}\\
+V\left({\widehat{\theta}}_{2}\right)&amp;=V\left( \frac{Y_{1} + Y_{2}}{2} \right) = \frac{1}{4}\ V\left( Y_{1} + Y_{2} \right) = \frac{1}{4}\cdot{2\theta}^{2}\\
+&amp;= \frac{1}{2}\theta^2\\
+V\left({\widehat{\theta}}_{3}\right)&amp;=V\left(\frac{Y_1+2Y_2}{3}\right)=\frac{1}{9}\left[V\left(Y_1\right) +4V\left(Y_2\right)\right]\\
+&amp;=\frac{5}{9}\theta^2\\
+V\left({\widehat{\theta}}_{5}\right)&amp;= V\left( \overline{Y} \right) = V\left( \frac{1}{3}\sum_{i = 1}^{3}Y_{i} \right)=\frac{1}{9}V\left(Y_1+Y_2+Y_3\right)\\
+&amp; =\frac{1}{9}\cdot 3V\left( Y_{i} \right) = \frac{1}{3}\theta^2
+\end{aligned}
+\]</span></p>
+<p>Maka, penduga tak bias dengan ragam terkecil adalah <span class="math inline">\(\hat{\theta}_5\)</span>.</p>
+</section>
+</section>
+<section id="jika-ysimmathrmbinomialnp-maka-hatp_1yn-adalah-penduga-tak-bias-bagi-p.-penduga-lain-bagi-p-adalah-hatp_2y1n2." class="level3">
+<h3 class="anchored" data-anchor-id="jika-ysimmathrmbinomialnp-maka-hatp_1yn-adalah-penduga-tak-bias-bagi-p.-penduga-lain-bagi-p-adalah-hatp_2y1n2.">Jika <span class="math inline">\(Y\sim\mathrm{Binomial}(n,p)\)</span>, maka <span class="math inline">\(\hat{p}_1=Y/n\)</span> adalah penduga tak bias bagi <span class="math inline">\(p\)</span>. Penduga lain bagi <span class="math inline">\(p\)</span> adalah <span class="math inline">\(\hat{p}_2=(Y+1)/(n+2)\)</span>.</h3>
+<ol type="1">
+<li>Tunjukkan bias dari <span class="math inline">\(\hat{p}_2\)</span>.</li>
+<li>Tunjukkan MSE (KTG) dari <span class="math inline">\(\hat{p}_1\)</span> dan <span class="math inline">\(\hat{p}_2\)</span>.</li>
+<li>Di nilai p apa saja <span class="math inline">\(MSE(\hat{p}_1)&lt;MSE(\hat{p}_2)\)</span>?</li>
+</ol>
+<p>Karena <span class="math inline">\(Y\ \sim\ \mathrm{Binomial}(n,\ p)\ \)</span>, maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(Y)&amp;= np &amp; V(Y)&amp;= np(1 - p)\\
+E\left( Y^{2} \right)&amp;=V(Y)+\left[E(Y)\right]^2\\
+&amp;=np(1-p)+n^2p^2=np(1-p+np)
+\end{aligned}
+\]</span></p>
+<section id="bias-dari-hatp_2" class="level4">
+<h4 class="anchored" data-anchor-id="bias-dari-hatp_2">Bias dari <span class="math inline">\(\hat{p}_2\)</span></h4>
+<p>Pertama, cari nilai harapan dari <span class="math inline">\(\hat{p}_2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\widehat{p}}_{2} \right)&amp; = \ E\left( \frac{Y + 1}{n + 2} \right) = \frac{1}{n + 2}\ E(Y + 1) = \frac{np + 1}{n + 2} &amp; \text{(bias)}\\
+\end{aligned}
+\]</span></p>
+<p>Lalu, bias tidak lain adalah perbedaan dari nilai harapan penduga dengan parameter yang hendak diduga. Maka hitung bias:</p>
+<p><span class="math display">\[
+\begin{aligned}
+B\left( {\widehat{p}}_{2} \right) &amp;= E\ \left( {\widehat{p}}_{2} \right) - p = \frac{np + 1}{n + 2} - p \\
+&amp;= \frac{np+1-np-2p}{n + 2}=\frac{1-2p}{n+2}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="mse-dari-hatp_1-dan-hatp_2" class="level4">
+<h4 class="anchored" data-anchor-id="mse-dari-hatp_1-dan-hatp_2">MSE dari <span class="math inline">\(\hat{p}_1\)</span> dan <span class="math inline">\(\hat{p}_2\)</span></h4>
+<p>Kuadrat tengah galat tidak lain adalah ragam ditambah bias kuadrat. Oleh karena itu, cari bias dan ragam <span class="math inline">\(\hat{p}_1\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\widehat{p}}_{1} \right)&amp;= E\left( \frac{Y}{n} \right) = \frac{1}{n}E(Y) = \frac{1}{n}(np) = p &amp; \text{(tidak bias)}\\
+E\ \left( {\widehat{p}}_{1}^{2} \right)&amp;= E\left( \frac{Y^{2}}{n^{2}} \right) = \frac{1}{n^{2}}E\left( Y^{2} \right) = \frac{1}{n^{2}}\left[ np(1 + np - p) \right] \\
+&amp;= \frac{p + np^{2} - p^{2}}{n}
+\end{aligned}
+\]</span></p>
+<p>Oleh karena <span class="math inline">\(\hat{p}_1\)</span> tak bias, MSE hanya memiliki komponen ragam:</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{1} \right)&amp;= \ V\left( {\widehat{p}}_{1} \right)=E\left( {{\widehat{p}}_{1}}^{2} \right) - \left\lbrack E\ \left( {\widehat{p}}_{1} \right) \right\rbrack^{2} \\
+&amp;=\frac{p + np^{2} - p^{2}}{n} - p^{2} = \frac{p(1 - p)}{n}
+\end{aligned}
+\]</span></p>
+<p>Bias dari <span class="math inline">\(\hat{p}_2\)</span> sudah ditemukan, cari ragamnya:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\ \left({{\widehat{p}}_{2}}^{2} \right)&amp;= E\left[ \frac{(Y + 1)^{2}}{{(n + 2)}^{2}} \right] = \frac{1}{{(n + 2)}^{2}}\ E\left( Y^{2} + 2Y + 1 \right)\\  
+&amp;=\frac{1}{(n+2)^2}(np-np^2+n^2p^2+2np+1)\\
+&amp;= \frac{n^{2}p^{2} - np^{2} + 3np + 1}{{(n + 2)}^{2}}\\
+V\left( {\widehat{p}}_{2} \right)&amp;= E\ \left( {{\widehat{p}}_{2}}^{2} \right) - \left\lbrack E\ \left( {\widehat{p}}_{2} \right) \right\rbrack^{2} \\
+&amp;= \frac{n^{2}p^{2} - np^{2} + 3np + 1}{(n + 2)^{2}} - \left( \frac{np + 1}{n + 2} \right)^{2}\\
+&amp;=\frac{n^{2}p^{2} - np^{2} + 3np + 1}{(n + 2)^{2}} - \frac{n^2p^2 + 2np+ 1}{(n + 2)^2}\\
+&amp;=\frac{np-np^2}{(n+2)^2}=  \frac{np(1 - p)}{(n + 2)^{2}}
+\end{aligned}
+\]</span></p>
+<p>Karena ragam dan bias sudah ditemukan, cari MSE:</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{2} \right)&amp;= \ V\left( {\widehat{p}}_{2} \right) + \left\lbrack B\left( {\widehat{p}}_{2} \right) \right\rbrack^{2} = \frac{np(1 - p)}{(n + 2)^{2}} + \left( \frac{1 - 2p}{n + 2} \right)^{2}\\
+&amp;=\frac{np(1 - p) + {(1 - 2p)}^{2}}{(n + 2)^{2}}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="kapan-msehatp_1msehatp_2" class="level4">
+<h4 class="anchored" data-anchor-id="kapan-msehatp_1msehatp_2">Kapan <span class="math inline">\(MSE(\hat{p}_1)&lt;MSE(\hat{p}_2)\)</span>?</h4>
+<p>Kondisi tersebut sama dengan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{2} \right)&amp;&lt; MSE\ \left( {\widehat{p}}_{1} \right)\\
+\frac{np(1 - p) + (1 - 2p)^{2}}{(n + 2)^{2}}&amp; &lt; \frac{p(1 - p)}{n}\\
+n^2p-n^2p^2+n-4np+4np^2&amp;&lt;(p-p^2)(n^2+4n+4)\\
+n^2p-n^2p^2+n-4np+4np^2&amp;&lt;n^2p-n^2p^2+4np-4np^2+4p-4p^2\\
+(4np^2+4np^2+4p^2)-(4np+4np+4p)+n&amp;&lt;(n^2p-n^2p^2)-(n^2-n^2p^2)\\
+(8n+4)p^2-(8n+4)p+n&amp;&lt;0
+\end{aligned}
+\]</span></p>
+<p>Nilai p dapat diperoleh dari rumus abc:</p>
+<p><span class="math display">\[p_{1,2} = \ \frac{(8n + 4) \pm \sqrt{{(8n + 4)}^{2} - 4(8n + 4)(n)}}{2(8n + 4)} = \frac{1}{2} \pm \sqrt{\frac{n + 1}{8n + 4}}\]</span></p>
+<p>Jadi, nilai p mendekati 0.5.</p>
+</section>
+</section>
+</section>
+<section id="metode-momen" class="level2">
+<h2 class="anchored" data-anchor-id="metode-momen">Metode Momen</h2>
+<section id="x-adalah-peubah-acak-dengan-fungsi-kepekatan-peluang-fx-thetafrac2theta2theta-x-quad-0xtheta-theta-in-omega0theta" class="level3">
+<h3 class="anchored" data-anchor-id="x-adalah-peubah-acak-dengan-fungsi-kepekatan-peluang-fx-thetafrac2theta2theta-x-quad-0xtheta-theta-in-omega0theta"><span class="math inline">\(X\)</span> adalah peubah acak dengan fungsi kepekatan peluang <span class="math inline">\(f(x\ | \ \theta)=\frac{2}{\theta^2}(\theta-x), \quad 0&lt;x&lt;\theta, \ \theta \in \Omega=(0,\theta)\)</span></h3>
+<p>Maka:</p>
+<section id="tunjukkan-fx-theta-adalah-fkp." class="level4">
+<h4 class="anchored" data-anchor-id="tunjukkan-fx-theta-adalah-fkp.">Tunjukkan <span class="math inline">\(f(x \ | \ \theta)\)</span> adalah fkp.</h4>
+<p>Suatu fungsi tersebut fungsi kepekatan peluang atau fungsi massa peluang jika:</p>
+<ul>
+<li>Fungsi diskret: <span class="math inline">\(\sum_{i = 1}^{n}{P\left( x_{i} \right) = 1}\)</span></li>
+<li>Fungsi kontinu: <span class="math inline">\(\int_{- \infty}^{\infty}{f(x \ | \ \theta)}dx = 1\)</span></li>
+</ul>
+<p>Maka, karena <span class="math inline">\(f(x \ | \ \theta)\)</span> kontinu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{-\infty}^{\infty}f(x \ | \ \theta)\ dx&amp;=
+\int_{- \infty}^{0}{f(x\ | \ \theta)}\ dx + \int_{0}^{\theta}{f(x\ | \ \theta)}\ dx + \int_{\theta}^{\infty}{f(x\ | \ \theta)}\ dx\\
+&amp;=0 + \frac{2}{\theta^{2}}\int_{0}^{\theta}(\theta -x)\ dx +0=\frac{2}{\theta^2}\left(\theta x -\frac{x^2}{2}\right){\huge |}_{0}^\theta\\
+&amp;=\frac{2}{\theta^2}\left(\theta^2-\frac{\theta^2}{2}-0\right)=2-1=1
+\end{aligned}
+\]</span></p>
+</section>
+<section id="tunjukkan-e_thetaxfractheta3-dan-mathrmvar_thetaxfractheta218." class="level4">
+<h4 class="anchored" data-anchor-id="tunjukkan-e_thetaxfractheta3-dan-mathrmvar_thetaxfractheta218.">Tunjukkan <span class="math inline">\(E_\theta(X)=\frac{\theta}{3}\)</span> dan <span class="math inline">\(\mathrm{Var}_{\theta}(X)=\frac{\theta^2}{18}\)</span>.</h4>
+<p>Pertama, hitung nilai harapan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E_{\theta}(x)&amp;= \int_{0}^{\theta}{x\ f(x\ | \ \theta)}dx = \int_{0}^{\theta}{x\ \frac{2}{\theta^{2}}(\theta - x)}dx = \frac{2}{\theta^{2}}\int_{0}^{\theta}{\theta x - x^{2}}dx\\
+&amp;=\frac{2}{\theta^{2}}\left( \frac{\theta x^{2}}{2} - \frac{x^{3}}{3} \right){\huge|}^\theta_0= \frac{2}{\theta^{2}}\left( \frac{\theta^{3}}{2} - \frac{\theta^{3}}{3}  - 0 \right) = \theta - \frac{2\theta}{3}\\
+&amp;= \frac{\theta}{3}\quad \text{(terbukti)}
+\end{aligned}
+\]</span></p>
+<p>Lalu, hitung ragam:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E_{\theta}\left( x^{2} \right)&amp;= \int_{0}^{\theta}{x^{2}\ f(x\ | \ \theta)}dx = \int_{0}^{\theta}{x^{2}\ \frac{2}{\theta^{2}}(\theta - x)}dx = \frac{2}{\theta^{2}}\int_{0}^{\theta}{\theta x^{2} - x^{3}}dx\\
+&amp;= \frac{2}{\theta^{2}}\left( \frac{\theta x^{3}}{3} - \frac{x^{4}}{4} \right){\huge |}^\theta_0 = \frac{2}{\theta^{2}}\left(\frac{\theta^{4}}{3} - \frac{\theta^{4}}{4} - 0 \right) = \frac{2\theta^{2}}{3} - \frac{\theta^{2}}{2}\\
+&amp;=\frac{\theta^{2}}{6}\\
+V_{\theta}(x)&amp;= E_{\theta}\left( x^{2} \right) - \left\lbrack E_{\theta}(x) \right\rbrack^{2} = \frac{\theta^{2}}{6} - \left\lbrack \frac{\theta}{3} \right\rbrack^{2} = \frac{\theta^{2}}{18}\quad \text{terbukti}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="dari-suatu-contoh-acak-berukuran-n-dari-fx-theta-cari-penduga-momen-theta-hattheta-dan-tunjukkan-penduga-tersebut-tak-bias.-cari-ragam-penduga-tersebut." class="level4">
+<h4 class="anchored" data-anchor-id="dari-suatu-contoh-acak-berukuran-n-dari-fx-theta-cari-penduga-momen-theta-hattheta-dan-tunjukkan-penduga-tersebut-tak-bias.-cari-ragam-penduga-tersebut.">Dari suatu contoh acak berukuran <span class="math inline">\(n\)</span> dari <span class="math inline">\(f(x \ | \ \theta)\)</span>, cari penduga momen <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\hat{\theta}\)</span>, dan tunjukkan penduga tersebut tak bias. Cari ragam penduga tersebut.</h4>
+<section id="tentukan-1-momen-dari-populasi-mu_k" class="level5">
+<h5 class="anchored" data-anchor-id="tentukan-1-momen-dari-populasi-mu_k">Tentukan 1 momen dari populasi <span class="math inline">\(\mu_{k}\)</span>:</h5>
+<p><span class="math display">\[
+\mu_{1} = E\left( X^{1} \right) = \frac{\theta}{3}
+\]</span></p>
+</section>
+<section id="tentukan-1-momen-dari-contoh-m_k" class="level5">
+<h5 class="anchored" data-anchor-id="tentukan-1-momen-dari-contoh-m_k">Tentukan 1 momen dari contoh <span class="math inline">\(m_{k}\)</span>:</h5>
+<p><span class="math display">\[
+m_{1} = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}}^{1} = \bar{X}
+\]</span></p>
+</section>
+<section id="solusi-dari-sistem-persamaan-mu_k-m_k" class="level5">
+<h5 class="anchored" data-anchor-id="solusi-dari-sistem-persamaan-mu_k-m_k">Solusi dari sistem persamaan <span class="math inline">\(\mu_{k} = \ m_{k}\)</span>:</h5>
+<p><span class="math display">\[
+\begin{aligned}
+\mu_{1} &amp;= \ m_{1}\\
+\frac{\theta}{3}\ &amp;= \ \bar{X}\\
+\theta &amp; = 3\overline{X}
+\end{aligned}
+\]</span></p>
+<p>Maka penduga bagi <span class="math inline">\(\theta\)</span>, adalah <span class="math inline">\({\hat{\theta}}_{m} = \ 3\overline{X}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\hat{\theta}}_{m} \right)&amp;= E\left( 3\bar{X} \right) = 3E\left( \frac{1}{n}\sum_{i = 1}^{n}X_{i} \right) =  \frac{3}{n}\cdot n E\left( X_{i} \right) &amp;\\
+&amp;= 3\left( \frac{\theta}{3} \right) = \theta&amp; \text{(tidak bias)}\\
+V\ \left( {\hat{\theta}}_{m} \right)&amp;= V\left( 3\bar{X} \right) = 9\ V\left( \frac{1}{n}\sum_{i = 1}^{n}X_{i} \right) = \frac{9}{n^{2}}\cdot nV\left( X_{i} \right) &amp;\\
+&amp;= \frac{9}{n}\left( \frac{\theta^{2}}{18}\  \right) = \frac{\theta^{2}}{2n}&amp;
+\end{aligned}
+\]</span></p>
+
+
+</section>
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

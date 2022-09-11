@@ -1,0 +1,314 @@
+---
+title: "Bab 2, Pembahasan Tugas"
+format: html
+---
+
+##  Breakdowns
+
+The number of breakdowns per week for a type of mini coupler is a random variable Y with a Poisson distribution and mean $\lambda$. A random sample $Y_{1},\ Y_{2},\ \cdots,\ Y_{n}$ of observations on the weekly number of breakdowns is available.
+
+Karena, $Y_{1},\ Y_{2},\ \cdots,\ Y_{n}\sim Poisson\ (\lambda)$, maka:
+
+$$
+\begin{aligned}
+E(Y)&= \lambda &V(Y)  = \lambda
+\end{aligned}
+$$
+
+### Berikan penduga tak bias bagi $\lambda$
+
+Syarat penduga tidak bias adalah
+$E\left( \hat{\theta} \right) = \theta$. Penduga tidak bias yang trivial adalah $Y_i$, karena $E(Y_i)=\lambda$ (dengan memilih i sembarang). Tapi misalkan $\hat{\lambda}$ (rata-rata sampel) adalah penduga bagi $\lambda$.
+
+$$
+\hat{\lambda} = \bar{Y} = \left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)
+$$
+
+Apakah $E\left( \hat{\lambda} \right) = \lambda?$
+
+$$
+\begin{aligned}
+E\left( \hat{\lambda} \right) &= E\left( \bar{Y} \right) = E\left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)
+= \frac{1}{n}E\left( \sum_{i = 1}^{n}Y_{i} \right)\\ 
+&= \frac{1}{n}\cdot nE(Y) = E(Y) = \lambda \quad \text{(tidak bias)}
+\end{aligned}
+$$
+
+Karena $E\left( \hat{\lambda} \right) = \lambda$ maka $hat{\lambda} = \bar{Y}$ adalah penduga tidak bias bagi $\lambda.$
+
+### Biaya perbaikan kerusakan per minggu. 
+
+Biaya perbaikan kerusakan per minggu adalah $C = 3Y+Y^2$. Tunjukkan $E(C) = \ 4\lambda + \ \lambda^{2}$.
+
+$$
+\begin{aligned}
+E(C)&= \ E\left( 3Y + \ Y^{2} \right)
+= E(3Y) + E\left( Y^{2} \right)\\ 
+&= 3E(Y) + Y(Y) + \left\lbrack E(Y) \right\rbrack^{2}
+= 3\lambda + \lambda + \ \lambda^{2}\\ 
+&=  4\lambda + \ \lambda^{2}
+\end{aligned}
+$$
+
+Maka, terbukti.
+
+### Penduga tak bias bagi $E(C)$
+
+Berikan suatu fungsi dari $Y_1, Y_2, \ldots, Y_n$ yang merupakan penduga tak bias bagi $E(C)$
+
+Karena diperlukan suatu fungsi dari seluruh observasi, penduga trivial yang hanya menggunakan satu observasi tak bisa dipakai. Begitu juga penduga yang hanya menggunakan sebagian observasi. Suatu statistik yang menggabungkan informasi dari seluruh sampel adalah $\bar{Y}$, maka gunakan informasi $\bar{Y}$ dan ${\bar{Y}}^{2}$.
+
+$$
+\lambda_2=E(C) = \ 4\lambda + \ \lambda^{2}
+$$
+
+Sehingga dicari ${\hat{\lambda}}_{2}$. Syarat penduga tidak bias adalah $E\left( {\hat{\lambda}}_{2} \right) = \lambda_{2} = 4\lambda + \ \lambda^{2}$. Informasi yang bisa digunakan adalah $E\left( \bar{Y} \right) = \lambda$. Maka cari ragam dari $\bar{Y}$ untuk mencari informasi dari $\bar{Y}^2$:
+
+$$
+\begin{aligned}
+V\left( \bar{Y} \right)&= V\left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right) = \frac{1}{n^{2}}V\left( \sum_{i = 1}^{n}Y_{i} \right)
+= \frac{1}{n^{2}}\sum_{i = 1}^{n}{V(Y)}\\ 
+&= \frac{1}{n^{2}}\cdot n\lambda= \frac{\lambda}{n}
+\end{aligned}
+$$
+
+Maka kaji informasi dari $\bar{Y}^2$:
+
+$$
+\begin{aligned}
+E\left( {\bar{Y}}^{2} \right)&= V\left( \bar{Y} \right) + \left\lbrack E\left( \bar{Y} \right) \right\rbrack^{2}= \frac{\lambda}{n} + \ \lambda^{2}\\ 
+E\left( {\bar{Y}}^{2} \right)-\frac{\lambda}{n}+4\lambda&=4\lambda+\lambda^2\\
+\end{aligned}
+$$
+
+Maka:
+$$
+\begin{aligned}
+4\lambda+\lambda^2&=E\left( {\bar{Y}}^{2} \right)-\frac{E\left(\bar{Y}\right)}{n}+4E\left(\bar{Y}\right)\\
+&=E\left(\bar{Y}^2-\frac{\bar{Y}}{n}+\bar{Y}\right)
+\end{aligned}
+$$
+
+Oleh karena itu, dipilih :
+$$
+ {\hat{\lambda}}_{2}=\bar{Y}^2-\frac{\bar{Y}}{n}+\bar{Y}
+$$
+
+Sebagai penduga tak bias dari $E(C)$ yang merupakan fungsi dari semua observasi di sampel.
+
+## Penduga Metode Momen: Gamma
+
+Diketahui $Y_{1},\ Y_{2},\ \cdots,\ Y_{n}\sim Gamma(\alpha,\beta)$ dengan fkp berikut :
+
+$$
+f(y\ | \ \alpha,\beta) = \ \left\lbrack \frac{1}{\Gamma(\alpha)\beta^{2}} \right\rbrack y^{n - 1}e^{- \frac{y}{\beta}},\quad 0 < y < \infty
+$$
+
+Tentukan penduga bagi $\alpha$ dan $\beta$ dengan menggunakan metode
+momen ($\alpha$ dan $\beta$ tidak diketahui).
+
+Untuk sebaran Gamma, diketahui bahwa:
+
+$$
+\begin{aligned}
+E(Y)&= \alpha\beta&
+V(Y)&= \alpha\beta^{2}
+\end{aligned}
+$$
+
+Bandingkan momen populasi dan sampel:
+
+| Momen| Populasi                                                 | Sampel                                 |
+|------|----------------------------------------------------------|----------------------------------------|
+| 1    |$\mu_1=E(Y^1)=E(Y)=\alpha\beta$                           |$m_1=\frac{\sum_{i=1}^n Y_i}{n}=\bar{Y}$|
+| 2    |$\mu_2=E(Y^2)=V(Y)+[E(Y)]^2=\alpha\beta^2+\alpha^2\beta^2$|$m_2=\frac{\sum_{i=1}^n Y_i^2}{n}$      |
+
+Cari penduga momen dengan solusi dari sistem persamaan $\mu_{k} = \ m_{k}$.
+
+1. $\mu_{1} = \ m_{1}$
+
+$$
+\begin{aligned}
+\alpha\beta&=\bar{Y}\\ 
+\beta&=\frac{\bar{Y}}{\alpha}\\
+{\hat{\beta}}_{m}&= \frac{\bar{Y}}{\hat{\alpha}}
+\end{aligned}
+$$
+
+2. $\mu_{2} = \ m_{2}$
+
+$$
+\begin{aligned}
+\alpha\beta^{2} + \alpha^{2}\beta^{2}&= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2}\\
+\alpha\left\lbrack \frac{\bar{Y}}{\alpha} \right\rbrack^{2} + \alpha^{2}\left\lbrack \frac{\bar{Y}}{\alpha} \right\rbrack^{2}&= \frac{1}{n}\sum_{i = 1}^{n} Y_{i}^{2}\\
+\frac{{\bar{Y}}^{2}}{\alpha} + {\bar{Y}}^{2}&= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2}\\ 
+\frac{{\bar{Y}}^{2}}{\alpha}&= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}\\ 
+\alpha&= \frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}\\ 
+\ \ \ {\hat{\alpha}}_{m}&= \frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}
+\end{aligned}
+$$
+
+Maka, penduga $\beta=\hat{\beta}_m$ adalah:
+
+$$
+\begin{aligned}
+{\hat{\beta}}_{m}&= \frac{\bar{Y}}{\hat{\alpha}}=\frac{\bar{Y}}{\frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}}\\ 
+&=\frac{\bar{Y}\left(\frac{1}{n}\sum_{i=1}^n Y_i^2-\bar{Y}^2\right)}{\bar{Y}^2}\cdot\frac{n}{n}\\ 
+&=\frac{\sum_{i=1}^n Y_i^2-\bar{Y}^2}{n\bar{Y}}\\ 
+&=\frac{\sum_{i=1}^n (Y_i-\bar{Y})^2}{n\bar{Y}}\\ 
+\end{aligned}
+$$
+
+## Penduga Metode Momen, Peubah Acak X
+
+$X_{1},\ X_{2},\ \cdots,\ X_{n}$ contoh acak yang saling bebas, dengan fungsi kepekatan peluang:
+
+$$
+f(x\ | \ \theta) = \ \frac{1}{\theta}e^{- \frac{(x - \beta)}{\theta}},\ \ x \geq 5,\ \ \theta > 0
+$$
+
+
+### Tentukan nilai $\beta$ sehingga $f(x\ | \ \theta)$ di atas merupakan fungsi kepekatan peluang.
+
+Syarat fkp peubah acak kontinu:
+
+$$
+\int_{- \infty}^{\infty}{f(x\ | \ \theta)}\ dx = 1
+$$
+
+Maka, cek integral tersebut:
+
+$$
+\begin{aligned}
+\int_{- \infty}^{\infty}{f(x\ | \ \theta)}\ dx&= \int_{- \infty}^{5}{f(x\ | \ \theta)}\ dx + \int_{5}^{\infty}{f(x\ | \ \theta)\ dx}=0 + \int_{5}^{\infty}{\frac{1}{\theta}e^{- \frac{(x - \beta)}{\theta}} \ dx}\\ 
+&=\frac{1}{\theta}\int_{5}^{\infty}{e^{- \frac{(x - \beta)}{\theta}}dx}=\frac{1}{\theta} \cdot - \theta e^{- \frac{(x - \beta)}{\theta}}  {\LARGE |}^{\infty}_{5}= e^{- \frac{(x - \beta)}{\theta}}  {\LARGE |}^{\infty}_{5}\\ 
+&=e^{-\frac{5-\beta}{\theta}}\\ 
+\end{aligned}
+$$
+
+Maka $e^{-\frac{5-\beta}{\theta}}$ harus sama dengan 1.
+
+$$
+\begin{aligned}
+e^{-\frac{5-\beta}{\theta}}&=1\\ 
+\log\left(e^{-\frac{5-\beta}{\theta}}\right)=\frac{-5+\beta}{\theta}&=0=\log(1)\\\
+\beta&=5 
+\end{aligned}
+$$
+
+Agar $(-5+\beta)/ \theta=0$, maka $\beta$ harus sama dengan 5. Maka ubah fungsi kepekatan peluang:
+$$f(x\ | \ \theta) = \ \frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}},\ \ x \geq 5,\ \ \theta > 0$$
+
+
+### Tentukan penduga bagi $\theta$ melalui metode momen. Apakah penduga yang diperoleh bersifat tidak bias? 
+
+#### Tentukan 1 momen dari populasi $\mu_{k}$
+
+$$
+\begin{aligned}
+\mu_{1}&=E\left( X^{1} \right) = E(X) = \int_{5}^{\infty}{xf(x\ | \ \theta)\ dx} = \int_{5}^{\infty}{x\frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}}\ dx}\\ 
+&=\int_{5}^{\infty}{x\frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}}\ dx}= \frac{1}{\theta}\int_{5}^{\infty}{xe^{- \frac{x - 5}{\theta}}\ dx}
+\end{aligned}
+$$
+
+Buat suatu integral parsial dengan substitusi:
+
+$$
+\begin{aligned}
+u&=x & dv&=e^{-\frac{x-5}{\theta}}\\ 
+du&=dx & v&=\int e^{-\frac{x-5}{\theta}} \ dx=-\theta e^{-\frac{x-5}{\theta}}
+\end{aligned}
+$$
+
+Maka:
+$$
+\begin{aligned}
+\mu_{1}&=\frac{1}{\theta}\left( uv  \int_{5}^{\infty}{v\ du} \right)\\ 
+&=\frac{1}{\theta}\left[ x\left( - \theta e^{- \frac{(x - 5)}{\theta}} \right) {\LARGE|}^\infty_5- \int_{5}^{\infty}{- \theta e^{- \frac{(x - 5)}{\theta}}\ dx} \right]\\ 
+&=\frac{1}{\theta}\left[\left( 0 + 5\theta e^{- \frac{(5 - 5)}{\theta}} \right) + \theta\int_{5}^{\infty}{e^{- \frac{(x - 5)}{\theta}}\ dx} \right]\\ 
+&=\frac{1}{\theta}\left[ 5\theta + \theta\left( - \theta e^{- \frac{(x - 5)}{\theta}} {\LARGE|}^\infty_5 \right) \right]\\ 
+&=\frac{1}{\theta}\left[ 5\theta + \theta(0 + \theta) \right]=5+\theta
+\end{aligned}
+$$
+
+####  Tentukan 1 momen dari contoh $m_{k}$
+
+$$m_{1} = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}}^{1} = \bar{X}$$
+
+#### Solusi dari sistem persamaan $\mu_{k} = \ m_{k}$
+
+$$
+\begin{aligned}
+\mu_{1}&=m_{1}\\ 
+\theta + 5&=  \bar{X}\\ 
+\theta &= \bar{X} - 5\\ 
+ \hat{\theta}_{m}&= \ \bar{X} - 5
+\end{aligned}
+$$
+
+
+Lalu, cek bias dari penduga tersebut.
+
+$$
+\begin{aligned}
+E\left( {\hat{\theta}}_{m} \right)&= E\left( \bar{X} - 5 \right) = E\left( \bar{X} \right) - 5 = E(X) - 5 \\ &= \theta + 5 - 5 = \theta \quad \text{(tidak bias)}
+\end{aligned}
+$$
+
+Maka, penduga momen bagi $\theta$ tak bias.
+
+## Sebaran t dan F
+
+### Jika $X\sim t(n)$, maka buktikan $X^2\sim F(1,n)$!
+
+Sebaran t-Student didefinisikan sebagai:
+
+$$
+X=\frac{Z}{\sqrt{Y/n}}
+$$
+
+Di mana $Z\sim N(0,1)$, dan $Y\sim \chi^2(n)$. Maka kuadratnya adalah:
+
+$$
+X^2=\frac{Z}{Y/n}=\frac{Z^2/1}{Y/n}
+$$
+
+Dari modul, dapat dibuktikan $Z^2 \sim \chi^2(1)$. Definisi sebaran $F(n_1, n_2)$ adalah:
+
+$$
+F=\frac{U/n_1}{V/n_2}
+$$
+
+Jika $U\sim \chi^2(n_1)$, dan $V\sim \chi^2(n_2)$. Sehingga jika $Z^2\sim \chi^2(1)$ dan $Y\sim \chi^2(n)$, $X^2\sim F(1,n)$ menurut definisi sebaran.
+
+*Beberapa kelompok menjawab pertanyaan ini menggunakan transformasi fungsi. Jawaban ini benar, tetapi cukup panjang untuk dimasukkan. Jika kode LaTeX untuk jawaban tersebut ada dan diberikan ke saya, saya dapat memasukkan jawaban tersebut.*
+
+### Jika $U\sim F(n_1,n_2)$, apa sebaran $1/U$?
+
+Definisi suatu peubah acak $U\sim F(n_1, n_2)$ adalah:
+
+$$
+U=\frac{X/n_1}{Y/n_2}
+$$
+
+Jika $X\sim \chi^2(n_1)$, dan $Y\sim \chi^2(n_2)$. Maka $1/U$:
+
+$$
+\frac{1}{U}=\frac{1}{\frac{X/n_1}{Y/n_2}}=\frac{Y/n_2}{X/n_1}
+$$
+
+Cukup jelas bahwa peubah acak tersebut menyebar $F(n_2,n_1)$.
+
+*Beberapa kelompok menjawab pertanyaan ini menggunakan transformasi fungsi. Jawaban ini benar, tetapi cukup panjang untuk dimasukkan. Jika kode LaTeX untuk jawaban tersebut ada dan diberikan ke saya, saya dapat memasukkan jawaban tersebut.*
+
+## Sebaran perbedaan rataan normal
+
+Jika $X, Y$ saling bebas dan $X\sim N(\mu_1,\sigma_1^2)$, dan $Y\sim N(\mu_2,\sigma_2^2)$, buktikan $\bar{X}-\bar{Y} \sim N\left(\mu_1-\mu_2, \frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}\right)$
+
+Diketahui bahwa $\bar{X}\sim \mathrm{Normal}\left(\mu_1, \frac{\sigma_1^2}{n_1}\right)$ dan $\bar{Y}\sim \mathrm{Normal}\left(\mu_2, \frac{\sigma_2^2}{n_2}\right)$; teorema ini sudah dibuktikan di modul.
+
+Lalu jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2$. Teorema ini dibuktikan di modul.
+
+Maka $\bar{X}$ dan $\bar{Y}$ saling bebas karena semua elemen $X$ saling bebas dengan $Y$. Maka buat peubah $W=a_1\bar{X}+a_2\bar{Y}$, di mana $a_1=1,\ a_2=-1$, atau $W=\bar{X}-\bar{Y}$.
+
+Maka, $\mu_W=\mu_1-\mu_2$, dan $\sigma_W=1^2\cdot\frac{\sigma_1}{n_1}+(-1)^2\cdot\frac{\sigma_2}{n_2}=\frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}$. Maka $W\sim N\left(\mu_1-\mu_2, \frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}\right)$.

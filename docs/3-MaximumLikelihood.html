@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ayunda Afiani Rosita, Muhammad Ammar Sahab">
 
-<title>Praktikum Inferensia Statistika - Bab 3 - Pendugaan Kemungkinan Maksimum</title>
+<title>Praktikum Inferensia Statistika - Bab 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -3861,7 +3861,7 @@ vertical-align: -.125em;
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bab 3 - Pendugaan Kemungkinan Maksimum</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 3</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -3881,17 +3881,22 @@ vertical-align: -.125em;
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1: Kekonvergenan, LLN, CLT</a>
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</a>
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link">Bab 2</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link active">Bab 3 - Pendugaan Kemungkinan Maksimum</a>
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link active">Bab 3</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-PendugaBayes.html" class="sidebar-item-text sidebar-link">Bab 4 - Penduga Bayes</a>
   </div>
 </li>
     </ul>
@@ -3905,13 +3910,6 @@ vertical-align: -.125em;
   <ul>
   <li><a href="#fungsi-likelihood" id="toc-fungsi-likelihood" class="nav-link active" data-scroll-target="#fungsi-likelihood">Fungsi likelihood</a></li>
   <li><a href="#pemaksimuman-likelihood" id="toc-pemaksimuman-likelihood" class="nav-link" data-scroll-target="#pemaksimuman-likelihood">Pemaksimuman Likelihood</a></li>
-  <li><a href="#contoh" id="toc-contoh" class="nav-link" data-scroll-target="#contoh">Contoh</a>
-  <ul class="collapse">
-  <li><a href="#sebaran-eksponensial" id="toc-sebaran-eksponensial" class="nav-link" data-scroll-target="#sebaran-eksponensial">Sebaran Eksponensial</a></li>
-  <li><a href="#sebaran-binomial" id="toc-sebaran-binomial" class="nav-link" data-scroll-target="#sebaran-binomial">Sebaran binomial</a></li>
-  <li><a href="#sebaran-normal" id="toc-sebaran-normal" class="nav-link" data-scroll-target="#sebaran-normal">Sebaran normal</a></li>
-  <li><a href="#sebaran-seragam-0" id="toc-sebaran-seragam-0" class="nav-link" data-scroll-target="#sebaran-seragam-0">Sebaran Seragam (0,)</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -3920,7 +3918,7 @@ vertical-align: -.125em;
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bab 3 - Pendugaan Kemungkinan Maksimum</h1>
+<h1 class="title d-none d-lg-block">Bab 3</h1>
 </div>
 
 
@@ -4012,165 +4010,8 @@ l(\theta)&amp;=\log[L(\theta)]=\log\left[\prod_{i=1}^n f(x_i \ | \ \theta)\right
 <li>Cari log dari fungsi tersebut.</li>
 </ol>
 <p>Lalu lanjutkan langkah 4-6.</p>
-</section>
-<section id="contoh" class="level2">
-<h2 class="anchored" data-anchor-id="contoh">Contoh</h2>
-<section id="sebaran-eksponensial" class="level3">
-<h3 class="anchored" data-anchor-id="sebaran-eksponensial">Sebaran Eksponensial</h3>
-<p>Misal <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> menyebar bebas stokastik identik, <span class="math inline">\(\mathrm{Eksponensial}(\theta)\)</span>. Berilah penduga kemungkinan maksimum bagi <span class="math inline">\(\theta\)</span>! Apakah berbias?</p>
-<p>Fungsi kepekatan peluang <span class="math inline">\(\mathrm{Eksponensial}(\theta)\)</span> adalah:</p>
-<p><span class="math display">\[
-f(x_i)=\frac{1}{\theta}e^{-x_i/\theta}
-\]</span></p>
-<p>Maka log-nya adalah:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log\left[f(x_i)\right]&amp;=\log\left[\frac{1}{\theta}e^{-x_i/\theta}\right]=\log\frac{1}{\theta}+\log e^{-x_i/\theta}\\
-&amp;= -\log\theta-\frac{x_i}{\theta}
-\end{aligned}
-\]</span></p>
-<p>Dan log-likelihood:</p>
-<p><span class="math display">\[
-\begin{aligned}
-l(\theta)&amp;=\sum_{i=1}^n\log\left[f(x_i)\right]=\sum_{i=1}^n \left\{-\log\theta-\frac{x_i}{\theta}\right\}\\
-&amp;=-n\log\theta-\frac{1}{\theta}\sum_{i=1}^n x_{i}
-\end{aligned}
-\]</span></p>
-<p>Lalu cari turunan pada <span class="math inline">\(\theta\)</span>; note, turunan <span class="math inline">\(\partial \log(x)/\partial x=1/x\)</span>:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial l(\theta)}{\partial \theta}&amp;=-\frac{n}{\theta}+\frac{1}{\theta^2}\sum_{i=1}^n x_{i}
-\end{aligned}
-\]</span></p>
-<p>Karena <span class="math inline">\(-1/\theta=-\theta^{-1}\)</span>, sehingga turunannya adalah <span class="math inline">\(\theta^{-2}\)</span>. Lalu buat nilai turunan tersebut sama dengan nol, dan cari penduga untuk <span class="math inline">\(\theta\)</span>:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial l(\theta)}{\partial \theta}&amp;=-\frac{n}{\theta}+\frac{1}{\theta^2}\sum_{i=1}^n x_{i}=0\\
-&amp;=\frac{1}{\theta}\left(-n+\frac{1}{\theta}\sum_{i=1}^n x_i\right)=0\\
-&amp;=\theta\cdot\frac{1}{\theta}\left(\cdots\right)=\theta\cdot0\\
-&amp;=-n+\frac{1}{\theta}\sum_{i=1}^n x_i=0\\
-&amp;=\frac{1}{\theta}\sum_{i=1}^n x_{i}=n\\
-&amp;=\frac{\sum_{i=1}^n x_i}{n}=\theta\\
-&amp;=\bar{x}
-\end{aligned}
-\]</span></p>
-<p>Maka penduga bagi <span class="math inline">\(\theta\)</span> adalah <span class="math inline">\(\bar{x}\)</span>. Coba uji turunan kedua:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial^2 l(\theta)}{\partial \theta^2}&amp;=\frac{n}{\theta^2}-\frac{2}{\theta^3}\sum_{i=1}^n x_{i}&amp;\\
-&amp;=\frac{1}{\theta^2}\left[n-\frac{2}{\theta}\sum_{i=1}^n x_i\right]&amp; \text{substitusi }\theta \text{ dengan } \bar{x}\\
-&amp;=\frac{1}{\bar{x}^2}\left[n-\frac{2}{\frac{\sum_{i=1}^n x_i}{n}}\sum_{i=1}^n x_i\right]\\
-&amp;=\bar{x}^2\left[n-2n\right]=-n\bar{x}^2 &lt;0
-\end{aligned}
-\]</span></p>
-<p>Sehingga turunan kedua negatif.</p>
-<p>Bias dari penduga tersebut juga dapat dicari, dengan mengetahui bahwa <span class="math inline">\(E\left[X\right]=\theta\)</span> untuk eksponensial:</p>
-<p><span class="math display">\[
-E\left[\bar{x}\right]=E\left[\frac{\sum_{i=1}^n x_i}{n}\right]=\frac{1}{n}\left[n\theta\right]=\theta
-\]</span></p>
-<p>Ragam dari penduga juga dapat dicari.</p>
-</section>
-<section id="sebaran-binomial" class="level3">
-<h3 class="anchored" data-anchor-id="sebaran-binomial">Sebaran binomial</h3>
-<p><span class="math inline">\(X\)</span> adalah satu jika suatu percobaan Bernoulli sukses dan nol jika percobaan tersebut gagal, dengan probabilitas sukses <span class="math inline">\(\theta\)</span>. <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari <span class="math inline">\(X\)</span>, dengan n diketahui. Temukan penduga kemungkinan maksimum dan cek biasnya!</p>
-<p>Fungsi massa peluang Bernoulli:</p>
-<p><span class="math display">\[
-p(x\ | \ \theta)=\theta^x(1-\theta)^{1-x}, \ x=0 \text{ atau }1
-\]</span></p>
-<p>Maka log dari fungsi tersebut adalah:</p>
-<p><span class="math display">\[
-\log\left[p(x \ | \ \theta)\right]=x\log\theta+(1-x)\log(1-\theta)
-\]</span></p>
-<p>Sehingga fungsi log-likelihood:</p>
-<p><span class="math display">\[
-\begin{aligned}
-l(\theta)&amp;=\sum_{i=1}^n\log\left[p(x_i \ | \ \theta)\right]=\sum_{i=1}^n x_i \log \theta+\left(n-\sum_{i=1}^n x_i\right)\log(1-\theta)\\
-\end{aligned}
-\]</span></p>
-<p>Cari turunannya dan buat nol:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial l(\theta)}{\partial \theta}&amp;=\frac{\sum_{i=1}^n x_i}{\theta}-\frac{n-\sum_{i=1}^n x_i}{1-\theta}=0\\
-&amp;=\frac{\sum_{i=1}^n x_i}{\theta}=\frac{n-\sum_{i=1}^n x_i}{1-\theta}\\
-&amp;=\sum_{i=1}^n x_i-\theta\sum_{i=1}^n x_i=\theta n-\theta\sum_{i=1}^n x_i\\
-&amp;=\sum_{i=1}^n x_i-\theta\sum_{i=1}^n x_i+\theta\sum_{i=1}^n x_i=\theta n-\theta\sum_{i=1}^n x_i+\theta\sum_{i=1}^n x_i\\
-&amp;=\sum_{i=1}^n x_i=\theta n\\
-&amp;=\frac{\sum_{i=1}^n x_i}{n}=\theta
-\end{aligned}
-\]</span></p>
-<p>Atau, proporsi kejadian sukses dari semua kejadian. Karena <span class="math inline">\(E(x_i)=p\)</span>, maka jelas penduga tersebut takbias, karena <span class="math inline">\(\sum_{i=1}^n p=np\)</span>; jika dibagi n maka ketakbiasan terbukti.</p>
-<p>Cek juga turunan kedua:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial^2 l(\theta)}{\partial \theta^2}&amp;=-\frac{\sum_{i=1}^n x_i}{\theta^2}-\frac{n-\sum_{i=1}^n x_i}{(1-\theta)^2}&lt;0
-\end{aligned}
-\]</span></p>
-<p>Karena <span class="math inline">\(X\)</span> hanya memiliki nilai 1 atau 0, term <span class="math inline">\(sum_{i=1}^n x_i\)</span> pasti positif dan lebih kecil atau sama dengan <span class="math inline">\(n\)</span>. Oleh karena itu jelas bahwa <span class="math inline">\(-\sum_{i=1}^n x_i\)</span> pasti negatif. Lalu <span class="math inline">\(n-\sum_{i=1}^n x_i\)</span> tidak mungkin negatif, sehingga minusnya tidak mungkin positif.</p>
-</section>
-<section id="sebaran-normal" class="level3">
-<h3 class="anchored" data-anchor-id="sebaran-normal">Sebaran normal</h3>
-<p><span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>. Cari penduga kemungkinan maksimum untuk vektor <span class="math inline">\(\theta=(\mu, \sigma^2)\)</span>:</p>
-<p>Log dari fungsi kepekatan peluang:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\log\left[f(x_i\ | \ \theta)\right]&amp;=\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left\{-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2\right\}\right]\\
-&amp;=\log\frac{1}{\sigma}+\log\frac{1}{2\pi}-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2\\
-&amp;=-\log\sigma-\log2\pi-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2
-\end{aligned}
-\]</span></p>
-<p>Lalu cari fungsi log-likelihood:</p>
-<p><span class="math display">\[
-\begin{aligned}
-l(\theta)&amp;=\sum_{i=1}^n\log\left[f(x_i \ | \ \theta)\right]\\
-&amp;=-n\log\sigma-n\log2\pi-\frac{1}{2}\sum_{i=1}^n\left(\frac{x_i-\mu}{\sigma}\right)^2\\
-\end{aligned}
-\]</span></p>
-<p>Lalu turunkan:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\frac{\partial l(\mu, \sigma)}{\partial \mu}&amp;=-\frac{1}{2}\cdot2\sum_{i=1}^n\left[\frac{\partial}{\partial \mu}\left(\frac{x_i-\mu}{\sigma}\right)\right]\\
-&amp;=\frac{1}{\sigma}\sum_{i=1}^n\left(\frac{x_i-\mu}{\sigma}\right)=\frac{1}{\sigma^2}\sum_{i=1}^n (x_i-\mu)\\
-\frac{\partial l(\mu, \sigma)}{\partial \sigma}
-&amp;=-\frac{n}{\sigma}-\frac{1}{2}\sum_{i=1}^n\left(x_i-\mu\right)^2\frac{\partial }{\partial \sigma}\left(\sigma\right)^{-2}\\
-&amp;=-\frac{n}{\sigma}+\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\mu)^2
-\end{aligned}
-\]</span></p>
-<p>Untuk membuat persamaan pertama nol, haruslah <span class="math inline">\(\sum_{i=1}^n (x_i-\mu)\)</span> nol. Maka haruslah <span class="math inline">\(n\bar{X}-n\mu=0\)</span>, dan <span class="math inline">\(\bar{X}=\mu\)</span> menjadi penduga nilai harapan.</p>
-<p>Jika penduga tersebut dimasukkan ke persamaan kedua, maka dimiliki:</p>
-<p><span class="math display">\[
-\begin{aligned}
-0&amp;=-\frac{n}{\sigma}+\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\bar{x})^2\\
-\sigma^3\cdot\frac{n}{\sigma}&amp;=\sigma^3\cdot\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\bar{x})^2\\
-\sigma^2n&amp;=\sum_{i=1}^n (x_i-\bar{x})^2\\
-\sigma^2&amp;=\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}
-\end{aligned}
-\]</span></p>
-<p>Sehingga penduga kemungkinan maksimum <span class="math inline">\(\sigma^2\)</span> dijelaskan di atas.</p>
-</section>
-<section id="sebaran-seragam-0" class="level3">
-<h3 class="anchored" data-anchor-id="sebaran-seragam-0">Sebaran Seragam (0,)</h3>
-<p>Untuk menghitung penduga kemungkinan maksimum sebaran seragam, perlu pengetahuan mengenai konsep <em>fungsi indikator</em>. <span class="math inline">\(I(a,b)\)</span> adalah 1 jika <span class="math inline">\(a\leq b\)</span> dan 0 jika <span class="math inline">\(a&gt;b\)</span>. Oleh karena sebaran <span class="math inline">\(Seragam(0,\theta)\)</span> memiliki fungsi kepekatan peluang:</p>
-<p><span class="math display">\[
-\begin{aligned}
-f(x \ | \ \theta)&amp;=\begin{cases}
-\frac{1}{\theta}, &amp;0\leq x_i\leq\theta \\
-0, &amp; lainnya
-\end{cases}
-\\&amp;=\frac{1}{\theta}I(x_i,\theta)
-\end{aligned}
-\]</span></p>
-<p>Karena jika <span class="math inline">\(x_i\)</span> di luar selang tersebut,fungsi indikator akan nol. Karena sudah diketahui batas bawah sebaran adalah 0, semua nilai di contoh acak pastilah lebih dari nol. Maka fungsi likelihoodnya adalah:</p>
-<p><span class="math display">\[
-L(\theta)=\frac{1}{\theta^n}\prod_{i=1}^n I(x_i,\theta)
-\]</span></p>
-<p>Note nilai yang mungkin untuk fungsi indikator adalah <span class="math inline">\(1\)</span> jika semua <span class="math inline">\(x_i\leq\theta\)</span> dan <span class="math inline">\(0\)</span> jika setidaknya satu <span class="math inline">\(x_i&gt;\theta\)</span>. Namun <span class="math inline">\(max(x_i)\geq x_i\)</span> sehingga jika <span class="math inline">\(max(x_i)\leq \theta\)</span> pastilah semua <span class="math inline">\(x_i\leq\theta\)</span>. Sehingga fungsi likelihood ditulis:</p>
-<p><span class="math display">\[
-L(\theta)=\frac{1}{\theta^n}\prod_{i=1}^n I(max\{x_i\},\theta)
-\]</span></p>
-<p>Tentu, kita ingin <span class="math inline">\(\theta\)</span> sekecil mungkin agar pembagi sekecil mungkin dan fungsi likelihood sebesar mungkin, tetapi dengan syarat <span class="math inline">\(max\{x_i\}\leq\theta\)</span>. Oleh karena itu penduga kemungkinan maksimum adalah <span class="math inline">\(max\{x_i\}\)</span></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

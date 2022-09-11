@@ -1,5 +1,5 @@
 ---
-title: "Tugas Bab 1 - Kekonvergenan"
+title: "Bab 1, Pembahasan Tugas"
 format: html
 ---
 ## Konvergensi dalam peluang

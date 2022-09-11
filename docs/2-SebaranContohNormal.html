@@ -8,7 +8,7 @@
 
 <meta name="author" content="Ayunda Afiani Rosita, Muhammad Ammar Sahab">
 
-<title>Praktikum Inferensia Statistika - Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</title>
+<title>Praktikum Inferensia Statistika - Bab 2</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -96,7 +96,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 2</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -116,17 +116,22 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1: Kekonvergenan, LLN, CLT</a>
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link active">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</a>
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link active">Bab 2</a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Bab 3 - Pendugaan Kemungkinan Maksimum</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-PendugaBayes.html" class="sidebar-item-text sidebar-link">Bab 4 - Penduga Bayes</a>
   </div>
 </li>
     </ul>
@@ -191,7 +196,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen</h1>
+<h1 class="title d-none d-lg-block">Bab 2</h1>
 </div>
 
 
@@ -313,7 +318,7 @@ M_Y(t)&amp;=E\left[e^{t\left(aX+b\right)}\right]=E\left[e^{t\left(aX\right)+bt}\
 \]</span></p>
 <section id="sebaran-dari-kombinasi-linear-peubah-acak-normal" class="level2">
 <h2 class="anchored" data-anchor-id="sebaran-dari-kombinasi-linear-peubah-acak-normal">Sebaran dari kombinasi linear peubah acak normal</h2>
-<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2\)</span>.</p>
+<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i^2\sigma_i^2\)</span>.</p>
 <section id="bukti" class="level3">
 <h3 class="anchored" data-anchor-id="bukti">Bukti</h3>
 <p>Cari fungsi pembangkit momen dari <span class="math inline">\(Y\)</span> - jika fungsi pembangkit momen tersebut sama dengan fungsi pembangkit momen (fpm)normal, maka <span class="math inline">\(Y\)</span> menyebar normal:</p>
@@ -323,10 +328,10 @@ M_Y(t)&amp;=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\
 &amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]&amp; \text{(saling bebas)}\\
 &amp;=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&amp;\\
 &amp;=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&amp;\text{(fpm normal)}\\
-&amp;=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
+&amp;=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t^2\right\}
 \end{aligned}
 \]</span></p>
-<p>Yang tidak lain adalah fungsi pembangkit momen peubah acak <span class="math inline">\(\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i\sigma_i^2\right)\)</span>.</p>
+<p>Yang tidak lain adalah fungsi pembangkit momen peubah acak <span class="math inline">\(\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i^2\sigma_i^2\right)\)</span>.</p>
 </section>
 <section id="sebaran-dari-rata-rata-sampel" class="level3">
 <h3 class="anchored" data-anchor-id="sebaran-dari-rata-rata-sampel">Sebaran dari rata-rata sampel</h3>
@@ -609,7 +614,7 @@ Y_{1} &lt; Y_{2} &lt; \ldots &lt; Y_{n}
 <li>Maksimum dari <span class="math inline">\(X_i\)</span> yaitu: <span class="math inline">\(Y_{n} = \mathrm{max}(X_{1},\ X_{2},\ldots, X_{n})\)</span></li>
 </ol>
 <section id="fungsi-kepekatan-peluang-bersama-dari-y_1-y_2-ldots-y_n-adalah" class="level4">
-<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dari-y_1-y_2-ldots-y_n-adalah">Fungsi kepekatan peluang bersama dari <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> adalah</h4>
+<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dari-y_1-y_2-ldots-y_n-adalah">Fungsi kepekatan peluang bersama dari <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> adalah:</h4>
 <p><span class="math display">\[
 g\left( y_{1},y_{2},\ldots,y_{n} \right) = n!f\left( y_{1} \right)f\left( y_{2} \right)\ldots f\left( y_{n} \right) = n!{{\lbrack f}_{x}(x)\rbrack}^{n}
 \]</span></p>
@@ -692,7 +697,7 @@ g_{n}\left( y_{n} \right)&amp;=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \
 \]</span></p>
 </section>
 <section id="fungsi-kepekatan-peluang-bersama-dua-statistik-tataan-misalnya-y_i-y_j-adalah" class="level4">
-<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dua-statistik-tataan-misalnya-y_i-y_j-adalah">Fungsi kepekatan peluang bersama dua statistik tataan, misalnya <span class="math inline">\(Y_i &lt; Y_j\)</span> adalah</h4>
+<h4 class="anchored" data-anchor-id="fungsi-kepekatan-peluang-bersama-dua-statistik-tataan-misalnya-y_i-y_j-adalah">Fungsi kepekatan peluang bersama dua statistik tataan, misalnya <span class="math inline">\(Y_i &lt; Y_j\)</span> adalah:</h4>
 <p><span class="math display">\[
 \begin{aligned}
 g_{ij}\left( y_{i},y_{j} \right) =&amp; \frac{n!}{(i - 1)!(j - i - 1)!(n - j)!}{\lbrack F(y_{i})\rbrack}^{i - 1}f\left( y_{i} \right){\lbrack F(y_{j}) - F(y_{i})\rbrack}^{j - i - 1}f\left( y_{j} \right)\\  

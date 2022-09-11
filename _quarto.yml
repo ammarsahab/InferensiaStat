@@ -27,7 +27,8 @@ website:
         - 1-Kekonvergenan.qmd
         - 2-SebaranContohNormal.qmd
         - 3-MaximumLikelihood.qmd
-        
+        - 4-PendugaBayes.qmd
+
     - title: "Tugas"
       style: "docked"
       background: light
@@ -42,6 +43,11 @@ website:
         - pembahasan.qmd
         - 1-LatihanSoal.qmd
         - 1-PembahasanTugas.qmd
+        - 2-LatihanSoal.qmd
+        - 2-PembahasanTugas.qmd
+        - 3-LatihanSoal.qmd
+        - 3-PembahasanTugas.qmd
+        - 4-LatihanSoal.qmd
 
 format:
   html:

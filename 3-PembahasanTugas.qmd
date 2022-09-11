@@ -1,0 +1,127 @@
+---
+title: "Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1"
+format: html
+---
+
+# Cek Bias
+
+Tentukan bias dari penduga kemungkinan maksimum tersebut.
+
+## Penduga $\sigma^2$ di contoh acak $X\sim N(\mu,\sigma^2)$
+
+Diketahui bahwa $\hat{\sigma}_{ml}^2=\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}$. Untuk melihat nilai harapan dari penduga tersebut, perhatikan bahwa:
+
+$$
+\mathrm{Var}(X)=E\left[\left(X-E\left[X\right]\right)^2\right]
+$$
+
+Maka, jika $E(X)=\mu$, kaji dan lakukan dekomposisi pada $\sum_{i=1}^n \left(X_i-\mu\right)^2$.
+
+$$
+\begin{aligned}
+\sum_{i=1}^n \left(X_i-\mu\right)^2&=\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)+\left(\bar{X}-\mu\right)\right]^2\\
+&=\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)^2+\left(\bar{X}-\mu\right)^2-2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]\\
+&=\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]
+\end{aligned}
+$$
+
+Karena diketahui bahwa:
+
+$$
+\begin{aligned}
+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)&=2\sum_{i=1}^n \left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\\
+&=2\sum_{i=1}^n\left(X_i\bar{X}-X_i\mu-
+\bar{X}^2+\bar{X}\mu\right)\\
+&=2\left[\sum_{i=1}^nX_iX-\sum_{i=1}^n X_i\mu-\sum_{i=1}^n \bar{X}^2+\sum_{i=1}^n\bar{X}\mu\right]\\
+&=2\left[\left(n\bar{X}\right)\bar{X}-\left(n\bar{X}\right)\mu-n\bar{X}^2+n\bar{X}\mu\right]\\
+&=2\left[\left(n\bar{X}^2-n\bar{X}^2\right)-n\bar{X}\mu+n\bar{X}\mu\right]\\
+&=0
+\end{aligned}
+$$
+
+Maka:
+
+$$
+\sum_{i=1}^n \left(X_i-\mu\right)^2=\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2
+$$
+
+Kaji nilai harapan. Perhatikan bahwa $E(X_i)=\mu$, dan $E(\bar{X})=\mu$:
+
+$$
+\begin{aligned}
+E\left[\sum_{i=1}^n \left(X_i-\mu\right)^2\right]&=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+E\left[\sum_{i=1}^n\left(\bar{X}-\mu\right)^2\right]&\\ 
+\sum_{i=1}^nE\left[\left(X_i-\mu\right)^2\right]&=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+\sum_{i=1}^nE\left[\left(\bar{X}-\mu\right)^2\right]&\\ 
+\sum_{i=1}^n V\left(X_i\right)&=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+\sum_{i=1}^nV\left(\bar{X}\right)&\\ 
+E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]&=\sum_{i=1}^n V\left(X\right)+nV\left(\bar{X}\right)& \text{(X identik)}\\ 
+&=nV\left(X\right)+nV\left(\bar{X}\right)\\ 
+\frac{E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]}{n}&=V\left(X\right)+V\left(\bar{X}\right)\\ 
+E\left[\frac{\sum_{i=1}^n\left(X_i-\bar{X}\right)^2}{n}\right]&=\sigma^2+\frac{\sigma^2}{n}
+\end{aligned}
+$$
+
+Maka terbukti bahwa penduga tersebut bias.
+
+## Penduga $p$ di contoh acak $X$ yang menyebar Geometrik
+
+Diketahui bahwa $\hat{p}_{ml}=\frac{1}{\bar{X}}$. Pembuktian akan dilakukan dengan mengkaji kasus awal yaitu $n=1$. Maka $\bar{X}=X_1$. Cek bias dari penduga tersebut dengan mencari $E\left(\frac{1}{X}\right)$:
+
+$$
+\begin{aligned}
+E\left(\frac{1}{X}\right)=\sum_{x=1}^\infty \frac{1}{x}p(1-p)^{x-1}=p+\sum_{x=2}^\infty\frac{1}{x}p(1-p)^{x-1}
+\end{aligned}
+$$
+
+Hasil penjumlahan tersebut akan selalu positif, karena $\frac{1}{x}$ positif, serta $p$ dan $1-p$ bukan nol. Maka dari itu, penduga kemungkinan maksimum sudah terbukti bias untuk suatu kasus, dan tak mungkin tak bias.
+
+## Penduga $\lambda$ di contoh acak $X$ yang menyebar Poisson
+
+$\hat{\lambda}_{ml}=\bar{X}$. Diketahui juga $E(X)=\lambda$. Maka:
+
+$$
+E\left(\bar{X}\right)=E\left(\frac{X_1+\ldots+X_n}{n}\right)=\frac{nE(X)}{n}=\lambda
+$$
+
+Maka penduga tersebut tak bias.
+
+# Pencarian penduga kemungkinan maksimum
+
+Cari penduga kemungkinan maksimum untuk $\theta$, di mana $\theta$ adalah parameter di fungsi kepekatan peluang:
+
+$$
+f(x \ | \ \theta)=\theta x^{\theta-1}, \quad 0<x<1, \ 0<\theta<\infty
+$$
+
+Cari fungsi likelihood terlebih dahulu:
+
+$$
+L(\theta)=\prod_{i=1}^n f(x_i \ | \ \theta)=\theta^n\prod_{i=1}^n x_i^{\theta-1}
+$$
+
+Lalu, cari log dari fungsi tersebut:
+
+$$
+\begin{aligned}
+l(\theta)&=\log\left[L(\theta)\right]=\log\left[\theta^n\prod_{i=1}^n x_i^{\theta-1}\right]\\ 
+&=n\log\theta+(\theta-1)\sum_{i=1}^n \log X_i
+\end{aligned}
+$$
+
+Dan turunkan:
+
+$$
+\frac{\partial l(\theta)}{\partial\theta}=\frac{n}{\theta}+\sum_{i=1}^n\log X_i=0
+$$
+
+Maka:
+
+$$
+\theta=-\frac{n}{\sum_{i=1}^n \log(X_i)}
+$$
+
+Perhatikan bahwa semua $\log(X_i)$ negatif karena $0<X<1$. Oleh karena itu, penduga kemungkinan maksimum pasti positif dan memenuhi syarat $\theta$. Selain itu, turunan kedua:
+
+$$
+\frac{\partial l(\theta)}{\partial\theta}=-\frac{n}{\theta^2}<0
+$$
+
+Yang benar karena $\theta$ positif.

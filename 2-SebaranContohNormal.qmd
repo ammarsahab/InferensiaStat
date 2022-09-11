@@ -1,10 +1,9 @@
 ---
-title: "Bab 2: Sebaran Percontohan dari Sebaran Normal, Pendugaan Parameter, dan Metode Momen"
+title: "Bab 2"
 format: 
   html
 editor: visual
 author: "Ayunda Afiani Rosita, Muhammad Ammar Sahab"
-theme: simplex
 ---
 
 # Review Momen dan Fungsi Pembangkit Momen
@@ -135,7 +134,7 @@ $$
 
 ## Sebaran dari kombinasi linear peubah acak normal
 
-Jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2$.
+Jika $X_1, X_2, \ldots, X_n$ adalah peubah acak saling bebas dengan $X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)$ dan $a_1, a_2, \ldots, a_n$ adalah konstanta real, maka sebaran $Y=\sum_{i=1}^n a_iX_i$ (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan $\mu_Y=\sum_{i=1}^n a_i\mu_i$ dan ragam $\sigma_Y^2=\sum_{i=1}^n a_i^2\sigma_i^2$.
 
 ### Bukti
 
@@ -147,11 +146,11 @@ M_Y(t)&=E\left[\mathrm{exp}\left\{\left(\sum_{i=1}^n a_iX_i\right)t\right\}\righ
 &=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_iX_i\right)t\right\}\right]& \text{(saling bebas)}\\
 &=\prod_{i=1}^nE\left[\mathrm{exp}\left\{\left(a_it\right)X_i\right\}\right]=\prod_{i=1}^n M_{X_i}\left(a_it\right)&\\
 &=\prod_{i=1}^n\mathrm{exp}\left(\mu_i a_it+\frac{a_i^2t^2\sigma_i^2}{2}\right)&\text{(fpm normal)}\\
-&=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t\right\}
+&=\mathrm{exp}\left\{\left(\sum_{i=1}^n \mu_i a_i\right)t+\frac{\sum_{i=1}^n a_i^2\sigma_i^2}{2} t^2\right\}
 \end{aligned}
 $$
 
-Yang tidak lain adalah fungsi pembangkit momen peubah acak $\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i\sigma_i^2\right)$.
+Yang tidak lain adalah fungsi pembangkit momen peubah acak $\mathrm{Normal}\left(\sum_{i=1}^n a_i\mu_i, \sum_{i=1}^n a_i^2\sigma_i^2\right)$.
 
 ### Sebaran dari rata-rata sampel
 
@@ -511,7 +510,7 @@ Notasi lain dari statistik tataan bagi contoh acak $X_1, X_2, \ldots, X_n$ adala
 1. Minimum dari $X_i$ yaitu: $Y_{1} = \mathrm{min}(X_{1},\ X_{2},\ldots, X_{n})$
 2. Maksimum dari $X_i$ yaitu: $Y_{n} = \mathrm{max}(X_{1},\ X_{2},\ldots, X_{n})$
 
-#### Fungsi kepekatan peluang bersama dari $Y_1, Y_2, \ldots, Y_n$ adalah
+#### Fungsi kepekatan peluang bersama dari $Y_1, Y_2, \ldots, Y_n$ adalah:
 
 $$
 g\left( y_{1},y_{2},\ldots,y_{n} \right) = n!f\left( y_{1} \right)f\left( y_{2} \right)\ldots f\left( y_{n} \right) = n!{{\lbrack f}_{x}(x)\rbrack}^{n}
@@ -597,7 +596,7 @@ g_{n}\left( y_{n} \right)&=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \righ
 \end{aligned}
 $$
 
-#### Fungsi kepekatan peluang bersama dua statistik tataan, misalnya $Y_i < Y_j$ adalah
+#### Fungsi kepekatan peluang bersama dua statistik tataan, misalnya $Y_i < Y_j$ adalah:
 
 $$
 \begin{aligned}

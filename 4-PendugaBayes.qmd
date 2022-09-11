@@ -1,0 +1,73 @@
+---
+title: "Bab 4"
+format: html
+---
+
+Terkadang, ada informasi tertentu mengenai nilai parameter yang belum diketahui. Informasi ini dapat diperhitungkan dengan metode Bayes. Pada metode Bayes, parameter yang tidak diketahui ($\theta$) dianggap sebagai **peubah acak** dengan sebaran peluang tertentu yang dikenal sebagai **sebaran prior** bagi $\theta$ yang dinotasikan dengan $\pi(\theta)$.
+
+## Definisi
+
+Misalkan $Y_1, Y_2, \ldots, Y_n$ adalah contoh acak dengan sebaran yang memiliki fungsi kepekatan peluang $f_{\underline{Y}}(\underline{y} \ {\Large |} \ \theta)$, di mana $\theta$ adalah parameter yang tidak diketahui. Fungsi kepekatan peluang bersyarat dari peubah acak jika diberikan contoh $y_1, y_2, \ldots, y_n$ disebut **sebaran posterior**. Bagi $\theta$, fungsi kepekatan peluang sebaran posterior dinotasikan dengan $\pi(\theta \| \underline{y}$). Penduga parameter ditemukan dari sebaran posterior.
+
+### Fungsi kepekatan/massa peluang bersama antara $Y_1, Y_2, \ldots, Y_n$ dan $\theta$
+
+Untuk mencari fungsi kepekatan peluang bersama, ingat kembali definisi peluang bersama:
+
+$$
+P(A,B)=P(A \ | \ B)\cdot P(B)
+$$
+
+Langkah pertama yang intuitif adalah mencari fungsi kepekatan/massa peluang bersama $Y_1, Y_2, \ldots, Y_n$:
+
+$$
+f_{\underline{Y}}(\underline{y}|\theta) = \prod_{i = 1}^{n}{f_{Y}\left( y_{i} \middle| \theta \right)}
+$$
+
+Tentu, fungsi kepekatan peluang bersama tersebut masih menghitung peluang bersyarat $Y_1, Y_2, \ldots, Y_n$ dengan $\theta$. Peluang bersama ditemukan dengan mengalikan peluang bersyarat dengan fungsi kepekatan peluang $\theta$ (dari sebaran prior).
+
+$$
+f(\underline{y},\theta) = f_{\underline{Y}}(\underline{y}|\theta)\pi(\theta)
+$$
+
+### Fungsi kepekatan/massa peluang marginal bagi $Y_1, Y_2, \ldots, Y_n$
+
+Fungsi kepekatan/massa peluang marginal untuk kasus multivariat ditemukan dengan mengintegralkan/menambahkan fungsi kepekatan/massa peluang bersama di peubah-peubah yang tidak dimasukkan dalam fungsi marginal. Misal, jika dicari fungsi kepekatan/massa peluang marginal $Y_1, Y_2, \ldots, Y_n$, integral dievaluasi di seluruh peubah yang bukan $Y_1, Y_2, \ldots, Y_n$ (dalam kasus ini $\theta$).
+
+$$
+f(\underline{y}) = \int_{\forall\theta}^{}{f(\underline{y},\theta)}d\theta
+$$
+
+### Sebaran posterior bagi $\theta$
+
+Sebaran posterior tidak lain adalah suatu peluang bersyarat:
+$$
+P(A\ | \ B)=\frac{P(A,B)}{P(B)}
+$$
+
+Sehingga:
+
+$$
+\pi(\theta|\underline{y}) = \frac{f(\underline{y},\theta)}{f(\underline{y})}
+$$
+
+### Penduga Bayes bagi parameter $\theta$
+
+Penduga Bayes bagi parameter θ pada selang tertentu sehubungan dengan
+$L(θ, d) = (θ - d)^2$ yang diharapkan minimum, maka:
+
+$$
+{\hat{\theta}}_{B} = E(\theta|\underline{y}) = \int_{\forall\theta}^{}{\theta\pi(\theta|\underline{y})}d\theta
+$$
+
+Oleh karena itu, langkah metode Bayes adalah sebagai berikut:
+
+1.  Tentukan fkp/fmp bersama antara $Y_1, Y_2, \ldots, Y_n$ dengan syarat
+    $\theta$, $f_{\underline{Y}}(\underline{y} \ | \ \theta)$.
+2.  Tentukan fkp/fmp dari sebaran prior bagi $\theta$, $\pi(\theta)$.
+3.  Tentukan fkp/fmp bersama antara $Y_1, Y_2, \ldots, Y_n$ dan $\theta$,
+    $f(\underline{y},\theta)$.
+4.  Tentukan fkp/fmp marginal bagi $Y_1, Y_2, \ldots, Y_n$,
+    $f(\underline{y})$.
+5.  Tentukan sebaran posterior bagi $\theta$, $\pi(\theta|\underline{y})$.
+6.  Dari rumus ${\widehat{\theta}}_{B}$, akan diperoleh penduga Bayes
+    bagi parameter $\theta$.

@@ -1,0 +1,295 @@
+---
+title: "Bab 2, Latihan Soal"
+format: html
+---
+
+## Dasar-Dasar Pendugaan Parameter
+
+### $Y_1, Y_2, Y_3$ adalah contoh acak yang menyebar eksponensial dengan fungsi kepekatan peluang yang disebutkan di bawah:
+
+$$
+f(y)=
+\begin{cases}
+\frac{1}{\theta}e^{-y/\theta},& y>0\\
+0, & \mathrm{lainnya}
+\end{cases}
+$$
+
+Kaji penduga $\theta$ tersebut:
+$$
+\begin{aligned}
+\hat{\theta}_1&=Y_1 &\hat{\theta}_2&=\frac{Y_1+Y_2}{2}\\
+\hat{\theta}_3&=\frac{Y_1+2Y_2}{3} &\hat{\theta}_4&=\mathrm{min}(Y_1,Y_2,Y_3)\\
+\hat{\theta}_3&= Y_3
+\end{aligned}
+$$
+
+
+1. Penduga mana yang tak bias?
+2. Dari semua penduga tak bias, mana yang memiliki ragam terkecil?
+
+Karena $Y_1, Y_2, Y_3\sim \mathrm{Eksponensial}$ maka:
+$$
+\begin{aligned}
+E (Y)&= \theta  &V(Y)&=\theta^{2}
+\end{aligned}
+$$
+
+#### Bagian A: bias
+
+$$
+\begin{aligned}
+E ({\widehat{\theta}}_{1})&=E (Y_1)=\theta& \text{(tidak bias)}\\ 
+E ({\widehat{\theta}}_{2})&=E
+\left( \frac{Y_{1} + Y_{2}}{2} \right) = \frac{1}{2}\ E\left( Y_{1} + Y_{2} \right) = \theta & \text{(tidak bias)}\\ 
+E ({\widehat{\theta}}_{3})&=E
+\left( \frac{Y_{1} + 2Y_{2}}{3} \right)= \frac{1}{3}\ E\left( Y_{1} + 2Y_{2} \right)=\theta  &\text{(tidak bias)}\\
+E ({\widehat{\theta}}_{5})&= E\left( \overline{Y} \right) = E\left( \frac{1}{3}\sum_{i = 1}^{3}Y_{i} \right) &\\
+&= \frac{1}{3}.3.E\left( Y_{i} \right) = \theta &\text{(tidak bias)}
+\end{aligned}
+$$
+
+Untuk $\hat{\theta}_4$, penghitungan nilai harapan agak lebih kompleks. Perhatikan fungsi kepekatan peluang marginal statistik tataan minimum:
+
+$$
+g_{1}\left[ y_{(1)} \right]=nf\left[ y_{(1)} \right]\left( 1 - F\left[y_{(1)}\right]\right)^{n - 1},\ a < y_{(1)} < b \\
+$$
+
+Maka tentukan fungsi kumulatif dari $y$ dan dari situ, ambil fungsi kepekatan peluang marginal tatistik tataan minimum:
+
+$$
+\begin{aligned}
+F\left[y_{(1)} \right] &= \int_{0}^{y_{(1)}}{f(y)\ dy} = \int_{0}^{y_{(1)}}{\frac{1}{\theta}e^{- \frac{y}{\theta}}\ dy} = \frac{1}{\theta}\int_{0}^{y_{(1)}}{e^{- \frac{y}{\theta}}\ dy}\\ 
+&= \frac{1}{\theta}\left( - \theta e^{- \frac{y}{\theta}} \right){\huge|}^{y_{(1)}}_0= 1 - e^{- \frac{y_{(1)}}{\theta}},\ \ y_{(1)} > 0\\
+g_{1}\left[ y_{(1)} \right]&=nf\left[ y_{(1)} \right]\left( 1 - F\left[y_{(1)}\right]\right)^{n - 1} = 3\left( \frac{1}{\theta}e^{- \frac{y_{(1)}}{\theta}} \right)\left\lbrack 1 - \left( 1 - e^{- \frac{y_{(1)}}{\theta}} \right) \right\rbrack^{3 - 1}\\ 
+&= \frac{3}{\theta}e^{- \frac{y_{(1)}}{\theta}}.e^{- \frac{{2y}_{(1)}}{\theta}} = \frac{3}{\theta}e^{- \frac{3y_{(1)}}{\theta}},\ \ y_{(1)} > 0
+\end{aligned}
+$$
+
+Lalu cari nilai harapannya:
+
+$$
+\begin{aligned}
+E\left[ y_{(1)} \right]&= \int_{0}^{\infty}{{y_{(1)}g}_{(1)}\left[ y_{(1)} \right]\ dy_{(1)}} = \int_{0}^{\infty}{y_{(1)}\ \frac{3}{\theta}e^{- \frac{3y_{(1)}}{\theta}}dy_{(1)}}\\
+&= \frac{3}{\theta}\int_{0}^{\infty}{y_{(1)}\ e^{- \frac{3y_{(1)}}{\theta}}dy_{(1)}}
+\end{aligned}
+$$
+
+Untuk menyelesaikan integral tersebut, dapat dilakukan integrasi parsial:
+
+$$
+\begin{aligned}
+u&= y_{(1)} & dv&= \exp\left[\frac{3y_{(1)}}{\theta}\right]\\
+du&=dy_{(1)}& v&=\int \exp\left[-\frac{3y_{(1)}}{\theta}\right]dy_{(1)}\\
+& & &=-\frac{\theta}{3}\exp\left[-\frac{3y_{(1)}}{\theta}\right]
+\end{aligned}
+$$
+
+Maka:
+$$
+\begin{aligned}
+E\left[ y_{(1)} \right]&= \frac{3}{\theta}\left[uv {\huge|}^{\infty}_{0}- \int_{0}^{\infty}{v\ du} \right]\\ 
+&=\frac{3}{\theta}\left[\left\{y_{(1)} - \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}} \right\} {\huge|}^{\infty}_0  - \int_{0}^{\infty}\left\{- \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}}\ dy_{(1)}\right\} \right]\\ 
+&= \frac{3}{\theta}\left[\left\{0 - 0\right\} + \frac{\theta}{3}\int_{0}^{\infty}{e^{- \frac{3y_{(1)}}{\theta}}\ dy_{(1)}} \right]\\ 
+& = \frac{3}{\theta}\left[ \frac{\theta}{3}\left( - \frac{\theta}{3}e^{- \frac{3y_{(1)}}{\theta}} \right){\huge |}^{\infty}_{0}\right]\\ 
+& =  \frac{\theta}{3} \neq \theta\ \quad \text{(bias)}
+\end{aligned}
+$$
+
+#### Bagian B: ragam
+
+Karena $\hat{\theta}_4$ bias, ragamnya tak perlu dicari.
+
+$$
+\begin{aligned}
+V\left({\widehat{\theta}}_{1}\right)&= V\left( Y_{1} \right)\\ 
+&= \theta^{2}\\ 
+V\left({\widehat{\theta}}_{2}\right)&=V\left( \frac{Y_{1} + Y_{2}}{2} \right) = \frac{1}{4}\ V\left( Y_{1} + Y_{2} \right) = \frac{1}{4}\cdot{2\theta}^{2}\\ 
+&= \frac{1}{2}\theta^2\\ 
+V\left({\widehat{\theta}}_{3}\right)&=V\left(\frac{Y_1+2Y_2}{3}\right)=\frac{1}{9}\left[V\left(Y_1\right) +4V\left(Y_2\right)\right]\\
+&=\frac{5}{9}\theta^2\\ 
+V\left({\widehat{\theta}}_{5}\right)&= V\left( \overline{Y} \right) = V\left( \frac{1}{3}\sum_{i = 1}^{3}Y_{i} \right)=\frac{1}{9}V\left(Y_1+Y_2+Y_3\right)\\
+& =\frac{1}{9}\cdot 3V\left( Y_{i} \right) = \frac{1}{3}\theta^2
+\end{aligned}
+$$
+
+Maka, penduga tak bias dengan ragam terkecil adalah $\hat{\theta}_5$.
+
+### Jika $Y\sim\mathrm{Binomial}(n,p)$, maka $\hat{p}_1=Y/n$ adalah penduga tak bias bagi $p$. Penduga lain bagi $p$ adalah $\hat{p}_2=(Y+1)/(n+2)$.
+
+1. Tunjukkan bias dari $\hat{p}_2$.
+2. Tunjukkan MSE (KTG) dari $\hat{p}_1$ dan $\hat{p}_2$.
+3. Di nilai p apa saja $MSE(\hat{p}_1)<MSE(\hat{p}_2)$?
+
+Karena $Y\ \sim\ \mathrm{Binomial}(n,\ p)\ $, maka:
+
+$$
+\begin{aligned}
+E(Y)&= np & V(Y)&= np(1 - p)\\
+E\left( Y^{2} \right)&=V(Y)+\left[E(Y)\right]^2\\ 
+&=np(1-p)+n^2p^2=np(1-p+np)
+\end{aligned}
+$$
+
+#### Bias dari $\hat{p}_2$
+
+Pertama, cari nilai harapan dari $\hat{p}_2$:
+$$
+\begin{aligned}
+E\left( {\widehat{p}}_{2} \right)& = \ E\left( \frac{Y + 1}{n + 2} \right) = \frac{1}{n + 2}\ E(Y + 1) = \frac{np + 1}{n + 2} & \text{(bias)}\\ 
+\end{aligned}
+$$
+
+Lalu, bias tidak lain adalah perbedaan dari nilai harapan penduga dengan parameter yang hendak diduga. Maka hitung bias:
+
+$$
+\begin{aligned}
+B\left( {\widehat{p}}_{2} \right) &= E\ \left( {\widehat{p}}_{2} \right) - p = \frac{np + 1}{n + 2} - p \\ 
+&= \frac{np+1-np-2p}{n + 2}=\frac{1-2p}{n+2}
+\end{aligned}
+$$
+
+#### MSE dari $\hat{p}_1$ dan $\hat{p}_2$
+
+Kuadrat tengah galat tidak lain adalah ragam ditambah bias kuadrat. Oleh karena itu, cari bias dan ragam $\hat{p}_1$:
+
+$$
+\begin{aligned}
+E\left( {\widehat{p}}_{1} \right)&= E\left( \frac{Y}{n} \right) = \frac{1}{n}E(Y) = \frac{1}{n}(np) = p & \text{(tidak bias)}\\ 
+E\ \left( {\widehat{p}}_{1}^{2} \right)&= E\left( \frac{Y^{2}}{n^{2}} \right) = \frac{1}{n^{2}}E\left( Y^{2} \right) = \frac{1}{n^{2}}\left[ np(1 + np - p) \right] \\ 
+&= \frac{p + np^{2} - p^{2}}{n}
+\end{aligned}
+$$
+
+Oleh karena $\hat{p}_1$ tak bias, MSE hanya memiliki komponen ragam:
+$$
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{1} \right)&= \ V\left( {\widehat{p}}_{1} \right)=E\left( {{\widehat{p}}_{1}}^{2} \right) - \left\lbrack E\ \left( {\widehat{p}}_{1} \right) \right\rbrack^{2} \\ 
+&=\frac{p + np^{2} - p^{2}}{n} - p^{2} = \frac{p(1 - p)}{n}
+\end{aligned}
+$$
+
+Bias dari $\hat{p}_2$ sudah ditemukan, cari ragamnya:
+$$
+\begin{aligned}
+E\ \left({{\widehat{p}}_{2}}^{2} \right)&= E\left[ \frac{(Y + 1)^{2}}{{(n + 2)}^{2}} \right] = \frac{1}{{(n + 2)}^{2}}\ E\left( Y^{2} + 2Y + 1 \right)\\  
+&=\frac{1}{(n+2)^2}(np-np^2+n^2p^2+2np+1)\\ 
+&= \frac{n^{2}p^{2} - np^{2} + 3np + 1}{{(n + 2)}^{2}}\\ 
+V\left( {\widehat{p}}_{2} \right)&= E\ \left( {{\widehat{p}}_{2}}^{2} \right) - \left\lbrack E\ \left( {\widehat{p}}_{2} \right) \right\rbrack^{2} \\
+&= \frac{n^{2}p^{2} - np^{2} + 3np + 1}{(n + 2)^{2}} - \left( \frac{np + 1}{n + 2} \right)^{2}\\
+&=\frac{n^{2}p^{2} - np^{2} + 3np + 1}{(n + 2)^{2}} - \frac{n^2p^2 + 2np+ 1}{(n + 2)^2}\\ 
+&=\frac{np-np^2}{(n+2)^2}=  \frac{np(1 - p)}{(n + 2)^{2}}
+\end{aligned}
+$$
+
+Karena ragam dan bias sudah ditemukan, cari MSE:
+
+$$
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{2} \right)&= \ V\left( {\widehat{p}}_{2} \right) + \left\lbrack B\left( {\widehat{p}}_{2} \right) \right\rbrack^{2} = \frac{np(1 - p)}{(n + 2)^{2}} + \left( \frac{1 - 2p}{n + 2} \right)^{2}\\ 
+&=\frac{np(1 - p) + {(1 - 2p)}^{2}}{(n + 2)^{2}}
+\end{aligned}
+$$
+
+
+#### Kapan $MSE(\hat{p}_1)<MSE(\hat{p}_2)$?
+
+Kondisi tersebut sama dengan:
+
+$$
+\begin{aligned}
+MSE\ \left( {\widehat{p}}_{2} \right)&< MSE\ \left( {\widehat{p}}_{1} \right)\\ 
+\frac{np(1 - p) + (1 - 2p)^{2}}{(n + 2)^{2}}& < \frac{p(1 - p)}{n}\\ 
+n^2p-n^2p^2+n-4np+4np^2&<(p-p^2)(n^2+4n+4)\\
+n^2p-n^2p^2+n-4np+4np^2&<n^2p-n^2p^2+4np-4np^2+4p-4p^2\\
+(4np^2+4np^2+4p^2)-(4np+4np+4p)+n&<(n^2p-n^2p^2)-(n^2-n^2p^2)\\ 
+(8n+4)p^2-(8n+4)p+n&<0
+\end{aligned}
+$$
+
+Nilai p dapat diperoleh dari rumus abc:
+
+$$p_{1,2} = \ \frac{(8n + 4) \pm \sqrt{{(8n + 4)}^{2} - 4(8n + 4)(n)}}{2(8n + 4)} = \frac{1}{2} \pm \sqrt{\frac{n + 1}{8n + 4}}$$
+
+Jadi, nilai p mendekati 0.5.
+
+## Metode Momen
+
+### $X$ adalah peubah acak dengan fungsi kepekatan peluang $f(x\ | \ \theta)=\frac{2}{\theta^2}(\theta-x), \quad 0<x<\theta, \ \theta \in \Omega=(0,\theta)$
+
+Maka:
+
+#### Tunjukkan $f(x \ | \ \theta)$ adalah fkp.
+
+Suatu fungsi tersebut fungsi kepekatan peluang atau fungsi massa peluang jika:
+
+- Fungsi diskret: $\sum_{i = 1}^{n}{P\left( x_{i} \right) = 1}$
+- Fungsi kontinu: $\int_{- \infty}^{\infty}{f(x \ |  \ \theta)}dx = 1$
+
+Maka, karena $f(x \ | \ \theta)$ kontinu:
+$$
+\begin{aligned}
+\int_{-\infty}^{\infty}f(x \ | \ \theta)\ dx&=
+\int_{- \infty}^{0}{f(x\ | \ \theta)}\ dx + \int_{0}^{\theta}{f(x\ | \ \theta)}\ dx + \int_{\theta}^{\infty}{f(x\ | \ \theta)}\ dx\\ 
+&=0 + \frac{2}{\theta^{2}}\int_{0}^{\theta}(\theta -x)\ dx +0=\frac{2}{\theta^2}\left(\theta x -\frac{x^2}{2}\right){\huge |}_{0}^\theta\\ 
+&=\frac{2}{\theta^2}\left(\theta^2-\frac{\theta^2}{2}-0\right)=2-1=1
+\end{aligned}
+$$
+
+#### Tunjukkan $E_\theta(X)=\frac{\theta}{3}$ dan $\mathrm{Var}_{\theta}(X)=\frac{\theta^2}{18}$.
+
+Pertama, hitung nilai harapan:
+
+$$
+\begin{aligned}
+E_{\theta}(x)&= \int_{0}^{\theta}{x\ f(x\ | \ \theta)}dx = \int_{0}^{\theta}{x\ \frac{2}{\theta^{2}}(\theta - x)}dx = \frac{2}{\theta^{2}}\int_{0}^{\theta}{\theta x - x^{2}}dx\\ 
+&=\frac{2}{\theta^{2}}\left( \frac{\theta x^{2}}{2} - \frac{x^{3}}{3} \right){\huge|}^\theta_0= \frac{2}{\theta^{2}}\left( \frac{\theta^{3}}{2} - \frac{\theta^{3}}{3}  - 0 \right) = \theta - \frac{2\theta}{3}\\ 
+&= \frac{\theta}{3}\quad \text{(terbukti)}
+\end{aligned}
+$$
+
+Lalu, hitung ragam:
+
+$$
+\begin{aligned}
+E_{\theta}\left( x^{2} \right)&= \int_{0}^{\theta}{x^{2}\ f(x\ | \ \theta)}dx = \int_{0}^{\theta}{x^{2}\ \frac{2}{\theta^{2}}(\theta - x)}dx = \frac{2}{\theta^{2}}\int_{0}^{\theta}{\theta x^{2} - x^{3}}dx\\ 
+&= \frac{2}{\theta^{2}}\left( \frac{\theta x^{3}}{3} - \frac{x^{4}}{4} \right){\huge |}^\theta_0 = \frac{2}{\theta^{2}}\left(\frac{\theta^{4}}{3} - \frac{\theta^{4}}{4} - 0 \right) = \frac{2\theta^{2}}{3} - \frac{\theta^{2}}{2}\\ 
+&=\frac{\theta^{2}}{6}\\ 
+V_{\theta}(x)&= E_{\theta}\left( x^{2} \right) - \left\lbrack E_{\theta}(x) \right\rbrack^{2} = \frac{\theta^{2}}{6} - \left\lbrack \frac{\theta}{3} \right\rbrack^{2} = \frac{\theta^{2}}{18}\quad \text{terbukti}
+\end{aligned}
+$$
+
+#### Dari suatu contoh acak berukuran $n$ dari $f(x \ | \ \theta)$, cari penduga momen $\theta$, $\hat{\theta}$, dan tunjukkan penduga tersebut tak bias. Cari ragam penduga tersebut.
+
+##### Tentukan 1 momen dari populasi $\mu_{k}$:
+
+$$
+\mu_{1} = E\left( X^{1} \right) = \frac{\theta}{3}
+$$
+
+#####  Tentukan 1 momen dari contoh $m_{k}$:
+
+$$
+m_{1} = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}}^{1} = \bar{X}
+$$
+
+#####  Solusi dari sistem persamaan $\mu_{k} = \ m_{k}$:
+
+$$
+\begin{aligned}
+\mu_{1} &= \ m_{1}\\ 
+\frac{\theta}{3}\ &= \ \bar{X}\\ 
+\theta & = 3\overline{X}
+\end{aligned}
+$$
+
+Maka penduga bagi $\theta$, adalah ${\hat{\theta}}_{m} = \ 3\overline{X}$.
+
+$$
+\begin{aligned}
+E\left( {\hat{\theta}}_{m} \right)&= E\left( 3\bar{X} \right) = 3E\left( \frac{1}{n}\sum_{i = 1}^{n}X_{i} \right) =  \frac{3}{n}\cdot n E\left( X_{i} \right) &\\ 
+&= 3\left( \frac{\theta}{3} \right) = \theta& \text{(tidak bias)}\\ 
+V\ \left( {\hat{\theta}}_{m} \right)&= V\left( 3\bar{X} \right) = 9\ V\left( \frac{1}{n}\sum_{i = 1}^{n}X_{i} \right) = \frac{9}{n^{2}}\cdot nV\left( X_{i} \right) &\\ 
+&= \frac{9}{n}\left( \frac{\theta^{2}}{18}\  \right) = \frac{\theta^{2}}{2n}&
+\end{aligned}
+$$

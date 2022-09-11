@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Praktikum Inferensia Statistika - Bab 1, Latihan Soal</title>
+<title>Praktikum Inferensia Statistika - Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bab 1, Latihan Soal</h1>
+      <h1 class="quarto-secondary-nav-title">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -112,7 +112,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 1, Latihan Soal</a>
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Contoh Soal Bab 1 - Kekonvergenan</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -137,12 +137,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4-LatihanSoal.html" class="sidebar-item-text sidebar-link">Untitled</a>
+  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link active">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</a>
   </div>
 </li>
     </ul>
@@ -154,16 +149,13 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#konvergensi-dalam-peluang" id="toc-konvergensi-dalam-peluang" class="nav-link active" data-scroll-target="#konvergensi-dalam-peluang">Konvergensi dalam peluang</a>
+  <li><a href="#cek-bias" id="toc-cek-bias" class="nav-link active" data-scroll-target="#cek-bias">Cek Bias</a>
   <ul class="collapse">
-  <li><a href="#let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." id="toc-let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." class="nav-link" data-scroll-target="#let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu.">Let <span class="math inline">\(W_n\)</span> denote a random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(b/n^{p}\)</span>, where <span class="math inline">\(p &gt; 0, \mu\)</span>, and <span class="math inline">\(b\)</span> are constants (not functions of n). Prove that <span class="math inline">\(W_n\)</span> converges in probability to <span class="math inline">\(\mu\)</span>.</a></li>
-  <li><a href="#let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." id="toc-let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." class="nav-link" data-scroll-target="#let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0.">Let <span class="math inline">\(X_n\sim \mathrm{Exponential}(n)\)</span>, show that <span class="math inline">\(X_n\)</span> converges in probability to 0.</a></li>
+  <li><a href="#penduga-sigma2-di-contoh-acak-xsim-nmusigma2" id="toc-penduga-sigma2-di-contoh-acak-xsim-nmusigma2" class="nav-link" data-scroll-target="#penduga-sigma2-di-contoh-acak-xsim-nmusigma2">Penduga <span class="math inline">\(\sigma^2\)</span> di contoh acak <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span></a></li>
+  <li><a href="#penduga-p-di-contoh-acak-x-yang-menyebar-geometrik" id="toc-penduga-p-di-contoh-acak-x-yang-menyebar-geometrik" class="nav-link" data-scroll-target="#penduga-p-di-contoh-acak-x-yang-menyebar-geometrik">Penduga <span class="math inline">\(p\)</span> di contoh acak <span class="math inline">\(X\)</span> yang menyebar Geometrik</a></li>
+  <li><a href="#penduga-lambda-di-contoh-acak-x-yang-menyebar-poisson" id="toc-penduga-lambda-di-contoh-acak-x-yang-menyebar-poisson" class="nav-link" data-scroll-target="#penduga-lambda-di-contoh-acak-x-yang-menyebar-poisson">Penduga <span class="math inline">\(\lambda\)</span> di contoh acak <span class="math inline">\(X\)</span> yang menyebar Poisson</a></li>
   </ul></li>
-  <li><a href="#konvergensi-dalam-distribusi" id="toc-konvergensi-dalam-distribusi" class="nav-link" data-scroll-target="#konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</a>
-  <ul class="collapse">
-  <li><a href="#barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" id="toc-barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" class="nav-link" data-scroll-target="#barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke"><span class="math inline">\(\bar{X}_{n}\)</span> memiliki fungsi kumulatif sebagai berikut. Peubah acak tersebut konvergen dalam distirbusi ke?</a></li>
-  <li><a href="#diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." id="toc-diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." class="nav-link" data-scroll-target="#diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda.">Diberikan <span class="math inline">\(X_n \sim Binomial\left(n, \frac{\lambda}{n}\right)\)</span> Di mana <span class="math inline">\(\lambda&gt;0\)</span> suatu konstanta. Tunjukkan <span class="math inline">\(X_n\)</span> konvergen dalam distribusi ke Poisson(<span class="math inline">\(\lambda\)</span>).</a></li>
-  </ul></li>
+  <li><a href="#pencarian-penduga-kemungkinan-maksimum" id="toc-pencarian-penduga-kemungkinan-maksimum" class="nav-link" data-scroll-target="#pencarian-penduga-kemungkinan-maksimum">Pencarian penduga kemungkinan maksimum</a></li>
   </ul>
 </nav>
     </div>
@@ -172,7 +164,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bab 1, Latihan Soal</h1>
+<h1 class="title d-none d-lg-block">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</h1>
 </div>
 
 
@@ -186,92 +178,104 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="konvergensi-dalam-peluang" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-peluang">Konvergensi dalam peluang</h2>
-<p>Dua soal ini menunjukkan dua pendekatan membuktikan konvergensi dalam peluang. Pertama, menggunakan pertidaksamaan Chebysheff dan kedua, menggunakan fungsi kepekatan peluang.</p>
-<section id="let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." class="level3">
-<h3 class="anchored" data-anchor-id="let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu.">Let <span class="math inline">\(W_n\)</span> denote a random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(b/n^{p}\)</span>, where <span class="math inline">\(p &gt; 0, \mu\)</span>, and <span class="math inline">\(b\)</span> are constants (not functions of n). Prove that <span class="math inline">\(W_n\)</span> converges in probability to <span class="math inline">\(\mu\)</span>.</h3>
-<p>Dengan pertidaksamaan Chebysheff, buat <span class="math inline">\(a=\varepsilon\)</span>:</p>
+<section id="cek-bias" class="level1">
+<h1>Cek Bias</h1>
+<p>Tentukan bias dari penduga kemungkinan maksimum tersebut.</p>
+<section id="penduga-sigma2-di-contoh-acak-xsim-nmusigma2" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-sigma2-di-contoh-acak-xsim-nmusigma2">Penduga <span class="math inline">\(\sigma^2\)</span> di contoh acak <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span></h2>
+<p>Diketahui bahwa <span class="math inline">\(\hat{\sigma}_{ml}^2=\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}\)</span>. Untuk melihat nilai harapan dari penduga tersebut, perhatikan bahwa:</p>
+<p><span class="math display">\[
+\mathrm{Var}(X)=E\left[\left(X-E\left[X\right]\right)^2\right]
+\]</span></p>
+<p>Maka, jika <span class="math inline">\(E(X)=\mu\)</span>, kaji dan lakukan dekomposisi pada <span class="math inline">\(\sum_{i=1}^n \left(X_i-\mu\right)^2\)</span>.</p>
 <p><span class="math display">\[
 \begin{aligned}
-    P\left(|W_n-\mu |\geq \varepsilon \right)\leq {\frac {b}{n^p\varepsilon^{2}}}.
+\sum_{i=1}^n \left(X_i-\mu\right)^2&amp;=\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)+\left(\bar{X}-\mu\right)\right]^2\\
+&amp;=\sum_{i=1}^n \left[\left(X_i-\bar{X}\right)^2+\left(\bar{X}-\mu\right)^2-2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]\\
+&amp;=\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\right]
 \end{aligned}
 \]</span></p>
-<p>Ambil limit jika <span class="math inline">\(n\to\infty\)</span>, pasti akan 0.</p>
+<p>Karena diketahui bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\sum_{i=1}^n 2\left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)&amp;=2\sum_{i=1}^n \left(X_i-\bar{X}\right)\left(\bar{X}-\mu\right)\\
+&amp;=2\sum_{i=1}^n\left(X_i\bar{X}-X_i\mu-
+\bar{X}^2+\bar{X}\mu\right)\\
+&amp;=2\left[\sum_{i=1}^nX_iX-\sum_{i=1}^n X_i\mu-\sum_{i=1}^n \bar{X}^2+\sum_{i=1}^n\bar{X}\mu\right]\\
+&amp;=2\left[\left(n\bar{X}\right)\bar{X}-\left(n\bar{X}\right)\mu-n\bar{X}^2+n\bar{X}\mu\right]\\
+&amp;=2\left[\left(n\bar{X}^2-n\bar{X}^2\right)-n\bar{X}\mu+n\bar{X}\mu\right]\\
+&amp;=0
+\end{aligned}
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\sum_{i=1}^n \left(X_i-\mu\right)^2=\sum_{i=1}^n\left(X_i-\bar{X}\right)^2+\sum_{i=1}^n\left(\bar{X}-\mu\right)^2
+\]</span></p>
+<p>Kaji nilai harapan. Perhatikan bahwa <span class="math inline">\(E(X_i)=\mu\)</span>, dan <span class="math inline">\(E(\bar{X})=\mu\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[\sum_{i=1}^n \left(X_i-\mu\right)^2\right]&amp;=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+E\left[\sum_{i=1}^n\left(\bar{X}-\mu\right)^2\right]&amp;\\
+\sum_{i=1}^nE\left[\left(X_i-\mu\right)^2\right]&amp;=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+\sum_{i=1}^nE\left[\left(\bar{X}-\mu\right)^2\right]&amp;\\
+\sum_{i=1}^n V\left(X_i\right)&amp;=E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]+\sum_{i=1}^nV\left(\bar{X}\right)&amp;\\
+E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]&amp;=\sum_{i=1}^n V\left(X\right)+nV\left(\bar{X}\right)&amp; \text{(X identik)}\\
+&amp;=nV\left(X\right)+nV\left(\bar{X}\right)\\
+\frac{E\left[\sum_{i=1}^n\left(X_i-\bar{X}\right)^2\right]}{n}&amp;=V\left(X\right)+V\left(\bar{X}\right)\\
+E\left[\frac{\sum_{i=1}^n\left(X_i-\bar{X}\right)^2}{n}\right]&amp;=\sigma^2+\frac{\sigma^2}{n}
+\end{aligned}
+\]</span></p>
+<p>Maka terbukti bahwa penduga tersebut bias.</p>
 </section>
-<section id="let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." class="level3">
-<h3 class="anchored" data-anchor-id="let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0.">Let <span class="math inline">\(X_n\sim \mathrm{Exponential}(n)\)</span>, show that <span class="math inline">\(X_n\)</span> converges in probability to 0.</h3>
+<section id="penduga-p-di-contoh-acak-x-yang-menyebar-geometrik" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-p-di-contoh-acak-x-yang-menyebar-geometrik">Penduga <span class="math inline">\(p\)</span> di contoh acak <span class="math inline">\(X\)</span> yang menyebar Geometrik</h2>
+<p>Diketahui bahwa <span class="math inline">\(\hat{p}_{ml}=\frac{1}{\bar{X}}\)</span>. Pembuktian akan dilakukan dengan mengkaji kasus awal yaitu <span class="math inline">\(n=1\)</span>. Maka <span class="math inline">\(\bar{X}=X_1\)</span>. Cek bias dari penduga tersebut dengan mencari <span class="math inline">\(E\left(\frac{1}{X}\right)\)</span>:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lim_{n \rightarrow \infty} P\big(|X_n-0| \geq \epsilon \big) &amp;=\lim_{n \rightarrow \infty} P\big(X_n \geq \epsilon \big) &amp; (\textrm{$X_n\geq 0$ })\\
-&amp;=\lim_{n \rightarrow \infty} e^{-n\epsilon} &amp; \textrm{(fkp dari $\mathrm{Eksponensial}[n]$)} \\
-&amp;=0 , \qquad \textrm{ for all }\epsilon&gt;0.
+E\left(\frac{1}{X}\right)=\sum_{x=1}^\infty \frac{1}{x}p(1-p)^{x-1}=p+\sum_{x=2}^\infty\frac{1}{x}p(1-p)^{x-1}
 \end{aligned}
 \]</span></p>
-<p>Limit menuju <span class="math inline">\(0\)</span> karena pangkat negatif tak hingga berarti satu dibagi angka yang sangat besar, sehingga mendekati nol.</p>
+<p>Hasil penjumlahan tersebut akan selalu positif, karena <span class="math inline">\(\frac{1}{x}\)</span> positif, serta <span class="math inline">\(p\)</span> dan <span class="math inline">\(1-p\)</span> bukan nol. Maka dari itu, penduga kemungkinan maksimum sudah terbukti bias untuk suatu kasus, dan tak mungkin tak bias.</p>
+</section>
+<section id="penduga-lambda-di-contoh-acak-x-yang-menyebar-poisson" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-lambda-di-contoh-acak-x-yang-menyebar-poisson">Penduga <span class="math inline">\(\lambda\)</span> di contoh acak <span class="math inline">\(X\)</span> yang menyebar Poisson</h2>
+<p><span class="math inline">\(\hat{\lambda}_{ml}=\bar{X}\)</span>. Diketahui juga <span class="math inline">\(E(X)=\lambda\)</span>. Maka:</p>
+<p><span class="math display">\[
+E\left(\bar{X}\right)=E\left(\frac{X_1+\ldots+X_n}{n}\right)=\frac{nE(X)}{n}=\lambda
+\]</span></p>
+<p>Maka penduga tersebut tak bias.</p>
 </section>
 </section>
-<section id="konvergensi-dalam-distribusi" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</h2>
-<section id="barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" class="level3">
-<h3 class="anchored" data-anchor-id="barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke"><span class="math inline">\(\bar{X}_{n}\)</span> memiliki fungsi kumulatif sebagai berikut. Peubah acak tersebut konvergen dalam distirbusi ke?</h3>
+<section id="pencarian-penduga-kemungkinan-maksimum" class="level1">
+<h1>Pencarian penduga kemungkinan maksimum</h1>
+<p>Cari penduga kemungkinan maksimum untuk <span class="math inline">\(\theta\)</span>, di mana <span class="math inline">\(\theta\)</span> adalah parameter di fungsi kepekatan peluang:</p>
 <p><span class="math display">\[
-F_n(\bar{x})=\int_{-\infty}^{\bar{x}} \frac{1}{\sqrt{1/n}\sqrt{2\pi}}e^{-nw^2/2}dw
+f(x \ | \ \theta)=\theta x^{\theta-1}, \quad 0&lt;x&lt;1, \ 0&lt;\theta&lt;\infty
 \]</span></p>
-<p>Dengan menggunakan substitusi <span class="math inline">\(v=\sqrt{n}w\)</span>, maka <span class="math inline">\(dv=\sqrt{n}dw\)</span> sehingga:</p>
+<p>Cari fungsi likelihood terlebih dahulu:</p>
 <p><span class="math display">\[
-F_n(\bar{x})=\int_{-\infty}^{\sqrt{n}\bar{x}} \frac{1}{\sqrt{2\pi}}e^{-v^2/2}dw
+L(\theta)=\prod_{i=1}^n f(x_i \ | \ \theta)=\theta^n\prod_{i=1}^n x_i^{\theta-1}
 \]</span></p>
-<p>Sehingga:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\lim_{n\to\infty}F_n(\bar{x})
-\begin{cases}
-0, &amp; \bar{x}&lt;0\\
-\frac{1}{2}, &amp; \bar{x}=0\\
-1, &amp; \bar{x}&gt;0
-\end{cases}
-\end{aligned}
-\]</span></p>
-<p>Karena jika <span class="math inline">\(\bar{x}\)</span> negatif, maka integral dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(-\infty\)</span> menghasilkan nol. Jika <span class="math inline">\(\bar{x}=0\)</span>, integral merupakan fungsi kepekatan peluang normal baku dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(0\)</span>. Karena diketahui normal baku simetris dengan titik tengah di nol, peluang tersebut pasti <span class="math inline">\(1/2\)</span>. Jika <span class="math inline">\(\bar{x}\)</span> positif, maka integral dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(\infty\)</span> akan mencakup seluruh area peubah. Maka, <span class="math inline">\(F_n(\bar{x})\)</span> konvergen dalam distribusi ke:</p>
+<p>Lalu, cari log dari fungsi tersebut:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lim_{n\to\infty}F_n(\bar{x})
-\begin{cases}
-0, &amp; \bar{x}&lt;0\\
-1, &amp; \bar{x}&gt;0
-\end{cases}
+l(\theta)&amp;=\log\left[L(\theta)\right]=\log\left[\theta^n\prod_{i=1}^n x_i^{\theta-1}\right]\\
+&amp;=n\log\theta+(\theta-1)\sum_{i=1}^n \log X_i
 \end{aligned}
 \]</span></p>
-<p>Karena <span class="math inline">\(F_n(\bar{x})\)</span> tak kontinu di <span class="math inline">\(\bar{x}=0\)</span>.</p>
-</section>
-<section id="diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." class="level3">
-<h3 class="anchored" data-anchor-id="diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda.">Diberikan <span class="math inline">\(X_n \sim Binomial\left(n, \frac{\lambda}{n}\right)\)</span> Di mana <span class="math inline">\(\lambda&gt;0\)</span> suatu konstanta. Tunjukkan <span class="math inline">\(X_n\)</span> konvergen dalam distribusi ke Poisson(<span class="math inline">\(\lambda\)</span>).</h3>
-<p>Kaji fungsi kumulatif binomial:</p>
+<p>Dan turunkan:</p>
 <p><span class="math display">\[
-\begin{aligned}
-\nonumber \nonumber \lim_{n \rightarrow \infty} P_{X_n}(k) &amp;= \lim_{n \rightarrow \infty} {n \choose k} \left(\frac{\lambda}{n}\right)^k \left(1-\frac{\lambda}{n}\right)^{n-k} \\
-\nonumber &amp;= \lambda^k \lim_{n \rightarrow \infty} {\frac{n!}{k! (n-k)!}} \left(\frac{1}{n^k}\right) \left(1-\frac{\lambda}{n}\right)^{n-k}\\
-\nonumber &amp;= \frac{\lambda^k}{k!} . \lim_{n \rightarrow \infty} \left(\left[ \frac{n...(n-k+1)}{n^k}\right]\\  \left[ \left(1-\frac{\lambda}{n}\right)^{n}\right] \left[\left(1-\frac{\lambda}{n}\right)^{-k}\right]\right)
-\end{aligned}
+\frac{\partial l(\theta)}{\partial\theta}=\frac{n}{\theta}+\sum_{i=1}^n\log X_i=0
 \]</span></p>
-<p>Sehingga:</p>
+<p>Maka:</p>
 <p><span class="math display">\[
-\begin{aligned}%\label{}
-\nonumber &amp;\lim_{n \rightarrow \infty} \frac{n(n-1)(n-2)...(n-k+1)}{n^k} =1,\\
-\nonumber &amp;\lim_{n \rightarrow \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=1,\\
-\nonumber &amp;\lim_{n \rightarrow \infty}\left(1-\frac{\lambda}{n}\right)^{n}=e^{-\lambda}.
-\end{aligned}
+\theta=-\frac{n}{\sum_{i=1}^n \log(X_i)}
 \]</span></p>
-<p>Yang jika digabung tidak lain merupakan fungsi kumulatif dari Poisson:</p>
+<p>Perhatikan bahwa semua <span class="math inline">\(\log(X_i)\)</span> negatif karena <span class="math inline">\(0&lt;X&lt;1\)</span>. Oleh karena itu, penduga kemungkinan maksimum pasti positif dan memenuhi syarat <span class="math inline">\(\theta\)</span>. Selain itu, turunan kedua:</p>
 <p><span class="math display">\[
-\begin{equation}
-\nonumber \lim_{n \rightarrow \infty} P_{X_n}(k)=\frac{e^{-\lambda} \lambda^k}{k!}.
-\end{equation}
+\frac{\partial l(\theta)}{\partial\theta}=-\frac{n}{\theta^2}&lt;0
 \]</span></p>
+<p>Yang benar karena <span class="math inline">\(\theta\)</span> positif.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->

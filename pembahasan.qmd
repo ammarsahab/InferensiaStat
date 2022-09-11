@@ -4,10 +4,19 @@ title: "Pembahasan"
 
 Pembahasan latihan soal, tugas, dan kuis. Pembahasan yang sudah ada:
 
-## Latihan Soal
-
-1. Bab 1: Kekonvergenan, WLLN, CLT
-
-## Tugas
-
-1. Bab 1: Kekonvergenan, WLLN, CLT
+| Bab | Materi                                                                      | Latihan Soal | Tugas |
+|-----|-----------------------------------------------------------------------------|--------------|-------|
+| 1   | Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat                    | Ada          | Ada   |
+| 2   | Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen | Ada          | Ada   |
+| 3   | Penduga Kemungkinan Maksimum                                                | Ada          | Ada   |
+| 4   | Penduga Bayes                                                               | Ada          |       |
+| 5   | Statistik Cukup                                                             |              |       |
+| 6   |                                                                             |              |       |
+| 7   |                                                                             |              |       |
+| 8   |                                                                             |              |       |
+| 9   |                                                                             |              |       |
+| 10  |                                                                             |              |       |
+| 11  |                                                                             |              |       |
+| 12  |                                                                             |              |       |
+| 13  |                                                                             |              |       |
+| 14  |                                                                             |              |       |

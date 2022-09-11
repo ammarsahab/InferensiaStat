@@ -4,11 +4,19 @@ title: "Tugas"
 
 Tugas-tugas Inferensia Statistika. Tugas yang ada, yaitu:
 
-## Tugas Individu 
-
-1.  Bab 1: Kekonvergenan
-2.  Bab 3: Penduga Kemungkinan Maksimum (**on progress**)
-
-## Tugas Kelompok 
-
-1. Bab 2: Sebaran Percontohan Normal dan Pendugaan Parameter (**on progress**)
+| Bab | Materi                                                                      | Tugas          | Pengumpulan       | Penilaian |
+|-----|-----------------------------------------------------------------------------|----------------|-------------------|-----------|
+| 1   | Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat                    | Latihan        | Tidak dikumpulkan |           |
+| 2   | Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen | Tugas Individu | Kertas            | Belum     |
+| 3   | Penduga Kemungkinan Maksimum                                                | Tugas Kelompok | Google Form       | Belum     |
+| 4   | Penduga Bayes                                                               | Tugas Kelompok | TBD               |           |
+| 5   | Statistik Cukup                                                             |                | TBD               |           |
+| 6   |                                                                             |                |                   |           |
+| 7   |                                                                             |                |                   |           |
+| 8   |                                                                             |                |                   |           |
+| 9   |                                                                             |                |                   |           |
+| 10  |                                                                             |                |                   |           |
+| 11  |                                                                             |                |                   |           |
+| 12  |                                                                             |                |                   |           |
+| 13  |                                                                             |                |                   |           |
+| 14  |                                                                             |                |                   |           |

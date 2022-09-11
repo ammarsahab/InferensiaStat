@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Bab 3, Latihan Soal</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./modul.html">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pembahasan.html" aria-current="page">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 3, Latihan Soal</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pembahasan.html" class="sidebar-item-text sidebar-link">Pembahasan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 1, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 1, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 2, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 2, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 3, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-LatihanSoal.html" class="sidebar-item-text sidebar-link">Untitled</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sebaran-eksponensial" id="toc-sebaran-eksponensial" class="nav-link active" data-scroll-target="#sebaran-eksponensial">Sebaran Eksponensial</a></li>
+  <li><a href="#sebaran-binomial" id="toc-sebaran-binomial" class="nav-link" data-scroll-target="#sebaran-binomial">Sebaran binomial</a></li>
+  <li><a href="#sebaran-normal" id="toc-sebaran-normal" class="nav-link" data-scroll-target="#sebaran-normal">Sebaran Normal</a></li>
+  <li><a href="#sebaran-seragam-0" id="toc-sebaran-seragam-0" class="nav-link" data-scroll-target="#sebaran-seragam-0">Sebaran Seragam (0,)</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 3, Latihan Soal</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="sebaran-eksponensial" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-eksponensial">Sebaran Eksponensial</h2>
+<p>Misal <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> menyebar bebas stokastik identik, <span class="math inline">\(\mathrm{Eksponensial}(\theta)\)</span>. Berilah penduga kemungkinan maksimum bagi <span class="math inline">\(\theta\)</span>! Apakah berbias?</p>
+<p>Fungsi kepekatan peluang <span class="math inline">\(\mathrm{Eksponensial}(\theta)\)</span> adalah:</p>
+<p><span class="math display">\[
+f(x_i)=\frac{1}{\theta}e^{-x_i/\theta}
+\]</span></p>
+<p>Maka log-nya adalah:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log\left[f(x_i)\right]&amp;=\log\left[\frac{1}{\theta}e^{-x_i/\theta}\right]=\log\frac{1}{\theta}+\log e^{-x_i/\theta}\\
+&amp;= -\log\theta-\frac{x_i}{\theta}
+\end{aligned}
+\]</span></p>
+<p>Dan log-likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+l(\theta)&amp;=\sum_{i=1}^n\log\left[f(x_i)\right]=\sum_{i=1}^n \left\{-\log\theta-\frac{x_i}{\theta}\right\}\\
+&amp;=-n\log\theta-\frac{1}{\theta}\sum_{i=1}^n x_{i}
+\end{aligned}
+\]</span></p>
+<p>Lalu cari turunan pada <span class="math inline">\(\theta\)</span>; note, turunan <span class="math inline">\(\partial \log(x)/\partial x=1/x\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial l(\theta)}{\partial \theta}&amp;=-\frac{n}{\theta}+\frac{1}{\theta^2}\sum_{i=1}^n x_{i}
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(-1/\theta=-\theta^{-1}\)</span>, sehingga turunannya adalah <span class="math inline">\(\theta^{-2}\)</span>. Lalu buat nilai turunan tersebut sama dengan nol, dan cari penduga untuk <span class="math inline">\(\theta\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial l(\theta)}{\partial \theta}&amp;=-\frac{n}{\theta}+\frac{1}{\theta^2}\sum_{i=1}^n x_{i}=0\\
+&amp;=\frac{1}{\theta}\left(-n+\frac{1}{\theta}\sum_{i=1}^n x_i\right)=0\\
+&amp;=\theta\cdot\frac{1}{\theta}\left(\cdots\right)=\theta\cdot0\\
+&amp;=-n+\frac{1}{\theta}\sum_{i=1}^n x_i=0\\
+&amp;=\frac{1}{\theta}\sum_{i=1}^n x_{i}=n\\
+&amp;=\frac{\sum_{i=1}^n x_i}{n}=\theta\\
+&amp;=\bar{x}
+\end{aligned}
+\]</span></p>
+<p>Maka penduga bagi <span class="math inline">\(\theta\)</span> adalah <span class="math inline">\(\bar{x}\)</span>. Coba uji turunan kedua:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial^2 l(\theta)}{\partial \theta^2}&amp;=\frac{n}{\theta^2}-\frac{2}{\theta^3}\sum_{i=1}^n x_{i}&amp;\\
+&amp;=\frac{1}{\theta^2}\left[n-\frac{2}{\theta}\sum_{i=1}^n x_i\right]&amp; \text{substitusi }\theta \text{ dengan } \bar{x}\\
+&amp;=\frac{1}{\bar{x}^2}\left[n-\frac{2}{\frac{\sum_{i=1}^n x_i}{n}}\sum_{i=1}^n x_i\right]\\
+&amp;=\bar{x}^2\left[n-2n\right]=-n\bar{x}^2 &lt;0
+\end{aligned}
+\]</span></p>
+<p>Sehingga turunan kedua negatif.</p>
+<p>Bias dari penduga tersebut juga dapat dicari, dengan mengetahui bahwa <span class="math inline">\(E\left[X\right]=\theta\)</span> untuk eksponensial:</p>
+<p><span class="math display">\[
+E\left[\bar{x}\right]=E\left[\frac{\sum_{i=1}^n x_i}{n}\right]=\frac{1}{n}\left[n\theta\right]=\theta
+\]</span></p>
+<p>Ragam dari penduga juga dapat dicari.</p>
+</section>
+<section id="sebaran-binomial" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-binomial">Sebaran binomial</h2>
+<p><span class="math inline">\(X\)</span> adalah satu jika suatu percobaan Bernoulli sukses dan nol jika percobaan tersebut gagal, dengan probabilitas sukses <span class="math inline">\(\theta\)</span>. <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari <span class="math inline">\(X\)</span>, dengan n diketahui. Temukan penduga kemungkinan maksimum dan cek biasnya!</p>
+<p>Fungsi massa peluang Bernoulli:</p>
+<p><span class="math display">\[
+p(x\ | \ \theta)=\theta^x(1-\theta)^{1-x}, \ x=0 \text{ atau }1
+\]</span></p>
+<p>Maka log dari fungsi tersebut adalah:</p>
+<p><span class="math display">\[
+\log\left[p(x \ | \ \theta)\right]=x\log\theta+(1-x)\log(1-\theta)
+\]</span></p>
+<p>Sehingga fungsi log-likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+l(\theta)&amp;=\sum_{i=1}^n\log\left[p(x_i \ | \ \theta)\right]=\sum_{i=1}^n x_i \log \theta+\left(n-\sum_{i=1}^n x_i\right)\log(1-\theta)\\
+\end{aligned}
+\]</span></p>
+<p>Cari turunannya dan buat nol:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial l(\theta)}{\partial \theta}&amp;=\frac{\sum_{i=1}^n x_i}{\theta}-\frac{n-\sum_{i=1}^n x_i}{1-\theta}=0\\
+&amp;=\frac{\sum_{i=1}^n x_i}{\theta}=\frac{n-\sum_{i=1}^n x_i}{1-\theta}\\
+&amp;=\sum_{i=1}^n x_i-\theta\sum_{i=1}^n x_i=\theta n-\theta\sum_{i=1}^n x_i\\
+&amp;=\sum_{i=1}^n x_i-\theta\sum_{i=1}^n x_i+\theta\sum_{i=1}^n x_i=\theta n-\theta\sum_{i=1}^n x_i+\theta\sum_{i=1}^n x_i\\
+&amp;=\sum_{i=1}^n x_i=\theta n\\
+&amp;=\frac{\sum_{i=1}^n x_i}{n}=\theta
+\end{aligned}
+\]</span></p>
+<p>Atau, proporsi kejadian sukses dari semua kejadian. Karena <span class="math inline">\(E(x_i)=p\)</span>, maka jelas penduga tersebut takbias, karena <span class="math inline">\(\sum_{i=1}^n p=np\)</span>; jika dibagi n maka ketakbiasan terbukti.</p>
+<p>Cek juga turunan kedua:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial^2 l(\theta)}{\partial \theta^2}&amp;=-\frac{\sum_{i=1}^n x_i}{\theta^2}-\frac{n-\sum_{i=1}^n x_i}{(1-\theta)^2}&lt;0
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(X\)</span> hanya memiliki nilai 1 atau 0, term <span class="math inline">\(sum_{i=1}^n x_i\)</span> pasti positif dan lebih kecil atau sama dengan <span class="math inline">\(n\)</span>. Oleh karena itu jelas bahwa <span class="math inline">\(-\sum_{i=1}^n x_i\)</span> pasti negatif. Lalu <span class="math inline">\(n-\sum_{i=1}^n x_i\)</span> tidak mungkin negatif, sehingga minusnya tidak mungkin positif.</p>
+</section>
+<section id="sebaran-normal" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-normal">Sebaran Normal</h2>
+<p><span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari <span class="math inline">\(X\sim N(\mu,\sigma^2)\)</span>. Cari penduga kemungkinan maksimum untuk vektor <span class="math inline">\(\theta=(\mu, \sigma^2)\)</span>:</p>
+<p>Log dari fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\log\left[f(x_i\ | \ \theta)\right]&amp;=\log\left[\frac{1}{\sigma\sqrt{2\pi}}\exp\left\{-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2\right\}\right]\\
+&amp;=\log\frac{1}{\sigma}+\log\frac{1}{2\pi}-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2\\
+&amp;=-\log\sigma-\log2\pi-\frac{1}{2}\left(\frac{x_i-\mu}{\sigma}\right)^2
+\end{aligned}
+\]</span></p>
+<p>Lalu cari fungsi log-likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+l(\theta)&amp;=\sum_{i=1}^n\log\left[f(x_i \ | \ \theta)\right]\\
+&amp;=-n\log\sigma-n\log2\pi-\frac{1}{2}\sum_{i=1}^n\left(\frac{x_i-\mu}{\sigma}\right)^2\\
+\end{aligned}
+\]</span></p>
+<p>Lalu turunkan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\frac{\partial l(\mu, \sigma)}{\partial \mu}&amp;=-\frac{1}{2}\cdot2\sum_{i=1}^n\left[\frac{\partial}{\partial \mu}\left(\frac{x_i-\mu}{\sigma}\right)\right]\\
+&amp;=\frac{1}{\sigma}\sum_{i=1}^n\left(\frac{x_i-\mu}{\sigma}\right)=\frac{1}{\sigma^2}\sum_{i=1}^n (x_i-\mu)\\
+\frac{\partial l(\mu, \sigma)}{\partial \sigma}
+&amp;=-\frac{n}{\sigma}-\frac{1}{2}\sum_{i=1}^n\left(x_i-\mu\right)^2\frac{\partial }{\partial \sigma}\left(\sigma\right)^{-2}\\
+&amp;=-\frac{n}{\sigma}+\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\mu)^2
+\end{aligned}
+\]</span></p>
+<p>Untuk membuat persamaan pertama nol, haruslah <span class="math inline">\(\sum_{i=1}^n (x_i-\mu)\)</span> nol. Maka haruslah <span class="math inline">\(n\bar{X}-n\mu=0\)</span>, dan <span class="math inline">\(\bar{X}=\mu\)</span> menjadi penduga nilai harapan.</p>
+<p>Jika penduga tersebut dimasukkan ke persamaan kedua, maka dimiliki:</p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=-\frac{n}{\sigma}+\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\bar{x})^2\\
+\sigma^3\cdot\frac{n}{\sigma}&amp;=\sigma^3\cdot\frac{1}{\sigma^3}\sum_{i=1}^n (x_i-\bar{x})^2\\
+\sigma^2n&amp;=\sum_{i=1}^n (x_i-\bar{x})^2\\
+\sigma^2&amp;=\frac{\sum_{i=1}^n (x_i-\bar{x})^2}{n}
+\end{aligned}
+\]</span></p>
+<p>Sehingga ditemukan penduga kemungkinan maksimum <span class="math inline">\(\sigma^2\)</span>.</p>
+</section>
+<section id="sebaran-seragam-0" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-seragam-0">Sebaran Seragam (0,)</h2>
+<p>Untuk menghitung penduga kemungkinan maksimum sebaran seragam, perlu pengetahuan mengenai konsep <em>fungsi indikator</em>. <span class="math inline">\(I(a,b)\)</span> adalah 1 jika <span class="math inline">\(a\leq b\)</span> dan 0 jika <span class="math inline">\(a&gt;b\)</span>. Oleh karena sebaran <span class="math inline">\(Seragam(0,\theta)\)</span> memiliki fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f(x \ | \ \theta)&amp;=\begin{cases}
+\frac{1}{\theta}, &amp;0\leq x_i\leq\theta \\
+0, &amp; lainnya
+\end{cases}
+\\&amp;=\frac{1}{\theta}I(x_i,\theta)
+\end{aligned}
+\]</span></p>
+<p>Karena jika <span class="math inline">\(x_i\)</span> di luar selang tersebut,fungsi indikator akan nol. Karena sudah diketahui batas bawah sebaran adalah 0, semua nilai di contoh acak pastilah lebih dari nol. Maka fungsi likelihoodnya adalah:</p>
+<p><span class="math display">\[
+L(\theta)=\frac{1}{\theta^n}\prod_{i=1}^n I(x_i,\theta)
+\]</span></p>
+<p>Note nilai yang mungkin untuk fungsi indikator adalah <span class="math inline">\(1\)</span> jika semua <span class="math inline">\(x_i\leq\theta\)</span> dan <span class="math inline">\(0\)</span> jika setidaknya satu <span class="math inline">\(x_i&gt;\theta\)</span>. Namun <span class="math inline">\(max(x_i)\geq x_i\)</span> sehingga jika <span class="math inline">\(max(x_i)\leq \theta\)</span> pastilah semua <span class="math inline">\(x_i\leq\theta\)</span>. Sehingga fungsi likelihood ditulis:</p>
+<p><span class="math display">\[
+L(\theta)=\frac{1}{\theta^n}\prod_{i=1}^n I(max\{x_i\},\theta)
+\]</span></p>
+<p>Tentu, kita ingin <span class="math inline">\(\theta\)</span> sekecil mungkin agar pembagi sekecil mungkin dan fungsi likelihood sebesar mungkin, tetapi dengan syarat <span class="math inline">\(max\{x_i\}\leq\theta\)</span>. Oleh karena itu penduga kemungkinan maksimum adalah <span class="math inline">\(max\{x_i\}\)</span></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

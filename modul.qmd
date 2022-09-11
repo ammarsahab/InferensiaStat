@@ -4,7 +4,19 @@ title: "Modul"
 
 Materi pembelajaran Inferensia Statistika. Modul yang sudah dibuat adalah:
 
-1. Bab 1: Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat.
-2. Bab 2: Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen.
-3. Bab 3: Maximum Likelihood.
-4. **sedang dibuat** - Bab 4: Penduga Bayes.
+| Bab | Materi                                                                      | Keterangan                    |
+|-----|-----------------------------------------------------------------------------|-------------------------------|
+| 1   | Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat                    | Lengkap                       |
+| 2   | Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen | Lengkap                       |
+| 3   | Penduga Kemungkinan Maksimum                                                | Belum lengkap (kurang Jacobi) |
+| 4   | Penduga Bayes                                                               | Lengkap                       |
+| 5   | Statistik Cukup                                                             |                               |
+| 6   |                                                                             |                               |
+| 7   |                                                                             |                               |
+| 8   |                                                                             |                               |
+| 9   |                                                                             |                               |
+| 10  |                                                                             |                               |
+| 11  |                                                                             |                               |
+| 12  |                                                                             |                               |
+| 13  |                                                                             |                               |
+| 14  |                                                                             |                               |

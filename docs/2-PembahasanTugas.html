@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Bab 2, Pembahasan Tugas</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./modul.html">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pembahasan.html" aria-current="page">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 2, Pembahasan Tugas</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pembahasan.html" class="sidebar-item-text sidebar-link">Pembahasan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 1, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 1, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 2, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-PembahasanTugas.html" class="sidebar-item-text sidebar-link active">Bab 2, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-LatihanSoal.html" class="sidebar-item-text sidebar-link">Contoh Soal Bab 3 - Penduga Kemungkinan Maksimum</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-LatihanSoal.html" class="sidebar-item-text sidebar-link">Untitled</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#breakdowns" id="toc-breakdowns" class="nav-link active" data-scroll-target="#breakdowns">Breakdowns</a>
+  <ul class="collapse">
+  <li><a href="#berikan-penduga-tak-bias-bagi-lambda" id="toc-berikan-penduga-tak-bias-bagi-lambda" class="nav-link" data-scroll-target="#berikan-penduga-tak-bias-bagi-lambda">Berikan penduga tak bias bagi <span class="math inline">\(\lambda\)</span></a></li>
+  <li><a href="#biaya-perbaikan-kerusakan-per-minggu." id="toc-biaya-perbaikan-kerusakan-per-minggu." class="nav-link" data-scroll-target="#biaya-perbaikan-kerusakan-per-minggu.">Biaya perbaikan kerusakan per minggu.</a></li>
+  <li><a href="#penduga-tak-bias-bagi-ec" id="toc-penduga-tak-bias-bagi-ec" class="nav-link" data-scroll-target="#penduga-tak-bias-bagi-ec">Penduga tak bias bagi <span class="math inline">\(E(C)\)</span></a></li>
+  </ul></li>
+  <li><a href="#penduga-metode-momen-gamma" id="toc-penduga-metode-momen-gamma" class="nav-link" data-scroll-target="#penduga-metode-momen-gamma">Penduga Metode Momen: Gamma</a></li>
+  <li><a href="#penduga-metode-momen-peubah-acak-x" id="toc-penduga-metode-momen-peubah-acak-x" class="nav-link" data-scroll-target="#penduga-metode-momen-peubah-acak-x">Penduga Metode Momen, Peubah Acak X</a>
+  <ul class="collapse">
+  <li><a href="#tentukan-nilai-beta-sehingga-fx-theta-di-atas-merupakan-fungsi-kepekatan-peluang." id="toc-tentukan-nilai-beta-sehingga-fx-theta-di-atas-merupakan-fungsi-kepekatan-peluang." class="nav-link" data-scroll-target="#tentukan-nilai-beta-sehingga-fx-theta-di-atas-merupakan-fungsi-kepekatan-peluang.">Tentukan nilai <span class="math inline">\(\beta\)</span> sehingga <span class="math inline">\(f(x\ | \ \theta)\)</span> di atas merupakan fungsi kepekatan peluang.</a></li>
+  <li><a href="#tentukan-penduga-bagi-theta-melalui-metode-momen.-apakah-penduga-yang-diperoleh-bersifat-tidak-bias" id="toc-tentukan-penduga-bagi-theta-melalui-metode-momen.-apakah-penduga-yang-diperoleh-bersifat-tidak-bias" class="nav-link" data-scroll-target="#tentukan-penduga-bagi-theta-melalui-metode-momen.-apakah-penduga-yang-diperoleh-bersifat-tidak-bias">Tentukan penduga bagi <span class="math inline">\(\theta\)</span> melalui metode momen. Apakah penduga yang diperoleh bersifat tidak bias?</a></li>
+  </ul></li>
+  <li><a href="#sebaran-t-dan-f" id="toc-sebaran-t-dan-f" class="nav-link" data-scroll-target="#sebaran-t-dan-f">Sebaran t dan F</a>
+  <ul class="collapse">
+  <li><a href="#jika-xsim-tn-maka-buktikan-x2sim-f1n" id="toc-jika-xsim-tn-maka-buktikan-x2sim-f1n" class="nav-link" data-scroll-target="#jika-xsim-tn-maka-buktikan-x2sim-f1n">Jika <span class="math inline">\(X\sim t(n)\)</span>, maka buktikan <span class="math inline">\(X^2\sim F(1,n)\)</span>!</a></li>
+  <li><a href="#jika-usim-fn_1n_2-apa-sebaran-1u" id="toc-jika-usim-fn_1n_2-apa-sebaran-1u" class="nav-link" data-scroll-target="#jika-usim-fn_1n_2-apa-sebaran-1u">Jika <span class="math inline">\(U\sim F(n_1,n_2)\)</span>, apa sebaran <span class="math inline">\(1/U\)</span>?</a></li>
+  </ul></li>
+  <li><a href="#sebaran-perbedaan-rataan-normal" id="toc-sebaran-perbedaan-rataan-normal" class="nav-link" data-scroll-target="#sebaran-perbedaan-rataan-normal">Sebaran perbedaan rataan normal</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 2, Pembahasan Tugas</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="breakdowns" class="level2">
+<h2 class="anchored" data-anchor-id="breakdowns">Breakdowns</h2>
+<p>The number of breakdowns per week for a type of mini coupler is a random variable Y with a Poisson distribution and mean <span class="math inline">\(\lambda\)</span>. A random sample <span class="math inline">\(Y_{1},\ Y_{2},\ \cdots,\ Y_{n}\)</span> of observations on the weekly number of breakdowns is available.</p>
+<p>Karena, <span class="math inline">\(Y_{1},\ Y_{2},\ \cdots,\ Y_{n}\sim Poisson\ (\lambda)\)</span>, maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(Y)&amp;= \lambda &amp;V(Y)  = \lambda
+\end{aligned}
+\]</span></p>
+<section id="berikan-penduga-tak-bias-bagi-lambda" class="level3">
+<h3 class="anchored" data-anchor-id="berikan-penduga-tak-bias-bagi-lambda">Berikan penduga tak bias bagi <span class="math inline">\(\lambda\)</span></h3>
+<p>Syarat penduga tidak bias adalah <span class="math inline">\(E\left( \hat{\theta} \right) = \theta\)</span>. Penduga tidak bias yang trivial adalah <span class="math inline">\(Y_i\)</span>, karena <span class="math inline">\(E(Y_i)=\lambda\)</span> (dengan memilih i sembarang). Tapi misalkan <span class="math inline">\(\hat{\lambda}\)</span> (rata-rata sampel) adalah penduga bagi <span class="math inline">\(\lambda\)</span>.</p>
+<p><span class="math display">\[
+\hat{\lambda} = \bar{Y} = \left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)
+\]</span></p>
+<p>Apakah <span class="math inline">\(E\left( \hat{\lambda} \right) = \lambda?\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( \hat{\lambda} \right) &amp;= E\left( \bar{Y} \right) = E\left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right)
+= \frac{1}{n}E\left( \sum_{i = 1}^{n}Y_{i} \right)\\
+&amp;= \frac{1}{n}\cdot nE(Y) = E(Y) = \lambda \quad \text{(tidak bias)}
+\end{aligned}
+\]</span></p>
+<p>Karena <span class="math inline">\(E\left( \hat{\lambda} \right) = \lambda\)</span> maka <span class="math inline">\(hat{\lambda} = \bar{Y}\)</span> adalah penduga tidak bias bagi <span class="math inline">\(\lambda.\)</span></p>
+</section>
+<section id="biaya-perbaikan-kerusakan-per-minggu." class="level3">
+<h3 class="anchored" data-anchor-id="biaya-perbaikan-kerusakan-per-minggu.">Biaya perbaikan kerusakan per minggu.</h3>
+<p>Biaya perbaikan kerusakan per minggu adalah <span class="math inline">\(C = 3Y+Y^2\)</span>. Tunjukkan <span class="math inline">\(E(C) = \ 4\lambda + \ \lambda^{2}\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(C)&amp;= \ E\left( 3Y + \ Y^{2} \right)
+= E(3Y) + E\left( Y^{2} \right)\\
+&amp;= 3E(Y) + Y(Y) + \left\lbrack E(Y) \right\rbrack^{2}
+= 3\lambda + \lambda + \ \lambda^{2}\\
+&amp;=  4\lambda + \ \lambda^{2}
+\end{aligned}
+\]</span></p>
+<p>Maka, terbukti.</p>
+</section>
+<section id="penduga-tak-bias-bagi-ec" class="level3">
+<h3 class="anchored" data-anchor-id="penduga-tak-bias-bagi-ec">Penduga tak bias bagi <span class="math inline">\(E(C)\)</span></h3>
+<p>Berikan suatu fungsi dari <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> yang merupakan penduga tak bias bagi <span class="math inline">\(E(C)\)</span></p>
+<p>Karena diperlukan suatu fungsi dari seluruh observasi, penduga trivial yang hanya menggunakan satu observasi tak bisa dipakai. Begitu juga penduga yang hanya menggunakan sebagian observasi. Suatu statistik yang menggabungkan informasi dari seluruh sampel adalah <span class="math inline">\(\bar{Y}\)</span>, maka gunakan informasi <span class="math inline">\(\bar{Y}\)</span> dan <span class="math inline">\({\bar{Y}}^{2}\)</span>.</p>
+<p><span class="math display">\[
+\lambda_2=E(C) = \ 4\lambda + \ \lambda^{2}
+\]</span></p>
+<p>Sehingga dicari <span class="math inline">\({\hat{\lambda}}_{2}\)</span>. Syarat penduga tidak bias adalah <span class="math inline">\(E\left( {\hat{\lambda}}_{2} \right) = \lambda_{2} = 4\lambda + \ \lambda^{2}\)</span>. Informasi yang bisa digunakan adalah <span class="math inline">\(E\left( \bar{Y} \right) = \lambda\)</span>. Maka cari ragam dari <span class="math inline">\(\bar{Y}\)</span> untuk mencari informasi dari <span class="math inline">\(\bar{Y}^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+V\left( \bar{Y} \right)&amp;= V\left( \frac{1}{n}\sum_{i = 1}^{n}Y_{i} \right) = \frac{1}{n^{2}}V\left( \sum_{i = 1}^{n}Y_{i} \right)
+= \frac{1}{n^{2}}\sum_{i = 1}^{n}{V(Y)}\\
+&amp;= \frac{1}{n^{2}}\cdot n\lambda= \frac{\lambda}{n}
+\end{aligned}
+\]</span></p>
+<p>Maka kaji informasi dari <span class="math inline">\(\bar{Y}^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\bar{Y}}^{2} \right)&amp;= V\left( \bar{Y} \right) + \left\lbrack E\left( \bar{Y} \right) \right\rbrack^{2}= \frac{\lambda}{n} + \ \lambda^{2}\\
+E\left( {\bar{Y}}^{2} \right)-\frac{\lambda}{n}+4\lambda&amp;=4\lambda+\lambda^2\\
+\end{aligned}
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+4\lambda+\lambda^2&amp;=E\left( {\bar{Y}}^{2} \right)-\frac{E\left(\bar{Y}\right)}{n}+4E\left(\bar{Y}\right)\\
+&amp;=E\left(\bar{Y}^2-\frac{\bar{Y}}{n}+\bar{Y}\right)
+\end{aligned}
+\]</span></p>
+<p>Oleh karena itu, dipilih :</p>
+<p><span class="math display">\[
+{\hat{\lambda}}_{2}=\bar{Y}^2-\frac{\bar{Y}}{n}+\bar{Y}
+\]</span></p>
+<p>Sebagai penduga tak bias dari <span class="math inline">\(E(C)\)</span> yang merupakan fungsi dari semua observasi di sampel.</p>
+</section>
+</section>
+<section id="penduga-metode-momen-gamma" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-metode-momen-gamma">Penduga Metode Momen: Gamma</h2>
+<p>Diketahui <span class="math inline">\(Y_{1},\ Y_{2},\ \cdots,\ Y_{n}\sim Gamma(\alpha,\beta)\)</span> dengan fkp berikut :</p>
+<p><span class="math display">\[
+f(y\ | \ \alpha,\beta) = \ \left\lbrack \frac{1}{\Gamma(\alpha)\beta^{2}} \right\rbrack y^{n - 1}e^{- \frac{y}{\beta}},\quad 0 &lt; y &lt; \infty
+\]</span></p>
+<p>Tentukan penduga bagi <span class="math inline">\(\alpha\)</span> dan <span class="math inline">\(\beta\)</span> dengan menggunakan metode momen (<span class="math inline">\(\alpha\)</span> dan <span class="math inline">\(\beta\)</span> tidak diketahui).</p>
+<p>Untuk sebaran Gamma, diketahui bahwa:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E(Y)&amp;= \alpha\beta&amp;
+V(Y)&amp;= \alpha\beta^{2}
+\end{aligned}
+\]</span></p>
+<p>Bandingkan momen populasi dan sampel:</p>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 55%">
+<col style="width: 38%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Momen</th>
+<th>Populasi</th>
+<th>Sampel</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td><span class="math inline">\(\mu_1=E(Y^1)=E(Y)=\alpha\beta\)</span></td>
+<td><span class="math inline">\(m_1=\frac{\sum_{i=1}^n Y_i}{n}=\bar{Y}\)</span></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><span class="math inline">\(\mu_2=E(Y^2)=V(Y)+[E(Y)]^2=\alpha\beta^2+\alpha^2\beta^2\)</span></td>
+<td><span class="math inline">\(m_2=\frac{\sum_{i=1}^n Y_i^2}{n}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Cari penduga momen dengan solusi dari sistem persamaan <span class="math inline">\(\mu_{k} = \ m_{k}\)</span>.</p>
+<ol type="1">
+<li><span class="math inline">\(\mu_{1} = \ m_{1}\)</span></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\alpha\beta&amp;=\bar{Y}\\
+\beta&amp;=\frac{\bar{Y}}{\alpha}\\
+{\hat{\beta}}_{m}&amp;= \frac{\bar{Y}}{\hat{\alpha}}
+\end{aligned}
+\]</span></p>
+<ol start="2" type="1">
+<li><span class="math inline">\(\mu_{2} = \ m_{2}\)</span></li>
+</ol>
+<p><span class="math display">\[
+\begin{aligned}
+\alpha\beta^{2} + \alpha^{2}\beta^{2}&amp;= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2}\\
+\alpha\left\lbrack \frac{\bar{Y}}{\alpha} \right\rbrack^{2} + \alpha^{2}\left\lbrack \frac{\bar{Y}}{\alpha} \right\rbrack^{2}&amp;= \frac{1}{n}\sum_{i = 1}^{n} Y_{i}^{2}\\
+\frac{{\bar{Y}}^{2}}{\alpha} + {\bar{Y}}^{2}&amp;= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2}\\
+\frac{{\bar{Y}}^{2}}{\alpha}&amp;= \frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}\\
+\alpha&amp;= \frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}\\
+\ \ \ {\hat{\alpha}}_{m}&amp;= \frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}
+\end{aligned}
+\]</span></p>
+<p>Maka, penduga <span class="math inline">\(\beta=\hat{\beta}_m\)</span> adalah:</p>
+<p><span class="math display">\[
+\begin{aligned}
+{\hat{\beta}}_{m}&amp;= \frac{\bar{Y}}{\hat{\alpha}}=\frac{\bar{Y}}{\frac{{\bar{Y}}^{2}}{\frac{1}{n}\sum_{i = 1}^{n}Y_{i}^{2} - {\bar{Y}}^{2}}}\\
+&amp;=\frac{\bar{Y}\left(\frac{1}{n}\sum_{i=1}^n Y_i^2-\bar{Y}^2\right)}{\bar{Y}^2}\cdot\frac{n}{n}\\
+&amp;=\frac{\sum_{i=1}^n Y_i^2-\bar{Y}^2}{n\bar{Y}}\\
+&amp;=\frac{\sum_{i=1}^n (Y_i-\bar{Y})^2}{n\bar{Y}}\\
+\end{aligned}
+\]</span></p>
+</section>
+<section id="penduga-metode-momen-peubah-acak-x" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-metode-momen-peubah-acak-x">Penduga Metode Momen, Peubah Acak X</h2>
+<p><span class="math inline">\(X_{1},\ X_{2},\ \cdots,\ X_{n}\)</span> contoh acak yang saling bebas, dengan fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+f(x\ | \ \theta) = \ \frac{1}{\theta}e^{- \frac{(x - \beta)}{\theta}},\ \ x \geq 5,\ \ \theta &gt; 0
+\]</span></p>
+<section id="tentukan-nilai-beta-sehingga-fx-theta-di-atas-merupakan-fungsi-kepekatan-peluang." class="level3">
+<h3 class="anchored" data-anchor-id="tentukan-nilai-beta-sehingga-fx-theta-di-atas-merupakan-fungsi-kepekatan-peluang.">Tentukan nilai <span class="math inline">\(\beta\)</span> sehingga <span class="math inline">\(f(x\ | \ \theta)\)</span> di atas merupakan fungsi kepekatan peluang.</h3>
+<p>Syarat fkp peubah acak kontinu:</p>
+<p><span class="math display">\[
+\int_{- \infty}^{\infty}{f(x\ | \ \theta)}\ dx = 1
+\]</span></p>
+<p>Maka, cek integral tersebut:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\int_{- \infty}^{\infty}{f(x\ | \ \theta)}\ dx&amp;= \int_{- \infty}^{5}{f(x\ | \ \theta)}\ dx + \int_{5}^{\infty}{f(x\ | \ \theta)\ dx}=0 + \int_{5}^{\infty}{\frac{1}{\theta}e^{- \frac{(x - \beta)}{\theta}} \ dx}\\
+&amp;=\frac{1}{\theta}\int_{5}^{\infty}{e^{- \frac{(x - \beta)}{\theta}}dx}=\frac{1}{\theta} \cdot - \theta e^{- \frac{(x - \beta)}{\theta}}  {\LARGE |}^{\infty}_{5}= e^{- \frac{(x - \beta)}{\theta}}  {\LARGE |}^{\infty}_{5}\\
+&amp;=e^{-\frac{5-\beta}{\theta}}\\
+\end{aligned}
+\]</span></p>
+<p>Maka <span class="math inline">\(e^{-\frac{5-\beta}{\theta}}\)</span> harus sama dengan 1.</p>
+<p><span class="math display">\[
+\begin{aligned}
+e^{-\frac{5-\beta}{\theta}}&amp;=1\\
+\log\left(e^{-\frac{5-\beta}{\theta}}\right)=\frac{-5+\beta}{\theta}&amp;=0=\log(1)\\\
+\beta&amp;=5
+\end{aligned}
+\]</span></p>
+<p>Agar <span class="math inline">\((-5+\beta)/ \theta=0\)</span>, maka <span class="math inline">\(\beta\)</span> harus sama dengan 5. Maka ubah fungsi kepekatan peluang:</p>
+<p><span class="math display">\[f(x\ | \ \theta) = \ \frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}},\ \ x \geq 5,\ \ \theta &gt; 0\]</span></p>
+</section>
+<section id="tentukan-penduga-bagi-theta-melalui-metode-momen.-apakah-penduga-yang-diperoleh-bersifat-tidak-bias" class="level3">
+<h3 class="anchored" data-anchor-id="tentukan-penduga-bagi-theta-melalui-metode-momen.-apakah-penduga-yang-diperoleh-bersifat-tidak-bias">Tentukan penduga bagi <span class="math inline">\(\theta\)</span> melalui metode momen. Apakah penduga yang diperoleh bersifat tidak bias?</h3>
+<section id="tentukan-1-momen-dari-populasi-mu_k" class="level4">
+<h4 class="anchored" data-anchor-id="tentukan-1-momen-dari-populasi-mu_k">Tentukan 1 momen dari populasi <span class="math inline">\(\mu_{k}\)</span></h4>
+<p><span class="math display">\[
+\begin{aligned}
+\mu_{1}&amp;=E\left( X^{1} \right) = E(X) = \int_{5}^{\infty}{xf(x\ | \ \theta)\ dx} = \int_{5}^{\infty}{x\frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}}\ dx}\\
+&amp;=\int_{5}^{\infty}{x\frac{1}{\theta}e^{- \frac{(x - 5)}{\theta}}\ dx}= \frac{1}{\theta}\int_{5}^{\infty}{xe^{- \frac{x - 5}{\theta}}\ dx}
+\end{aligned}
+\]</span></p>
+<p>Buat suatu integral parsial dengan substitusi:</p>
+<p><span class="math display">\[
+\begin{aligned}
+u&amp;=x &amp; dv&amp;=e^{-\frac{x-5}{\theta}}\\
+du&amp;=dx &amp; v&amp;=\int e^{-\frac{x-5}{\theta}} \ dx=-\theta e^{-\frac{x-5}{\theta}}
+\end{aligned}
+\]</span></p>
+<p>Maka:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\mu_{1}&amp;=\frac{1}{\theta}\left( uv  \int_{5}^{\infty}{v\ du} \right)\\
+&amp;=\frac{1}{\theta}\left[ x\left( - \theta e^{- \frac{(x - 5)}{\theta}} \right) {\LARGE|}^\infty_5- \int_{5}^{\infty}{- \theta e^{- \frac{(x - 5)}{\theta}}\ dx} \right]\\
+&amp;=\frac{1}{\theta}\left[\left( 0 + 5\theta e^{- \frac{(5 - 5)}{\theta}} \right) + \theta\int_{5}^{\infty}{e^{- \frac{(x - 5)}{\theta}}\ dx} \right]\\
+&amp;=\frac{1}{\theta}\left[ 5\theta + \theta\left( - \theta e^{- \frac{(x - 5)}{\theta}} {\LARGE|}^\infty_5 \right) \right]\\
+&amp;=\frac{1}{\theta}\left[ 5\theta + \theta(0 + \theta) \right]=5+\theta
+\end{aligned}
+\]</span></p>
+</section>
+<section id="tentukan-1-momen-dari-contoh-m_k" class="level4">
+<h4 class="anchored" data-anchor-id="tentukan-1-momen-dari-contoh-m_k">Tentukan 1 momen dari contoh <span class="math inline">\(m_{k}\)</span></h4>
+<p><span class="math display">\[m_{1} = \frac{1}{n}\sum_{i = 1}^{n}{X_{i}}^{1} = \bar{X}\]</span></p>
+</section>
+<section id="solusi-dari-sistem-persamaan-mu_k-m_k" class="level4">
+<h4 class="anchored" data-anchor-id="solusi-dari-sistem-persamaan-mu_k-m_k">Solusi dari sistem persamaan <span class="math inline">\(\mu_{k} = \ m_{k}\)</span></h4>
+<p><span class="math display">\[
+\begin{aligned}
+\mu_{1}&amp;=m_{1}\\
+\theta + 5&amp;=  \bar{X}\\
+\theta &amp;= \bar{X} - 5\\
+\hat{\theta}_{m}&amp;= \ \bar{X} - 5
+\end{aligned}
+\]</span></p>
+<p>Lalu, cek bias dari penduga tersebut.</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\hat{\theta}}_{m} \right)&amp;= E\left( \bar{X} - 5 \right) = E\left( \bar{X} \right) - 5 = E(X) - 5 \\ &amp;= \theta + 5 - 5 = \theta \quad \text{(tidak bias)}
+\end{aligned}
+\]</span></p>
+<p>Maka, penduga momen bagi <span class="math inline">\(\theta\)</span> tak bias.</p>
+</section>
+</section>
+</section>
+<section id="sebaran-t-dan-f" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-t-dan-f">Sebaran t dan F</h2>
+<section id="jika-xsim-tn-maka-buktikan-x2sim-f1n" class="level3">
+<h3 class="anchored" data-anchor-id="jika-xsim-tn-maka-buktikan-x2sim-f1n">Jika <span class="math inline">\(X\sim t(n)\)</span>, maka buktikan <span class="math inline">\(X^2\sim F(1,n)\)</span>!</h3>
+<p>Sebaran t-Student didefinisikan sebagai:</p>
+<p><span class="math display">\[
+X=\frac{Z}{\sqrt{Y/n}}
+\]</span></p>
+<p>Di mana <span class="math inline">\(Z\sim N(0,1)\)</span>, dan <span class="math inline">\(Y\sim \chi^2(n)\)</span>. Maka kuadratnya adalah:</p>
+<p><span class="math display">\[
+X^2=\frac{Z}{Y/n}=\frac{Z^2/1}{Y/n}
+\]</span></p>
+<p>Dari modul, dapat dibuktikan <span class="math inline">\(Z^2 \sim \chi^2(1)\)</span>. Definisi sebaran <span class="math inline">\(F(n_1, n_2)\)</span> adalah:</p>
+<p><span class="math display">\[
+F=\frac{U/n_1}{V/n_2}
+\]</span></p>
+<p>Jika <span class="math inline">\(U\sim \chi^2(n_1)\)</span>, dan <span class="math inline">\(V\sim \chi^2(n_2)\)</span>. Sehingga jika <span class="math inline">\(Z^2\sim \chi^2(1)\)</span> dan <span class="math inline">\(Y\sim \chi^2(n)\)</span>, <span class="math inline">\(X^2\sim F(1,n)\)</span> menurut definisi sebaran.</p>
+<p><em>Beberapa kelompok menjawab pertanyaan ini menggunakan transformasi fungsi. Jawaban ini benar, tetapi cukup panjang untuk dimasukkan. Jika kode LaTeX untuk jawaban tersebut ada dan diberikan ke saya, saya dapat memasukkan jawaban tersebut.</em></p>
+</section>
+<section id="jika-usim-fn_1n_2-apa-sebaran-1u" class="level3">
+<h3 class="anchored" data-anchor-id="jika-usim-fn_1n_2-apa-sebaran-1u">Jika <span class="math inline">\(U\sim F(n_1,n_2)\)</span>, apa sebaran <span class="math inline">\(1/U\)</span>?</h3>
+<p>Definisi suatu peubah acak <span class="math inline">\(U\sim F(n_1, n_2)\)</span> adalah:</p>
+<p><span class="math display">\[
+U=\frac{X/n_1}{Y/n_2}
+\]</span></p>
+<p>Jika <span class="math inline">\(X\sim \chi^2(n_1)\)</span>, dan <span class="math inline">\(Y\sim \chi^2(n_2)\)</span>. Maka <span class="math inline">\(1/U\)</span>:</p>
+<p><span class="math display">\[
+\frac{1}{U}=\frac{1}{\frac{X/n_1}{Y/n_2}}=\frac{Y/n_2}{X/n_1}
+\]</span></p>
+<p>Cukup jelas bahwa peubah acak tersebut menyebar <span class="math inline">\(F(n_2,n_1)\)</span>.</p>
+<p><em>Beberapa kelompok menjawab pertanyaan ini menggunakan transformasi fungsi. Jawaban ini benar, tetapi cukup panjang untuk dimasukkan. Jika kode LaTeX untuk jawaban tersebut ada dan diberikan ke saya, saya dapat memasukkan jawaban tersebut.</em></p>
+</section>
+</section>
+<section id="sebaran-perbedaan-rataan-normal" class="level2">
+<h2 class="anchored" data-anchor-id="sebaran-perbedaan-rataan-normal">Sebaran perbedaan rataan normal</h2>
+<p>Jika <span class="math inline">\(X, Y\)</span> saling bebas dan <span class="math inline">\(X\sim N(\mu_1,\sigma_1^2)\)</span>, dan <span class="math inline">\(Y\sim N(\mu_2,\sigma_2^2)\)</span>, buktikan <span class="math inline">\(\bar{X}-\bar{Y} \sim N\left(\mu_1-\mu_2, \frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}\right)\)</span></p>
+<p>Diketahui bahwa <span class="math inline">\(\bar{X}\sim \mathrm{Normal}\left(\mu_1, \frac{\sigma_1^2}{n_1}\right)\)</span> dan <span class="math inline">\(\bar{Y}\sim \mathrm{Normal}\left(\mu_2, \frac{\sigma_2^2}{n_2}\right)\)</span>; teorema ini sudah dibuktikan di modul.</p>
+<p>Lalu jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> adalah peubah acak saling bebas dengan <span class="math inline">\(X_i\sim \mathrm{Normal}\left(\mu_i,\sigma^2\right)\)</span> dan <span class="math inline">\(a_1, a_2, \ldots, a_n\)</span> adalah konstanta real, maka sebaran <span class="math inline">\(Y=\sum_{i=1}^n a_iX_i\)</span> (kombinasi linear peubah acak tersebut) adalah normal dengan nilai harapan <span class="math inline">\(\mu_Y=\sum_{i=1}^n a_i\mu_i\)</span> dan ragam <span class="math inline">\(\sigma_Y^2=\sum_{i=1}^n a_i\sigma_i^2\)</span>. Teorema ini dibuktikan di modul.</p>
+<p>Maka <span class="math inline">\(\bar{X}\)</span> dan <span class="math inline">\(\bar{Y}\)</span> saling bebas karena semua elemen <span class="math inline">\(X\)</span> saling bebas dengan <span class="math inline">\(Y\)</span>. Maka buat peubah <span class="math inline">\(W=a_1\bar{X}+a_2\bar{Y}\)</span>, di mana <span class="math inline">\(a_1=1,\ a_2=-1\)</span>, atau <span class="math inline">\(W=\bar{X}-\bar{Y}\)</span>.</p>
+<p>Maka, <span class="math inline">\(\mu_W=\mu_1-\mu_2\)</span>, dan <span class="math inline">\(\sigma_W=1^2\cdot\frac{\sigma_1}{n_1}+(-1)^2\cdot\frac{\sigma_2}{n_2}=\frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}\)</span>. Maka <span class="math inline">\(W\sim N\left(\mu_1-\mu_2, \frac{\sigma_1}{n_1}+\frac{\sigma_2}{n_2}\right)\)</span>.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
