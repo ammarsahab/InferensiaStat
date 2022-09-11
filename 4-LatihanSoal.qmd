@@ -1,0 +1,152 @@
+---
+title: "Bab 4, Latihan Soal"
+format: html
+---
+
+Let $X_1, X_2, \ldots , X_n$ be Poisson random variables with parameter
+$\lambda$, Assume that $\lambda$ has a $\mathrm{Gamma}(\alpha, \beta)$ prior, $\alpha$ and $\beta$ are known. Obtain the Bayes estimate of $\lambda$.
+
+Karena $X_1, X_2, \ldots , X_n \sim \mathrm{Poisson} (\lambda)$, maka:
+
+$$
+\begin{aligned}
+E(X)&= \lambda &  V(X)&= \lambda
+\end{aligned}
+$$
+
+## Tentukan fkp/fmp bersama antara $X_1, X_2, \ldots , X_n$ dengan syarat  $\lambda$, $f_{\underline{X}}(\underline{x}\ | \ \lambda)$.
+
+Karena peubah di contoh acak tersebut saling bebas, kalikan fungsi massa peluang:
+
+$$
+\begin{aligned}
+f_{\underline{X}}\left( \underline{x} \middle| \lambda \right)& = \prod_{i = 1}^{n}{f_{x}\left( x_{i} \middle| \lambda \right)} = \prod_{i = 1}^{n}\frac{\lambda^{x_{i}}e^{- \lambda}}{x_{i}!}\\ 
+&= \frac{\lambda^{x_{1}}e^{- \lambda}}{x_{1}!} \times \frac{\lambda^{x_{2}}e^{- \lambda}}{x_{2}!} \times \ldots \times \frac{\lambda^{x_{n}}e^{- \lambda}}{x_{n}!}\\ 
+&= \frac{\lambda^{\sum_{i = 1}^{n}x_{i}}e^{- n\lambda}}{\prod_{i = 1}^{n}{x_{i}!}},\quad x_{i} = 0, 1, 2,\ldots;\ i = 1, 2,\ldots,n
+\end{aligned}
+$$
+
+
+## Tentukan fkp/fmp dari sebaran prior bagi $\lambda$, $\pi(\lambda$).
+
+Cari fungsi kepekatan peluang $\mathrm{Gamma}(\alpha,\beta)$. Karena peluang yang dicari adalah peluang munculnya nilai tertentu bagi peubah acak $\lambda$, maka cari $f(\lambda \ | \ \alpha,\beta)$. Jika pada umumnya peubah yang dipakai $x$ atau $y$, ganti dengan $\lambda$:
+$$
+\pi(\lambda) = \frac{1}{\Gamma(\alpha)\beta^{\alpha}}\lambda^{\alpha - 1}e^{- \lambda/\beta},\quad \alpha,\beta,\lambda > 0
+$$
+
+## Tentukan fkp/fmp bersama antara $X_1, X_2, \ldots , X_n$ dan $\lambda$, $f(\underline{x},\lambda)$.
+
+Kalikan fungsi massa peluang bersama dan fungsi kepekatan peluang prior:
+
+$$
+\begin{aligned}
+f\left( \underline{x},\lambda \right) &= f_{\underline{X}}\left( \underline{x} \middle| \lambda \right)\pi(\lambda) = \left( \frac{\lambda^{\sum_{i = 1}^{n}x_{i}}e^{- n\lambda}}{\prod_{i = 1}^{n}{x_{i}!}} \right)\left( \frac{1}{\Gamma(\alpha)\beta^{\alpha}}\lambda^{\alpha - 1}e^{- \frac{\lambda}{\beta}} \right) \\ 
+&= \frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}}
+\end{aligned}
+$$
+
+Di mana $x_{i} = 0, 1, 2,\ldots;\ i = 1, 2,\ldots,n$ dan $\alpha, \beta, \lambda > 0$
+
+## Tentukan fkp/fmp marginal bagi $X_1, X_2, \ldots , X_n$, $f(\underline{x})$.
+
+$$
+\begin{aligned}
+f\left( \underline{x} \right)&= \int_{\forall\lambda}^{}{f\left( \underline{x},\lambda \right)}d\lambda
+= \int_{0}^{\infty}{\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}}\ }d\lambda\\ 
+&= \frac{1}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}}\int_{0}^{\infty}{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}}d\lambda\\ 
+\end{aligned}
+$$
+
+Lakukan substitusi:
+
+$$
+\begin{aligned}
+t&=\lambda\left(n+\frac{1}{\beta}\right)\\ 
+dt&=\left(n+\frac{1}{\beta}\right)\ d\lambda
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+f\left( \underline{x} \right)&= \frac{1}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}}\int_{0}^{\infty}\left( \frac{t}{n + \frac{1}{\beta}} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- t}\frac{dt}{\left( n + \frac{1}{\beta} \right)}\\ 
+&=\frac{1}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}\int_{0}^{\infty}{t^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- t}}dt
+\end{aligned}
+$$
+
+Ini tidak lain merupakan bentuk fungsi Gamma:
+
+$$
+ \Gamma (z)=\int _{0}^{\infty }t^{z-1}e^{-t}\,dt,\ \qquad \Re (z)>0\
+$$
+
+Maka, integral tersebut dapat terselesaikan:
+
+$$
+\left( \underline{x} \right)= \frac{\Gamma(\sum_{i = 1}^{n}x_{i} + \alpha)}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}
+$$
+
+Di mana $x_i = 0, 1, 2, . . . ,; \ i = 1, 2, . . ., n$ dan $\alpha$, $\beta$ \> 0
+
+##  Tentukan sebaran posterior bagi $\lambda, \ \pi(\lambda|\underline{x})$.
+
+Bagi fungsi kepekatan peluang bersama dengan fungsi kepekatan peluang marginal:
+
+$$
+\begin{aligned}
+\pi\left( \lambda \middle| \underline{x} \right)&= \frac{f\left( \underline{x},\lambda \right)}{f\left( \underline{x} \right)} = \frac{\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}}}{\frac{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}}&\\ 
+&= \frac{\Gamma(\alpha)\beta^{\alpha}\prod_{i = 1}^{n}{x_{i}!}\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma(\alpha)\beta^{\alpha}\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)\prod_{i = 1}^{n}{x_{i}!}}&\\
+&= \frac{\Gamma(\alpha)\beta^{\alpha}\prod_{i=1}^n x_i!}{\Gamma(\alpha)\beta^{\alpha}\prod_{i=1}^n x_i!}\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}&\text{(sederhanakan)}\\ 
+
+&=\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}\\ 
+&=\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda/\left( \frac{\beta}{n\beta + 1} \right)}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)\left( \frac{\beta}{n\beta + 1} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}
+\end{aligned}
+$$
+
+Di mana $x_i = 0, 1, 2,\ldots,; \ i = 1, 2, . . ., n$, dan $\alpha, \beta, \lambda > 0$. Sebaran posterior $\lambda$ adalah $\mathrm{Gamma}$ dengan parameter $\alpha_p = \sum_{i = 1}^{n}x_{i} + \alpha$ dan $\beta_p = \frac{\beta}{n\beta + 1}$.
+
+##  Dari rumus ${\widehat{\lambda}}_{B}$, akan diperoleh penduga Bayes bagi parameter $\lambda$.
+
+$$
+\begin{aligned}
+{\widehat{\lambda}}_{B}&= E\left( \lambda \middle| \underline{x} \right) = \int_{\forall\lambda}^{}{\lambda\pi\left( \lambda \middle| \underline{x} \right)}d\lambda = \int_{0}^{\infty}{\lambda\frac{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha - 1}e^{- \lambda\left( n + \frac{1}{\beta} \right)}\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}}d\lambda\\ 
+&=\frac{\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}\int_{0}^{\infty}{\lambda^{\sum_{i = 1}^{n}x_{i} + \alpha}e^{- \lambda\left( n + \frac{1}{\beta} \right)}}d\lambda
+\end{aligned}
+$$
+
+Lakukan substitusi:
+
+$$
+\begin{aligned}
+t&=\lambda\left(n+\frac{1}{\beta}\right)\\ 
+dt&=\left(n+\frac{1}{\beta}\right)\ d\lambda
+\end{aligned}
+$$
+
+$$
+\begin{aligned}
+{\widehat{\lambda}}_{B}&= \frac{\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}\int_{0}^{\infty}{\left( \frac{t}{n + \frac{1}{\beta}} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}e^{- t}}\frac{dt}{\left( n + \frac{1}{\beta} \right)}\\ 
+&=\frac{\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha + 1}}\int_{0}^{\infty}{t^{(\sum_{i = 1}^{n}x_{i} + \alpha + 1) - 1}e^{- t}}dt
+\end{aligned}
+$$
+
+Integral tersebut tak lain merupakan fungsi Gamma sehingga:
+
+$$
+\begin{aligned}
+{\widehat{\lambda}}_{B}&= \frac{\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha}\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha + 1 \right)}{\Gamma\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)\left( n + \frac{1}{\beta} \right)^{\sum_{i = 1}^{n}x_{i} + \alpha + 1}}
+\end{aligned}
+$$
+
+Perhatikan bahwa $\Gamma(x+1)=x!$, sehingga $\Gamma(x+1)/\Gamma(x)=x!/(x-1)!=x$:
+
+$$
+{\widehat{\lambda}}_{B}= \frac{\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)!}{\left( n + \frac{1}{\beta} \right)\left( \sum_{i = 1}^{n}x_{i} + \alpha - 1 \right)!} = \frac{\sum_{i = 1}^{n}x_{i} + \alpha}{\left( n + \frac{1}{\beta} \right)}
+$$
+
+Atau, dapat ditemukan dari sifat sebaran:
+$$
+\begin{aligned}
+{\widehat{\lambda}}_{B}&= E\left( \lambda \middle| \underline{x} \right) = {\alpha_p}{\beta_p}= \left( \sum_{i = 1}^{n}x_{i} + \alpha \right)\left( \frac{\beta}{n\beta + 1} \right)\\
+&=\frac{\left( \sum_{i = 1}^{n}x_{i} + \alpha \right)}{\left( n + \frac{1}{\beta} \right)}
+\end{aligned}
+$$
