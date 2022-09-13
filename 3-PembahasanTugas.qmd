@@ -1,5 +1,5 @@
 ---
-title: "Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1"
+title: "Bab 3, Pembahasan Tugas"
 format: html
 ---
 

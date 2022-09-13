@@ -36,7 +36,7 @@ website:
         - tugas.qmd
         - 1-Tugas.qmd
 
-    - title: "pembahasan"
+    - title: "Pembahasan"
       style: "docked"
       background: light
       contents: 
