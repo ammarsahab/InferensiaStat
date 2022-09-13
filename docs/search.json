@@ -212,7 +212,7 @@
   {
     "objectID": "3-PembahasanTugas.html",
     "href": "3-PembahasanTugas.html",
-    "title": "Pembahasan Tugas Bab 3 - Penduga Kemungkinan Maksimum1",
+    "title": "Bab 3, Pembahasan Tugas",
     "section": "",
     "text": "Pencarian penduga kemungkinan maksimum\nCari penduga kemungkinan maksimum untuk \\(\\theta\\), di mana \\(\\theta\\) adalah parameter di fungsi kepekatan peluang:\n\\[\nf(x \\ | \\ \\theta)=\\theta x^{\\theta-1}, \\quad 0<x<1, \\ 0<\\theta<\\infty\n\\]\nCari fungsi likelihood terlebih dahulu:\n\\[\nL(\\theta)=\\prod_{i=1}^n f(x_i \\ | \\ \\theta)=\\theta^n\\prod_{i=1}^n x_i^{\\theta-1}\n\\]\nLalu, cari log dari fungsi tersebut:\n\\[\n\\begin{aligned}\nl(\\theta)&=\\log\\left[L(\\theta)\\right]=\\log\\left[\\theta^n\\prod_{i=1}^n x_i^{\\theta-1}\\right]\\\\\n&=n\\log\\theta+(\\theta-1)\\sum_{i=1}^n \\log X_i\n\\end{aligned}\n\\]\nDan turunkan:\n\\[\n\\frac{\\partial l(\\theta)}{\\partial\\theta}=\\frac{n}{\\theta}+\\sum_{i=1}^n\\log X_i=0\n\\]\nMaka:\n\\[\n\\theta=-\\frac{n}{\\sum_{i=1}^n \\log(X_i)}\n\\]\nPerhatikan bahwa semua \\(\\log(X_i)\\) negatif karena \\(0<X<1\\). Oleh karena itu, penduga kemungkinan maksimum pasti positif dan memenuhi syarat \\(\\theta\\). Selain itu, turunan kedua:\n\\[\n\\frac{\\partial l(\\theta)}{\\partial\\theta}=-\\frac{n}{\\theta^2}<0\n\\]\nYang benar karena \\(\\theta\\) positif."
   },
