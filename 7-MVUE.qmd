@@ -159,7 +159,7 @@ $$
 \operatorname{E}[W \mid T]= \operatorname{E}\left[h(T)\mid T\right]=h(T)
 $$
 
-Karena secara intuitif $E[f(X)\mid X]$ - atau nilai harapan dari $f(X)$, jika $X$ diketahui, pastilah $f(X)$. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.
+Karena secara intuitif $E[f(X)\mid X]$ - atau nilai harapan dari $f(X)$, jika $X$ diketahui, pastilah $f(X)$ diketahui. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.
 
 ### Mengambil Penduga Tak Bias 
 
@@ -169,7 +169,7 @@ $$
 \int WP(W\mid T)=\int W \frac{P(W, T)}{P(T)}
 $$
 
-Agar lebih mudah, konversi kejadian $W$ dan $T$ menjadi kejadian $W$ dan $O$, di mana $W$ dan $O$ saling bebas. Peluang dapat dihitung dengan lebih mudah.
+Agar lebih mudah, konversi kejadian $W$ dan $T$ menjadi kejadian $W$ dan $O$, di mana $W$ dan $O$ saling bebas. Ini akan diilustrasikan di latihan soal.
 
 ### Mengambil Penduga Maximum Likelihood
 
@@ -188,4 +188,4 @@ L(\theta; x_1, x_2,\ldots,x_n)&= f(x_1\mid \theta)f(x_2\mid \theta)\ldots f(x_n\
 \end{aligned}
 $$
 
-Do mana $H(x_1, x_2,\ldots,x_n)$ tidak bergantung pada $\theta$. Maka $L$ dan $f_{Y_{1}}$ akan termaksimumkan bersama-sama jika dicari $\theta$ yang memaksimumkan $L$. Oleh karena itu, penduga $\hat{\theta}$ tersebut merupakan input fungsi dari $f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]$. Maka pastilah penduga tersebut fungsi dari statistik cukup.
+Di mana $H(x_1, x_2,\ldots,x_n)$ tidak bergantung pada $\theta$. Maka $L$ dan $f_{Y_{1}}$ akan termaksimumkan bersama-sama jika dicari $\theta$ yang memaksimumkan $L$. Oleh karena itu, penduga $\hat{\theta}$ tersebut merupakan input fungsi dari $f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]$. Maka pastilah penduga tersebut fungsi dari statistik cukup.

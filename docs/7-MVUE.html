@@ -307,7 +307,7 @@ Var\left( \widehat{\theta} \right) \geq \frac{1}{nE\left\lbrack - \frac{\partial
 <p><span class="math display">\[
 \operatorname{E}[W \mid T]= \operatorname{E}\left[h(T)\mid T\right]=h(T)
 \]</span></p>
-<p>Karena secara intuitif <span class="math inline">\(E[f(X)\mid X]\)</span> - atau nilai harapan dari <span class="math inline">\(f(X)\)</span>, jika <span class="math inline">\(X\)</span> diketahui, pastilah <span class="math inline">\(f(X)\)</span>. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.</p>
+<p>Karena secara intuitif <span class="math inline">\(E[f(X)\mid X]\)</span> - atau nilai harapan dari <span class="math inline">\(f(X)\)</span>, jika <span class="math inline">\(X\)</span> diketahui, pastilah <span class="math inline">\(f(X)\)</span> diketahui. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.</p>
 </section>
 <section id="mengambil-penduga-tak-bias" class="level3">
 <h3 class="anchored" data-anchor-id="mengambil-penduga-tak-bias">Mengambil Penduga Tak Bias</h3>
@@ -315,7 +315,7 @@ Var\left( \widehat{\theta} \right) \geq \frac{1}{nE\left\lbrack - \frac{\partial
 <p><span class="math display">\[
 \int WP(W\mid T)=\int W \frac{P(W, T)}{P(T)}
 \]</span></p>
-<p>Agar lebih mudah, konversi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(T\)</span> menjadi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span>, di mana <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span> saling bebas. Peluang dapat dihitung dengan lebih mudah.</p>
+<p>Agar lebih mudah, konversi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(T\)</span> menjadi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span>, di mana <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span> saling bebas. Ini akan diilustrasikan di latihan soal.</p>
 </section>
 <section id="mengambil-penduga-maximum-likelihood" class="level3">
 <h3 class="anchored" data-anchor-id="mengambil-penduga-maximum-likelihood">Mengambil Penduga Maximum Likelihood</h3>
@@ -329,7 +329,7 @@ L(\theta; x_1, x_2,\ldots,x_n)&amp;= f(x_1\mid \theta)f(x_2\mid \theta)\ldots f(
 &amp;= f_{Y_1} [u_1(X_1, X_2, \ldots, X_n)\mid \theta]H(x_1, x_2,\ldots,x_n),
 \end{aligned}
 \]</span></p>
-<p>Do mana <span class="math inline">\(H(x_1, x_2,\ldots,x_n)\)</span> tidak bergantung pada <span class="math inline">\(\theta\)</span>. Maka <span class="math inline">\(L\)</span> dan <span class="math inline">\(f_{Y_{1}}\)</span> akan termaksimumkan bersama-sama jika dicari <span class="math inline">\(\theta\)</span> yang memaksimumkan <span class="math inline">\(L\)</span>. Oleh karena itu, penduga <span class="math inline">\(\hat{\theta}\)</span> tersebut merupakan input fungsi dari <span class="math inline">\(f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]\)</span>. Maka pastilah penduga tersebut fungsi dari statistik cukup.</p>
+<p>Di mana <span class="math inline">\(H(x_1, x_2,\ldots,x_n)\)</span> tidak bergantung pada <span class="math inline">\(\theta\)</span>. Maka <span class="math inline">\(L\)</span> dan <span class="math inline">\(f_{Y_{1}}\)</span> akan termaksimumkan bersama-sama jika dicari <span class="math inline">\(\theta\)</span> yang memaksimumkan <span class="math inline">\(L\)</span>. Oleh karena itu, penduga <span class="math inline">\(\hat{\theta}\)</span> tersebut merupakan input fungsi dari <span class="math inline">\(f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]\)</span>. Maka pastilah penduga tersebut fungsi dari statistik cukup.</p>
 
 
 </section>
