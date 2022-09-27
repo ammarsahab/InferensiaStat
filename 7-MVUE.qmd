@@ -1,0 +1,191 @@
+---
+title: "Bab 7"
+format: html
+---
+
+## Penduga Efisien
+
+Suatu penduga dikatakan efisien jika
+
+$$
+Var\left( \widehat{\theta} \right) = HBCR = \frac{1}{I(\theta)}=\frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}
+$$
+
+HBCR adalah Had Bawah Cramer-Rao (Batas Bawah Cramer-Rao) dan $I(\theta)$ adalah Informasi Fisher, yang dihitung dengan:
+
+$$
+I(\theta) = nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack
+$$
+
+Oleh karena itu, ragam dibatasi oleh Pertidaksamaan Cramer-Rao:
+
+$$
+Var\left( \widehat{\theta} \right) \geq \frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}
+$$
+
+*Note* : Pertidaksamaan tersebut berlaku jika contoh acak dengan $f_{Y}\left( y|\theta \right)$ termasuk sebaran egular (ruang contoh $R_{Y}$ bebas dari parameter $\theta$).
+
+## UMVUE
+
+Penduga tak bias bagi $\tau(\theta)$, yaitu $W^*$, disebut penduga tak bias terbaik bagi $\tau(\theta)$ jika memenuhi $\mathrm{Var}_{\theta}(W^{*})<\mathrm{Var}_{\theta}(W)$, untuk semua W yang merupakan penduga tak bias lainnya bagi $\tau(\theta)$. Penduga tak bias ini disebut *Uniformly Minimum Variance Unbiased Estimator*. Maka dari itu, dua sifat kunci dari penduga ini adalah 1) ragam minimum (efisien), dan 2) tak bias.
+
+Bagaimana cara menemukan UMVUE? Satu cara adalah:
+
+1. Cari penduga, misal melalui MLE atau melalui statistik cukup.
+2. Cek bias dari penduga tersebut. Jika bias, lakukan koreksi.
+3. Cek ragam dan bandingan dengan Had Bawah Cramer Rao. Jika ragam lebih besar dari HBCR, penduga belum efisien. Jika ragam sama dengan HBCR, ragam minimum dan penduga UMVUE.
+
+Permasalahan dari prosedur ini adalah sifatnya yang hanya diagnostik. Prosedur ini dapat menentukan apakah suatu penduga UMVUE. Penduga ada yang seharusnya digunakan? Ada prosedur lain yang dapat mengacu ke penduga lain tersebut.
+
+## Teorema Rao-Blackwell
+
+Pencarian penduga tak bias terbaik dilakukan dengan **memperbaiki** penduga tak bias - memperkecil ragamnya. Ini dilakukan dengan Rao-Blackwell. Anggap $W$ merupakan suatu penduga tak bias bagi $\tau(\theta)$, dan $T$ adalah statistik cukup untuk $\theta$. Definisikan $\phi(T)=E[W|T=t]$. Maka:
+
+1. $\mathrm{E}_{\theta}[\phi(T)]=\tau(\theta)$, dan
+2. $\mathrm{Var}_{\theta}[\phi(T)]\leq\mathrm{Var}_{\theta}(W)$ untuk semua $\theta$.
+
+Bukti dari teorema ini berdasarkan dua hukum:
+
+### Law of Iterated Expectations
+
+Misal $X$ dan $Y$ adalah peubah acak. Maka:
+
+$$
+\mathrm{E}(X)=\mathrm{E[E(X|Y)]}
+$$
+
+Di mana $X|Y$ adalah sebaran bersyarat X dengan Y. Hukum ini cukup intuitif. Pertama, hitung nilai harapan $X$ di beberapa skenario tertentu ($\mathrm{E(X|Y)}$). Lalu, boboti tiap nilai harapan $X|Y$ dengan kemungkinan tiap skenario $Y$ terjadi (ini sama dengan menghitung nilai harapan $E(X|Y)$). Akan ditemukan nilai harapan $X$.
+
+Misal, Anda ingin menghitung nilai harapan berapa kali kalian keluar kos. Jika hari hujan, Anda rata-rata hanya keluar kos 1 kali sehari. Jika tidak hujan, Anda keluar kos 3 kali sehari. Anda mengetahui bahwa probabilitas hari hujan adalah $50 \%$. Maka dapat dihitung $1\cdot 0.5+3\cdot 0.5=2$ adalah nilai harapan berapa kali kalian keluar kos dalam satu hari.
+
+Dalam kata lain, jika peubah $Y_i$ memiliki nilai $A_1, A_2, \ldots, A_n$, maka $\mathrm{E[E(X|Y)]}$ dapat ditulis sebagai:
+
+$$
+\mathrm{E}(X)=\sum_{i=1}^n \mathrm{E}[X|A_i]P(A_i)
+$$
+
+Yang sesuai dengan definisi $\mathrm{E}(U)=\sum_{i=1}^n U_i P(U_i)$
+
+### Law of Total Variance
+
+Jika $X$ dan $Y$ adlaah peubah acak, maka:
+
+$$
+{\displaystyle \operatorname {Var} (Y)=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {Var} (\operatorname {E} [Y\mid X]).}
+$$
+
+Diketahui bahwa dari definisi $E[X^2]=\operatorname{Var}(X)+[\operatorname{E}(X)]^2$:
+
+$$
+\begin{aligned}
+ \operatorname {E} \left[Y^{2}\right]&=\operatorname {E} \left[\operatorname {E} (Y^{2}\mid X)\right]=\operatorname {E} \left[\operatorname {Var} (Y\mid X)+\{\operatorname {E} (Y\mid X)\}^{2}\right]\\ 
+\operatorname {Var} [Y]&=\operatorname {E} \left[Y^{2}\right]-\operatorname {E} [Y]^{2}\\ 
+&=\operatorname {E} \left[\operatorname {Var} (Y\mid X)+\{\operatorname {E} (Y\mid X)\}^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}\\ 
+\end{aligned}
+$$
+
+Jika didekomposisi, dapat menjadi:
+
+$$
+\begin{aligned}
+\operatorname {Var} [Y]&=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {E} \left[\operatorname {E} (Y\mid X)^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}
+\end{aligned}
+$$
+
+Note, jika $U=\operatorname{E}(Y\mid X)$ maka:
+ 
+$$
+\operatorname {E} \left[\operatorname {E} (Y\mid X)^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}=\operatorname{E}(U^2)-[\operatorname{E}(U)]^2=\operatorname{Var}(U)
+$$
+
+Maka dari itu:
+
+$$
+{\displaystyle \operatorname {Var} (Y)=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {Var} (\operatorname {E} [Y\mid X]).}
+$$
+
+### Bukti Rao-Blackwell
+
+Karena $T$ statistik cukup, $W\mid T$ tidak bergantung $\theta$, maka $\phi(T)=\operatorname{E}[W\mid T]$ hanya fungsi dari contoh acak dan merupakan penduga. Maka dari itu, menggunakan Law of Iterated Expectations:
+
+$$
+\operatorname{E}[\phi(T)]=\operatorname{E}[\operatorname{E}(W \mid T)]=\operatorname{E}[W]=\tau(\theta)
+$$
+
+Dan:
+
+$$
+\begin{aligned}
+\operatorname{Var}[W]&=\operatorname{E}[\operatorname{Var}(W \mid T)]+\operatorname{Var}[\operatorname{E}(W\mid T)]\\ 
+&=\operatorname{E}[\operatorname{Var}(W \mid T)]+\operatorname{Var}[\phi(T)]\\ 
+&\geq \operatorname{Var}[\phi(T)]
+\end{aligned}
+$$
+
+Pasti $\operatorname{Var}[W\mid T]\geq 0$. Maka nilai harapannya lebih dari nol.
+
+Perhatikan bahwa Rao-Blackwell pada statistik cukup belum tentu menghasilkan UMVUE. Perlu dipastikan bahwa statistik cukup berupa **statistik cukup lengkap**, atau berasal dari **complete family** (keluarga lengkap) dari fungsi kepekatan atau fungsi massa peluang.
+
+Definisi keluarga lengkap sebagai berikut. Buat peubah acak $Z$ yang kontinu atau diskret dan memiliki fungsi kepekatan atau massa peluang yang merupakan anggota keluarga $\{h(z\mid\theta): \theta \in \Omega\}$. Jika kondisi $E[u(Z)]=0$, untuk tiap $\theta \in \Omega$, mengharuskan $u(z)$ nol kecuali di titik-titik yang memiliki probabilitas nol untuk tiap $h(z \mid \theta), \ \theta \in \Omega$, maka keluarga $\{h(z\mid\theta): \theta \in \Omega\}$ disebut keluarga lengkap dari fungsi kepekatan atau massa peluang.
+
+Definisi tersebut agak panjang, tetapi fokusnya adalah mencari $E[u(Z)]=0$, lalu mencari nilai $u(Z)$ yang mungkin. Jika hal tersebut dibuktikan, maka dapat dipakai Lehman-Scheffe.
+
+## Lehman-Scheffe
+
+Dari Rao-Blackwell, diketahui bahwa jika $W$ penduga tak bias dari $\theta$ dan $Y=u(X_1, \ldots, X_n)$ merupakan suatu statistik cukup dan $f_Y(y : \theta) :\theta\in\Omega$ berasal dari keluarga lengkap. Maka $\phi(Y)=E[W\mid Y]$ merupakan penduga tak bias dari $\theta$ dengan ragam lebih kecil atau sama dengan $W$.
+
+Untuk membuktikan bahwa penduga tersebut MVUE, perlu dibuktikan bahwa penduga tersebut unik. Anggap ada suatu penduga tak bias $Z$ dan $\psi(Y)=\operatorname{E}[Z \mid Y]$ yang merupakan penduga tak bias yang merupakan fungsi lain dari statistik cukup dengan ragam tak lebih besar dari ragam $Z$. Maka dari itu:
+
+$$
+\theta-\theta=\operatorname{E}[\phi(Y)]-\operatorname{E}[\psi(Y)]=\operatorname{E}[\phi(Y)-\psi(Y)]=0
+$$
+
+Jika fungsi peluang $Y$ berasal dari keluarga lengkap, maka hal tersebut muncul karena $\phi(Y)=\psi(Y)$, kecuali di titik dengan probabilitas nol. Logika tersebut dapat diperpanjang ke semua penduga tak bias yang mungkin. Hasil Rao-Blackwell semua penduga tak bias akan sama, dan ragamnya selalu lebih kecil atau sama dengan penduga tak bias yang ada. Oleh karena itu, pastilah penduga tersebut MVUE.
+
+## Cara Melakukan Rao-Blackwell
+
+Secara umum, Rao-Blackwell dapat dilakukan dengan dua cara:
+
+1. Kaji nilai harapan dari statistik cukup; jika nilai harapan tersebut dekat dengan parameter yang diduga, maka dapat dilakukan koreksi sederhana untuk memastikan ketidakbiasan.
+2. Ambil suatu penduga tak bias sederhana yang bebas dari statistik cukup. Lakukan Rao-Blackwell dari menghitung nilai harapan kondisional penduga tak bias tersebut dengan statistik cukup.
+
+### Mengkaji Statistik Cukup
+
+Anggap bahwa $E[h(T)]=\theta$ sehingga $W=h(T)$ merupakan penduga tak bias dari $\theta$.
+
+Oleh karena itu,
+
+$$
+\operatorname{E}[W \mid T]= \operatorname{E}\left[h(T)\mid T\right]=h(T)
+$$
+
+Karena secara intuitif $E[f(X)\mid X]$ - atau nilai harapan dari $f(X)$, jika $X$ diketahui, pastilah $f(X)$. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.
+
+### Mengambil Penduga Tak Bias 
+
+Perlu dihitung $\operatorname{E}(W \mid T)$. Definisi dari kuantitas tersebut tidak lain untuk fungsi kontinu:
+
+$$
+\int WP(W\mid T)=\int W \frac{P(W, T)}{P(T)}
+$$
+
+Agar lebih mudah, konversi kejadian $W$ dan $T$ menjadi kejadian $W$ dan $O$, di mana $W$ dan $O$ saling bebas. Peluang dapat dihitung dengan lebih mudah.
+
+### Mengambil Penduga Maximum Likelihood
+
+Teorema:
+
+Jika $X_1, X_2, \ldots, X_n$ merupakan contoh acak dari sebaran dengan fungsi kepekatan atau massa peluang $f(x\mid \theta), \theta \in \Omega$. Jika terdapat statistik cukup $Y_1=u_1(X_1, X_2, \ldots, X_n)$ untuk $\theta$ ada dan sebuah MLE $\theta^{*}$ untuk $\theta$ ada secara unik, maka $\theta^{*}$ fungsi dari $Y_1$.
+
+Bukti dari teorema ini sebagai berikut:
+
+$f_{y_1}(y_1\mid\theta)$ adalah fungsi kepekatan atau massa peluang $Y_1$. Maka dari definisi kecupukan, fungsi likelihood:
+
+$$
+\begin{aligned}
+L(\theta; x_1, x_2,\ldots,x_n)&= f(x_1\mid \theta)f(x_2\mid \theta)\ldots f(x_n\mid \theta)\\
+&= f_{Y_1} [u_1(X_1, X_2, \ldots, X_n)\mid \theta]H(x_1, x_2,\ldots,x_n),
+\end{aligned}
+$$
+
+Do mana $H(x_1, x_2,\ldots,x_n)$ tidak bergantung pada $\theta$. Maka $L$ dan $f_{Y_{1}}$ akan termaksimumkan bersama-sama jika dicari $\theta$ yang memaksimumkan $L$. Oleh karena itu, penduga $\hat{\theta}$ tersebut merupakan input fungsi dari $f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]$. Maka pastilah penduga tersebut fungsi dari statistik cukup.

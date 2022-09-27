@@ -1,0 +1,103 @@
+---
+title: "Bab 6"
+format: html
+---
+
+## Statistik Cukup (*Sufficient Statistic*)
+
+Statistik cukup merupakan suatu statistik yang sudah cukup memberi
+informasi semua populasi yang diperlukan untuk menduga parameter
+populasi.
+
+Misalkan $Y_{1},Y_{2},\ldots,Y_{n}$ adalah suatu contoh acak dengan
+fmp/fkp $f_{Y}(y|\theta)$ dengan parameter $\theta$ yang tidak diketahui.
+Statistik $T(Y_{1},Y_{2},\ldots,Y_{n})$ dikatakan **cukup** bagi $\theta$, bila
+fmp/fkp bersyarat dari $(Y_{1},Y_{2},\ldots,Y_{n})$ bila diketahui nilai
+$T(Y_{1},Y_{2},\ldots,Y_{n})$ **tidak bergantung pada $\theta$**.
+
+### Teorema
+
+Jika $f_{\underline{Y}}(\underline{y}|\theta)$ fmp/fkp dari
+$(Y_{1},Y_{2},\ldots,Y_{n})$, maka $T(Y_{1},Y_{2},\ldots,Y_{n})$
+dikatakan statistik cukup bagi $\theta$ jika:
+
+$$
+f_{\underline{Y}}(\underline{y}|T = t)\  = \frac{f_{\underline{Y}}(\underline{y}|\theta)\ }{f_{T}\left( t \middle| \theta \right)}
+$$
+
+Tidak bergantung pada $\theta$ di mana $f_{T}\left( t \middle| \theta \right)$ adalah fmp/fkp dari nilai $\ T(Y_{1},Y_{2},\ldots,Y_{n})$
+
+Penduga bagi $\theta$ yang merupakan fungsi dari statistik cukup bagi $\theta$
+dinamakan **penduga cukup** (*sufficient estimator*) bagi $\theta$.
+
+### Statistik Cukup Minimum *(Minimal Sufficient Statistic)*
+
+Statistik cukup minimum adalah suatu statistik cukup yang memiliki
+dimensi terkecil diantara berbagai statistik cukup lainnya.
+
+### Fisher-Neyman Factorization Theorem:
+
+$$
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\theta)\ &= \prod_{i = 1}^{n}{f_{Y}(y_{i}|\theta)}\\ 
+&= g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\theta\rbrack h(y_{1},y_{2},\ldots,y_{n})
+\end{aligned}
+$$
+
+
+Di mana $h(y_{1},y_{2},\ldots,y_{n})$ fungsi dari $(y_{1},y_{2},\ldots,y_{n})$ atau fungsi konstanta dan tidak bergantung pada $\theta$. Maka $T(Y_{1},Y_{2},\ldots,Y_{n})$ merupakan statistik cukup bagi $\theta$.
+
+### Fungsi Indikator (I(x) atau 1(x))
+
+Fungsi yang digunakan untuk menyatakan suatu fungsi sebaran sebagai cara
+untuk menentukan statistik cukup minimum.
+
+Misalnya $I_A: X \to {0, 1}$ maka didefinisikan
+
+$$
+I_{A}(x) = \begin{cases}
+1,& jika\ x \in A \\
+0,&jika\ x \notin A \\
+\end{cases}
+$$
+
+Langkah-langkah menentukan statistik cukup adalah sebagai berikut.
+
+1 Tentukan fmp/fkp bersama antara $Y_{1},Y_{2},\ldots,Y_{n}$ dengan syarat $\theta$, $f_{\underline{Y}}(\underline{y}|\theta)$.
+2. Menggunakan *teorema*, tentukan fmp/fkp dari $T(Y_{1},Y_{2},\ldots,Y_{n})$, $f_{T}\left( t \middle| \theta \right)$.
+3. Turunkan $f_{\underline{Y}}(\underline{y}|T = t)$ sedemikian rupa sehingga tidak bergantung pada $\theta$.
+
+Apabila memungkinkan, maka $T(Y_{1},Y_{2},\ldots,Y_{n})$ merupakan statistik cukup bagi $\theta$.
+
+*Atau*, melakukan faktorisasi:
+
+1. Tentukan fmp/fkp bersama antara $Y_{1},Y_{2},\ldots,Y_{n}$ dengan syarat $\theta$, $f_{\underline{Y}}(\underline{y}|\theta)$.
+2.  Menggunakan *Fisher-Neyman Factorization Theorem*, definisikan fungsi-fungsi g dan h sedemikian rupa sehingga g hanya merupakan fungsi dari statistik dan parameter saja sedangkan h merupakan fungsi dari contoh acak.
+
+Apabila memungkinkan maka statistik tersebut bersifat cukup bagi $\theta$. Kalau tidak, bukan statistik cukup bagi $\theta$.
+
+## Penduga Konsisten
+
+$\widehat{\theta}$ dikatakan penduga konsisten dari $\theta$ jika untuk
+sembarang bilangan $\varepsilon$ positif berlaku kondisi berikut :
+
+$$
+\lim_{n \rightarrow \infty}{P\left( \left| {\widehat{\theta}}_{n} - \theta \right| \right) >}\varepsilon = 0
+$$
+
+Ekuivalen dengan
+
+$$
+\lim_{n \rightarrow \infty}{P\left( \left| {\widehat{\theta}}_{n}- \theta \right| \right) \leq}\varepsilon = 1
+$$
+
+Ini dapat dibuktikan dengan mengkaji konvergensi pada peluang.
+
+### Kekonsistenan untuk penduga tak bias
+
+Teorema berikut sering digunakan untuk membuktikan bahwa penduga
+parameter konsisten untuk penduga tak bias. Penduga tak bias ${\widehat{\theta}}_{n}$ bagi $\theta$ disebut konsisten jika:
+
+$$
+\lim_{n\to\infty}Var(\widehat{\theta}_n)=0
+$$

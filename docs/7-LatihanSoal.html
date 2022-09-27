@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Bab 7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./modul.html">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./pembahasan.html" aria-current="page">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 7</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pembahasan.html" class="sidebar-item-text sidebar-link">Pembahasan</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 1, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 1, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 2, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 2, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 3, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-PembahasanTugas.html" class="sidebar-item-text sidebar-link">Bab 3, Pembahasan Tugas</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 4, Latihan Soal</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 6</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 7</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#penduga-efisien" id="toc-penduga-efisien" class="nav-link active" data-scroll-target="#penduga-efisien">Penduga Efisien</a></li>
+  <li><a href="#rao-blackwell" id="toc-rao-blackwell" class="nav-link" data-scroll-target="#rao-blackwell">Rao-Blackwell</a>
+  <ul class="collapse">
+  <li><a href="#pengkajian-fungsi-statistik-cukup" id="toc-pengkajian-fungsi-statistik-cukup" class="nav-link" data-scroll-target="#pengkajian-fungsi-statistik-cukup">Pengkajian Fungsi Statistik Cukup</a>
+  <ul class="collapse">
+  <li><a href="#mvue-bernoulli" id="toc-mvue-bernoulli" class="nav-link" data-scroll-target="#mvue-bernoulli">MVUE Bernoulli</a></li>
+  <li><a href="#weibull" id="toc-weibull" class="nav-link" data-scroll-target="#weibull">Weibull</a></li>
+  <li><a href="#normal" id="toc-normal" class="nav-link" data-scroll-target="#normal">Normal</a></li>
+  <li><a href="#exponensial" id="toc-exponensial" class="nav-link" data-scroll-target="#exponensial">Exponensial</a></li>
+  <li><a href="#uniform-sifat-statistik-cukup" id="toc-uniform-sifat-statistik-cukup" class="nav-link" data-scroll-target="#uniform-sifat-statistik-cukup">Uniform, Sifat Statistik Cukup</a></li>
+  </ul></li>
+  <li><a href="#penduga-tak-bias-sederhana" id="toc-penduga-tak-bias-sederhana" class="nav-link" data-scroll-target="#penduga-tak-bias-sederhana">Penduga Tak Bias Sederhana</a>
+  <ul class="collapse">
+  <li><a href="#uniform-redux" id="toc-uniform-redux" class="nav-link" data-scroll-target="#uniform-redux">Uniform, Redux</a></li>
+  <li><a href="#poisson" id="toc-poisson" class="nav-link" data-scroll-target="#poisson">Poisson</a></li>
+  </ul></li>
+  <li><a href="#maximum-likelihood" id="toc-maximum-likelihood" class="nav-link" data-scroll-target="#maximum-likelihood">Maximum Likelihood</a>
+  <ul class="collapse">
+  <li><a href="#gamma" id="toc-gamma" class="nav-link" data-scroll-target="#gamma">Gamma</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 7</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="penduga-efisien" class="level1">
+<h1>Penduga Efisien</h1>
+<p>Misalkan <span class="math inline">\(Y_{1},Y_{2},\cdots,Y_{n}\)</span> menyebar dengan fkp berikut:</p>
+<p><span class="math display">\[
+f_{Y}\left( y|\theta \right) = \theta^{y}(1 - \theta)^{1 - y}\ \ ,y = 0,1
+\]</span></p>
+<p>Tunjukkan bahwa <span class="math inline">\(\overline{Y}\)</span> merupakan penduga yang efisien bagi <span class="math inline">\(\theta\)</span>!</p>
+<section id="informasi-fisher" class="level4">
+<h4 class="anchored" data-anchor-id="informasi-fisher">Informasi Fisher</h4>
+<p><span class="math display">\[
+\begin{aligned}
+I(\theta)&amp;= nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack\\
+&amp;=- nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack\\
+&amp;= - nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\left( \log\left\lbrack \theta^{y}(1 - \theta)^{1 - y} \right\rbrack \right) \right\rbrack\\
+&amp;=- nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\left( y\log\theta + (1 - y)\log(1 - \theta) \right) \right\rbrack\\
+&amp;=- nE\left\lbrack \frac{\partial}{\partial\theta}\left( \frac{y}{\theta} - \frac{(1 - y)}{(1 - \theta)} \right) \right\rbrack\\
+&amp;=- nE\left\lbrack - \frac{y}{\theta^{2}} - \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack\\
+&amp;=- n\left( - E\left\lbrack \frac{y}{\theta^{2}} \right\rbrack - E\left\lbrack \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack \right)\\
+&amp;= n\left( E\left\lbrack \frac{y}{\theta^{2}} \right\rbrack + E\left\lbrack \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack \right)\\
+&amp;= n\left( \frac{\theta}{\theta^{2}} + \frac{(1 - \theta)}{(1 - \theta)^{2}} \right)\\
+&amp;=n\left( \frac{\theta}{\theta^{2}} + \frac{(1 - \theta)}{(1 - \theta)^{2}} \right)\\
+&amp;= \frac{n}{\theta(1 - \theta)}
+\end{aligned}
+\]</span></p>
+</section>
+<section id="had-bawah-cramer-rao" class="level4">
+<h4 class="anchored" data-anchor-id="had-bawah-cramer-rao">Had Bawah Cramer-Rao</h4>
+<p><span class="math display">\[
+HBCR = \frac{1}{\frac{n}{\theta(1 - \theta)}}= \frac{\theta(1 - \theta)}{n}
+\]</span></p>
+</section>
+<section id="ragam-dari-overliney" class="level4">
+<h4 class="anchored" data-anchor-id="ragam-dari-overliney">Ragam dari <span class="math inline">\(\overline{Y}\)</span></h4>
+<p><span class="math display">\[
+Var\left( {\overline{Y}}_{n} \right) = \frac{1}{n}Var(Y)=\frac{1}{n}\theta(1 - \theta)
+\]</span></p>
+<p><em>Note</em> : Ragam sebaran Bernoulli <span class="math inline">\(Var(Y) = \ \theta(1 - \theta)\)</span></p>
+</section>
+<section id="syarat-keefisienan" class="level4">
+<h4 class="anchored" data-anchor-id="syarat-keefisienan">Syarat keefisienan</h4>
+<p><span class="math display">\[
+\begin{aligned}
+Var\left( \widehat{\theta} \right)&amp;= \frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}\\
+Var\left( {\overline{Y}}_{n} \right) &amp;= \frac{\theta(1 - \theta)}{n}
+\end{aligned}
+\]</span></p>
+<p>Jadi, <span class="math inline">\(\overline{Y}\)</span> merupakan penduga yang efisien bagi <span class="math inline">\(\theta\)</span>.</p>
+</section>
+</section>
+<section id="rao-blackwell" class="level1">
+<h1>Rao-Blackwell</h1>
+<p>Beberapa penyelesaian Rao-Blackwell dengan beragam pendekatan:</p>
+<section id="pengkajian-fungsi-statistik-cukup" class="level2">
+<h2 class="anchored" data-anchor-id="pengkajian-fungsi-statistik-cukup">Pengkajian Fungsi Statistik Cukup</h2>
+<section id="mvue-bernoulli" class="level3">
+<h3 class="anchored" data-anchor-id="mvue-bernoulli">MVUE Bernoulli</h3>
+<p><span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> merupakan contoh acak yang menyebar Bernoulli. Cari statistik cukup, dan berikan MVUE untuk p!</p>
+<p>Cari fungsi likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(p\mid y_1, y_2, \ldots, y_n)&amp;=p(y_1, y_2, \ldots, y_n\mid p)\\
+&amp;=\prod_{i=1}^n p(y_i\mid p)=\prod_{i=1}^n p^{y_i}(1-p)^{1-y_i}\\
+&amp;=p^{\sum_{i=1}^n y_i}(1-p)^{n-\sum_{i=1}^n y_i} \times1\\
+&amp;=g\left(\sum_{i=1}^n y_i,\  p\right)\times h(y_1, y_2, \ldots, y_n)
+\end{aligned}
+\]</span></p>
+<p>Maka statistik cukup adalah <span class="math inline">\(Z=\sum_{i=1}^n y_i\)</span>. Diketahui bahwa <span class="math inline">\(E(Y)=p\)</span> untuk peubah acak Bernoulli, maka <span class="math inline">\(E(Z)=np\)</span>. Maka <span class="math inline">\(E(Z/n)=p\)</span>, dan <span class="math inline">\(Z/n\)</span> penduga tak bias bagi p dari statistik cukup.</p>
+<p>Diketahui bahwa peubah acak Bernoulli memiliki fungsi pembangkit momen dan fungsi pembangkit momen dari pertambahan peubah acak Bernoulli berasal dari perkalian fungsi pembangkit momen:</p>
+<p><span class="math display">\[
+\begin{aligned}
+M_Y(t)&amp;=E\left[e^{tX}\right]=e^0(1-p)+pe^t=1-p+pe^t\\
+M_{Z}(t)&amp;=\prod_{i=1}^n M_Y(t)=(1-p+pe^t)^n
+\end{aligned}
+\]</span></p>
+<p>Yang tidak lain merupakan fungsi pembangkit momen binomial. Sekarang cek:</p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=E[u(z)]=\sum_{i=0}^n u(z){n\choose i}p^i(1-p)^{n-i}\\
+&amp;=(1-p)^n \sum_{i=0}^n u(z){n\choose i}\left(\frac{p}{1-p}\right)^i\\
+&amp;=\sum_{i=0}^n u(z){n\choose i}r^t
+\end{aligned}
+\]</span></p>
+<p>Berbentuk suatu polinomial, dengan <span class="math inline">\(r\)</span> pasti positif. Agar polinomial tersebut nol, haruslah <span class="math inline">\(u(z){n\choose i}\)</span> 0, dan <span class="math inline">\(u(z)\)</span> haruslah 0.</p>
+<p>Maka statistik cukup berasal dar <em>complete family</em> dan penduga dari statistik cukup tersebut MVUE.</p>
+</section>
+<section id="weibull" class="level3">
+<h3 class="anchored" data-anchor-id="weibull">Weibull</h3>
+<p><span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> merupakan contoh acak yang menyebar Weibull, dengan fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+f(y \mid \theta)=
+\begin{cases}
+\left(\frac{2y}{\theta}\right)e^{-y^2/\theta}, &amp;y&gt;0\\
+0, &amp; \text{lainnya}
+\end{cases}
+\]</span></p>
+<p>Temukan MVUE untuk <span class="math inline">\(\theta\)</span>!</p>
+<p>Cari fungsi likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\theta\mid y_1, y_2, \ldots, y_n)&amp;=f(y_1, y_2, \ldots, y_n\mid \theta)\\
+&amp;=\prod_{i=1}^n f(y_i\mid \theta)=\prod_{i=1}^n \left(\frac{2y}{\theta}\right)e^{-y^2/\theta}\\
+&amp;=\left(\frac{2}{\theta}\right)^n \exp\left[-\frac{1}{\theta}\sum_{i=1}^n y_i^2\right]\times\prod_{i=1}^n y_i\\
+&amp;=g\left(\sum_{i=1}^n y_i^2,\ \theta\right)\times h(y_1, y_2, \ldots, y_n)
+\end{aligned}
+\]</span></p>
+<p>Maka statistik cukup jelas <span class="math inline">\(\sum_{i=1}^n y_i^2\)</span>. Apa nilai harapannya? Bisa dicari fungsi kepekatan peluang <span class="math inline">\(W=Y^2\)</span>. Menggunakan transformasi fungsi:</p>
+<p><span class="math display">\[
+\begin{aligned}
+W&amp;=Y^2 &amp; Y&amp;=\sqrt{W}\\
+&amp; &amp; dy&amp;=\frac{dw}{2\sqrt{W}}
+\end{aligned}
+\]</span></p>
+<p>Oleh karena itu:</p>
+<p><span class="math display">\[
+f(w)=\frac{2}{\theta}\sqrt{w}e^{-w/\theta}\frac{1}{2\sqrt{w}}=\frac{1}{\theta}e^{-w/\theta}
+\]</span></p>
+<p><span class="math inline">\(Y^2\)</span> menyebar <span class="math inline">\(\mathrm{Exp}(\theta)\)</span>. Diketahui bahwa nilai harapan sebaran Eksponensial adalah <span class="math inline">\(\theta\)</span>. Oleh karena itu, nilai harapan <span class="math inline">\(\sum_{i=1}^n Y^2/n=n\theta/n=\theta\)</span>. Karena penduga dari statistik cukup tersebut tak bias, penduga disebut MVUE.</p>
+<p>Note: <span class="math inline">\(\sum_{i=1}^n Y_i\)</span> menyebar Gamma dari fungsi pembangkit momen. Statistik cukup tersebut dianggap berasal dari <em>complete family</em>, tapi tidak akan dibuktikan.</p>
+</section>
+<section id="normal" class="level3">
+<h3 class="anchored" data-anchor-id="normal">Normal</h3>
+<p>Anggap <span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> contoh acak dari sebaran normal dengan parameter mean <span class="math inline">\(\mu\)</span> dan ragam <span class="math inline">\(\sigma^2\)</span> tak diketahui. Cari MVUE untuk <span class="math inline">\(\mu\)</span> dan <span class="math inline">\(\sigma^2\)</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\mu, \sigma |y_1, \ldots, y_n)&amp;=f(y_1, y_2, \ldots, y_n|\mu, \sigma)\\
+&amp;= \prod_{i=1}^n f(y_i)\\
+&amp;=\left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n\exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-\mu)^2\right]\\
+&amp;=\left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n\exp\left[-\frac{1}{2\sigma^2}\left(\sum_{i=1}^n y_i^2-2\mu\sum_{i=1}^n y_i+n\mu^2\right)\right]\\
+&amp;=\left(\frac{n\mu^2}{\sigma\sqrt{2\pi}}\right)^n\exp\left(\frac{n\mu^2}{2\sigma^2}\right)\exp\left[-\frac{1}{2\sigma^2}\left(\sum_{i=1}^n y_i^2-2\mu\sum_{i=1}^n y_i\right)\right]
+\end{aligned}
+\]</span></p>
+<p>Maka statistik cukup adalah <span class="math inline">\(\sum_{i=1}^n Y_i^2\)</span> dan <span class="math inline">\(\sum_{i=1}^n Y_i\)</span>. Diketahui bahwa <span class="math inline">\(\bar{y}=\sum_{i=1}^n y_i\n\)</span> dan <span class="math inline">\(S^2=\frac{1}{n-1}\left[\sum_{i=1}^n Y_i^2-n\bar{Y}^2\right]\)</span> tak bias dalam menduga kedua parameter.</p>
+<p>Kedua fungsi dari statistik cukup tersebut merupakan MVUE.</p>
+</section>
+<section id="exponensial" class="level3">
+<h3 class="anchored" data-anchor-id="exponensial">Exponensial</h3>
+<p><span class="math inline">\(Y_1, Y_2, \ldots, Y_n\)</span> merupakan contoh acak dari peubah eksponensial dengan fkp:</p>
+<p><span class="math display">\[
+f(y\mid \theta)=\begin{cases}
+\frac{1}{\theta}e^{-y/\theta}, &amp; y&gt;0\\
+0, &amp; \text{(lainnya)}
+\end{cases}
+\]</span></p>
+<p>Temukan MVUE dari <span class="math inline">\(V(y_i)\)</span>.</p>
+<p>Statistik cukup dari <span class="math inline">\(\theta\)</span> adalah <span class="math inline">\(\sum_{i=1}^n y_i\)</span>. Diketahui bahwa <span class="math inline">\(E(y)=\theta\)</span> dan <span class="math inline">\(V(y)=\theta^2\)</span>. Maka dari itu, <span class="math inline">\(V(\bar{y})=\theta^2/n\)</span>. Karena:</p>
+<p><span class="math display">\[
+\begin{aligned}
+V(X)&amp;=E(X^2)-[E(X)]^2\\
+V(\bar{Y})&amp;=E(\bar{Y}^2)-[E(\bar{Y})]^2\\
+\frac{\theta^2}{n}&amp;=E(\bar{Y}^2)-\theta^2\\
+\theta^2\left(\frac{1}{n}+1\right)&amp;=\left(\frac{n+1}{n}\right)E(\bar{Y^2})
+\end{aligned}
+\]</span></p>
+<p>Maka lakukan koreksi bias dengan penduga <span class="math inline">\([n/(n+1)]\bar{Y}^2\)</span>; penduga ini adalah MVUE karena merupakan fungsi dari statistik cukup.</p>
+</section>
+<section id="uniform-sifat-statistik-cukup" class="level3">
+<h3 class="anchored" data-anchor-id="uniform-sifat-statistik-cukup">Uniform, Sifat Statistik Cukup</h3>
+<p>Diketahui bahwa statistik cukup untuk <span class="math inline">\(Y_1, Y_2, \ldots, Y_n \sim\mathrm{Uniform}(0,1)\)</span> adalah <span class="math inline">\(Y_{(n)}\)</span>, atau nilai maksimum di sampel. Dari statistik tataan, diketahui bahwa:</p>
+<p><span class="math display">\[
+g_{(n)}\left[y_{(n)} \right]=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \right)\ \ \ \ \ \ \ ,\ a &lt; y_{n} &lt; b
+\]</span></p>
+<p>Maka dari itu, diketahui bahwa <span class="math inline">\(f(y)=1/\theta\)</span> dan <span class="math inline">\(F(y)=y/\theta\)</span>. Maka dari itu:</p>
+<p><span class="math display">\[
+g_{(n)}\left[y_{(n)} \right]=n\cdot \frac{y_{(n)}^{n-1}}{\theta^{n-1}}\cdot \frac{1}{\theta}
+\]</span></p>
+<p>Maka dari itu, nilai harapan dari nilai maksimum suatu conth acak uniform (note, range dari maksimum uniform adalah 0 ke <span class="math inline">\(\theta\)</span>).</p>
+<p><span class="math display">\[
+\begin{aligned}
+E[Y_{(n)}]&amp;=\int_0^{\theta} y_{(n)}\frac{ny_{(n)}^{n-1}}{\theta^n}dy_{(n)}=\int_0^\theta \frac{ny_{(n)}^n}{\theta^n}dy_{(n)}\\
+&amp;=\frac{ny_{(n)}^{n+1} }{(n+1)\theta^n}{\huge \mid}_0^\theta=\frac
+{n}{n+1}\theta
+\end{aligned}
+\]</span></p>
+<p>Oleh karena itu, lakukan koreksi sederhana sehingga MVUE adalah <span class="math inline">\(\frac{n+1}{n}Y_{(n)}\)</span></p>
+<p>Dapat juga dibuktikan bahwa <span class="math inline">\(Y_{(n)}\)</span> berasal dari complete family.</p>
+<p><span class="math display">\[
+\begin{aligned}
+0&amp;=E[u\{y_{(n)}\}]=\int_0^{\theta} u[y_{(n)}]\frac{ny_{(n)}^{n-1}}{\theta^n}dy_{(n)}\\
+&amp;=\frac{1}{\theta^n}\int_0^\theta u[y_{(n)}]ny^{n-1}_{(n)} dy_{(n)}\\
+0\cdot\theta^n=0&amp;=\int_0^{\theta}u[y_{(n)}]ny^{n-1}_{(n)} dy_{(n)}\\
+\frac{d}{dy_{(n)}}0=0&amp;=u(\theta)n\theta^{n-1}
+\end{aligned}
+\]</span></p>
+<p>Melalui teorema dasar kalkulus. Karena <span class="math inline">\(\theta&gt;0\)</span> maka <span class="math inline">\(u(\theta)\)</span> haruslah nol.</p>
+</section>
+</section>
+<section id="penduga-tak-bias-sederhana" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-tak-bias-sederhana">Penduga Tak Bias Sederhana</h2>
+<section id="uniform-redux" class="level3">
+<h3 class="anchored" data-anchor-id="uniform-redux">Uniform, Redux</h3>
+<p>Karena diketahui bahwa <span class="math inline">\(E(Y)=\theta/2\)</span> untuk Uniform, maka <span class="math inline">\(E(\sum_{i=1}^n Y_i)=n\theta/2\)</span>. Oleh karena itu penduga tak bias sederhana <span class="math inline">\(W=(2/n)\sum_{i=1}^n {Y_i}\)</span>.</p>
+<p>Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\phi(T)&amp;=E(W\mid T)=E[(2/n)\sum_{i=1}^n {Y_i}\mid Y_{(n)}]&amp;\\
+&amp;=(2/n)E\left[\sum_{i=1}^n {Y_i}\mid Y_{(n)}\right] &amp; \text{(sifat nilai harapan)}
+\end{aligned}
+\]</span></p>
+<p>Sekarang pisahkan kejadian menjadi dua. <span class="math inline">\(\sum_{i=1}^n Y_i=t\)</span> dapat dipisahkan menjadi nilai <span class="math inline">\(Y_{(n)}\)</span>, dan nilai <span class="math inline">\(\sum_{i=1, i\neq (n)}^n Y_i=\)</span> (jumlah di luar semua elemen selain maksimum). Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\phi(T)
+&amp;=(2/n)E\left(\sum_{i=1;i\neq(n)}^n {Y_i}+Y_{(n)}\mid Y_{(n)}\right) &amp; \text{(pisahkan)}\\
+&amp;=(2/n)\left[E\left(\sum_{i=1;i\neq(n)}^n {Y_i}\mid Y_{(n)}\right)+E\left(Y_{(n)}\mid Y_{(n)}\right)\right] &amp;\\
+&amp;=(2/n)\left[\sum_{i=1;i\neq(n)}^nE\left( {Y_i}\mid Y_{(n)}\right)+Y_{(n)}\right] &amp;\\
+\end{aligned}
+\]</span></p>
+<p>Karena nilai harapan dari jumlah merupakan jumlah dari nilai harapan untuk peubah acak yang saling bebas. Perhatikan bahwa:</p>
+<p><span class="math display">\[
+P(Y_i=x|Y_{(n)}=t)=P(Y_i=x;Y_i&lt;t)
+\]</span></p>
+<p>Agar kondisi tersebut terpenuhi, <span class="math inline">\(Y_i\mid Y_{(n)}=U(0,Y_{(n)})\)</span>. Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\phi(T)
+&amp;=(2/n)\left[\sum_{i=1;i\neq(n)}^nE\left( {Y_i}\mid Y_{(n)}\right)+Y_{(n)}\right] \\
+&amp;=(2/n)\left[\sum_{i=1;i\neq(n)}^n\int_0^{Y_{(n)}}\frac{y_i}{Y_{(n)}}dy_{i}+Y_{(n)}\right] \\
+&amp;=(2/n)\left[\frac{(n-1)Y_{(n)}}{2}\right]+Y_{(n)}\\
+&amp;=\left(\frac{n-1}{n}+\frac{2}{n}\right)Y_{(n)}\\
+&amp;=\frac{n+1}{n} Y_{(n)}
+\end{aligned}
+\]</span></p>
+<p>Yang sama dengan penduga sebelumnya. Dalam kasus ini, peluang bersyarat diturunkan melalui argumen logis.</p>
+</section>
+<section id="poisson" class="level3">
+<h3 class="anchored" data-anchor-id="poisson">Poisson</h3>
+<p>Duga <span class="math inline">\(P(X=0)\)</span> untuk <span class="math inline">\(X_1, X_2, \ldots, X_n \mathrm{Poisson}(\lambda)\)</span>.</p>
+<p>Penduga tak bias sederhana:</p>
+<p><span class="math display">\[
+W=\begin{cases}
+1, &amp; X_1=0\\
+0, &amp; \text{lainnya}
+\end{cases}
+\]</span></p>
+<p>Karena nilai harapannya adalah <span class="math inline">\(P[X_1=0]\)</span> - di nilai <span class="math inline">\(X_1\)</span> lainnya, <span class="math inline">\(W=0\)</span>. Dari fungsi massa peluang,</p>
+<p><span class="math display">\[
+\begin{aligned}
+p(x)&amp;=\frac{\lambda^ye^{-\lambda}}{y!}\\
+L(\lambda \mid x)&amp;=\prod_{i=1}^n p(x_i)=\frac{\lambda^{\sum_{i=1}^n y_i}e^{-n\lambda}}{\prod_{i=1}^n (y_i!)}
+\end{aligned}
+\]</span></p>
+<p>Diketahui bahwa <span class="math inline">\(\sum_{i=1}^n x_i\)</span> statistik cukup untuk Poisson. Lalu, cari nilai harapan kondisional:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[W{\huge \mid} \sum_{i=1}^{n} x_i\right]&amp;=\frac{P(X_1=0, \sum_{i=1}^n X_i =t)}{P(\sum_{i=1}^n X_i=t)}\\
+&amp;=\frac{P(X_1=0, \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}\\
+&amp;=\frac{P(X_1=0)P( \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}
+\end{aligned}
+\]</span></p>
+<p>Dari fungsi pembangkit momen Poisson:</p>
+<p><span class="math display">\[
+\exp\left[\lambda(e^t-1)\right]
+\]</span></p>
+<p>Cukup jelas bahwa jumlah dari contoh acak Poisson akan menghasilkan fungsi pembangkit momen:</p>
+<p><span class="math display">\[
+\exp\left[n\lambda(e^t-1)\right]
+\]</span></p>
+<p>Atau, <span class="math inline">\(\sum_{i=1}^n x_i\)</span> menyebar <span class="math inline">\(\mathrm{Poisson}(n\lambda)\)</span>. Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[W{\huge \mid} \sum_{i=1}^{n} x_i\right]
+&amp;=\frac{P(X_1=0)P( \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}\\
+&amp;=e^{-\lambda}\frac{\frac{[(n-1)\lambda]^{t} e^{-(n-1)\lambda}}{t!}}{\frac{[n\lambda^{t}] e^{-n\lambda}}{t!}}\\
+&amp;=\frac{e^{-\lambda}e^{-(n-1)\lambda}}{e^{-n\lambda}}\cdot\frac{t!}{t!}\cdot\frac{\lambda^t}{\lambda^t}\left(\frac{n-1}{n}\right)^t\\
+&amp;=\left(1-\frac{1}{n}\right)^{\sum_{i=1}^n x_i}
+\end{aligned}
+\]</span></p>
+<p>Merupakan UMVUE bagi <span class="math inline">\(P[X=0]\)</span>. Note, Poisson merupakan sebaran yang berasal dari <em>complete family</em>.</p>
+</section>
+</section>
+<section id="maximum-likelihood" class="level2">
+<h2 class="anchored" data-anchor-id="maximum-likelihood">Maximum Likelihood</h2>
+<section id="gamma" class="level3">
+<h3 class="anchored" data-anchor-id="gamma">Gamma</h3>
+<p><span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> contoh acak dari populasi yang memiliki fungsi kepekatan peluang:</p>
+<p><span class="math display">\[
+f(x\mid \theta\begin{cases}
+\theta e^{−\theta x} &amp;0 &lt;x&lt; \infty, θ&gt; 0
+\\0&amp; lainnya.
+\end{cases}
+\]</span></p>
+<p>Fungsi likelihood adalah:</p>
+<p><span class="math display">\[
+L(\theta\mid x_1,\ldots,x_n) = \theta^ne^{-\theta\sum_{i=1}^n x_i}, \quad x_i&gt;0; \ i=1,2,\ldots,n
+\]</span></p>
+<p>Maka dari itu <span class="math inline">\(\sum_{i=1}^n X_i=Y_i\)</span> statistik cukup. Log-likelihod adalah:</p>
+<p><span class="math display">\[
+l(\theta) = n\log \theta− \theta\sum_{i=1}^n x_i
+\]</span></p>
+<p>Maka jika diambil turunan:</p>
+<p><span class="math display">\[
+0=\frac{n}{\theta}-\sum_{i=1}^n X_i
+\]</span></p>
+<p>Sehingga <span class="math inline">\(\theta=n/\sum_{i=1}^n X_i=1/\bar{X}\)</span> merupakan fungsi statistik cukup. Maka pastikan ketakbiasan:</p>
+<p>Perhatikan bahwa <span class="math inline">\(X\sim \mathrm{Gamma}(1, 1/\theta)\)</span>. Maka dari itu <span class="math inline">\(Y=\sum_{i=1}^n X_i \sim \mathrm{Gamma}(n, 1/\theta)\)</span>. Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[\hat{\theta}\right]&amp;=nE\left[\frac{1}{Y}\right]\\
+&amp;=\int_0^{\infty}\frac{\theta^n}{\Gamma(n)}y^{n-2}e^{-\theta y}dy
+\end{aligned}
+\]</span></p>
+<p>Dengan membuat:</p>
+<p><span class="math display">\[
+z=\theta y; \quad dy=1/\theta
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[\hat{\theta}\right]&amp;=nE\left[\frac{1}{Y}\right]\\
+&amp;=n\int_0^{\infty}\frac{\theta^n}{\Gamma(n)}\left(\frac{z}{\theta}\right)^{n-2}e^{-\theta \cdot(z/\theta)}\frac{1}{\theta}dz=\int_0^{\infty}\frac{\theta}{\Gamma(n)}z^{n-2}e^{-z}dz\\
+&amp;=\frac{n\theta}{\Gamma(n)}\int_0^{\infty}y^{n-2}e^{-z}dz
+\end{aligned}
+\]</span></p>
+<p>Ingat bahwa:</p>
+<p><span class="math display">\[
+\displaystyle \Gamma (z)=\int _{0}^{\infty }t^{z-1}e^{-t}\,dt,\ \qquad \Re (z)&gt;0\,.
+\]</span></p>
+<p>Maka dari itu:</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left[\hat{\theta}\right]
+&amp;=\frac{n\theta}{\Gamma(n)}\int_0^{\infty}y^{n-2}e^{-z}dz\\
+&amp;=\frac{n\theta}{\Gamma(n)}\Gamma(n-1)=\frac{n}{n-1}\theta
+\end{aligned}
+\]</span></p>
+<p>Sehingga dapat dilakukan koreksi bias sederhana: <span class="math inline">\(\hat{\theta}(n-1)/n\)</span></p>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

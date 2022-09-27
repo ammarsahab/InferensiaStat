@@ -1,0 +1,410 @@
+---
+title: "Bab 7"
+format: html
+---
+
+# Penduga Efisien 
+
+Misalkan $Y_{1},Y_{2},\cdots,Y_{n}$ menyebar dengan fkp berikut:
+
+$$
+f_{Y}\left( y|\theta \right) = \theta^{y}(1 - \theta)^{1 - y}\ \ ,y = 0,1
+$$
+
+Tunjukkan bahwa $\overline{Y}$ merupakan penduga yang efisien bagi
+$\theta$!
+
+#### Informasi Fisher
+
+$$
+\begin{aligned}
+I(\theta)&= nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack\\
+&=- nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack\\
+&= - nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\left( \log\left\lbrack \theta^{y}(1 - \theta)^{1 - y} \right\rbrack \right) \right\rbrack\\
+&=- nE\left\lbrack \frac{\partial^{2}}{{\partial\theta}^{2}}\left( y\log\theta + (1 - y)\log(1 - \theta) \right) \right\rbrack\\ 
+&=- nE\left\lbrack \frac{\partial}{\partial\theta}\left( \frac{y}{\theta} - \frac{(1 - y)}{(1 - \theta)} \right) \right\rbrack\\ 
+&=- nE\left\lbrack - \frac{y}{\theta^{2}} - \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack\\ 
+&=- n\left( - E\left\lbrack \frac{y}{\theta^{2}} \right\rbrack - E\left\lbrack \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack \right)\\ 
+&= n\left( E\left\lbrack \frac{y}{\theta^{2}} \right\rbrack + E\left\lbrack \frac{(1 - y)}{(1 - \theta)^{2}} \right\rbrack \right)\\ 
+&= n\left( \frac{\theta}{\theta^{2}} + \frac{(1 - \theta)}{(1 - \theta)^{2}} \right)\\ 
+&=n\left( \frac{\theta}{\theta^{2}} + \frac{(1 - \theta)}{(1 - \theta)^{2}} \right)\\ 
+&= \frac{n}{\theta(1 - \theta)}
+\end{aligned}
+$$
+
+#### Had Bawah Cramer-Rao
+
+$$
+HBCR = \frac{1}{\frac{n}{\theta(1 - \theta)}}= \frac{\theta(1 - \theta)}{n}
+$$
+
+#### Ragam dari $\overline{Y}$
+
+$$
+Var\left( {\overline{Y}}_{n} \right) = \frac{1}{n}Var(Y)=\frac{1}{n}\theta(1 - \theta)
+$$
+*Note* : Ragam sebaran Bernoulli $Var(Y) = \ \theta(1 - \theta)$
+
+#### Syarat keefisienan
+
+$$
+\begin{aligned}
+Var\left( \widehat{\theta} \right)&= \frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}\\ 
+Var\left( {\overline{Y}}_{n} \right) &= \frac{\theta(1 - \theta)}{n}
+\end{aligned}
+$$
+
+Jadi, $\overline{Y}$ merupakan penduga yang efisien bagi $\theta$.
+
+# Rao-Blackwell
+
+Beberapa penyelesaian Rao-Blackwell dengan beragam pendekatan:
+
+## Pengkajian Fungsi Statistik Cukup
+
+### MVUE Bernoulli
+
+$Y_1, Y_2, \ldots, Y_n$ merupakan contoh acak yang menyebar Bernoulli. Cari statistik cukup, dan berikan MVUE untuk p!
+
+Cari fungsi likelihood:
+
+$$
+\begin{aligned}
+L(p\mid y_1, y_2, \ldots, y_n)&=p(y_1, y_2, \ldots, y_n\mid p)\\ 
+&=\prod_{i=1}^n p(y_i\mid p)=\prod_{i=1}^n p^{y_i}(1-p)^{1-y_i}\\ 
+&=p^{\sum_{i=1}^n y_i}(1-p)^{n-\sum_{i=1}^n y_i} \times1\\ 
+&=g\left(\sum_{i=1}^n y_i,\  p\right)\times h(y_1, y_2, \ldots, y_n)
+\end{aligned}
+$$
+
+Maka statistik cukup adalah $Z=\sum_{i=1}^n y_i$. Diketahui bahwa $E(Y)=p$ untuk peubah acak Bernoulli, maka $E(Z)=np$. Maka $E(Z/n)=p$, dan $Z/n$ penduga tak bias bagi p dari statistik cukup. 
+
+Diketahui bahwa peubah acak Bernoulli memiliki fungsi pembangkit momen dan fungsi pembangkit momen dari pertambahan peubah acak Bernoulli berasal dari perkalian fungsi pembangkit momen:
+$$
+\begin{aligned}
+M_Y(t)&=E\left[e^{tX}\right]=e^0(1-p)+pe^t=1-p+pe^t\\ 
+M_{Z}(t)&=\prod_{i=1}^n M_Y(t)=(1-p+pe^t)^n
+\end{aligned}
+$$
+
+Yang tidak lain merupakan fungsi pembangkit momen binomial. Sekarang cek:
+
+$$
+\begin{aligned}
+0&=E[u(z)]=\sum_{i=0}^n u(z){n\choose i}p^i(1-p)^{n-i}\\ 
+&=(1-p)^n \sum_{i=0}^n u(z){n\choose i}\left(\frac{p}{1-p}\right)^i\\ 
+&=\sum_{i=0}^n u(z){n\choose i}r^t
+\end{aligned}
+$$
+
+Berbentuk suatu polinomial, dengan $r$ pasti positif. Agar polinomial tersebut nol, haruslah $u(z){n\choose i}$ 0, dan $u(z)$ haruslah 0.
+
+Maka statistik cukup berasal dar *complete family* dan penduga dari statistik cukup tersebut MVUE.
+
+### Weibull
+
+$Y_1, Y_2, \ldots, Y_n$ merupakan contoh acak yang menyebar Weibull, dengan fungsi kepekatan peluang:
+
+$$
+f(y \mid \theta)=
+\begin{cases}
+\left(\frac{2y}{\theta}\right)e^{-y^2/\theta}, &y>0\\ 
+0, & \text{lainnya}
+\end{cases}
+$$
+
+Temukan MVUE untuk $\theta$!
+
+Cari fungsi likelihood:
+
+$$
+\begin{aligned}
+L(\theta\mid y_1, y_2, \ldots, y_n)&=f(y_1, y_2, \ldots, y_n\mid \theta)\\ 
+&=\prod_{i=1}^n f(y_i\mid \theta)=\prod_{i=1}^n \left(\frac{2y}{\theta}\right)e^{-y^2/\theta}\\ 
+&=\left(\frac{2}{\theta}\right)^n \exp\left[-\frac{1}{\theta}\sum_{i=1}^n y_i^2\right]\times\prod_{i=1}^n y_i\\ 
+&=g\left(\sum_{i=1}^n y_i^2,\ \theta\right)\times h(y_1, y_2, \ldots, y_n)
+\end{aligned}
+$$
+
+Maka statistik cukup jelas $\sum_{i=1}^n y_i^2$. Apa nilai harapannya? Bisa dicari fungsi kepekatan peluang $W=Y^2$. Menggunakan transformasi fungsi:
+
+$$
+\begin{aligned}
+W&=Y^2 & Y&=\sqrt{W}\\ 
+& & dy&=\frac{dw}{2\sqrt{W}}
+\end{aligned}
+$$
+
+Oleh karena itu:
+
+$$
+f(w)=\frac{2}{\theta}\sqrt{w}e^{-w/\theta}\frac{1}{2\sqrt{w}}=\frac{1}{\theta}e^{-w/\theta}
+$$
+
+$Y^2$ menyebar $\mathrm{Exp}(\theta)$. Diketahui bahwa nilai harapan sebaran Eksponensial adalah $\theta$. Oleh karena itu, nilai harapan $\sum_{i=1}^n Y^2/n=n\theta/n=\theta$. Karena penduga dari statistik cukup tersebut tak bias, penduga disebut MVUE.
+
+Note: $\sum_{i=1}^n Y_i$ menyebar Gamma dari fungsi pembangkit momen. Statistik cukup tersebut dianggap berasal dari *complete family*, tapi tidak akan dibuktikan.
+
+### Normal
+
+Anggap $Y_1, Y_2, \ldots, Y_n$ contoh acak dari sebaran normal dengan parameter mean $\mu$ dan ragam $\sigma^2$ tak diketahui. Cari MVUE untuk $\mu$ dan $\sigma^2$
+
+$$
+\begin{aligned}
+L(\mu, \sigma |y_1, \ldots, y_n)&=f(y_1, y_2, \ldots, y_n|\mu, \sigma)\\ 
+&= \prod_{i=1}^n f(y_i)\\ 
+&=\left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n\exp\left[-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-\mu)^2\right]\\
+&=\left(\frac{1}{\sigma\sqrt{2\pi}}\right)^n\exp\left[-\frac{1}{2\sigma^2}\left(\sum_{i=1}^n y_i^2-2\mu\sum_{i=1}^n y_i+n\mu^2\right)\right]\\
+&=\left(\frac{n\mu^2}{\sigma\sqrt{2\pi}}\right)^n\exp\left(\frac{n\mu^2}{2\sigma^2}\right)\exp\left[-\frac{1}{2\sigma^2}\left(\sum_{i=1}^n y_i^2-2\mu\sum_{i=1}^n y_i\right)\right]
+\end{aligned}
+$$
+
+Maka statistik cukup adalah $\sum_{i=1}^n Y_i^2$ dan $\sum_{i=1}^n Y_i$. Diketahui bahwa $\bar{y}=\sum_{i=1}^n y_i\n$ dan $S^2=\frac{1}{n-1}\left[\sum_{i=1}^n Y_i^2-n\bar{Y}^2\right]$ tak bias dalam menduga kedua parameter.
+
+Kedua fungsi dari statistik cukup tersebut merupakan MVUE.
+
+### Exponensial
+
+$Y_1, Y_2, \ldots, Y_n$ merupakan contoh acak dari peubah eksponensial dengan fkp:
+
+$$
+f(y\mid \theta)=\begin{cases}
+\frac{1}{\theta}e^{-y/\theta}, & y>0\\ 
+0, & \text{(lainnya)}
+\end{cases}
+$$
+
+Temukan MVUE dari $V(y_i)$.
+
+Statistik cukup dari $\theta$ adalah $\sum_{i=1}^n y_i$. Diketahui bahwa $E(y)=\theta$ dan $V(y)=\theta^2$. Maka dari itu, $V(\bar{y})=\theta^2/n$. Karena:
+
+$$
+\begin{aligned}
+V(X)&=E(X^2)-[E(X)]^2\\ 
+V(\bar{Y})&=E(\bar{Y}^2)-[E(\bar{Y})]^2\\ 
+\frac{\theta^2}{n}&=E(\bar{Y}^2)-\theta^2\\ 
+\theta^2\left(\frac{1}{n}+1\right)&=\left(\frac{n+1}{n}\right)E(\bar{Y^2})
+\end{aligned}
+$$
+
+Maka lakukan koreksi bias dengan penduga $[n/(n+1)]\bar{Y}^2$; penduga ini adalah MVUE karena merupakan fungsi dari statistik cukup.
+
+### Uniform, Sifat Statistik Cukup
+
+Diketahui bahwa statistik cukup untuk $Y_1, Y_2, \ldots, Y_n \sim\mathrm{Uniform}(0,1)$ adalah $Y_{(n)}$, atau nilai maksimum di sampel. Dari statistik tataan, diketahui bahwa:
+
+$$
+g_{(n)}\left[y_{(n)} \right]=n{\lbrack F(y_{n})\rbrack}^{n - 1}f\left( y_{n} \right)\ \ \ \ \ \ \ ,\ a < y_{n} < b
+$$
+
+Maka dari itu, diketahui bahwa $f(y)=1/\theta$ dan $F(y)=y/\theta$. Maka dari itu:
+
+$$
+g_{(n)}\left[y_{(n)} \right]=n\cdot \frac{y_{(n)}^{n-1}}{\theta^{n-1}}\cdot \frac{1}{\theta}
+$$
+
+Maka dari itu, nilai harapan dari nilai maksimum suatu conth acak uniform (note, range dari maksimum uniform adalah 0 ke $\theta$).
+
+$$
+\begin{aligned}
+E[Y_{(n)}]&=\int_0^{\theta} y_{(n)}\frac{ny_{(n)}^{n-1}}{\theta^n}dy_{(n)}=\int_0^\theta \frac{ny_{(n)}^n}{\theta^n}dy_{(n)}\\ 
+&=\frac{ny_{(n)}^{n+1} }{(n+1)\theta^n}{\huge \mid}_0^\theta=\frac
+{n}{n+1}\theta
+\end{aligned}
+$$
+
+Oleh karena itu, lakukan koreksi sederhana sehingga MVUE adalah $\frac{n+1}{n}Y_{(n)}$
+
+Dapat juga dibuktikan bahwa $Y_{(n)}$ berasal dari complete family.
+
+$$
+\begin{aligned}
+0&=E[u\{y_{(n)}\}]=\int_0^{\theta} u[y_{(n)}]\frac{ny_{(n)}^{n-1}}{\theta^n}dy_{(n)}\\ 
+&=\frac{1}{\theta^n}\int_0^\theta u[y_{(n)}]ny^{n-1}_{(n)} dy_{(n)}\\ 
+0\cdot\theta^n=0&=\int_0^{\theta}u[y_{(n)}]ny^{n-1}_{(n)} dy_{(n)}\\ 
+\frac{d}{dy_{(n)}}0=0&=u(\theta)n\theta^{n-1}
+\end{aligned}
+$$
+
+Melalui teorema dasar kalkulus. Karena $\theta>0$ maka $u(\theta)$ haruslah nol.
+
+## Penduga Tak Bias Sederhana
+
+### Uniform, Redux
+
+Karena diketahui bahwa $E(Y)=\theta/2$ untuk Uniform, maka $E(\sum_{i=1}^n Y_i)=n\theta/2$. Oleh karena itu penduga tak bias sederhana $W=(2/n)\sum_{i=1}^n {Y_i}$.
+
+Maka dari itu:
+
+$$
+\begin{aligned}
+\phi(T)&=E(W\mid T)=E[(2/n)\sum_{i=1}^n {Y_i}\mid Y_{(n)}]&\\ 
+&=(2/n)E\left[\sum_{i=1}^n {Y_i}\mid Y_{(n)}\right] & \text{(sifat nilai harapan)}
+\end{aligned}
+$$
+
+Sekarang pisahkan kejadian menjadi dua. $\sum_{i=1}^n Y_i=t$ dapat dipisahkan menjadi nilai $Y_{(n)}$, dan nilai $\sum_{i=1, i\neq (n)}^n Y_i=$ (jumlah di luar semua elemen selain maksimum). Maka dari itu:
+
+$$
+\begin{aligned}
+\phi(T) 
+&=(2/n)E\left(\sum_{i=1;i\neq(n)}^n {Y_i}+Y_{(n)}\mid Y_{(n)}\right) & \text{(pisahkan)}\\
+&=(2/n)\left[E\left(\sum_{i=1;i\neq(n)}^n {Y_i}\mid Y_{(n)}\right)+E\left(Y_{(n)}\mid Y_{(n)}\right)\right] &\\
+&=(2/n)\left[\sum_{i=1;i\neq(n)}^nE\left( {Y_i}\mid Y_{(n)}\right)+Y_{(n)}\right] &\\
+\end{aligned}
+$$
+
+Karena nilai harapan dari jumlah merupakan jumlah dari nilai harapan untuk peubah acak yang saling bebas. Perhatikan bahwa:
+
+$$
+P(Y_i=x|Y_{(n)}=t)=P(Y_i=x;Y_i<t)
+$$
+
+Agar kondisi tersebut terpenuhi, $Y_i\mid Y_{(n)}=U(0,Y_{(n)})$. Maka dari itu:
+
+$$
+\begin{aligned}
+\phi(T) 
+&=(2/n)\left[\sum_{i=1;i\neq(n)}^nE\left( {Y_i}\mid Y_{(n)}\right)+Y_{(n)}\right] \\
+&=(2/n)\left[\sum_{i=1;i\neq(n)}^n\int_0^{Y_{(n)}}\frac{y_i}{Y_{(n)}}dy_{i}+Y_{(n)}\right] \\
+&=(2/n)\left[\frac{(n-1)Y_{(n)}}{2}\right]+Y_{(n)}\\ 
+&=\left(\frac{n-1}{n}+\frac{2}{n}\right)Y_{(n)}\\ 
+&=\frac{n+1}{n} Y_{(n)}
+\end{aligned}
+$$
+
+Yang sama dengan penduga sebelumnya. Dalam kasus ini, peluang bersyarat diturunkan melalui argumen logis.
+
+### Poisson
+
+Duga $P(X=0)$ untuk $X_1, X_2, \ldots, X_n \mathrm{Poisson}(\lambda)$.
+
+Penduga tak bias sederhana:
+
+$$
+W=\begin{cases}
+1, & X_1=0\\ 
+0, & \text{lainnya}
+\end{cases}
+$$
+
+Karena nilai harapannya adalah $P[X_1=0]$ - di nilai $X_1$ lainnya, $W=0$. Dari fungsi massa peluang,
+
+$$
+\begin{aligned}
+p(x)&=\frac{\lambda^ye^{-\lambda}}{y!}\\ 
+L(\lambda \mid x)&=\prod_{i=1}^n p(x_i)=\frac{\lambda^{\sum_{i=1}^n y_i}e^{-n\lambda}}{\prod_{i=1}^n (y_i!)}
+\end{aligned}
+$$
+
+Diketahui bahwa $\sum_{i=1}^n x_i$ statistik cukup untuk Poisson. Lalu, cari nilai harapan kondisional:
+
+$$
+\begin{aligned}
+E\left[W{\huge \mid} \sum_{i=1}^{n} x_i\right]&=\frac{P(X_1=0, \sum_{i=1}^n X_i =t)}{P(\sum_{i=1}^n X_i=t)}\\ 
+&=\frac{P(X_1=0, \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}\\ 
+&=\frac{P(X_1=0)P( \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}
+\end{aligned}
+$$
+
+Dari fungsi pembangkit momen Poisson:
+
+$$
+\exp\left[\lambda(e^t-1)\right]
+$$
+
+Cukup jelas bahwa jumlah dari contoh acak Poisson akan menghasilkan fungsi pembangkit momen:
+
+$$
+\exp\left[n\lambda(e^t-1)\right]
+$$
+
+Atau, $\sum_{i=1}^n x_i$ menyebar $\mathrm{Poisson}(n\lambda)$. Maka dari itu:
+
+$$
+\begin{aligned}
+E\left[W{\huge \mid} \sum_{i=1}^{n} x_i\right]
+&=\frac{P(X_1=0)P( \sum_{i=2}^n X_i=t)}{P(\sum_{i=1}^n X_i=t)}\\ 
+&=e^{-\lambda}\frac{\frac{[(n-1)\lambda]^{t} e^{-(n-1)\lambda}}{t!}}{\frac{[n\lambda^{t}] e^{-n\lambda}}{t!}}\\ 
+&=\frac{e^{-\lambda}e^{-(n-1)\lambda}}{e^{-n\lambda}}\cdot\frac{t!}{t!}\cdot\frac{\lambda^t}{\lambda^t}\left(\frac{n-1}{n}\right)^t\\ 
+&=\left(1-\frac{1}{n}\right)^{\sum_{i=1}^n x_i}
+\end{aligned}
+$$
+
+Merupakan UMVUE bagi $P[X=0]$. Note, Poisson merupakan sebaran yang berasal dari *complete family*.
+
+
+## Maximum Likelihood
+
+### Gamma
+
+$X_1, X_2, \ldots, X_n$ contoh acak dari populasi yang memiliki fungsi kepekatan peluang:
+
+$$
+f(x\mid \theta\begin{cases}
+\theta e^{−\theta x} &0 <x< \infty, θ> 0
+\\0& lainnya.
+\end{cases}
+$$
+
+Fungsi likelihood adalah:
+
+$$
+L(\theta\mid x_1,\ldots,x_n) = \theta^ne^{-\theta\sum_{i=1}^n x_i}, \quad x_i>0; \ i=1,2,\ldots,n
+$$
+
+Maka dari itu $\sum_{i=1}^n X_i=Y_i$ statistik cukup. Log-likelihod adalah:
+$$
+l(\theta) = n\log \theta− \theta\sum_{i=1}^n x_i
+$$
+
+Maka jika diambil turunan:
+
+$$
+0=\frac{n}{\theta}-\sum_{i=1}^n X_i
+$$
+
+Sehingga $\theta=n/\sum_{i=1}^n X_i=1/\bar{X}$ merupakan fungsi statistik cukup. Maka pastikan ketakbiasan:
+
+Perhatikan bahwa $X\sim \mathrm{Gamma}(1, 1/\theta)$. Maka dari itu $Y=\sum_{i=1}^n X_i \sim \mathrm{Gamma}(n, 1/\theta)$. Maka dari itu:
+
+$$
+\begin{aligned}
+E\left[\hat{\theta}\right]&=nE\left[\frac{1}{Y}\right]\\ 
+&=\int_0^{\infty}\frac{\theta^n}{\Gamma(n)}y^{n-2}e^{-\theta y}dy
+\end{aligned}
+$$
+
+Dengan membuat:
+
+$$
+z=\theta y; \quad dy=1/\theta
+$$
+
+$$
+\begin{aligned}
+E\left[\hat{\theta}\right]&=nE\left[\frac{1}{Y}\right]\\ 
+&=n\int_0^{\infty}\frac{\theta^n}{\Gamma(n)}\left(\frac{z}{\theta}\right)^{n-2}e^{-\theta \cdot(z/\theta)}\frac{1}{\theta}dz=\int_0^{\infty}\frac{\theta}{\Gamma(n)}z^{n-2}e^{-z}dz\\ 
+&=\frac{n\theta}{\Gamma(n)}\int_0^{\infty}y^{n-2}e^{-z}dz
+\end{aligned}
+$$
+
+Ingat bahwa:
+
+$$
+\displaystyle \Gamma (z)=\int _{0}^{\infty }t^{z-1}e^{-t}\,dt,\ \qquad \Re (z)>0\,.
+$$
+
+Maka dari itu:
+
+$$
+\begin{aligned}
+E\left[\hat{\theta}\right]
+&=\frac{n\theta}{\Gamma(n)}\int_0^{\infty}y^{n-2}e^{-z}dz\\ 
+&=\frac{n\theta}{\Gamma(n)}\Gamma(n-1)=\frac{n}{n-1}\theta
+\end{aligned}
+$$
+
+Sehingga dapat dilakukan koreksi bias sederhana: $\hat{\theta}(n-1)/n$
+
+

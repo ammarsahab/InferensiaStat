@@ -1,0 +1,135 @@
+---
+title: "Bab 6"
+format: html
+---
+
+## Statistik Cukup
+
+### Eksponen dengan Indikator
+
+Misalkan $X_{1},X_{2},\ldots,X_{n}$ adalah contoh acak dari sebaran dengan $f_{X}\left( x \middle| \theta \right) = e^{- (x - \theta)}\mathbf{I}(x > \theta)$. Tunjukkan bahwa $T = X_(1)$ adalah statistik cukup bagi $\theta$.
+
+#### Fkp bersama antara $X_{1},X_{2},\ldots,X_{n}$ dengan syarat θ, $f_{\underline{X}}(\underline{x}|\theta)$.
+
+$$
+\begin{aligned}
+f_{\underline{X}}\left( \underline{x} \middle| \theta \right) &= \prod_{i = 1}^{n}{f_{X}\left( x_{i} \middle| \theta \right)} = \prod_{i = 1}^{n}{e^{- (x - \theta)}\mathbf{I}(x > \theta)}\\ 
+&= e^{- \left( x_{1} - \theta \right)} \times e^{- \left( x_{2} - \theta \right)} \times \ldots \times e^{- \left( x_{n} - \theta \right)}\\
+&= e^{n\theta - \sum_{i = 1}^{n}x_{i}}\mathbf{I}\left( x_{i} > \theta \right),\ i = 1,2,\ldots,n
+\end{aligned}
+$$
+
+#### Menggunakan teorema, fkp dari $\ T\  = \ X_{(1)} = \min\left( X_{i} \right)$, $f_{T}\left( t \middle| \theta \right)$.
+
+Perhatikan kembali statistik tataan:
+
+$$
+\begin{aligned}
+f_{T}\left( t \middle| \theta \right)&= nf(x_{(1)})\left\lbrack 1 - F\left( x_{(1)} \right) \right\rbrack^{n - 1}\mathbf{I}\left( x_{(1)} > \theta \right)\\ 
+&= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack 1 - \left( \int_{\theta}^{x_{(1)}}{e^{- (x - \theta)}dx} \right) \right\rbrack^{n - 1}\\
+\end{aligned}
+$$
+
+Gunakan substitusi:
+
+$$
+\begin{aligned}
+u&= \theta -x  &\to  d&u=-dx\\ 
+x&=\theta &\to u&=\theta-\theta=0\\ 
+x&=x_{(1)} &\to u&=\theta-x_{(1)}\\ 
+\end{aligned}
+$$
+
+Sehingga:
+
+$$
+F(y)=-\int_0^{\theta-x_{(1)}}e^u du=-e^{\theta-x_{(1)}}+e^0=1-e^{-\left[x_{(1)}-\theta\right]}
+$$
+
+Maka masukkan integral yang telah diselesaikan:
+
+$$
+\begin{aligned}
+f_{T}\left( t \middle| \theta \right)&= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack 1 - \left( 1 - e^{- \left( x_{(1)} - \theta \right)} \right) \right\rbrack^{n - 1}\\
+&= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack e^{- \left( x_{(1)} - \theta \right)} \right\rbrack^{n - 1}\\
+&= ne^{- n\left( x_{(1)} - \theta \right)}\mathbf{I}\left( x_{(1)} > \theta \right)\\ 
+&= ne^{- n\left( \min\left( x_{i} \right) - \theta \right)}\mathbf{I}\left( x_{i} > \theta \right),\ i = 1,2,\ldots,n
+\end{aligned}
+$$
+
+#### Turunan $f_{\underline{X}}(\underline{x}|T = t)$ sedemikian rupa sehingga tidak bergantung pada θ.
+
+$$
+\begin{aligned}
+f_{\underline{X}}\left( \underline{x} \middle| T = t \right) &= \frac{f_{\underline{X}}\left( \underline{x} \middle| \theta \right)}{f_{T}\left( t \middle| \theta \right)}\\ 
+&= \frac{e^{n\theta - \sum_{i = 1}^{n}x_{i}}}{ne^{- n\left[ \min\left( x_{i} \right) - \theta \right]}}\\ 
+&= \frac{e^{n[min\left( x_{i} \right)]}}{ne^{\sum_{i = 1}^{n}x_{i}}}\
+\end{aligned}
+$$
+
+Tidak bergantung pada $\theta$.
+
+Jadi, $T\  = \ X_{(1)} = \min\left( X_{i} \right)$ merupakan statistik
+cukup bagi $\theta$.
+
+### Pareto
+
+Let $Y_{1},Y_{2},\ldots,Y_{n}$ denote independent and identically
+distributed random variables from a Pareto distribution with parameters
+$\alpha$ and $\beta$. Then pdf, if $\alpha, \beta > 0$,
+
+$$
+f_{Y}\left( y \middle| \alpha,\beta \right) =  \begin{cases}
+\alpha\beta^{\alpha}y^{- (\alpha + 1)},& y \geq \beta \\
+0,& elsewhere \\
+\end{cases}  
+$$
+
+If $\beta$ is known, show that $\prod_{i = 1}^{n}Y_{i}$ is sufficient for $alpha$.
+
+
+#### Fkp bersama antara $Y_{1},Y_{2},\ldots,Y_{n}$ dengan syarat $\alpha, \beta$,   $f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )$.
+
+$$
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )&= \prod_{i = 1}^{n}{f_{Y}\left( y_{i} \middle| \alpha,\beta \right)} = \prod_{i = 1}^{n}{\alpha\beta^{\alpha}{y_{i}}^{- (\alpha + 1)}}\\ 
+&= \alpha\beta^{\alpha}{y_{1}}^{- (\alpha + 1)} \times \alpha\beta^{\alpha}{y_{2}}^{- (\alpha + 1)} \times \ldots \times \alpha\beta^{\alpha}{y_{n}}^{- (\alpha + 1)}\\ 
+&= \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)},\ y_{i} \geq \beta,\ i = 1,2,\ldots,n
+\end{aligned}
+$$
+
+
+####  Menggunakan *Fisher-Neyman Factorization Theorem*, definisikan fungsi-fungsi g dan h sedemikian rupa.
+
+$$
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )&= \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)} \times 1\\ 
+&== g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\alpha\rbrack \times h(y_{1},y_{2},\ldots,y_{n})$
+\end{aligned}
+$$
+
+Maka $g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\alpha\rbrack = \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)}$ dan $h(y_{1},y_{2},\ldots,y_{n}) = 1$
+
+Jadi, $T(y_{1},y_{2},\ldots,y_{n}) = \ \prod_{i = 1}^{n}Y_{i}$ merupakan
+statistik cukup bagi $\alpha$.
+
+## Penduga Konsisten
+
+Misalkan $Y_{1},Y_{2},\cdots,Y_{n}$ merupakan peubah acak dari sebaran
+Normal dengan nilai tengah $\mu$ dan ragam $\sigma^{2} < \infty$.
+Tunjukan bahwa ${\overline{Y}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}$
+adalah penduga konsisten bagi $\mu$.
+
+Notasi ${\overline{Y}}_{n}$ menunjukkan bahwa $\overline{Y}$ dihitung
+menggunakan sampel sebanyak $n$.
+
+$$
+\begin{aligned}
+E\left( {\overline{Y}}_{n} \right)&= \mu\\ 
+Var\left( {\overline{Y}}_{n} \right) &= \frac{\sigma^{2}}{n}\\ 
+\lim_{n \rightarrow \infty}{Var\left( {\widehat{\theta}}_{n} \right)}& = \lim_{n \rightarrow \infty}{Var\left( {\overline{Y}}_{n} \right)} = \lim_{n \rightarrow \infty}\frac{\sigma^{2}}{n} = 0
+\end{aligned}
+$$
+
+Jadi, ${\overline{Y}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}$ adalah
+penduga konsisten bagi $\mu$.

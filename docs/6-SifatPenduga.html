@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Praktikum Inferensia Statistika - Modul</title>
+<title>Praktikum Inferensia Statistika - Bab 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -54,6 +54,7 @@ ul.task-list{list-style: none;}
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -91,7 +92,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Modul</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 6</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -106,7 +107,7 @@ ul.task-list{list-style: none;}
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./modul.html" class="sidebar-item-text sidebar-link active">Modul</a>
+  <a href="./modul.html" class="sidebar-item-text sidebar-link">Modul</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -131,7 +132,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./6-SifatPenduga.html" class="sidebar-item-text sidebar-link">Bab 6</a>
+  <a href="./6-SifatPenduga.html" class="sidebar-item-text sidebar-link active">Bab 6</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -144,14 +145,30 @@ ul.task-list{list-style: none;}
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#statistik-cukup-sufficient-statistic" id="toc-statistik-cukup-sufficient-statistic" class="nav-link active" data-scroll-target="#statistik-cukup-sufficient-statistic">Statistik Cukup (<em>Sufficient Statistic</em>)</a>
+  <ul class="collapse">
+  <li><a href="#teorema" id="toc-teorema" class="nav-link" data-scroll-target="#teorema">Teorema</a></li>
+  <li><a href="#statistik-cukup-minimum-minimal-sufficient-statistic" id="toc-statistik-cukup-minimum-minimal-sufficient-statistic" class="nav-link" data-scroll-target="#statistik-cukup-minimum-minimal-sufficient-statistic">Statistik Cukup Minimum <em>(Minimal Sufficient Statistic)</em></a></li>
+  <li><a href="#fisher-neyman-factorization-theorem" id="toc-fisher-neyman-factorization-theorem" class="nav-link" data-scroll-target="#fisher-neyman-factorization-theorem">Fisher-Neyman Factorization Theorem:</a></li>
+  <li><a href="#fungsi-indikator-ix-atau-1x" id="toc-fungsi-indikator-ix-atau-1x" class="nav-link" data-scroll-target="#fungsi-indikator-ix-atau-1x">Fungsi Indikator (I(x) atau 1(x))</a></li>
+  </ul></li>
+  <li><a href="#penduga-konsisten" id="toc-penduga-konsisten" class="nav-link" data-scroll-target="#penduga-konsisten">Penduga Konsisten</a>
+  <ul class="collapse">
+  <li><a href="#kekonsistenan-untuk-penduga-tak-bias" id="toc-kekonsistenan-untuk-penduga-tak-bias" class="nav-link" data-scroll-target="#kekonsistenan-untuk-penduga-tak-bias">Kekonsistenan untuk penduga tak bias</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Modul</h1>
+<h1 class="title d-none d-lg-block">Bab 6</h1>
 </div>
 
 
@@ -165,95 +182,75 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<p>Materi pembelajaran Inferensia Statistika. Modul yang sudah dibuat adalah:</p>
-<table class="table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 68%">
-<col style="width: 27%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Bab</th>
-<th>Materi</th>
-<th>Keterangan</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Kekonvergenan, Hukum Bilangan Besar, Teorema Limit Pusat</td>
-<td>Lengkap</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td>Sebaran Percontohan dari Populasi Normal, Pendugaan Parameter, Metode Momen</td>
-<td>Lengkap</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Penduga Kemungkinan Maksimum</td>
-<td>Belum lengkap (kurang Jacobi)</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td>Penduga Bayes</td>
-<td>Lengkap</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Statistik Cukup</td>
-<td></td>
-</tr>
-<tr class="even">
-<td>6</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>7</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>8</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>9</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>10</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>11</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>12</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>13</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>14</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<section id="statistik-cukup-sufficient-statistic" class="level2">
+<h2 class="anchored" data-anchor-id="statistik-cukup-sufficient-statistic">Statistik Cukup (<em>Sufficient Statistic</em>)</h2>
+<p>Statistik cukup merupakan suatu statistik yang sudah cukup memberi informasi semua populasi yang diperlukan untuk menduga parameter populasi.</p>
+<p>Misalkan <span class="math inline">\(Y_{1},Y_{2},\ldots,Y_{n}\)</span> adalah suatu contoh acak dengan fmp/fkp <span class="math inline">\(f_{Y}(y|\theta)\)</span> dengan parameter <span class="math inline">\(\theta\)</span> yang tidak diketahui. Statistik <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span> dikatakan <strong>cukup</strong> bagi <span class="math inline">\(\theta\)</span>, bila fmp/fkp bersyarat dari <span class="math inline">\((Y_{1},Y_{2},\ldots,Y_{n})\)</span> bila diketahui nilai <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span> <strong>tidak bergantung pada <span class="math inline">\(\theta\)</span></strong>.</p>
+<section id="teorema" class="level3">
+<h3 class="anchored" data-anchor-id="teorema">Teorema</h3>
+<p>Jika <span class="math inline">\(f_{\underline{Y}}(\underline{y}|\theta)\)</span> fmp/fkp dari <span class="math inline">\((Y_{1},Y_{2},\ldots,Y_{n})\)</span>, maka <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span> dikatakan statistik cukup bagi <span class="math inline">\(\theta\)</span> jika:</p>
+<p><span class="math display">\[
+f_{\underline{Y}}(\underline{y}|T = t)\  = \frac{f_{\underline{Y}}(\underline{y}|\theta)\ }{f_{T}\left( t \middle| \theta \right)}
+\]</span></p>
+<p>Tidak bergantung pada <span class="math inline">\(\theta\)</span> di mana <span class="math inline">\(f_{T}\left( t \middle| \theta \right)\)</span> adalah fmp/fkp dari nilai <span class="math inline">\(\ T(Y_{1},Y_{2},\ldots,Y_{n})\)</span></p>
+<p>Penduga bagi <span class="math inline">\(\theta\)</span> yang merupakan fungsi dari statistik cukup bagi <span class="math inline">\(\theta\)</span> dinamakan <strong>penduga cukup</strong> (<em>sufficient estimator</em>) bagi <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="statistik-cukup-minimum-minimal-sufficient-statistic" class="level3">
+<h3 class="anchored" data-anchor-id="statistik-cukup-minimum-minimal-sufficient-statistic">Statistik Cukup Minimum <em>(Minimal Sufficient Statistic)</em></h3>
+<p>Statistik cukup minimum adalah suatu statistik cukup yang memiliki dimensi terkecil diantara berbagai statistik cukup lainnya.</p>
+</section>
+<section id="fisher-neyman-factorization-theorem" class="level3">
+<h3 class="anchored" data-anchor-id="fisher-neyman-factorization-theorem">Fisher-Neyman Factorization Theorem:</h3>
+<p><span class="math display">\[
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\theta)\ &amp;= \prod_{i = 1}^{n}{f_{Y}(y_{i}|\theta)}\\
+&amp;= g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\theta\rbrack h(y_{1},y_{2},\ldots,y_{n})
+\end{aligned}
+\]</span></p>
+<p>Di mana <span class="math inline">\(h(y_{1},y_{2},\ldots,y_{n})\)</span> fungsi dari <span class="math inline">\((y_{1},y_{2},\ldots,y_{n})\)</span> atau fungsi konstanta dan tidak bergantung pada <span class="math inline">\(\theta\)</span>. Maka <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span> merupakan statistik cukup bagi <span class="math inline">\(\theta\)</span>.</p>
+</section>
+<section id="fungsi-indikator-ix-atau-1x" class="level3">
+<h3 class="anchored" data-anchor-id="fungsi-indikator-ix-atau-1x">Fungsi Indikator (I(x) atau 1(x))</h3>
+<p>Fungsi yang digunakan untuk menyatakan suatu fungsi sebaran sebagai cara untuk menentukan statistik cukup minimum.</p>
+<p>Misalnya <span class="math inline">\(I_A: X \to {0, 1}\)</span> maka didefinisikan</p>
+<p><span class="math display">\[
+I_{A}(x) = \begin{cases}
+1,&amp; jika\ x \in A \\
+0,&amp;jika\ x \notin A \\
+\end{cases}
+\]</span></p>
+<p>Langkah-langkah menentukan statistik cukup adalah sebagai berikut.</p>
+<p>1 Tentukan fmp/fkp bersama antara <span class="math inline">\(Y_{1},Y_{2},\ldots,Y_{n}\)</span> dengan syarat <span class="math inline">\(\theta\)</span>, <span class="math inline">\(f_{\underline{Y}}(\underline{y}|\theta)\)</span>. 2. Menggunakan <em>teorema</em>, tentukan fmp/fkp dari <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span>, <span class="math inline">\(f_{T}\left( t \middle| \theta \right)\)</span>. 3. Turunkan <span class="math inline">\(f_{\underline{Y}}(\underline{y}|T = t)\)</span> sedemikian rupa sehingga tidak bergantung pada <span class="math inline">\(\theta\)</span>.</p>
+<p>Apabila memungkinkan, maka <span class="math inline">\(T(Y_{1},Y_{2},\ldots,Y_{n})\)</span> merupakan statistik cukup bagi <span class="math inline">\(\theta\)</span>.</p>
+<p><em>Atau</em>, melakukan faktorisasi:</p>
+<ol type="1">
+<li>Tentukan fmp/fkp bersama antara <span class="math inline">\(Y_{1},Y_{2},\ldots,Y_{n}\)</span> dengan syarat <span class="math inline">\(\theta\)</span>, <span class="math inline">\(f_{\underline{Y}}(\underline{y}|\theta)\)</span>.</li>
+<li>Menggunakan <em>Fisher-Neyman Factorization Theorem</em>, definisikan fungsi-fungsi g dan h sedemikian rupa sehingga g hanya merupakan fungsi dari statistik dan parameter saja sedangkan h merupakan fungsi dari contoh acak.</li>
+</ol>
+<p>Apabila memungkinkan maka statistik tersebut bersifat cukup bagi <span class="math inline">\(\theta\)</span>. Kalau tidak, bukan statistik cukup bagi <span class="math inline">\(\theta\)</span>.</p>
+</section>
+</section>
+<section id="penduga-konsisten" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-konsisten">Penduga Konsisten</h2>
+<p><span class="math inline">\(\widehat{\theta}\)</span> dikatakan penduga konsisten dari <span class="math inline">\(\theta\)</span> jika untuk sembarang bilangan <span class="math inline">\(\varepsilon\)</span> positif berlaku kondisi berikut :</p>
+<p><span class="math display">\[
+\lim_{n \rightarrow \infty}{P\left( \left| {\widehat{\theta}}_{n} - \theta \right| \right) &gt;}\varepsilon = 0
+\]</span></p>
+<p>Ekuivalen dengan</p>
+<p><span class="math display">\[
+\lim_{n \rightarrow \infty}{P\left( \left| {\widehat{\theta}}_{n}- \theta \right| \right) \leq}\varepsilon = 1
+\]</span></p>
+<p>Ini dapat dibuktikan dengan mengkaji konvergensi pada peluang.</p>
+<section id="kekonsistenan-untuk-penduga-tak-bias" class="level3">
+<h3 class="anchored" data-anchor-id="kekonsistenan-untuk-penduga-tak-bias">Kekonsistenan untuk penduga tak bias</h3>
+<p>Teorema berikut sering digunakan untuk membuktikan bahwa penduga parameter konsisten untuk penduga tak bias. Penduga tak bias <span class="math inline">\({\widehat{\theta}}_{n}\)</span> bagi <span class="math inline">\(\theta\)</span> disebut konsisten jika:</p>
+<p><span class="math display">\[
+\lim_{n\to\infty}Var(\widehat{\theta}_n)=0
+\]</span></p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

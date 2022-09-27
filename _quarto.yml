@@ -28,6 +28,8 @@ website:
         - 2-SebaranContohNormal.qmd
         - 3-MaximumLikelihood.qmd
         - 4-PendugaBayes.qmd
+        - 6-SifatPenduga.qmd
+        - 7-MVUE.qmd
 
     - title: "Tugas"
       style: "docked"
@@ -48,6 +50,8 @@ website:
         - 3-LatihanSoal.qmd
         - 3-PembahasanTugas.qmd
         - 4-LatihanSoal.qmd
+        - 6-LatihanSoal.qmd
+        - 7-LatihanSoal.qmd
 
 format:
   html:

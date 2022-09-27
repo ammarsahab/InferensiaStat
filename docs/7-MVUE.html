@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Praktikum Inferensia Statistika - Bab 7</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Praktikum Inferensia Statistika</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./modul.html" aria-current="page">Modul</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./tugas.html">Tugas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./pembahasan.html">Pembahasan</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Bab 7</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./modul.html" class="sidebar-item-text sidebar-link">Modul</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./1-Kekonvergenan.html" class="sidebar-item-text sidebar-link">Bab 1</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./2-SebaranContohNormal.html" class="sidebar-item-text sidebar-link">Bab 2</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./3-MaximumLikelihood.html" class="sidebar-item-text sidebar-link">Bab 3</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4-PendugaBayes.html" class="sidebar-item-text sidebar-link">Bab 4</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./6-SifatPenduga.html" class="sidebar-item-text sidebar-link">Bab 6</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./7-MVUE.html" class="sidebar-item-text sidebar-link active">Bab 7</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#penduga-efisien" id="toc-penduga-efisien" class="nav-link active" data-scroll-target="#penduga-efisien">Penduga Efisien</a></li>
+  <li><a href="#umvue" id="toc-umvue" class="nav-link" data-scroll-target="#umvue">UMVUE</a></li>
+  <li><a href="#teorema-rao-blackwell" id="toc-teorema-rao-blackwell" class="nav-link" data-scroll-target="#teorema-rao-blackwell">Teorema Rao-Blackwell</a>
+  <ul class="collapse">
+  <li><a href="#law-of-iterated-expectations" id="toc-law-of-iterated-expectations" class="nav-link" data-scroll-target="#law-of-iterated-expectations">Law of Iterated Expectations</a></li>
+  <li><a href="#law-of-total-variance" id="toc-law-of-total-variance" class="nav-link" data-scroll-target="#law-of-total-variance">Law of Total Variance</a></li>
+  <li><a href="#bukti-rao-blackwell" id="toc-bukti-rao-blackwell" class="nav-link" data-scroll-target="#bukti-rao-blackwell">Bukti Rao-Blackwell</a></li>
+  </ul></li>
+  <li><a href="#lehman-scheffe" id="toc-lehman-scheffe" class="nav-link" data-scroll-target="#lehman-scheffe">Lehman-Scheffe</a></li>
+  <li><a href="#cara-melakukan-rao-blackwell" id="toc-cara-melakukan-rao-blackwell" class="nav-link" data-scroll-target="#cara-melakukan-rao-blackwell">Cara Melakukan Rao-Blackwell</a>
+  <ul class="collapse">
+  <li><a href="#mengkaji-statistik-cukup" id="toc-mengkaji-statistik-cukup" class="nav-link" data-scroll-target="#mengkaji-statistik-cukup">Mengkaji Statistik Cukup</a></li>
+  <li><a href="#mengambil-penduga-tak-bias" id="toc-mengambil-penduga-tak-bias" class="nav-link" data-scroll-target="#mengambil-penduga-tak-bias">Mengambil Penduga Tak Bias</a></li>
+  <li><a href="#mengambil-penduga-maximum-likelihood" id="toc-mengambil-penduga-maximum-likelihood" class="nav-link" data-scroll-target="#mengambil-penduga-maximum-likelihood">Mengambil Penduga Maximum Likelihood</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Bab 7</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="penduga-efisien" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-efisien">Penduga Efisien</h2>
+<p>Suatu penduga dikatakan efisien jika</p>
+<p><span class="math display">\[
+Var\left( \widehat{\theta} \right) = HBCR = \frac{1}{I(\theta)}=\frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}
+\]</span></p>
+<p>HBCR adalah Had Bawah Cramer-Rao (Batas Bawah Cramer-Rao) dan <span class="math inline">\(I(\theta)\)</span> adalah Informasi Fisher, yang dihitung dengan:</p>
+<p><span class="math display">\[
+I(\theta) = nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack
+\]</span></p>
+<p>Oleh karena itu, ragam dibatasi oleh Pertidaksamaan Cramer-Rao:</p>
+<p><span class="math display">\[
+Var\left( \widehat{\theta} \right) \geq \frac{1}{nE\left\lbrack - \frac{\partial^{2}}{{\partial\theta}^{2}}\log f_{Y}\left( y|\theta \right) \right\rbrack}
+\]</span></p>
+<p><em>Note</em> : Pertidaksamaan tersebut berlaku jika contoh acak dengan <span class="math inline">\(f_{Y}\left( y|\theta \right)\)</span> termasuk sebaran egular (ruang contoh <span class="math inline">\(R_{Y}\)</span> bebas dari parameter <span class="math inline">\(\theta\)</span>).</p>
+</section>
+<section id="umvue" class="level2">
+<h2 class="anchored" data-anchor-id="umvue">UMVUE</h2>
+<p>Penduga tak bias bagi <span class="math inline">\(\tau(\theta)\)</span>, yaitu <span class="math inline">\(W^*\)</span>, disebut penduga tak bias terbaik bagi <span class="math inline">\(\tau(\theta)\)</span> jika memenuhi <span class="math inline">\(\mathrm{Var}_{\theta}(W^{*})&lt;\mathrm{Var}_{\theta}(W)\)</span>, untuk semua W yang merupakan penduga tak bias lainnya bagi <span class="math inline">\(\tau(\theta)\)</span>. Penduga tak bias ini disebut <em>Uniformly Minimum Variance Unbiased Estimator</em>. Maka dari itu, dua sifat kunci dari penduga ini adalah 1) ragam minimum (efisien), dan 2) tak bias.</p>
+<p>Bagaimana cara menemukan UMVUE? Satu cara adalah:</p>
+<ol type="1">
+<li>Cari penduga, misal melalui MLE atau melalui statistik cukup.</li>
+<li>Cek bias dari penduga tersebut. Jika bias, lakukan koreksi.</li>
+<li>Cek ragam dan bandingan dengan Had Bawah Cramer Rao. Jika ragam lebih besar dari HBCR, penduga belum efisien. Jika ragam sama dengan HBCR, ragam minimum dan penduga UMVUE.</li>
+</ol>
+<p>Permasalahan dari prosedur ini adalah sifatnya yang hanya diagnostik. Prosedur ini dapat menentukan apakah suatu penduga UMVUE. Penduga ada yang seharusnya digunakan? Ada prosedur lain yang dapat mengacu ke penduga lain tersebut.</p>
+</section>
+<section id="teorema-rao-blackwell" class="level2">
+<h2 class="anchored" data-anchor-id="teorema-rao-blackwell">Teorema Rao-Blackwell</h2>
+<p>Pencarian penduga tak bias terbaik dilakukan dengan <strong>memperbaiki</strong> penduga tak bias - memperkecil ragamnya. Ini dilakukan dengan Rao-Blackwell. Anggap <span class="math inline">\(W\)</span> merupakan suatu penduga tak bias bagi <span class="math inline">\(\tau(\theta)\)</span>, dan <span class="math inline">\(T\)</span> adalah statistik cukup untuk <span class="math inline">\(\theta\)</span>. Definisikan <span class="math inline">\(\phi(T)=E[W|T=t]\)</span>. Maka:</p>
+<ol type="1">
+<li><span class="math inline">\(\mathrm{E}_{\theta}[\phi(T)]=\tau(\theta)\)</span>, dan</li>
+<li><span class="math inline">\(\mathrm{Var}_{\theta}[\phi(T)]\leq\mathrm{Var}_{\theta}(W)\)</span> untuk semua <span class="math inline">\(\theta\)</span>.</li>
+</ol>
+<p>Bukti dari teorema ini berdasarkan dua hukum:</p>
+<section id="law-of-iterated-expectations" class="level3">
+<h3 class="anchored" data-anchor-id="law-of-iterated-expectations">Law of Iterated Expectations</h3>
+<p>Misal <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span> adalah peubah acak. Maka:</p>
+<p><span class="math display">\[
+\mathrm{E}(X)=\mathrm{E[E(X|Y)]}
+\]</span></p>
+<p>Di mana <span class="math inline">\(X|Y\)</span> adalah sebaran bersyarat X dengan Y. Hukum ini cukup intuitif. Pertama, hitung nilai harapan <span class="math inline">\(X\)</span> di beberapa skenario tertentu (<span class="math inline">\(\mathrm{E(X|Y)}\)</span>). Lalu, boboti tiap nilai harapan <span class="math inline">\(X|Y\)</span> dengan kemungkinan tiap skenario <span class="math inline">\(Y\)</span> terjadi (ini sama dengan menghitung nilai harapan <span class="math inline">\(E(X|Y)\)</span>). Akan ditemukan nilai harapan <span class="math inline">\(X\)</span>.</p>
+<p>Misal, Anda ingin menghitung nilai harapan berapa kali kalian keluar kos. Jika hari hujan, Anda rata-rata hanya keluar kos 1 kali sehari. Jika tidak hujan, Anda keluar kos 3 kali sehari. Anda mengetahui bahwa probabilitas hari hujan adalah <span class="math inline">\(50 \%\)</span>. Maka dapat dihitung <span class="math inline">\(1\cdot 0.5+3\cdot 0.5=2\)</span> adalah nilai harapan berapa kali kalian keluar kos dalam satu hari.</p>
+<p>Dalam kata lain, jika peubah <span class="math inline">\(Y_i\)</span> memiliki nilai <span class="math inline">\(A_1, A_2, \ldots, A_n\)</span>, maka <span class="math inline">\(\mathrm{E[E(X|Y)]}\)</span> dapat ditulis sebagai:</p>
+<p><span class="math display">\[
+\mathrm{E}(X)=\sum_{i=1}^n \mathrm{E}[X|A_i]P(A_i)
+\]</span></p>
+<p>Yang sesuai dengan definisi <span class="math inline">\(\mathrm{E}(U)=\sum_{i=1}^n U_i P(U_i)\)</span></p>
+</section>
+<section id="law-of-total-variance" class="level3">
+<h3 class="anchored" data-anchor-id="law-of-total-variance">Law of Total Variance</h3>
+<p>Jika <span class="math inline">\(X\)</span> dan <span class="math inline">\(Y\)</span> adlaah peubah acak, maka:</p>
+<p><span class="math display">\[
+{\displaystyle \operatorname {Var} (Y)=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {Var} (\operatorname {E} [Y\mid X]).}
+\]</span></p>
+<p>Diketahui bahwa dari definisi <span class="math inline">\(E[X^2]=\operatorname{Var}(X)+[\operatorname{E}(X)]^2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname {E} \left[Y^{2}\right]&amp;=\operatorname {E} \left[\operatorname {E} (Y^{2}\mid X)\right]=\operatorname {E} \left[\operatorname {Var} (Y\mid X)+\{\operatorname {E} (Y\mid X)\}^{2}\right]\\
+\operatorname {Var} [Y]&amp;=\operatorname {E} \left[Y^{2}\right]-\operatorname {E} [Y]^{2}\\
+&amp;=\operatorname {E} \left[\operatorname {Var} (Y\mid X)+\{\operatorname {E} (Y\mid X)\}^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}\\
+\end{aligned}
+\]</span></p>
+<p>Jika didekomposisi, dapat menjadi:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname {Var} [Y]&amp;=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {E} \left[\operatorname {E} (Y\mid X)^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}
+\end{aligned}
+\]</span></p>
+<p>Note, jika <span class="math inline">\(U=\operatorname{E}(Y\mid X)\)</span> maka:</p>
+<p><span class="math display">\[
+\operatorname {E} \left[\operatorname {E} (Y\mid X)^{2}\right]-[\operatorname {E} \{\operatorname {E} (Y\mid X)\}]^{2}=\operatorname{E}(U^2)-[\operatorname{E}(U)]^2=\operatorname{Var}(U)
+\]</span></p>
+<p>Maka dari itu:</p>
+<p><span class="math display">\[
+{\displaystyle \operatorname {Var} (Y)=\operatorname {E} [\operatorname {Var} (Y\mid X)]+\operatorname {Var} (\operatorname {E} [Y\mid X]).}
+\]</span></p>
+</section>
+<section id="bukti-rao-blackwell" class="level3">
+<h3 class="anchored" data-anchor-id="bukti-rao-blackwell">Bukti Rao-Blackwell</h3>
+<p>Karena <span class="math inline">\(T\)</span> statistik cukup, <span class="math inline">\(W\mid T\)</span> tidak bergantung <span class="math inline">\(\theta\)</span>, maka <span class="math inline">\(\phi(T)=\operatorname{E}[W\mid T]\)</span> hanya fungsi dari contoh acak dan merupakan penduga. Maka dari itu, menggunakan Law of Iterated Expectations:</p>
+<p><span class="math display">\[
+\operatorname{E}[\phi(T)]=\operatorname{E}[\operatorname{E}(W \mid T)]=\operatorname{E}[W]=\tau(\theta)
+\]</span></p>
+<p>Dan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\operatorname{Var}[W]&amp;=\operatorname{E}[\operatorname{Var}(W \mid T)]+\operatorname{Var}[\operatorname{E}(W\mid T)]\\
+&amp;=\operatorname{E}[\operatorname{Var}(W \mid T)]+\operatorname{Var}[\phi(T)]\\
+&amp;\geq \operatorname{Var}[\phi(T)]
+\end{aligned}
+\]</span></p>
+<p>Pasti <span class="math inline">\(\operatorname{Var}[W\mid T]\geq 0\)</span>. Maka nilai harapannya lebih dari nol.</p>
+<p>Perhatikan bahwa Rao-Blackwell pada statistik cukup belum tentu menghasilkan UMVUE. Perlu dipastikan bahwa statistik cukup berupa <strong>statistik cukup lengkap</strong>, atau berasal dari <strong>complete family</strong> (keluarga lengkap) dari fungsi kepekatan atau fungsi massa peluang.</p>
+<p>Definisi keluarga lengkap sebagai berikut. Buat peubah acak <span class="math inline">\(Z\)</span> yang kontinu atau diskret dan memiliki fungsi kepekatan atau massa peluang yang merupakan anggota keluarga <span class="math inline">\(\{h(z\mid\theta): \theta \in \Omega\}\)</span>. Jika kondisi <span class="math inline">\(E[u(Z)]=0\)</span>, untuk tiap <span class="math inline">\(\theta \in \Omega\)</span>, mengharuskan <span class="math inline">\(u(z)\)</span> nol kecuali di titik-titik yang memiliki probabilitas nol untuk tiap <span class="math inline">\(h(z \mid \theta), \ \theta \in \Omega\)</span>, maka keluarga <span class="math inline">\(\{h(z\mid\theta): \theta \in \Omega\}\)</span> disebut keluarga lengkap dari fungsi kepekatan atau massa peluang.</p>
+<p>Definisi tersebut agak panjang, tetapi fokusnya adalah mencari <span class="math inline">\(E[u(Z)]=0\)</span>, lalu mencari nilai <span class="math inline">\(u(Z)\)</span> yang mungkin. Jika hal tersebut dibuktikan, maka dapat dipakai Lehman-Scheffe.</p>
+</section>
+</section>
+<section id="lehman-scheffe" class="level2">
+<h2 class="anchored" data-anchor-id="lehman-scheffe">Lehman-Scheffe</h2>
+<p>Dari Rao-Blackwell, diketahui bahwa jika <span class="math inline">\(W\)</span> penduga tak bias dari <span class="math inline">\(\theta\)</span> dan <span class="math inline">\(Y=u(X_1, \ldots, X_n)\)</span> merupakan suatu statistik cukup dan <span class="math inline">\(f_Y(y : \theta) :\theta\in\Omega\)</span> berasal dari keluarga lengkap. Maka <span class="math inline">\(\phi(Y)=E[W\mid Y]\)</span> merupakan penduga tak bias dari <span class="math inline">\(\theta\)</span> dengan ragam lebih kecil atau sama dengan <span class="math inline">\(W\)</span>.</p>
+<p>Untuk membuktikan bahwa penduga tersebut MVUE, perlu dibuktikan bahwa penduga tersebut unik. Anggap ada suatu penduga tak bias <span class="math inline">\(Z\)</span> dan <span class="math inline">\(\psi(Y)=\operatorname{E}[Z \mid Y]\)</span> yang merupakan penduga tak bias yang merupakan fungsi lain dari statistik cukup dengan ragam tak lebih besar dari ragam <span class="math inline">\(Z\)</span>. Maka dari itu:</p>
+<p><span class="math display">\[
+\theta-\theta=\operatorname{E}[\phi(Y)]-\operatorname{E}[\psi(Y)]=\operatorname{E}[\phi(Y)-\psi(Y)]=0
+\]</span></p>
+<p>Jika fungsi peluang <span class="math inline">\(Y\)</span> berasal dari keluarga lengkap, maka hal tersebut muncul karena <span class="math inline">\(\phi(Y)=\psi(Y)\)</span>, kecuali di titik dengan probabilitas nol. Logika tersebut dapat diperpanjang ke semua penduga tak bias yang mungkin. Hasil Rao-Blackwell semua penduga tak bias akan sama, dan ragamnya selalu lebih kecil atau sama dengan penduga tak bias yang ada. Oleh karena itu, pastilah penduga tersebut MVUE.</p>
+</section>
+<section id="cara-melakukan-rao-blackwell" class="level2">
+<h2 class="anchored" data-anchor-id="cara-melakukan-rao-blackwell">Cara Melakukan Rao-Blackwell</h2>
+<p>Secara umum, Rao-Blackwell dapat dilakukan dengan dua cara:</p>
+<ol type="1">
+<li>Kaji nilai harapan dari statistik cukup; jika nilai harapan tersebut dekat dengan parameter yang diduga, maka dapat dilakukan koreksi sederhana untuk memastikan ketidakbiasan.</li>
+<li>Ambil suatu penduga tak bias sederhana yang bebas dari statistik cukup. Lakukan Rao-Blackwell dari menghitung nilai harapan kondisional penduga tak bias tersebut dengan statistik cukup.</li>
+</ol>
+<section id="mengkaji-statistik-cukup" class="level3">
+<h3 class="anchored" data-anchor-id="mengkaji-statistik-cukup">Mengkaji Statistik Cukup</h3>
+<p>Anggap bahwa <span class="math inline">\(E[h(T)]=\theta\)</span> sehingga <span class="math inline">\(W=h(T)\)</span> merupakan penduga tak bias dari <span class="math inline">\(\theta\)</span>.</p>
+<p>Oleh karena itu,</p>
+<p><span class="math display">\[
+\operatorname{E}[W \mid T]= \operatorname{E}\left[h(T)\mid T\right]=h(T)
+\]</span></p>
+<p>Karena secara intuitif <span class="math inline">\(E[f(X)\mid X]\)</span> - atau nilai harapan dari <span class="math inline">\(f(X)\)</span>, jika <span class="math inline">\(X\)</span> diketahui, pastilah <span class="math inline">\(f(X)\)</span>. Dalam kata lain, suatu fungsi adalah hasil fari suatu input yang pasti menghasilkan suatu output. Jika input sudah pasti, output juga pasti. Terlihat bahwa Rao-Blackwell dari koreksi statistik cukup agar tak bias tidak merubah penduga sama sekali.</p>
+</section>
+<section id="mengambil-penduga-tak-bias" class="level3">
+<h3 class="anchored" data-anchor-id="mengambil-penduga-tak-bias">Mengambil Penduga Tak Bias</h3>
+<p>Perlu dihitung <span class="math inline">\(\operatorname{E}(W \mid T)\)</span>. Definisi dari kuantitas tersebut tidak lain untuk fungsi kontinu:</p>
+<p><span class="math display">\[
+\int WP(W\mid T)=\int W \frac{P(W, T)}{P(T)}
+\]</span></p>
+<p>Agar lebih mudah, konversi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(T\)</span> menjadi kejadian <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span>, di mana <span class="math inline">\(W\)</span> dan <span class="math inline">\(O\)</span> saling bebas. Peluang dapat dihitung dengan lebih mudah.</p>
+</section>
+<section id="mengambil-penduga-maximum-likelihood" class="level3">
+<h3 class="anchored" data-anchor-id="mengambil-penduga-maximum-likelihood">Mengambil Penduga Maximum Likelihood</h3>
+<p>Teorema:</p>
+<p>Jika <span class="math inline">\(X_1, X_2, \ldots, X_n\)</span> merupakan contoh acak dari sebaran dengan fungsi kepekatan atau massa peluang <span class="math inline">\(f(x\mid \theta), \theta \in \Omega\)</span>. Jika terdapat statistik cukup <span class="math inline">\(Y_1=u_1(X_1, X_2, \ldots, X_n)\)</span> untuk <span class="math inline">\(\theta\)</span> ada dan sebuah MLE <span class="math inline">\(\theta^{*}\)</span> untuk <span class="math inline">\(\theta\)</span> ada secara unik, maka <span class="math inline">\(\theta^{*}\)</span> fungsi dari <span class="math inline">\(Y_1\)</span>.</p>
+<p>Bukti dari teorema ini sebagai berikut:</p>
+<p><span class="math inline">\(f_{y_1}(y_1\mid\theta)\)</span> adalah fungsi kepekatan atau massa peluang <span class="math inline">\(Y_1\)</span>. Maka dari definisi kecupukan, fungsi likelihood:</p>
+<p><span class="math display">\[
+\begin{aligned}
+L(\theta; x_1, x_2,\ldots,x_n)&amp;= f(x_1\mid \theta)f(x_2\mid \theta)\ldots f(x_n\mid \theta)\\
+&amp;= f_{Y_1} [u_1(X_1, X_2, \ldots, X_n)\mid \theta]H(x_1, x_2,\ldots,x_n),
+\end{aligned}
+\]</span></p>
+<p>Do mana <span class="math inline">\(H(x_1, x_2,\ldots,x_n)\)</span> tidak bergantung pada <span class="math inline">\(\theta\)</span>. Maka <span class="math inline">\(L\)</span> dan <span class="math inline">\(f_{Y_{1}}\)</span> akan termaksimumkan bersama-sama jika dicari <span class="math inline">\(\theta\)</span> yang memaksimumkan <span class="math inline">\(L\)</span>. Oleh karena itu, penduga <span class="math inline">\(\hat{\theta}\)</span> tersebut merupakan input fungsi dari <span class="math inline">\(f_{Y_{(1)}}[u_1(X_1, X_2, \ldots, X_n)\mid \theta]\)</span>. Maka pastilah penduga tersebut fungsi dari statistik cukup.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

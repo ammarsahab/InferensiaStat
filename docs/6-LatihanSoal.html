@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Praktikum Inferensia Statistika - Bab 1, Latihan Soal</title>
+<title>Praktikum Inferensia Statistika - Bab 6</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ ul.task-list{list-style: none;}
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Bab 1, Latihan Soal</h1>
+      <h1 class="quarto-secondary-nav-title">Bab 6</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -112,7 +112,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 1, Latihan Soal</a>
+  <a href="./1-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 1, Latihan Soal</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -147,7 +147,7 @@ ul.task-list{list-style: none;}
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./6-LatihanSoal.html" class="sidebar-item-text sidebar-link">Bab 6</a>
+  <a href="./6-LatihanSoal.html" class="sidebar-item-text sidebar-link active">Bab 6</a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -164,16 +164,12 @@ ul.task-list{list-style: none;}
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#konvergensi-dalam-peluang" id="toc-konvergensi-dalam-peluang" class="nav-link active" data-scroll-target="#konvergensi-dalam-peluang">Konvergensi dalam peluang</a>
+  <li><a href="#statistik-cukup" id="toc-statistik-cukup" class="nav-link active" data-scroll-target="#statistik-cukup">Statistik Cukup</a>
   <ul class="collapse">
-  <li><a href="#let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." id="toc-let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." class="nav-link" data-scroll-target="#let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu.">Let <span class="math inline">\(W_n\)</span> denote a random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(b/n^{p}\)</span>, where <span class="math inline">\(p &gt; 0, \mu\)</span>, and <span class="math inline">\(b\)</span> are constants (not functions of n). Prove that <span class="math inline">\(W_n\)</span> converges in probability to <span class="math inline">\(\mu\)</span>.</a></li>
-  <li><a href="#let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." id="toc-let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." class="nav-link" data-scroll-target="#let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0.">Let <span class="math inline">\(X_n\sim \mathrm{Exponential}(n)\)</span>, show that <span class="math inline">\(X_n\)</span> converges in probability to 0.</a></li>
+  <li><a href="#eksponen-dengan-indikator" id="toc-eksponen-dengan-indikator" class="nav-link" data-scroll-target="#eksponen-dengan-indikator">Eksponen dengan Indikator</a></li>
+  <li><a href="#pareto" id="toc-pareto" class="nav-link" data-scroll-target="#pareto">Pareto</a></li>
   </ul></li>
-  <li><a href="#konvergensi-dalam-distribusi" id="toc-konvergensi-dalam-distribusi" class="nav-link" data-scroll-target="#konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</a>
-  <ul class="collapse">
-  <li><a href="#barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" id="toc-barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" class="nav-link" data-scroll-target="#barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke"><span class="math inline">\(\bar{X}_{n}\)</span> memiliki fungsi kumulatif sebagai berikut. Peubah acak tersebut konvergen dalam distirbusi ke?</a></li>
-  <li><a href="#diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." id="toc-diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." class="nav-link" data-scroll-target="#diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda.">Diberikan <span class="math inline">\(X_n \sim Binomial\left(n, \frac{\lambda}{n}\right)\)</span> Di mana <span class="math inline">\(\lambda&gt;0\)</span> suatu konstanta. Tunjukkan <span class="math inline">\(X_n\)</span> konvergen dalam distribusi ke Poisson(<span class="math inline">\(\lambda\)</span>).</a></li>
-  </ul></li>
+  <li><a href="#penduga-konsisten" id="toc-penduga-konsisten" class="nav-link" data-scroll-target="#penduga-konsisten">Penduga Konsisten</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +178,7 @@ ul.task-list{list-style: none;}
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Bab 1, Latihan Soal</h1>
+<h1 class="title d-none d-lg-block">Bab 6</h1>
 </div>
 
 
@@ -196,92 +192,112 @@ ul.task-list{list-style: none;}
 
 </header>
 
-<section id="konvergensi-dalam-peluang" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-peluang">Konvergensi dalam peluang</h2>
-<p>Dua soal ini menunjukkan dua pendekatan membuktikan konvergensi dalam peluang. Pertama, menggunakan pertidaksamaan Chebysheff dan kedua, menggunakan fungsi kepekatan peluang.</p>
-<section id="let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu." class="level3">
-<h3 class="anchored" data-anchor-id="let-w_n-denote-a-random-variable-with-mean-mu-and-variance-bnp-where-p-0-mu-and-b-are-constants-not-functions-of-n.-prove-that-w_n-converges-in-probability-to-mu.">Let <span class="math inline">\(W_n\)</span> denote a random variable with mean <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(b/n^{p}\)</span>, where <span class="math inline">\(p &gt; 0, \mu\)</span>, and <span class="math inline">\(b\)</span> are constants (not functions of n). Prove that <span class="math inline">\(W_n\)</span> converges in probability to <span class="math inline">\(\mu\)</span>.</h3>
-<p>Dengan pertidaksamaan Chebysheff, buat <span class="math inline">\(a=\varepsilon\)</span>:</p>
+<section id="statistik-cukup" class="level2">
+<h2 class="anchored" data-anchor-id="statistik-cukup">Statistik Cukup</h2>
+<section id="eksponen-dengan-indikator" class="level3">
+<h3 class="anchored" data-anchor-id="eksponen-dengan-indikator">Eksponen dengan Indikator</h3>
+<p>Misalkan <span class="math inline">\(X_{1},X_{2},\ldots,X_{n}\)</span> adalah contoh acak dari sebaran dengan <span class="math inline">\(f_{X}\left( x \middle| \theta \right) = e^{- (x - \theta)}\mathbf{I}(x &gt; \theta)\)</span>. Tunjukkan bahwa <span class="math inline">\(T = X_(1)\)</span> adalah statistik cukup bagi <span class="math inline">\(\theta\)</span>.</p>
+<section id="fkp-bersama-antara-x_1x_2ldotsx_n-dengan-syarat-θ-f_underlinexunderlinextheta." class="level4">
+<h4 class="anchored" data-anchor-id="fkp-bersama-antara-x_1x_2ldotsx_n-dengan-syarat-θ-f_underlinexunderlinextheta.">Fkp bersama antara <span class="math inline">\(X_{1},X_{2},\ldots,X_{n}\)</span> dengan syarat θ, <span class="math inline">\(f_{\underline{X}}(\underline{x}|\theta)\)</span>.</h4>
 <p><span class="math display">\[
 \begin{aligned}
-    P\left(|W_n-\mu |\geq \varepsilon \right)\leq {\frac {b}{n^p\varepsilon^{2}}}.
+f_{\underline{X}}\left( \underline{x} \middle| \theta \right) &amp;= \prod_{i = 1}^{n}{f_{X}\left( x_{i} \middle| \theta \right)} = \prod_{i = 1}^{n}{e^{- (x - \theta)}\mathbf{I}(x &gt; \theta)}\\
+&amp;= e^{- \left( x_{1} - \theta \right)} \times e^{- \left( x_{2} - \theta \right)} \times \ldots \times e^{- \left( x_{n} - \theta \right)}\\
+&amp;= e^{n\theta - \sum_{i = 1}^{n}x_{i}}\mathbf{I}\left( x_{i} &gt; \theta \right),\ i = 1,2,\ldots,n
 \end{aligned}
 \]</span></p>
-<p>Ambil limit jika <span class="math inline">\(n\to\infty\)</span>, pasti akan 0.</p>
 </section>
-<section id="let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0." class="level3">
-<h3 class="anchored" data-anchor-id="let-x_nsim-mathrmexponentialn-show-that-x_n-converges-in-probability-to-0.">Let <span class="math inline">\(X_n\sim \mathrm{Exponential}(n)\)</span>, show that <span class="math inline">\(X_n\)</span> converges in probability to 0.</h3>
+<section id="menggunakan-teorema-fkp-dari-t-x_1-minleft-x_i-right-f_tleft-t-middle-theta-right." class="level4">
+<h4 class="anchored" data-anchor-id="menggunakan-teorema-fkp-dari-t-x_1-minleft-x_i-right-f_tleft-t-middle-theta-right.">Menggunakan teorema, fkp dari <span class="math inline">\(\ T\  = \ X_{(1)} = \min\left( X_{i} \right)\)</span>, <span class="math inline">\(f_{T}\left( t \middle| \theta \right)\)</span>.</h4>
+<p>Perhatikan kembali statistik tataan:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lim_{n \rightarrow \infty} P\big(|X_n-0| \geq \epsilon \big) &amp;=\lim_{n \rightarrow \infty} P\big(X_n \geq \epsilon \big) &amp; (\textrm{$X_n\geq 0$ })\\
-&amp;=\lim_{n \rightarrow \infty} e^{-n\epsilon} &amp; \textrm{(fkp dari $\mathrm{Eksponensial}[n]$)} \\
-&amp;=0 , \qquad \textrm{ for all }\epsilon&gt;0.
+f_{T}\left( t \middle| \theta \right)&amp;= nf(x_{(1)})\left\lbrack 1 - F\left( x_{(1)} \right) \right\rbrack^{n - 1}\mathbf{I}\left( x_{(1)} &gt; \theta \right)\\
+&amp;= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack 1 - \left( \int_{\theta}^{x_{(1)}}{e^{- (x - \theta)}dx} \right) \right\rbrack^{n - 1}\\
 \end{aligned}
 \]</span></p>
-<p>Limit menuju <span class="math inline">\(0\)</span> karena pangkat negatif tak hingga berarti satu dibagi angka yang sangat besar, sehingga mendekati nol.</p>
-</section>
-</section>
-<section id="konvergensi-dalam-distribusi" class="level2">
-<h2 class="anchored" data-anchor-id="konvergensi-dalam-distribusi">Konvergensi dalam Distribusi</h2>
-<section id="barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke" class="level3">
-<h3 class="anchored" data-anchor-id="barx_n-memiliki-fungsi-kumulatif-sebagai-berikut.-peubah-acak-tersebut-konvergen-dalam-distirbusi-ke"><span class="math inline">\(\bar{X}_{n}\)</span> memiliki fungsi kumulatif sebagai berikut. Peubah acak tersebut konvergen dalam distirbusi ke?</h3>
-<p><span class="math display">\[
-F_n(\bar{x})=\int_{-\infty}^{\bar{x}} \frac{1}{\sqrt{1/n}\sqrt{2\pi}}e^{-nw^2/2}dw
-\]</span></p>
-<p>Dengan menggunakan substitusi <span class="math inline">\(v=\sqrt{n}w\)</span>, maka <span class="math inline">\(dv=\sqrt{n}dw\)</span> sehingga:</p>
-<p><span class="math display">\[
-F_n(\bar{x})=\int_{-\infty}^{\sqrt{n}\bar{x}} \frac{1}{\sqrt{2\pi}}e^{-v^2/2}dw
-\]</span></p>
-<p>Sehingga:</p>
+<p>Gunakan substitusi:</p>
 <p><span class="math display">\[
 \begin{aligned}
-\lim_{n\to\infty}F_n(\bar{x})
-\begin{cases}
-0, &amp; \bar{x}&lt;0\\
-\frac{1}{2}, &amp; \bar{x}=0\\
-1, &amp; \bar{x}&gt;0
-\end{cases}
-\end{aligned}
-\]</span></p>
-<p>Karena jika <span class="math inline">\(\bar{x}\)</span> negatif, maka integral dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(-\infty\)</span> menghasilkan nol. Jika <span class="math inline">\(\bar{x}=0\)</span>, integral merupakan fungsi kepekatan peluang normal baku dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(0\)</span>. Karena diketahui normal baku simetris dengan titik tengah di nol, peluang tersebut pasti <span class="math inline">\(1/2\)</span>. Jika <span class="math inline">\(\bar{x}\)</span> positif, maka integral dari <span class="math inline">\(-\infty\)</span> ke <span class="math inline">\(\infty\)</span> akan mencakup seluruh area peubah. Maka, <span class="math inline">\(F_n(\bar{x})\)</span> konvergen dalam distribusi ke:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\lim_{n\to\infty}F_n(\bar{x})
-\begin{cases}
-0, &amp; \bar{x}&lt;0\\
-1, &amp; \bar{x}&gt;0
-\end{cases}
-\end{aligned}
-\]</span></p>
-<p>Karena <span class="math inline">\(F_n(\bar{x})\)</span> tak kontinu di <span class="math inline">\(\bar{x}=0\)</span>.</p>
-</section>
-<section id="diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda." class="level3">
-<h3 class="anchored" data-anchor-id="diberikan-x_n-sim-binomialleftn-fraclambdanright-di-mana-lambda0-suatu-konstanta.-tunjukkan-x_n-konvergen-dalam-distribusi-ke-poissonlambda.">Diberikan <span class="math inline">\(X_n \sim Binomial\left(n, \frac{\lambda}{n}\right)\)</span> Di mana <span class="math inline">\(\lambda&gt;0\)</span> suatu konstanta. Tunjukkan <span class="math inline">\(X_n\)</span> konvergen dalam distribusi ke Poisson(<span class="math inline">\(\lambda\)</span>).</h3>
-<p>Kaji fungsi kumulatif binomial:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\nonumber \nonumber \lim_{n \rightarrow \infty} P_{X_n}(k) &amp;= \lim_{n \rightarrow \infty} {n \choose k} \left(\frac{\lambda}{n}\right)^k \left(1-\frac{\lambda}{n}\right)^{n-k} \\
-\nonumber &amp;= \lambda^k \lim_{n \rightarrow \infty} {\frac{n!}{k! (n-k)!}} \left(\frac{1}{n^k}\right) \left(1-\frac{\lambda}{n}\right)^{n-k}\\
-\nonumber &amp;= \frac{\lambda^k}{k!} . \lim_{n \rightarrow \infty} \left(\left[ \frac{n...(n-k+1)}{n^k}\right]\\  \left[ \left(1-\frac{\lambda}{n}\right)^{n}\right] \left[\left(1-\frac{\lambda}{n}\right)^{-k}\right]\right)
+u&amp;= \theta -x  &amp;\to  d&amp;u=-dx\\
+x&amp;=\theta &amp;\to u&amp;=\theta-\theta=0\\
+x&amp;=x_{(1)} &amp;\to u&amp;=\theta-x_{(1)}\\
 \end{aligned}
 \]</span></p>
 <p>Sehingga:</p>
 <p><span class="math display">\[
-\begin{aligned}%\label{}
-\nonumber &amp;\lim_{n \rightarrow \infty} \frac{n(n-1)(n-2)...(n-k+1)}{n^k} =1,\\
-\nonumber &amp;\lim_{n \rightarrow \infty} \left(1-\frac{\lambda}{n}\right)^{-k}=1,\\
-\nonumber &amp;\lim_{n \rightarrow \infty}\left(1-\frac{\lambda}{n}\right)^{n}=e^{-\lambda}.
+F(y)=-\int_0^{\theta-x_{(1)}}e^u du=-e^{\theta-x_{(1)}}+e^0=1-e^{-\left[x_{(1)}-\theta\right]}
+\]</span></p>
+<p>Maka masukkan integral yang telah diselesaikan:</p>
+<p><span class="math display">\[
+\begin{aligned}
+f_{T}\left( t \middle| \theta \right)&amp;= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack 1 - \left( 1 - e^{- \left( x_{(1)} - \theta \right)} \right) \right\rbrack^{n - 1}\\
+&amp;= ne^{- \left( x_{(1)} - \theta \right)}\left\lbrack e^{- \left( x_{(1)} - \theta \right)} \right\rbrack^{n - 1}\\
+&amp;= ne^{- n\left( x_{(1)} - \theta \right)}\mathbf{I}\left( x_{(1)} &gt; \theta \right)\\
+&amp;= ne^{- n\left( \min\left( x_{i} \right) - \theta \right)}\mathbf{I}\left( x_{i} &gt; \theta \right),\ i = 1,2,\ldots,n
 \end{aligned}
 \]</span></p>
-<p>Yang jika digabung tidak lain merupakan fungsi kumulatif dari Poisson:</p>
-<p><span class="math display">\[
-\begin{equation}
-\nonumber \lim_{n \rightarrow \infty} P_{X_n}(k)=\frac{e^{-\lambda} \lambda^k}{k!}.
-\end{equation}
-\]</span></p>
-
-
 </section>
+<section id="turunan-f_underlinexunderlinext-t-sedemikian-rupa-sehingga-tidak-bergantung-pada-θ." class="level4">
+<h4 class="anchored" data-anchor-id="turunan-f_underlinexunderlinext-t-sedemikian-rupa-sehingga-tidak-bergantung-pada-θ.">Turunan <span class="math inline">\(f_{\underline{X}}(\underline{x}|T = t)\)</span> sedemikian rupa sehingga tidak bergantung pada θ.</h4>
+<p><span class="math display">\[
+\begin{aligned}
+f_{\underline{X}}\left( \underline{x} \middle| T = t \right) &amp;= \frac{f_{\underline{X}}\left( \underline{x} \middle| \theta \right)}{f_{T}\left( t \middle| \theta \right)}\\
+&amp;= \frac{e^{n\theta - \sum_{i = 1}^{n}x_{i}}}{ne^{- n\left[ \min\left( x_{i} \right) - \theta \right]}}\\
+&amp;= \frac{e^{n[min\left( x_{i} \right)]}}{ne^{\sum_{i = 1}^{n}x_{i}}}\
+\end{aligned}
+\]</span></p>
+<p>Tidak bergantung pada <span class="math inline">\(\theta\)</span>.</p>
+<p>Jadi, <span class="math inline">\(T\  = \ X_{(1)} = \min\left( X_{i} \right)\)</span> merupakan statistik cukup bagi <span class="math inline">\(\theta\)</span>.</p>
+</section>
+</section>
+<section id="pareto" class="level3">
+<h3 class="anchored" data-anchor-id="pareto">Pareto</h3>
+<p>Let <span class="math inline">\(Y_{1},Y_{2},\ldots,Y_{n}\)</span> denote independent and identically distributed random variables from a Pareto distribution with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. Then pdf, if <span class="math inline">\(\alpha, \beta &gt; 0\)</span>,</p>
+<p><span class="math display">\[
+f_{Y}\left( y \middle| \alpha,\beta \right) =  \begin{cases}
+\alpha\beta^{\alpha}y^{- (\alpha + 1)},&amp; y \geq \beta \\
+0,&amp; elsewhere \\
+\end{cases}  
+\]</span></p>
+<p>If <span class="math inline">\(\beta\)</span> is known, show that <span class="math inline">\(\prod_{i = 1}^{n}Y_{i}\)</span> is sufficient for <span class="math inline">\(alpha\)</span>.</p>
+<section id="fkp-bersama-antara-y_1y_2ldotsy_n-dengan-syarat-alpha-beta-f_underlineyunderlineyalpha-beta-." class="level4">
+<h4 class="anchored" data-anchor-id="fkp-bersama-antara-y_1y_2ldotsy_n-dengan-syarat-alpha-beta-f_underlineyunderlineyalpha-beta-.">Fkp bersama antara <span class="math inline">\(Y_{1},Y_{2},\ldots,Y_{n}\)</span> dengan syarat <span class="math inline">\(\alpha, \beta\)</span>, <span class="math inline">\(f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )\)</span>.</h4>
+<p><span class="math display">\[
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )&amp;= \prod_{i = 1}^{n}{f_{Y}\left( y_{i} \middle| \alpha,\beta \right)} = \prod_{i = 1}^{n}{\alpha\beta^{\alpha}{y_{i}}^{- (\alpha + 1)}}\\
+&amp;= \alpha\beta^{\alpha}{y_{1}}^{- (\alpha + 1)} \times \alpha\beta^{\alpha}{y_{2}}^{- (\alpha + 1)} \times \ldots \times \alpha\beta^{\alpha}{y_{n}}^{- (\alpha + 1)}\\
+&amp;= \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)},\ y_{i} \geq \beta,\ i = 1,2,\ldots,n
+\end{aligned}
+\]</span></p>
+</section>
+<section id="menggunakan-fisher-neyman-factorization-theorem-definisikan-fungsi-fungsi-g-dan-h-sedemikian-rupa." class="level4">
+<h4 class="anchored" data-anchor-id="menggunakan-fisher-neyman-factorization-theorem-definisikan-fungsi-fungsi-g-dan-h-sedemikian-rupa.">Menggunakan <em>Fisher-Neyman Factorization Theorem</em>, definisikan fungsi-fungsi g dan h sedemikian rupa.</h4>
+<p><span class="math display">\[
+\begin{aligned}
+f_{\underline{Y}}(\underline{y}|\alpha,\ \beta\ )&amp;= \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)} \times 1\\
+&amp;== g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\alpha\rbrack \times h(y_{1},y_{2},\ldots,y_{n})$
+\end{aligned}
+\]</span></p>
+<p>Maka <span class="math inline">\(g\lbrack T(y_{1},y_{2},\ldots,y_{n})|\alpha\rbrack = \alpha^{n}\beta^{n\alpha}\left( \prod_{i = 1}^{n}y_{i} \right)^{- (\alpha + 1)}\)</span> dan <span class="math inline">\(h(y_{1},y_{2},\ldots,y_{n}) = 1\)</span></p>
+<p>Jadi, <span class="math inline">\(T(y_{1},y_{2},\ldots,y_{n}) = \ \prod_{i = 1}^{n}Y_{i}\)</span> merupakan statistik cukup bagi <span class="math inline">\(\alpha\)</span>.</p>
+</section>
+</section>
+</section>
+<section id="penduga-konsisten" class="level2">
+<h2 class="anchored" data-anchor-id="penduga-konsisten">Penduga Konsisten</h2>
+<p>Misalkan <span class="math inline">\(Y_{1},Y_{2},\cdots,Y_{n}\)</span> merupakan peubah acak dari sebaran Normal dengan nilai tengah <span class="math inline">\(\mu\)</span> dan ragam <span class="math inline">\(\sigma^{2} &lt; \infty\)</span>. Tunjukan bahwa <span class="math inline">\({\overline{Y}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}\)</span> adalah penduga konsisten bagi <span class="math inline">\(\mu\)</span>.</p>
+<p>Notasi <span class="math inline">\({\overline{Y}}_{n}\)</span> menunjukkan bahwa <span class="math inline">\(\overline{Y}\)</span> dihitung menggunakan sampel sebanyak <span class="math inline">\(n\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+E\left( {\overline{Y}}_{n} \right)&amp;= \mu\\
+Var\left( {\overline{Y}}_{n} \right) &amp;= \frac{\sigma^{2}}{n}\\
+\lim_{n \rightarrow \infty}{Var\left( {\widehat{\theta}}_{n} \right)}&amp; = \lim_{n \rightarrow \infty}{Var\left( {\overline{Y}}_{n} \right)} = \lim_{n \rightarrow \infty}\frac{\sigma^{2}}{n} = 0
+\end{aligned}
+\]</span></p>
+<p>Jadi, <span class="math inline">\({\overline{Y}}_{n} = \frac{1}{n}\sum_{i = 1}^{n}y_{i}\)</span> adalah penduga konsisten bagi <span class="math inline">\(\mu\)</span>.</p>
+
+
 </section>
 
 </main> <!-- /main -->
